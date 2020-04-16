@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	<name>MedPod</name>
+	<author>sumghai</author>
+	<packageId>sumghai.medpod</packageId>
+	<description>Adds automated regenerative medical beds capable of treating virtually every injury and disease.\n\nv0.1.0</description>
+	<url/>
+	<supportedVersions>
+		<li>1.1</li>
+	</supportedVersions>
+</ModMetaData>

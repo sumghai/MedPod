@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="FurnitureBase" Name="MedPodBedBase" Abstract="True">
+		<thingClass>MedPod.Building_BedMedPod</thingClass>
+		<altitudeLayer>Building</altitudeLayer>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<selectable>true</selectable>
+		<constructEffect>ConstructMetal</constructEffect>
+		<comps>
+			<li Class="CompProperties_AssignableToPawn">
+				<drawAssignmentOverlay>false</drawAssignmentOverlay>
+				<compClass>CompAssignableToPawn_Bed</compClass>
+			</li>
+		</comps>
+		<tickerType>Normal</tickerType>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<repairEffect>Repair</repairEffect>
+		<canOverlapZones>false</canOverlapZones>
+		<passability>PassThroughOnly</passability>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+
+	<!-- ========== Standard MedPod ========== -->
+
+	<ThingDef ParentName="MedPodBedBase">
+		<defName>MedPodStandard</defName>
+		<label>MedPod</label>
+		<description>An advanced hospital bed that uses atomic reconstruction to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.</description>
+		<graphicData>
+			<texPath>Things/Building/Furniture/Bed/HospitalBed</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<castEdgeShadows>True</castEdgeShadows>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>2800</WorkToBuild>
+			<Mass>35</Mass>
+			<Flammability>1.0</Flammability>
+			<BedRestEffectiveness>1</BedRestEffectiveness>
+			<Comfort>0.80</Comfort>
+		</statBases>
+		<size>(1,2)</size>
+		<costStuffCount>40</costStuffCount>
+		<costList>
+			<Plasteel>80</Plasteel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<building>
+			<bed_showSleeperBody>true</bed_showSleeperBody>
+			<bed_defaultMedical>true</bed_defaultMedical>
+		</building>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>true</shortCircuitInRain>
+				<basePowerConsumption>125</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>60</pathCost>
+		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+		<staticSunShadowHeight>0.17</staticSunShadowHeight>
+		<researchPrerequisites>
+			<li>HospitalBed</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+		<techLevel>Spacer</techLevel>
+		<uiIconScale>0.90</uiIconScale>
+	</ThingDef>
+
+	<!-- ========== Luxury MedPod (With Stuffable, Art and Quality variation) ========== -->
+
+</Defs>
