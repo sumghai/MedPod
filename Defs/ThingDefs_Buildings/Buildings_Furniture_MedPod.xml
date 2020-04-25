@@ -29,10 +29,10 @@
 		<label>MedPod</label>
 		<description>An advanced hospital bed that uses atomic reconstruction to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.</description>
 		<graphicData>
-			<texPath>Things/Building/Furniture/Bed/HospitalBed</texPath>
+			<texPath>Things/Building/Furniture/MedPod</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(2,2)</drawSize>
+			<drawSize>(4,5)</drawSize>
 		</graphicData>
 		<castEdgeShadows>True</castEdgeShadows>
 		<statBases>
@@ -67,6 +67,8 @@
 		<pathCost>60</pathCost>
 		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
 		<staticSunShadowHeight>0.17</staticSunShadowHeight>
+		<canOverlapZones>false</canOverlapZones>
+		
 		<researchPrerequisites>
 			<li>HospitalBed</li>
 		</researchPrerequisites>
