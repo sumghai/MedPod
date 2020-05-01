@@ -39,15 +39,57 @@ namespace MedPod
             Error
         }
 
-        public MedPodStatus status = MedPodStatus.Idle;
+        public MedPodStatus status = MedPodStatus.Idle;   
+
+        private IntVec3 InvisibleBlockerPosition
+        {
+            get
+            {
+                IntVec3 position;
+                if (Rotation == Rot4.North)
+                {
+                    position = new IntVec3(Position.x + 0, Position.y, Position.z - 1);
+                }
+                else if (Rotation == Rot4.East)
+                {
+                    position = new IntVec3(Position.x - 1, Position.y, Position.z + 0);
+                }
+                else if (Rotation == Rot4.South)
+                {
+                    position = new IntVec3(Position.x + 0, Position.y, Position.z + 1);
+                }
+                else // Default: West
+                {
+                    position = new IntVec3(Position.x + 1, Position.y, Position.z + 0);
+                }
+
+                return position;
+            }
+        }
+
+        private Thing resultingBlocker;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             powerComp = GetComp<CompPowerTrader>();
+
+            // Add a blocker region for the MedPod main machinery
+            // (If one already exists, then we are probably loading a save with an existing MedPod)
+            Thing something = Map.thingGrid.ThingsListAtFast(InvisibleBlockerPosition).FirstOrDefault(x => x.def.Equals(MedPodDef.MedPodInvisibleBlocker));
+
+            if (something != null)
+            {
+                something.DeSpawn();
+            }
+
+            Thing t = ThingMaker.MakeThing(MedPodDef.MedPodInvisibleBlocker);
+            Log.Warning("MedPod :: Placing blocker for " + ThingID.ToString());
+            GenPlace.TryPlaceThing(t, InvisibleBlockerPosition, Map, ThingPlaceMode.Direct, out resultingBlocker, null, null, Rotation);
+            Log.Warning("MedPod :: Blocker placed for " + ThingID.ToString());
         }
 
-        private Pawn patientPawn
+        private Pawn PatientPawn
         {
             get
             {
@@ -63,10 +105,14 @@ namespace MedPod
         {
             if (powerComp.PowerOn && ( (status == MedPodStatus.DiagnosisFinished) || (status == MedPodStatus.HealingStarted) || (status == MedPodStatus.HealingFinished) ) )
             {
-                WakePatient(patientPawn, false);
+                WakePatient(PatientPawn, false);
             }
             this.ForPrisoners = false;
             this.Medical = false;
+
+            // Remove the blocker region
+            resultingBlocker.DeSpawn();
+
             Room room = this.GetRoom(RegionType.Set_Passable);
             base.DeSpawn(mode);
             if (room != null)
@@ -235,7 +281,7 @@ namespace MedPod
 
             float currentHediffSeverity = currentHediff.Severity;
 
-            float currentHediffBodyPartMaxHealth = (currentHediff.Part != null) ? currentHediff.Part.def.GetMaxHealth(patientPawn) : 1;
+            float currentHediffBodyPartMaxHealth = (currentHediff.Part != null) ? currentHediff.Part.def.GetMaxHealth(PatientPawn) : 1;
 
             float currentHediffNormalizedSeverity = (currentHediffSeverity < 1) ? currentHediffSeverity : currentHediffSeverity / currentHediffBodyPartMaxHealth;
 
@@ -264,18 +310,18 @@ namespace MedPod
 
             if (!powerComp.PowerOn)
             {
-                if (patientPawn != null)
+                if (PatientPawn != null)
                 {
                     if ( (status == MedPodStatus.DiagnosisFinished) || (status == MedPodStatus.HealingStarted) || (status == MedPodStatus.HealingFinished) )
                     {
                         // Wake patient up abruptly, as power was interrupted during treatment
-                        WakePatient(patientPawn, false);
+                        WakePatient(PatientPawn, false);
                     }
 
                     if (status == MedPodStatus.PatientDischarged)
                     {
                         // Wake patient up normally, as treatment was already completed when power was interrupted
-                        WakePatient(patientPawn);
+                        WakePatient(PatientPawn);
                     }
                 }
 
@@ -289,7 +335,7 @@ namespace MedPod
             if (this.IsHashIntervalTick(60))
             {
 
-                if (patientPawn != null)
+                if (PatientPawn != null)
                 {
                     if (status == MedPodStatus.Idle)
                     {
@@ -299,7 +345,7 @@ namespace MedPod
 
                     if (status == MedPodStatus.DiagnosisFinished)
                     {
-                        DiagnosePatient(patientPawn);
+                        DiagnosePatient(PatientPawn);
 
                         // Scale healing time for current hediff according to its (normalized) severity
                         // i.e. More severe hediffs take longer
@@ -312,7 +358,7 @@ namespace MedPod
 
                     if (status == MedPodStatus.HealingFinished)
                     {
-                        patientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
+                        PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
                         patientTreatableHediffs.RemoveAt(0);
 
                         if (!patientTreatableHediffs.NullOrEmpty())
@@ -333,7 +379,7 @@ namespace MedPod
 
                     if (status == MedPodStatus.PatientDischarged)
                     {
-                        WakePatient(patientPawn);
+                        WakePatient(PatientPawn);
                         SwitchState();
                         ProgressHealingTicks = 0;
                         TotalHealingTicks = 0;

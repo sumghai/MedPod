@@ -21,6 +21,29 @@
 		<passability>PassThroughOnly</passability>
 		<defaultPlacingRot>South</defaultPlacingRot>
 	</ThingDef>
+	
+	<!-- ========== Invisible Blocker, which adds a high pathCost to the main machinery part of the MedPod, and is dynamically spawned/despawned with the MedPod itself ========== -->
+
+	<ThingDef>
+		<defName>MedPodInvisibleBlocker</defName>
+		<label>Invisible Blocker</label>
+		<thingClass>Building</thingClass>
+		<category>Mote</category>
+		<graphicData>
+			<texPath>Things/Building/InvisibleTexture</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<size>(3,1)</size>
+		<selectable>false</selectable>
+		<passability>PassThroughOnly</passability>
+		<pathCost>150</pathCost>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<menuHidden>true</menuHidden>
+		<building>
+			<isInert>true</isInert>
+			<ai_chillDestination>false</ai_chillDestination>
+		</building>
+	</ThingDef>
 
 	<!-- ========== Standard MedPod ========== -->
 
