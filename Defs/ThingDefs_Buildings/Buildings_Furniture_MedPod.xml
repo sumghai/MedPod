@@ -21,7 +21,7 @@
 		<passability>PassThroughOnly</passability>
 		<defaultPlacingRot>South</defaultPlacingRot>
 	</ThingDef>
-	
+
 	<!-- ========== Invisible Blocker, which adds a high pathCost to the main machinery part of the MedPod, and is dynamically spawned/despawned with the MedPod itself ========== -->
 
 	<ThingDef>

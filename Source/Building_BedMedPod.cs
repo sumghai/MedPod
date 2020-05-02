@@ -39,7 +39,7 @@ namespace MedPod
             Error
         }
 
-        public MedPodStatus status = MedPodStatus.Idle;   
+        public MedPodStatus status = MedPodStatus.Idle;
 
         private IntVec3 InvisibleBlockerPosition
         {
@@ -101,7 +101,7 @@ namespace MedPod
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
-            if (powerComp.PowerOn && ( (status == MedPodStatus.DiagnosisFinished) || (status == MedPodStatus.HealingStarted) || (status == MedPodStatus.HealingFinished) ) )
+            if (powerComp.PowerOn && ((status == MedPodStatus.DiagnosisFinished) || (status == MedPodStatus.HealingStarted) || (status == MedPodStatus.HealingFinished)))
             {
                 WakePatient(PatientPawn, false);
             }
@@ -156,7 +156,7 @@ namespace MedPod
                         break;
                     case MedPodStatus.HealingStarted:
                     case MedPodStatus.HealingFinished:
-                        float healingProgress = (float) ProgressHealingTicks / TotalHealingTicks * 100;
+                        float healingProgress = (float)ProgressHealingTicks / TotalHealingTicks * 100;
                         inspectorStatus = "Reatomizing (" + (int)healingProgress + "%)";
                         break;
                     case MedPodStatus.PatientDischarged:
@@ -241,7 +241,7 @@ namespace MedPod
 
                 float currentSeverity = currentHediff.Severity;
 
-                float currentBodyPartMaxHealth = (currentHediff.Part != null) ? currentHediff.Part.def.GetMaxHealth(patientPawn) : 1 ;
+                float currentBodyPartMaxHealth = (currentHediff.Part != null) ? currentHediff.Part.def.GetMaxHealth(patientPawn) : 1;
 
                 float currentNormalizedSeverity = (currentSeverity < 1) ? currentSeverity : currentSeverity / currentBodyPartMaxHealth;
 
@@ -266,7 +266,7 @@ namespace MedPod
 
         private float GetHediffNormalizedSeverity(Hediff specificHediff = null)
         {
-            Hediff currentHediff = (specificHediff == null) ? patientTreatableHediffs.First() : specificHediff ;
+            Hediff currentHediff = (specificHediff == null) ? patientTreatableHediffs.First() : specificHediff;
 
             float currentHediffSeverity = currentHediff.Severity;
 
@@ -291,6 +291,11 @@ namespace MedPod
 
             Hediff corticalStimulation = HediffMaker.MakeHediff(HediffDef.Named(corticalStimulationType), patientPawn);
             patientPawn.health.AddHediff(corticalStimulation);
+        }
+
+        public override void Draw()
+        {
+            base.Draw();
         }
 
         public override void Tick()
@@ -326,48 +331,43 @@ namespace MedPod
 
                 if (PatientPawn != null)
                 {
-                    if (status == MedPodStatus.Idle)
+                    switch (status)
                     {
-                        DiagnosingTicks = MaxDiagnosingTicks;
-                        SwitchState();
-                    }
+                        case MedPodStatus.Idle:
+                            DiagnosingTicks = MaxDiagnosingTicks;
+                            SwitchState();
+                            break;
 
-                    if (status == MedPodStatus.DiagnosisFinished)
-                    {
-                        DiagnosePatient(PatientPawn);
-
-                        // Scale healing time for current hediff according to its (normalized) severity
-                        // i.e. More severe hediffs take longer
-                        HealingTicks = (int) Math.Ceiling(GetHediffNormalizedSeverity() * MaxHealingTicks);
-
-                        SwitchState();
-                    }
-
-                    if (status == MedPodStatus.HealingFinished)
-                    {
-                        PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
-                        patientTreatableHediffs.RemoveAt(0);
-
-                        if (!patientTreatableHediffs.NullOrEmpty())
-                        {
+                        case MedPodStatus.DiagnosisFinished:
+                            DiagnosePatient(PatientPawn);
                             // Scale healing time for current hediff according to its (normalized) severity
                             // i.e. More severe hediffs take longer
                             HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * MaxHealingTicks);
-
-                            status = MedPodStatus.HealingStarted;
-                        }
-                        else
-                        {
                             SwitchState();
-                        }
-                    }
+                            break;
 
-                    if (status == MedPodStatus.PatientDischarged)
-                    {
-                        WakePatient(PatientPawn);
-                        SwitchState();
-                        ProgressHealingTicks = 0;
-                        TotalHealingTicks = 0;
+                        case MedPodStatus.HealingFinished:
+                            PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
+                            patientTreatableHediffs.RemoveAt(0);
+                            if (!patientTreatableHediffs.NullOrEmpty())
+                            {
+                                // Scale healing time for current hediff according to its (normalized) severity
+                                // i.e. More severe hediffs take longer
+                                HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * MaxHealingTicks);
+                                status = MedPodStatus.HealingStarted;
+                            }
+                            else
+                            {
+                                SwitchState();
+                            }
+                            break;
+
+                        case MedPodStatus.PatientDischarged:
+                            WakePatient(PatientPawn);
+                            SwitchState();
+                            ProgressHealingTicks = 0;
+                            TotalHealingTicks = 0;
+                            break;
                     }
                 }
                 else
@@ -379,7 +379,7 @@ namespace MedPod
             if (DiagnosingTicks > 0)
             {
                 DiagnosingTicks--;
-                powerComp.PowerOutput = -500f;
+                powerComp.PowerOutput = -200f;
 
                 if (DiagnosingTicks == 0)
                 {
@@ -391,7 +391,7 @@ namespace MedPod
             {
                 HealingTicks--;
                 ProgressHealingTicks++;
-                powerComp.PowerOutput = -1000f;
+                powerComp.PowerOutput = -750f;
 
                 if (HealingTicks == 0)
                 {
