@@ -7,6 +7,5 @@ namespace MedPod
     public static class MedPodDef
     {
         public static ThingDef MedPodInvisibleBlocker;
-        public static ThingDef MedPodStandard;
     }
 }

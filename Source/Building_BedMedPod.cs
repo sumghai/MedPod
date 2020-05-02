@@ -84,9 +84,7 @@ namespace MedPod
             }
 
             Thing t = ThingMaker.MakeThing(MedPodDef.MedPodInvisibleBlocker);
-            Log.Warning("MedPod :: Placing blocker for " + ThingID.ToString());
             GenPlace.TryPlaceThing(t, InvisibleBlockerPosition, Map, ThingPlaceMode.Direct, out resultingBlocker, null, null, Rotation);
-            Log.Warning("MedPod :: Blocker placed for " + ThingID.ToString());
         }
 
         private Pawn PatientPawn
@@ -158,7 +156,6 @@ namespace MedPod
                         break;
                     case MedPodStatus.HealingStarted:
                     case MedPodStatus.HealingFinished:
-                        Log.Warning("MedPod :: " + ProgressHealingTicks);
                         float healingProgress = (float) ProgressHealingTicks / TotalHealingTicks * 100;
                         inspectorStatus = "Reatomizing (" + (int)healingProgress + "%)";
                         break;
@@ -265,14 +262,6 @@ namespace MedPod
 
                 TotalHealingTicks += (int)Math.Ceiling(GetHediffNormalizedSeverity(currentHediff) * MaxHealingTicks);
             }
-
-            Log.Warning(
-                "MedPod :: Diagnosis complete for patient " + patientPawn.Name.ToString() + "\n\n" +
-                "Hediffs (sorted by body part index, then severity):\n" +
-                hediffList + "(" + patientTreatableHediffs.Count.ToString() + " total)\n\n" +
-                "(Total Normalized Severity " + totalNormalizedSeverities.ToString() + ")\n\n" +
-                "(Total Healing Ticks Requires " + TotalHealingTicks.ToString() + ")\n\n");
-
         }
 
         private float GetHediffNormalizedSeverity(Hediff specificHediff = null)
@@ -350,8 +339,6 @@ namespace MedPod
                         // Scale healing time for current hediff according to its (normalized) severity
                         // i.e. More severe hediffs take longer
                         HealingTicks = (int) Math.Ceiling(GetHediffNormalizedSeverity() * MaxHealingTicks);
-                        
-                        Log.Warning("MedPod :: Healing ticks for current hediff should be " + GetHediffNormalizedSeverity().ToString() + " x " + MaxHealingTicks.ToString() + " = " + HealingTicks.ToString());
 
                         SwitchState();
                     }
@@ -366,8 +353,6 @@ namespace MedPod
                             // Scale healing time for current hediff according to its (normalized) severity
                             // i.e. More severe hediffs take longer
                             HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * MaxHealingTicks);
-
-                            Log.Warning("MedPod :: Healing ticks for current hediff should be " + GetHediffNormalizedSeverity().ToString() + " x " + MaxHealingTicks.ToString() + " = " + HealingTicks.ToString());
 
                             status = MedPodStatus.HealingStarted;
                         }

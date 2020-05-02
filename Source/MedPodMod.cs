@@ -34,7 +34,7 @@ namespace MedPod
         {
             static void Postfix(ref int __result, ref Building_Bed __instance)
             {
-                if (__instance.def == MedPodDef.MedPodStandard)
+                if (__instance.def.thingClass == typeof(Building_BedMedPod))
                 {
                     __result = 1;
                 }
@@ -46,7 +46,7 @@ namespace MedPod
         {
             static void Postfix(ref IntVec3 __result, ref Building_Bed __instance, int index)
             {
-                if (__instance.def == MedPodDef.MedPodStandard)
+                if (__instance.def.thingClass == typeof(Building_BedMedPod))
                 {
                     __result = __instance.Position;
                 }
