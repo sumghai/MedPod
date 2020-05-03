@@ -38,9 +38,11 @@ namespace MedPod
             Vector3 gantryGlowDrawPos = parent.DrawPos;
             Vector3 machineLidDrawPos = parent.DrawPos;
 
-            gantryDrawPos.y = AltitudeLayer.BuildingOnTop.AltitudeFor() + 0.03f;
-            gantryGlowDrawPos.y = AltitudeLayer.BuildingOnTop.AltitudeFor() + 0.06f;
-            machineLidDrawPos.y = AltitudeLayer.BuildingOnTop.AltitudeFor() + 0.09f;
+            float drawAltitude = AltitudeLayer.Pawn.AltitudeFor();
+
+            gantryDrawPos.y =  drawAltitude + 0.03f;
+            gantryGlowDrawPos.y = drawAltitude + 0.06f;
+            machineLidDrawPos.y = drawAltitude + 0.09f;
 
             Graphics.DrawMesh(gantryMesh, gantryDrawPos + Props.gantryGraphicData.drawOffset.RotatedBy(parent.Rotation) + GantryPositionOffset().RotatedBy(parent.Rotation), Quaternion.identity, Props.gantryGraphicData.Graphic.MatAt(parent.Rotation, null), 0);
 
