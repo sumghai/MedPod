@@ -28,6 +28,10 @@ namespace MedPod
 
         public int TotalHealingTicks = 0;
 
+        public int gantryPositionPercentInt = 0;
+
+        public bool gantryDirectionForwards = true;
+
         public enum MedPodStatus
         {
             Idle = 0,
@@ -221,6 +225,24 @@ namespace MedPod
             }
         }
 
+        public bool GantryMoving()
+        {
+            bool result;
+            switch (status)
+            {
+                case MedPodStatus.DiagnosisStarted:
+                case MedPodStatus.DiagnosisFinished:
+                case MedPodStatus.HealingStarted:
+                case MedPodStatus.HealingFinished:
+                    result = true;
+                    break;
+                default:
+                    result = false;
+                    break;
+            }
+            return result;
+        }
+
         private void DiagnosePatient(Pawn patientPawn)
         {
             // List all of the patient's hediffs/injuries, sorted by body part hierarchy then severity
@@ -231,32 +253,14 @@ namespace MedPod
             // (Pawns tend to get up as soon as they are "no longer incapable of walking")
             AnesthesizePatient(patientPawn);
 
-            string hediffList = null;
-
             foreach (Hediff currentHediff in patientTreatableHediffs)
             {
-                string currentBodyPart = (currentHediff.Part != null) ? currentHediff.Part.Label : "Whole Body";
-
-                string currentBodyPartIndex = (currentHediff.Part != null) ? currentHediff.Part.Index.ToString() : "unknown";
-
                 float currentSeverity = currentHediff.Severity;
 
+                // currentHediff.Part will throw an error if a hediff is applied to the whole body (e.g. malnutrition), as part == null
                 float currentBodyPartMaxHealth = (currentHediff.Part != null) ? currentHediff.Part.def.GetMaxHealth(patientPawn) : 1;
 
-                float currentNormalizedSeverity = (currentSeverity < 1) ? currentSeverity : currentSeverity / currentBodyPartMaxHealth;
-
-                // LoadID is unique per pawn, per savegame
-                // currentHediff.Part will throw an error if a hediff is applied to the whole body (e.g. malnutrition), as part == null
-
-                string hediffDebugData =
-                    "\tLoadID = " + currentHediff.loadID.ToString() + ", " +
-                    "(Index " + currentBodyPartIndex + "), " +
-                    "Body Part = " + currentBodyPart +
-                    "Type = " + currentHediff.def.ToString() + ", " +
-                    "Severity = " + currentSeverity.ToString() +
-                    " (Normalized = " + currentNormalizedSeverity.ToString() + ")";
-
-                hediffList += hediffDebugData + "\n";
+                float currentNormalizedSeverity = (currentSeverity < 1) ? currentSeverity : currentSeverity / currentBodyPartMaxHealth;               
 
                 totalNormalizedSeverities += currentNormalizedSeverity;
 
@@ -306,7 +310,7 @@ namespace MedPod
             {
                 if (PatientPawn != null)
                 {
-                    if ( (status == MedPodStatus.DiagnosisFinished) || (status == MedPodStatus.HealingStarted) || (status == MedPodStatus.HealingFinished) )
+                    if ((status == MedPodStatus.DiagnosisFinished) || (status == MedPodStatus.HealingStarted) || (status == MedPodStatus.HealingFinished))
                     {
                         // Wake patient up abruptly, as power was interrupted during treatment
                         WakePatient(PatientPawn, false);
@@ -373,6 +377,37 @@ namespace MedPod
                 else
                 {
                     status = MedPodStatus.Idle;
+                }
+            }
+
+            if (this.IsHashIntervalTick(2))
+            {
+                if (GantryMoving())
+                {
+                    if (gantryDirectionForwards)
+                    {
+                        gantryPositionPercentInt++;
+
+                        if (gantryPositionPercentInt == 100)
+                        {
+                            gantryDirectionForwards = false;
+                        }
+                    }
+                    else
+                    {
+                        gantryPositionPercentInt--;
+
+                        if (gantryPositionPercentInt == 0)
+                        {
+                            gantryDirectionForwards = true;
+                        }
+                    }
+                }
+                else
+                {
+                    // Reset gantry
+                    gantryPositionPercentInt = 0;
+                    gantryDirectionForwards = true;
                 }
             }
 

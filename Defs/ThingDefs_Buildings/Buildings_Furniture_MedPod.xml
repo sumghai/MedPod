@@ -35,6 +35,7 @@
 		</graphicData>
 		<size>(3,1)</size>
 		<selectable>false</selectable>
+		<canOverlapZones>false</canOverlapZones>
 		<passability>PassThroughOnly</passability>
 		<pathCost>150</pathCost>
 		<defaultPlacingRot>South</defaultPlacingRot>
@@ -89,6 +90,21 @@
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Breakdownable"/>
 			<li Class="CompProperties_Forbiddable"/>
+			<li Class="MedPod.CompProperties_AnimatedGantry">
+				<gantryGraphicData>
+					<texPath>Things/Building/Furniture/MedPod_gantry</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<drawSize>(3, 3)</drawSize>
+				</gantryGraphicData>
+				<machineLidGraphicData>
+					<texPath>Things/Building/Furniture/MedPod_machineLid</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<drawSize>(3, 2)</drawSize>
+					<drawOffset>(0, 0, -1)</drawOffset>
+				</machineLidGraphicData>
+			</li>
 		</comps>
 		<fillPercent>0.4</fillPercent>
 		<pathCost>60</pathCost>

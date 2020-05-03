@@ -293,6 +293,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompAnimatedGantry.cs" />
+    <Compile Include="CompProperties_AnimatedGantry.cs" />
     <Compile Include="MedPodDef.cs" />
     <Compile Include="MedPodMod.cs" />
     <Compile Include="Building_BedMedPod.cs" />
