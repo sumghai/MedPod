@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using Verse;
 
@@ -28,7 +30,6 @@ namespace MedPod
         }
 
         // Manually force the MedPod beds to only have one sleeping slot located in the center cell of the nominally 3x3 furniture, as by default RimWorld will assume a 3x3 "bed" should have three slots positioned in the top row cells
-
         [HarmonyPatch(typeof(Building_Bed), nameof(Building_BedMedPod.SleepingSlotsCount), MethodType.Getter)]
         static class BuildingBed_SleepingSlotsCount
         {
@@ -53,5 +54,26 @@ namespace MedPod
             }
         }
 
+        // Prevent Doctors/Wardens from feeding patients if:
+        // - The patient is lying on a MedPod
+        // - The MedPod is powered
+        // (as they would get smacked in the face by the MedPod's moving reatomizer gantry)
+        [HarmonyPatch]
+        static class ShouldBeFed_IgnoreMedPods
+        {
+            static IEnumerable<MethodInfo> TargetMethods()
+            {
+                yield return AccessTools.Method(typeof(FeedPatientUtility), "ShouldBeFed");
+                yield return AccessTools.Method(typeof(WardenFeedUtility), "ShouldBeFed");
+            }
+
+            static void Postfix(ref bool __result, Pawn p)
+            {
+                if (p.CurrentBed() is Building_BedMedPod bedMedPod && bedMedPod.powerComp.PowerOn)
+                {
+                    __result = false;
+                }
+            }
+        }
     }
 }
