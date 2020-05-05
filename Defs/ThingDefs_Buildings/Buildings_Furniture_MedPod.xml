@@ -61,6 +61,7 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
+		<uiIconPath>UI/MedPod_Standard</uiIconPath>
 		<castEdgeShadows>false</castEdgeShadows>
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
