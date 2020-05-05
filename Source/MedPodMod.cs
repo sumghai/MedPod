@@ -75,5 +75,22 @@ namespace MedPod
                 }
             }
         }
+
+        // Prevent Doctors/Wardens from tending patients if:
+        // - The patient is lying on a MedPod
+        // - The MedPod is powered
+        // (as they would get smacked in the face by the MedPod's moving reatomizer gantry)
+        [HarmonyPatch(typeof(WorkGiver_Tend), "HasJobOnThing")]
+        static class WorkGiver_Tend_JobOnThing_IgnoreMedPods
+        {
+            static void Postfix(ref bool __result, Pawn pawn, Thing t, bool forced = false)
+            {
+                Pawn patient = t as Pawn;
+                if (patient.CurrentBed() is Building_BedMedPod bedMedPod && bedMedPod.powerComp.PowerOn)
+                {
+                    __result = false;
+                }
+            }
+        }
     }
 }
