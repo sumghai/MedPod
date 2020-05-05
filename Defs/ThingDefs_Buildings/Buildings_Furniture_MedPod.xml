@@ -52,7 +52,7 @@
 		<label>MedPod</label>
 		<description>An advanced hospital bed that uses atomic reconstruction to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.</description>
 		<graphicData>
-			<texPath>Things/Building/Furniture/MedPod</texPath>
+			<texPath>Things/Building/Furniture/MedPod_Standard/MedPod_Standard</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(4,5)</drawSize>
@@ -92,13 +92,13 @@
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="MedPod.CompProperties_AnimatedGantry">
 				<gantryGraphicData>
-					<texPath>Things/Building/Furniture/MedPod_gantry</texPath>
+					<texPath>Things/Building/Furniture/MedPod_Standard/MedPod_Standard_gantry</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<drawSize>(3, 3)</drawSize>
 				</gantryGraphicData>
 				<machineLidGraphicData>
-					<texPath>Things/Building/Furniture/MedPod_machineLid</texPath>
+					<texPath>Things/Building/Furniture/MedPod_Standard/MedPod_Standard_machineLid</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<drawSize>(3, 2)</drawSize>
