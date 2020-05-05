@@ -50,7 +50,7 @@
 	<ThingDef ParentName="MedPodBedBase">
 		<defName>MedPodStandard</defName>
 		<label>MedPod</label>
-		<description>An advanced hospital bed that uses atomic reconstruction to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.</description>
+		<description>An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds.</description>
 		<graphicData>
 			<texPath>Things/Building/Furniture/MedPod_Standard/MedPod_Standard</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -114,7 +114,7 @@
 		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
 		<canOverlapZones>false</canOverlapZones>
 		<researchPrerequisites>
-			<li>HospitalBed</li>
+			<li>AtomicCellularRegeneration</li>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
 		<techLevel>Spacer</techLevel>
