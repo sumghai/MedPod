@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--=============== Isolinear Processor ====================-->
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>IsolinearProcessor</defName>
+		<label>Isolinear Processor</label>
+		<description>A high-density optical computational module with advanced data extrapolation and processing capabilities. The key component of MedPods.</description>
+		<graphicData>
+			<texPath>Things/Item/Special/IsolinearProcessor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Standard_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<stackLimit>25</stackLimit>
+		<statBases>
+			<MarketValue>300</MarketValue>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>0.125</Mass>
+		</statBases>
+		<intricate>true</intricate>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<tradeTags>
+			<li>Exotic</li>
+			<li>MedPod_Items</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+</Defs>

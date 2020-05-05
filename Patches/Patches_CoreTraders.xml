@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraderKindDef[
+					defName = "Caravan_Outlander_Exotic" or
+					defName = "Orbital_Exotic"
+				]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>IsolinearProcessor</thingDef>
+						<countRange>
+							<min>4</min>
+							<max>8</max>
+						</countRange>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>

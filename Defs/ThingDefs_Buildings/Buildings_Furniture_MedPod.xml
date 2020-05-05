@@ -74,8 +74,11 @@
 		<size>(3,3)</size>
 		<costStuffCount>40</costStuffCount>
 		<costList>
-			<Plasteel>80</Plasteel>
-			<ComponentIndustrial>5</ComponentIndustrial>
+			<ComponentIndustrial>6</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+			<IsolinearProcessor>1</IsolinearProcessor>
+			<Plasteel>160</Plasteel>
+			<Steel>80</Steel>
 		</costList>
 		<building>
 			<bed_showSleeperBody>true</bed_showSleeperBody>
