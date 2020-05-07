@@ -294,7 +294,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompAnimatedGantry.cs" />
+    <Compile Include="CompMedPodSettings.cs" />
     <Compile Include="CompProperties_AnimatedGantry.cs" />
+    <Compile Include="CompProperties_MedPodSettings.cs" />
     <Compile Include="MedPodDef.cs" />
     <Compile Include="MedPodMod.cs" />
     <Compile Include="Building_BedMedPod.cs" />

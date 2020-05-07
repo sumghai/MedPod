@@ -12,17 +12,23 @@ namespace MedPod
     {
         public CompPowerTrader powerComp;
 
+        public CompMedPodSettings medpodSettings;
+
         private List<Hediff> patientTreatableHediffs;
 
         private float totalNormalizedSeverities = 0;
 
         public int DiagnosingTicks = 0;
 
-        public int MaxDiagnosingTicks = GenTicks.SecondsToTicks(5);
+        public int MaxDiagnosingTicks;
 
         public int HealingTicks = 0;
 
-        public int MaxHealingTicks = GenTicks.SecondsToTicks(5);
+        public int MaxHealingTicks;
+
+        public float DiagnosingPowerConsumption;
+
+        public float HealingPowerConsumption;
 
         public int ProgressHealingTicks = 0;
 
@@ -77,6 +83,12 @@ namespace MedPod
         {
             base.SpawnSetup(map, respawningAfterLoad);
             powerComp = GetComp<CompPowerTrader>();
+            medpodSettings = GetComp<CompMedPodSettings>();
+
+            MaxDiagnosingTicks = GenTicks.SecondsToTicks(medpodSettings.MaxDiagnosisTime);
+            MaxHealingTicks = GenTicks.SecondsToTicks(medpodSettings.MaxPerHediffHealingTime);
+            DiagnosingPowerConsumption = medpodSettings.DiagnosisModePowerConsumption;
+            HealingPowerConsumption = medpodSettings.HealingModePowerConsumption;
 
             // Add a blocker region for the MedPod main machinery
             // (If one already exists, then we are probably loading a save with an existing MedPod)
@@ -414,7 +426,7 @@ namespace MedPod
             if (DiagnosingTicks > 0)
             {
                 DiagnosingTicks--;
-                powerComp.PowerOutput = -200f;
+                powerComp.PowerOutput = DiagnosingPowerConsumption;
 
                 if (DiagnosingTicks == 0)
                 {
@@ -426,7 +438,7 @@ namespace MedPod
             {
                 HealingTicks--;
                 ProgressHealingTicks++;
-                powerComp.PowerOutput = -750f;
+                powerComp.PowerOutput = HealingPowerConsumption;
 
                 if (HealingTicks == 0)
                 {

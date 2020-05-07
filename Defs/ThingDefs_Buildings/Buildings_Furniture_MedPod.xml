@@ -108,6 +108,9 @@
 					<drawOffset>(0, 0, -1)</drawOffset>
 				</machineLidGraphicData>
 			</li>
+			<li Class="MedPod.CompProperties_MedPodSettings">
+				<!-- Use default values -->
+			</li>
 		</comps>
 		<fillPercent>0.4</fillPercent>
 		<pathCost>60</pathCost>
