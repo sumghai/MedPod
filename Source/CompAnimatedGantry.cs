@@ -44,11 +44,13 @@ namespace MedPod
             gantryGlowDrawPos.y = drawAltitude + 0.06f;
             machineLidDrawPos.y = drawAltitude + 0.09f;
 
-            Graphics.DrawMesh(gantryMesh, gantryDrawPos + Props.gantryGraphicData.drawOffset.RotatedBy(parent.Rotation) + GantryPositionOffset().RotatedBy(parent.Rotation), Quaternion.identity, Props.gantryGraphicData.Graphic.MatAt(parent.Rotation, null), 0);
+            // GetColoredVersion() ensures that the gantry and machine lid get tinted correctly with the material color if the parent MedPod furniture is stuffed
+
+            Graphics.DrawMesh(gantryMesh, gantryDrawPos + Props.gantryGraphicData.drawOffset.RotatedBy(parent.Rotation) + GantryPositionOffset().RotatedBy(parent.Rotation), Quaternion.identity, Props.gantryGraphicData.Graphic.GetColoredVersion(Props.gantryGraphicData.Graphic.Shader, parent.DrawColor, parent.DrawColorTwo).MatAt(parent.Rotation, null), 0);
 
             Graphics.DrawMesh(gantryGlowMesh, gantryGlowDrawPos + Props.gantryGraphicData.drawOffset.RotatedBy(parent.Rotation) + GantryPositionOffset().RotatedBy(parent.Rotation), Quaternion.identity, FadedMaterialPool.FadedVersionOf(gantryGlow.MatAt(parent.Rotation, null), gantryGlowAlpha), 0);
 
-            Graphics.DrawMesh(machineLidMesh, machineLidDrawPos + Props.machineLidGraphicData.drawOffset.RotatedBy(parent.Rotation), Quaternion.identity, Props.machineLidGraphicData.Graphic.MatAt(parent.Rotation, null), 0);
+            Graphics.DrawMesh(machineLidMesh, machineLidDrawPos + Props.machineLidGraphicData.drawOffset.RotatedBy(parent.Rotation), Quaternion.identity, Props.machineLidGraphicData.Graphic.GetColoredVersion(Props.machineLidGraphicData.Graphic.Shader, parent.DrawColor, parent.DrawColorTwo).MatAt(parent.Rotation), 0);
         }
     }
 }
