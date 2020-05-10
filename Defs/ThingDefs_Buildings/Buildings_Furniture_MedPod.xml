@@ -63,7 +63,7 @@
 		<uiIconPath>UI/MedPod_Standard</uiIconPath>
 		<castEdgeShadows>false</castEdgeShadows>
 		<statBases>
-			<MaxHitPoints>150</MaxHitPoints>
+			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToBuild>2800</WorkToBuild>
 			<Mass>35</Mass>
 			<Flammability>1.0</Flammability>
@@ -122,7 +122,5 @@
 		<techLevel>Spacer</techLevel>
 		<uiIconScale>1.00</uiIconScale>
 	</ThingDef>
-
-	<!-- ========== Luxury MedPod (With Stuffable, Art and Quality variation) ========== -->
 
 </Defs>
