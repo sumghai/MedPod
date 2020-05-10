@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ========== Luxury MedPod (With Stuffable, Art and Quality variation) ========== -->
+
+	<ThingDef ParentName="MedPodBedBase">
+		<defName>MedPodLux</defName>
+		<label>MedPod Lux</label>
+		<description>An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings, capable of faster diagnosis and treatment but requires higher power consumption.</description>
+		<graphicData>
+			<texPath>Things/Building/Furniture/MedPod_Lux/MedPod_Lux</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(4,5)</drawSize>
+			<shadowData>
+				<volume>(1,0.7,3)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>UI/MedPod_Lux</uiIconPath>
+		<castEdgeShadows>false</castEdgeShadows>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>2800</WorkToBuild>
+			<Mass>35</Mass>
+			<Flammability>1.0</Flammability>
+			<BedRestEffectiveness>1</BedRestEffectiveness>
+			<Comfort>0.90</Comfort>
+		</statBases>
+		<size>(3,3)</size>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>120</costStuffCount>
+		<costList>
+			<ComponentIndustrial>6</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Gold>50</Gold>
+			<IsolinearProcessor>1</IsolinearProcessor>
+			<Plasteel>40</Plasteel>
+			<Steel>80</Steel>
+		</costList>
+		<building>
+			<bed_showSleeperBody>true</bed_showSleeperBody>
+			<bed_defaultMedical>true</bed_defaultMedical>
+		</building>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>true</shortCircuitInRain>
+				<basePowerConsumption>125</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="MedPod.CompProperties_AnimatedGantry">
+				<gantryGraphicData>
+					<texPath>Things/Building/Furniture/MedPod_Lux/MedPod_Lux_gantry</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<drawSize>(3, 3)</drawSize>
+				</gantryGraphicData>
+				<machineLidGraphicData>
+					<texPath>Things/Building/Furniture/MedPod_Lux/MedPod_Lux_machineLid</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<drawSize>(3, 2)</drawSize>
+					<drawOffset>(0, 0, -1)</drawOffset>
+				</machineLidGraphicData>
+			</li>
+			<li Class="MedPod.CompProperties_MedPodSettings">
+				<maxDiagnosisTime>2.5</maxDiagnosisTime>
+				<maxPerHediffHealingTime>3.5</maxPerHediffHealingTime>
+				<diagnosisModePowerConsumption>500</diagnosisModePowerConsumption>
+				<healingModePowerConsumption>1000</healingModePowerConsumption>
+			</li>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtFurniture</nameMaker>
+				<descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+				<minQualityForArtistic>Good</minQualityForArtistic>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>60</pathCost>
+		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+		<canOverlapZones>false</canOverlapZones>
+		<researchPrerequisites>
+			<li>AtomicCellularRegeneration</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+		<techLevel>Spacer</techLevel>
+		<uiIconScale>1.00</uiIconScale>
+	</ThingDef>
+
+</Defs>
