@@ -121,7 +121,7 @@
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
 		<techLevel>Spacer</techLevel>
-		<uiIconScale>0.90</uiIconScale>
+		<uiIconScale>1.00</uiIconScale>
 	</ThingDef>
 
 	<!-- ========== Luxury MedPod (With Stuffable, Art and Quality variation) ========== -->
