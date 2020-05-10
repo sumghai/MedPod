@@ -6,7 +6,6 @@
 		<altitudeLayer>Building</altitudeLayer>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<selectable>true</selectable>
-		<constructEffect>ConstructMetal</constructEffect>
 		<comps>
 			<li Class="CompProperties_AssignableToPawn">
 				<drawAssignmentOverlay>false</drawAssignmentOverlay>
@@ -71,6 +70,7 @@
 			<BedRestEffectiveness>1</BedRestEffectiveness>
 			<Comfort>0.80</Comfort>
 		</statBases>
+		<constructEffect>ConstructMetal</constructEffect>
 		<size>(3,3)</size>
 		<costStuffCount>40</costStuffCount>
 		<costList>
