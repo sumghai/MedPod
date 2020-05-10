@@ -72,7 +72,6 @@
 		</statBases>
 		<constructEffect>ConstructMetal</constructEffect>
 		<size>(3,3)</size>
-		<costStuffCount>40</costStuffCount>
 		<costList>
 			<ComponentIndustrial>6</ComponentIndustrial>
 			<ComponentSpacer>4</ComponentSpacer>
