@@ -4,5 +4,23 @@
 	<MedPod_SettingsCategory_Heading>MedPod</MedPod_SettingsCategory_Heading>
 	
 	<MedPod_Settings_HeaderGeneral>General</MedPod_Settings_HeaderGeneral>
+	
+	<MedPod_Stat_PowerConsumptionDiagnosis_Label>Power consumption (Diagnosis)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
+	
+	<MedPod_Stat_PowerConsumptionDiagnosis_Desc>The amount of power this MedPod will draw from the power grid while operating in Diagnosis mode.</MedPod_Stat_PowerConsumptionDiagnosis_Desc>
+	
+	<MedPod_Stat_PowerConsumptionHealing_Label>Power consumption (Treatment)</MedPod_Stat_PowerConsumptionHealing_Label>
+	
+	<MedPod_Stat_PowerConsumptionHealing_Desc>The amount of power this MedPod will draw from the power grid while operating in Treatment mode.</MedPod_Stat_PowerConsumptionHealing_Desc>
+	
+	<MedPod_Stat_DiagnosisTime_Label>Diagnosis time</MedPod_Stat_DiagnosisTime_Label>
+	
+	<MedPod_Stat_DiagnosisTime_Desc>How long it takes for this MedPod to diagnose a patient.</MedPod_Stat_DiagnosisTime_Desc>
+	
+	<MedPod_Stat_PerHediffHealingTime_Label>Avg.  per-condition treatment time</MedPod_Stat_PerHediffHealingTime_Label>
+	
+	<MedPod_Stat_PerHediffHealingTime_Desc>How long it takes (on average) for this MedPod to treat each medical condition on a patient.\n\nNote that this is scaled according to the severity of the condition - for instance, less severe injuries will take less time to treat.</MedPod_Stat_PerHediffHealingTime_Desc>
+	
+	<MedPod_Stat_TimeSeconds>{0} s</MedPod_Stat_TimeSeconds>
 
 </LanguageData>
