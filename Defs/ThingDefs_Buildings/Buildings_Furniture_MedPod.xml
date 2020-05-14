@@ -6,6 +6,9 @@
 		<altitudeLayer>Building</altitudeLayer>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<selectable>true</selectable>
+		<building>
+			<soundDispense>MedPod_Running</soundDispense>
+		</building>
 		<comps>
 			<li Class="CompProperties_AssignableToPawn">
 				<drawAssignmentOverlay>false</drawAssignmentOverlay>

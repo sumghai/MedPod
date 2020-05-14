@@ -5,6 +5,7 @@ using RimWorld;
 using UnityEngine;
 using System.Linq;
 using System;
+using Verse.Sound;
 
 namespace MedPod
 {
@@ -50,6 +51,8 @@ namespace MedPod
         }
 
         public MedPodStatus status = MedPodStatus.Idle;
+
+        private Sustainer wickSustainer;
 
         private IntVec3 InvisibleBlockerPosition
         {
@@ -313,6 +316,12 @@ namespace MedPod
             patientPawn.health.AddHediff(corticalStimulation);
         }
 
+        public void StartWickSustainer()
+        {
+            SoundInfo info = SoundInfo.InMap(this, MaintenanceType.PerTick);
+            wickSustainer = def.building.soundDispense.TrySpawnSustainer(info);
+        }
+
         public override void Draw()
         {
             base.Draw();
@@ -417,6 +426,19 @@ namespace MedPod
                         {
                             gantryDirectionForwards = true;
                         }
+                    }
+
+                    if (wickSustainer == null)
+                    {
+                        StartWickSustainer();
+                    }
+                    else if (wickSustainer.Ended)
+                    {
+                        StartWickSustainer();
+                    }
+                    else
+                    {
+                        wickSustainer.Maintain();
                     }
                 }
                 else
