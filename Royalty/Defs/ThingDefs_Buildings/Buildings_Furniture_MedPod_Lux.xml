@@ -6,7 +6,7 @@
 	<ThingDef ParentName="MedPodBedBase">
 		<defName>MedPodLux</defName>
 		<label>MedPod Lux</label>
-		<description>An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings, capable of faster diagnosis and treatment but requires higher power consumption.</description>
+		<description>An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption.</description>
 		<graphicData>
 			<texPath>Things/Building/Furniture/MedPod_Lux/MedPod_Lux</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
