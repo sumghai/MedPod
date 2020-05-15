@@ -325,6 +325,16 @@ namespace MedPod
         public override void Draw()
         {
             base.Draw();
+
+            if (powerComp.PowerOn && (Rotation == Rot4.South))
+            {
+                Graphic screenGlow = GraphicDatabase.Get<Graphic_Single>("FX/MedPod_screenGlow_south", ShaderDatabase.MoteGlow, new Vector2(4f, 5f), Color.white);
+                Mesh screenGlowMesh = screenGlow.MeshAt(Rotation);
+                Vector3 screenGlowDrawPos = DrawPos;
+                screenGlowDrawPos.y = AltitudeLayer.Building.AltitudeFor() + 0.03f;
+
+                Graphics.DrawMesh(screenGlowMesh, screenGlowDrawPos, Quaternion.identity, FadedMaterialPool.FadedVersionOf(screenGlow.MatAt(Rotation, null), 1), 0);
+            }
         }
 
         public override void Tick()
