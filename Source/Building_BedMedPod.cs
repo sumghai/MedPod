@@ -144,51 +144,58 @@ namespace MedPod
 
             string inspectorStatus = null;
 
-            stringBuilder.AppendInNewLine(powerComp.CompInspectStringExtra());
-
-            if (this.def.building.bed_humanlike)
+            if (ParentHolder != null && !(ParentHolder is Map))
             {
-                if (this.ForPrisoners)
-                {
-                    stringBuilder.AppendInNewLine("ForPrisonerUse".Translate());
-                }
-                else
-                {
-                    stringBuilder.AppendInNewLine("ForColonistUse".Translate());
-                }
-            }
-
-            if (!powerComp.PowerOn)
-            {
-                inspectorStatus = "Error: No power";
+                // If minified, don't show computer and feedstock check Inspector messages
             }
             else
             {
-                switch (status)
-                {
-                    case MedPodStatus.DiagnosisStarted:
-                        float diagnosingProgress = (float)(MaxDiagnosingTicks - DiagnosingTicks) / MaxDiagnosingTicks * 100;
-                        inspectorStatus = "Diagnosing (" + (int)diagnosingProgress + "%)";
-                        break;
-                    case MedPodStatus.DiagnosisFinished:
-                        inspectorStatus = "Diagnosis complete";
-                        break;
-                    case MedPodStatus.HealingStarted:
-                    case MedPodStatus.HealingFinished:
-                        float healingProgress = (float)ProgressHealingTicks / TotalHealingTicks * 100;
-                        inspectorStatus = "Reatomizing (" + (int)healingProgress + "%)";
-                        break;
-                    case MedPodStatus.PatientDischarged:
-                        inspectorStatus = "100% Clear";
-                        break;
-                    case MedPodStatus.Idle:
-                    default:
-                        inspectorStatus = "Idle";
-                        break;
-                }
-            }
+                stringBuilder.AppendInNewLine(powerComp.CompInspectStringExtra());
 
-            stringBuilder.AppendInNewLine(inspectorStatus);
+                if (def.building.bed_humanlike)
+                {
+                    if (ForPrisoners)
+                    {
+                        stringBuilder.AppendInNewLine("ForPrisonerUse".Translate());
+                    }
+                    else
+                    {
+                        stringBuilder.AppendInNewLine("ForColonistUse".Translate());
+                    }
+                }
+
+                if (!powerComp.PowerOn)
+                {
+                    inspectorStatus = "Error: No power";
+                }
+                else
+                {
+                    switch (status)
+                    {
+                        case MedPodStatus.DiagnosisStarted:
+                            float diagnosingProgress = (float)(MaxDiagnosingTicks - DiagnosingTicks) / MaxDiagnosingTicks * 100;
+                            inspectorStatus = "Diagnosing (" + (int)diagnosingProgress + "%)";
+                            break;
+                        case MedPodStatus.DiagnosisFinished:
+                            inspectorStatus = "Diagnosis complete";
+                            break;
+                        case MedPodStatus.HealingStarted:
+                        case MedPodStatus.HealingFinished:
+                            float healingProgress = (float)ProgressHealingTicks / TotalHealingTicks * 100;
+                            inspectorStatus = "Reatomizing (" + (int)healingProgress + "%)";
+                            break;
+                        case MedPodStatus.PatientDischarged:
+                            inspectorStatus = "100% Clear";
+                            break;
+                        case MedPodStatus.Idle:
+                        default:
+                            inspectorStatus = "Idle";
+                            break;
+                    }
+                }
+
+                stringBuilder.AppendInNewLine(inspectorStatus);
+            }
 
             return stringBuilder.ToString();
         }
