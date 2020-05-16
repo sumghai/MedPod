@@ -15,6 +15,8 @@ namespace MedPod
 
         public CompMedPodSettings medpodSettings;
 
+        public CompTreatmentRestrictions treatmentRestrictions;
+
         private List<Hediff> patientTreatableHediffs;
 
         private float totalNormalizedSeverities = 0;
@@ -30,6 +32,10 @@ namespace MedPod
         public float DiagnosingPowerConsumption;
 
         public float HealingPowerConsumption;
+
+        public List<HediffDef> AlwaysTreatableHediffs;
+
+        public List<HediffDef> NeverTreatableHediffs;
 
         public int ProgressHealingTicks = 0;
 
@@ -87,11 +93,15 @@ namespace MedPod
             base.SpawnSetup(map, respawningAfterLoad);
             powerComp = GetComp<CompPowerTrader>();
             medpodSettings = GetComp<CompMedPodSettings>();
+            treatmentRestrictions = GetComp<CompTreatmentRestrictions>();
 
             MaxDiagnosingTicks = GenTicks.SecondsToTicks(medpodSettings.MaxDiagnosisTime);
             MaxHealingTicks = GenTicks.SecondsToTicks(medpodSettings.MaxPerHediffHealingTime);
             DiagnosingPowerConsumption = medpodSettings.DiagnosisModePowerConsumption;
             HealingPowerConsumption = medpodSettings.HealingModePowerConsumption;
+
+            AlwaysTreatableHediffs = treatmentRestrictions.AlwaysTreatableHediffs;
+            NeverTreatableHediffs = treatmentRestrictions.NeverTreatableHediffs;
 
             // Add a blocker region for the MedPod main machinery
             // (If one already exists, then we are probably loading a save with an existing MedPod)
@@ -271,6 +281,12 @@ namespace MedPod
             // Hediffs with no body part defined (i.e. "Whole Body" hediffs) are moved to the bottom of the list)
             patientTreatableHediffs = patientPawn.health.hediffSet.hediffs.OrderBy((Hediff x) => x.Part == null ? 9999 : x.Part.Index).ThenByDescending((Hediff x) => x.Severity).ToList();
 
+            // Ignore hediffs/injuries that are:
+            // - Not explicitly whitelisted as always treatable
+            // - Blacklisted as never treatable
+            // - Not bad (i.e isBad = false)
+            patientTreatableHediffs.RemoveAll((Hediff x) => !AlwaysTreatableHediffs.Contains(x.def) && (NeverTreatableHediffs.Contains(x.def) || !x.def.isBad));
+
             // Induce coma in the patient so that they don't run off during treatment
             // (Pawns tend to get up as soon as they are "no longer incapable of walking")
             AnesthesizePatient(patientPawn);
@@ -386,10 +402,19 @@ namespace MedPod
 
                         case MedPodStatus.DiagnosisFinished:
                             DiagnosePatient(PatientPawn);
-                            // Scale healing time for current hediff according to its (normalized) severity
-                            // i.e. More severe hediffs take longer
-                            HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * MaxHealingTicks);
-                            SwitchState();
+
+                            if (patientTreatableHediffs.NullOrEmpty())
+                            {
+                                // Skip treatment if no treatable hediffs are found
+                                status = MedPodStatus.PatientDischarged;
+                            }
+                            else
+                            {
+                                // Scale healing time for current hediff according to its (normalized) severity
+                                // i.e. More severe hediffs take longer
+                                HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * MaxHealingTicks);
+                                SwitchState();
+                            }
                             break;
 
                         case MedPodStatus.HealingFinished:
