@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-	<MedPod_SettingsCategory_Heading>MedPod</MedPod_SettingsCategory_Heading>
-	
-	<MedPod_Settings_HeaderGeneral>General</MedPod_Settings_HeaderGeneral>
 	
 	<MedPod_Stat_PowerConsumptionDiagnosis_Label>Power consumption (Diagnosis)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
 	

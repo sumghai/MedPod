@@ -302,7 +302,6 @@
     <Compile Include="MedPodDef.cs" />
     <Compile Include="MedPodMod.cs" />
     <Compile Include="Building_BedMedPod.cs" />
-    <Compile Include="ModSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
