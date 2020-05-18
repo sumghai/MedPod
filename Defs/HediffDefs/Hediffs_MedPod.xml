@@ -3,7 +3,7 @@
 
 	<HediffDef>
 		<defName>MedPod_InducedComa</defName>
-		<label>neuroelectrically-induced coma</label>
+		<label>delta wave induced coma</label>
 		<description>Harmonically-shifted delta waves neuroelectrically applied to the cerebal cortex mimics the effects of chemical anesthesia, rendering creatures unconscious.</description>
 		<isBad>false</isBad>
 		<priceImpact>false</priceImpact>
