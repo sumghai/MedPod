@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 
 namespace MedPod
 {
@@ -76,6 +77,24 @@ namespace MedPod
                 {
                     __result = false;
                 }
+            }
+        }
+
+        /* WIP
+         * This patch is supposed to allow pawns to use the MedPod if they only have missing body parts
+         * (and no other hediffs, tendable or otherwise).
+         * 
+         * FailOnBedNoLongerUsable() is called by the vanilla Toils_LayDown.LayDown() and Toils_Bed.GotoBed()
+         * to check whether a pawn can go to or stay in a bed based on various conditions
+         */
+        [HarmonyPatch(typeof(Toils_Bed), "FailOnBedNoLongerUsable")]
+        static class Toils_Bed_FailOnBedNoLongerUsable_CheckForMedPod
+        {
+            public static void Prefix(Toil toil, TargetIndex bedIndex)
+            {
+                Log.Warning("MedPod :: Prefixing Toils_Bed.FailOnBedNoLongerUsable()!");
+
+                toil.FailOn(() => !MedPodHealthAIUtility.ShouldPawnSeekMedPod(toil.actor) && ((Building_Bed)toil.actor.CurJob.GetTarget(bedIndex).Thing).Medical && (Building_BedMedPod)toil.actor.CurJob.GetTarget(bedIndex).Thing is Building_BedMedPod);
             }
         }
     }

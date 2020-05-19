@@ -300,6 +300,7 @@
     <Compile Include="CompProperties_TreatmentRestrictions.cs" />
     <Compile Include="CompTreatmentRestrictions.cs" />
     <Compile Include="MedPodDef.cs" />
+    <Compile Include="MedPodHealthAIUtility.cs" />
     <Compile Include="MedPodMod.cs" />
     <Compile Include="Building_BedMedPod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
