@@ -211,11 +211,9 @@ namespace MedPod
             return stringBuilder.ToString();
         }
 
-        
-
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
         {
-            if (myPawn.RaceProps.Humanlike && !ForPrisoners && Medical && !myPawn.Drafted && base.Faction == Faction.OfPlayer && RestUtility.CanUseBedEver(myPawn, def))
+            if (myPawn.RaceProps.Humanlike && !ForPrisoners && Medical && !myPawn.Drafted && Faction == Faction.OfPlayer && RestUtility.CanUseBedEver(myPawn, def))
             {
                 if (!MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn))
                 {
