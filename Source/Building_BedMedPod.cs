@@ -6,10 +6,11 @@ using UnityEngine;
 using System.Linq;
 using System;
 using Verse.Sound;
+using Verse.AI;
 
 namespace MedPod
 {
-    class Building_BedMedPod : Building_Bed
+    public class Building_BedMedPod : Building_Bed
     {
         public CompPowerTrader powerComp;
 
@@ -208,6 +209,36 @@ namespace MedPod
             }
 
             return stringBuilder.ToString();
+        }
+
+        public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
+        {
+            if (myPawn.RaceProps.Humanlike && !ForPrisoners && Medical && !myPawn.Drafted && Faction == Faction.OfPlayer && RestUtility.CanUseBedEver(myPawn, def))
+            {
+                if (!MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn))
+                {
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + " --MedPod--)", null);
+                    yield break;
+                }
+                Action action = delegate
+                {
+                    if (!ForPrisoners && Medical && myPawn.CanReserveAndReach(this, PathEndMode.ClosestTouch, Danger.Deadly, SleepingSlotsCount, -1, null, ignoreOtherReservations: true))
+                    {
+                        if (myPawn.CurJobDef == JobDefOf.LayDown && myPawn.CurJob.GetTarget(TargetIndex.A).Thing == this)
+                        {
+                            myPawn.CurJob.restUntilHealed = true;
+                        }
+                        else
+                        {
+                            Job job = JobMaker.MakeJob(JobDefOf.LayDown, this);
+                            job.restUntilHealed = true;
+                            myPawn.jobs.TryTakeOrderedJob(job);
+                        }
+                        myPawn.mindState.ResetLastDisturbanceTick();
+                    }
+                };
+                yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("UseMedicalBed".Translate() + " --MedPod--", action), myPawn, this, (AnyUnoccupiedSleepingSlot ? "ReservedBy" : "SomeoneElseSleeping").CapitalizeFirst());
+            }
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
