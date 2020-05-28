@@ -114,8 +114,11 @@ namespace MedPod
 
             static bool Prefix(ref bool __result, Toil ___toil, TargetIndex ___bedIndex)
             {
-                if (___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod) {
-                    ___toil.FailOn(() => !MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor) && ((Building_Bed)___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod));
+                if (___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod bedMedPod) {
+                    // Add MedPod-specific fail conditions
+                    // - If the target bed is a MedPod AND
+                    // - If the pawn does not need to use the MedPod OR the MedPod has no power
+                    ___toil.FailOn(() => ((Building_Bed)___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod) && (!MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor) || !bedMedPod.powerComp.PowerOn));
                     return false; // Skip original code
                 }
 
@@ -124,8 +127,5 @@ namespace MedPod
         }
 
         // TODO - Prevent patients from using MedPods for any scheduled surgeries
-
-        // TODO - (Elsewhere) only allow pawns to use medpod if it has power
-
     }
 }
