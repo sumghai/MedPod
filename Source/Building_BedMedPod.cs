@@ -220,11 +220,6 @@ namespace MedPod
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + " --MedPod--)", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn) && !powerComp.PowerOn)
-                {
-                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + " --MedPod No Power-- )", null);
-                    yield break;
-                }
                 Action action = delegate
                 {
                     if (!ForPrisoners && Medical && myPawn.CanReserveAndReach(this, PathEndMode.ClosestTouch, Danger.Deadly, SleepingSlotsCount, -1, null, ignoreOtherReservations: true))

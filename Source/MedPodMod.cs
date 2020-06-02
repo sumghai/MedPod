@@ -118,13 +118,60 @@ namespace MedPod
                     // Add MedPod-specific fail conditions
                     // - If the target bed is a MedPod AND
                     // - If the pawn does not need to use the MedPod OR the MedPod has no power
-                    ___toil.FailOn(() => ((Building_Bed)___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod) && (!MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor) || !bedMedPod.powerComp.PowerOn));
+                    ___toil.FailOn(() => ((Building_Bed)___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod) && (!MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor)));
                     return false; // Skip original code
                 }
 
                 return true; // Run original code
             }
         }
+
+        // Make sure pawn stays in MedPod long enough to diagnosis to be run, and to get up once treatment is complete
+        [HarmonyPatch]
+        static class Toils_LayDown_LayDown_StayLyingInMedPod
+        {
+            static Type predicateClass;
+
+            // This targets the layDown.tickAction delegate function from Toils_LayDown.LayDown()
+            static MethodBase TargetMethod()
+            {
+                predicateClass = typeof(Toils_LayDown).GetNestedTypes(AccessTools.all)
+               .FirstOrDefault(t => t.FullName.Contains("c__DisplayClass2_0"));
+                if (predicateClass == null)
+                {
+                    Log.Error("MedPod :: Could not find Toils_LayDown:c__DisplayClass2_0");
+                    return null;
+                }
+
+                var m = predicateClass.GetMethods(AccessTools.all).FirstOrDefault(t => t.Name.Contains("<LayDown>b__1"));
+
+                if (m == null)
+                {
+                    Log.Error("MedPod :: Could not find Toils_LayDown:c__DisplayClass2_0<LayDown>b__1");
+                }
+
+                return m;
+            }
+
+            static bool Prefix(Toil ___layDown, TargetIndex ___bedOrRestSpotIndex)
+            {
+                Pawn patientPawn = ___layDown.actor;
+                Job curJob = patientPawn.CurJob;
+                JobDriver curDriver = patientPawn.jobs.curDriver;
+                Building_Bed building_Bed = (Building_Bed)curJob.GetTarget(___bedOrRestSpotIndex).Thing;
+                patientPawn.GainComfortFromCellIfPossible();
+
+                if (patientPawn != null && patientPawn.Name !=null && building_Bed is Building_BedMedPod && MedPodHealthAIUtility.ShouldPawnSeekMedPod(patientPawn))
+                {
+                    // Keep pawn asleep in MedPod as long as they need to use it
+                    curDriver.asleep = true;
+                    return false; // Skip original code
+                }
+
+                return true;  // Run original code
+            }
+        }
+
 
         // TODO - Prevent patients from using MedPods for any scheduled surgeries
     }
