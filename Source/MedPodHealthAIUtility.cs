@@ -11,7 +11,6 @@ namespace MedPod
             bool hasHediffsNeedingTend = patientPawn.health.HasHediffsNeedingTend(false);
             bool hasTendedAndHealingInjury = patientPawn.health.hediffSet.HasTendedAndHealingInjury();
             bool hasImmunizableNotImmuneHediff = patientPawn.health.hediffSet.HasImmunizableNotImmuneHediff();
-            int missingBodyPartCount = patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().Count();
             bool hasMissingBodyParts = !patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().NullOrEmpty();
             bool hasPermanentInjuries = (patientPawn.health.hediffSet.GetHediffs<Hediff>().Where(x => x.IsPermanent()).Count() > 0) ? true : false;
 
