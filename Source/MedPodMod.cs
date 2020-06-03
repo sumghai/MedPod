@@ -161,7 +161,7 @@ namespace MedPod
                 Building_Bed building_Bed = (Building_Bed)curJob.GetTarget(___bedOrRestSpotIndex).Thing;
                 patientPawn.GainComfortFromCellIfPossible();
 
-                if (patientPawn != null && patientPawn.Name !=null && building_Bed is Building_BedMedPod && MedPodHealthAIUtility.ShouldPawnSeekMedPod(patientPawn))
+                if (building_Bed is Building_BedMedPod && MedPodHealthAIUtility.ShouldPawnSeekMedPod(patientPawn))
                 {
                     // Keep pawn asleep in MedPod as long as they need to use it
                     curDriver.asleep = true;
