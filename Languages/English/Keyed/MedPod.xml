@@ -22,5 +22,7 @@
 	<MedPod_Message_TreatmentComplete>MedPod treatment complete for {1_label}.</MedPod_Message_TreatmentComplete>
 	
 	<MedPod_Message_TreatmentInterrupted>MedPod treatment interrupted for {1_label}.</MedPod_Message_TreatmentInterrupted>
+	
+	<MedPod_FloatMenu_Unpowered>MedPod not powered</MedPod_FloatMenu_Unpowered>
 
 </LanguageData>

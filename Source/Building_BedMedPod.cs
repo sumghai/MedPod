@@ -217,12 +217,12 @@ namespace MedPod
             {
                 if (!MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn))
                 {
-                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + " --MedPod--)", null);
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + ")", null);
                     yield break;
                 }
                 if (MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn) && !powerComp.PowerOn)
                 {
-                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " ( --MedPod No Power-- )", null);
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_Unpowered".Translate() + ")", null);
                     yield break;
                 }
                 Action action = delegate
@@ -242,7 +242,7 @@ namespace MedPod
                         myPawn.mindState.ResetLastDisturbanceTick();
                     }
                 };
-                yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("UseMedicalBed".Translate() + " --MedPod--", action), myPawn, this, (AnyUnoccupiedSleepingSlot ? "ReservedBy" : "SomeoneElseSleeping").CapitalizeFirst());
+                yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("UseMedicalBed".Translate(), action), myPawn, this, (AnyUnoccupiedSleepingSlot ? "ReservedBy" : "SomeoneElseSleeping").CapitalizeFirst());
             }
         }
 

@@ -185,6 +185,10 @@ namespace MedPod
                     __result = false;
                 }
             }
-        } 
+        }
+        
+        // TODO - Patients should prioritize (powered) MedPods over other beds
+
+        // TODO - Doctors should not perform scheduled surgeries on pawns using MedPods
     }
 }
