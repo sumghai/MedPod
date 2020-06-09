@@ -118,7 +118,7 @@ namespace MedPod
                     // Add MedPod-specific fail conditions
                     // - If the target bed is a MedPod AND
                     // - If the pawn does not need to use the MedPod OR the MedPod has no power
-                    ___toil.FailOn(() => ((Building_Bed)___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod) && (!MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor)));
+                    ___toil.FailOn(() => ((Building_Bed)___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod) && (!bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor)));
                     return false; // Skip original code
                 }
 
@@ -161,7 +161,7 @@ namespace MedPod
                 Building_Bed building_Bed = (Building_Bed)curJob.GetTarget(___bedOrRestSpotIndex).Thing;
                 patientPawn.GainComfortFromCellIfPossible();
 
-                if (building_Bed is Building_BedMedPod && MedPodHealthAIUtility.ShouldPawnSeekMedPod(patientPawn))
+                if (building_Bed is Building_BedMedPod bedMedPod && bedMedPod.powerComp.PowerOn && MedPodHealthAIUtility.ShouldPawnSeekMedPod(patientPawn))
                 {
                     // Keep pawn asleep in MedPod as long as they need to use it
                     curDriver.asleep = true;
@@ -172,7 +172,19 @@ namespace MedPod
             }
         }
 
-
-        // TODO - Prevent patients from using MedPods for any scheduled surgeries
+        // Make sure pawns only use MedPods if:
+        // - The MedPod has power
+        // - The pawn has a valid need to use a MedPod (i.e. MedPodHealthAIUtility.ShouldPawnSeekMedPod() returns true), which excludes surgeries
+        [HarmonyPatch(typeof(RestUtility), nameof(RestUtility.IsValidBedFor))]
+        static class RestUtility_IsValidBedFor_MedPodRestrictions
+        {
+            static void Postfix(ref bool __result, Thing bedThing, Pawn sleeper)
+            {
+                if (bedThing is Building_BedMedPod bedMedPod && (!bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(sleeper)))
+                {
+                    __result = false;
+                }
+            }
+        } 
     }
 }
