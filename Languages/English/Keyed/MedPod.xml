@@ -24,5 +24,7 @@
 	<MedPod_Message_TreatmentInterrupted>MedPod treatment interrupted for {1_label}.</MedPod_Message_TreatmentInterrupted>
 	
 	<MedPod_FloatMenu_Unpowered>MedPod not powered</MedPod_FloatMenu_Unpowered>
+	
+	<MedPod_SurgeryProhibited_PatientUsingMedPod>patient using MedPod</MedPod_SurgeryProhibited_PatientUsingMedPod>
 
 </LanguageData>
