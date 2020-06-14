@@ -9,6 +9,9 @@
 		<building>
 			<soundDispense>MedPod_Running</soundDispense>
 		</building>
+		<statBases>
+			<MedicalTendQualityOffset>0.101</MedicalTendQualityOffset>
+		</statBases>
 		<comps>
 			<li Class="CompProperties_AssignableToPawn">
 				<drawAssignmentOverlay>false</drawAssignmentOverlay>

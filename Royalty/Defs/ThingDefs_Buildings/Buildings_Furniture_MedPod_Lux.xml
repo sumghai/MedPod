@@ -32,7 +32,7 @@
 			<WorkToBuild>2800</WorkToBuild>
 			<Mass>35</Mass>
 			<Flammability>1.0</Flammability>
-			<BedRestEffectiveness>1</BedRestEffectiveness>
+			<BedRestEffectiveness>1.05</BedRestEffectiveness>
 			<Comfort>0.90</Comfort>
 		</statBases>
 		<size>(3,3)</size>
