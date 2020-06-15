@@ -11,11 +11,11 @@ namespace MedPod
 
         public float maxDiagnosisTime = 5f;
 
-        public float maxPerHediffHealingTime = 5f;
+        public float maxPerHediffHealingTime = 10f;
 
-        public float diagnosisModePowerConsumption = 250f;
+        public float diagnosisModePowerConsumption = 500f;
 
-        public float healingModePowerConsumption = 750f;
+        public float healingModePowerConsumption = 2000f;
 
         public CompProperties_MedPodSettings()
         {

@@ -79,10 +79,10 @@
 				</machineLidGraphicData>
 			</li>
 			<li Class="MedPod.CompProperties_MedPodSettings">
-				<maxDiagnosisTime>2.5</maxDiagnosisTime>
-				<maxPerHediffHealingTime>3.5</maxPerHediffHealingTime>
-				<diagnosisModePowerConsumption>500</diagnosisModePowerConsumption>
-				<healingModePowerConsumption>1000</healingModePowerConsumption>
+				<maxDiagnosisTime>3.75</maxDiagnosisTime>
+				<maxPerHediffHealingTime>7.5</maxPerHediffHealingTime>
+				<diagnosisModePowerConsumption>750</diagnosisModePowerConsumption>
+				<healingModePowerConsumption>3000</healingModePowerConsumption>
 			</li>
 			<li>
 				<compClass>CompQuality</compClass>

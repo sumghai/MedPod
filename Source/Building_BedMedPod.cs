@@ -530,7 +530,7 @@ namespace MedPod
             if (DiagnosingTicks > 0)
             {
                 DiagnosingTicks--;
-                powerComp.PowerOutput = DiagnosingPowerConsumption;
+                powerComp.PowerOutput = -DiagnosingPowerConsumption;
 
                 if (DiagnosingTicks == 0)
                 {
@@ -542,7 +542,7 @@ namespace MedPod
             {
                 HealingTicks--;
                 ProgressHealingTicks++;
-                powerComp.PowerOutput = HealingPowerConsumption;
+                powerComp.PowerOutput = -HealingPowerConsumption;
 
                 if (HealingTicks == 0)
                 {
