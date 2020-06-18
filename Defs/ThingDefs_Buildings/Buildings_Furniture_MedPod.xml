@@ -23,6 +23,7 @@
 					<li>MedPod_InducedComa</li>
 				</alwaysTreatableHediffs>
 				<neverTreatableHediffs />
+				<disallowedRaces />
 			</li>
 		</comps>
 		<tickerType>Normal</tickerType>

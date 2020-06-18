@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace MedPod
@@ -15,6 +16,21 @@ namespace MedPod
             bool hasPermanentInjuries = (patientPawn.health.hediffSet.GetHediffs<Hediff>().Where(x => x.IsPermanent()).Count() > 0) ? true : false;
 
             return isDowned || hasHediffsNeedingTend || hasTendedAndHealingInjury || hasImmunizableNotImmuneHediff || hasMissingBodyParts || hasPermanentInjuries;
+        }
+
+        public static bool IsValidRaceForMedPod(Pawn patientPawn, List<string> disallowedRaces)
+        {
+            if (!disallowedRaces.NullOrEmpty())
+            {
+                foreach (string currentRace in disallowedRaces)
+                {
+                    if (patientPawn.def.ToString() == currentRace)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
     }
 }

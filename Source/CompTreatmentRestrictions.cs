@@ -28,5 +28,13 @@ namespace MedPod
                 return Props.neverTreatableHediffs;
             }
         }
+
+        public List<string> DisallowedRaces
+        {
+            get
+            {
+                return Props.disallowedRaces;
+            }
+        }
     }
 }

@@ -9,6 +9,8 @@ namespace MedPod
 
         public List<HediffDef> neverTreatableHediffs = null;
 
+        public List<string> disallowedRaces = null;
+
         public CompProperties_TreatmentRestrictions()
         {
             compClass = typeof(CompTreatmentRestrictions);

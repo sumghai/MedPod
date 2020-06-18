@@ -38,6 +38,8 @@ namespace MedPod
 
         public List<HediffDef> NeverTreatableHediffs;
 
+        public List<string> DisallowedRaces;
+
         public int ProgressHealingTicks = 0;
 
         public int TotalHealingTicks = 0;
@@ -103,6 +105,7 @@ namespace MedPod
 
             AlwaysTreatableHediffs = treatmentRestrictions.AlwaysTreatableHediffs;
             NeverTreatableHediffs = treatmentRestrictions.NeverTreatableHediffs;
+            DisallowedRaces = treatmentRestrictions.DisallowedRaces;
 
             // Add a blocker region for the MedPod main machinery
             // (If one already exists, then we are probably loading a save with an existing MedPod)
@@ -215,6 +218,11 @@ namespace MedPod
         {
             if (myPawn.RaceProps.Humanlike && !ForPrisoners && Medical && !myPawn.Drafted && Faction == Faction.OfPlayer && RestUtility.CanUseBedEver(myPawn, def))
             {
+                if (!MedPodHealthAIUtility.IsValidRaceForMedPod(myPawn, DisallowedRaces))
+                {
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.def.label.CapitalizeFirst()) + ")", null);
+                    yield break;
+                }
                 if (!MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + ")", null);
