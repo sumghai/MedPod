@@ -325,6 +325,23 @@ namespace MedPod
             // Hediffs with no body part defined (i.e. "Whole Body" hediffs) are moved to the bottom of the list)
             patientTreatableHediffs = patientPawn.health.hediffSet.hediffs.OrderBy((Hediff x) => x.Part == null ? 9999 : x.Part.Index).ThenByDescending((Hediff x) => x.Severity).ToList();
 
+            // Ignore missing child parts of limbs and other body parts that have been replaced with
+            // implants or prosthetics
+            // This is a multi-step process:
+            // - Find the hediffs (and the associated body parts) corresponding to implants/prosthetics
+            // - Identify the child parts affected by the implants/prosthetics
+            // - Remove the hediffs from the treatment list by body part
+            List<Hediff> artificialPartHediffs = patientTreatableHediffs.FindAll((Hediff x) => x.def.hediffClass.Equals(typeof(Hediff_AddedPart)) || x.def.hediffClass.Equals(typeof(Hediff_Implant)));
+
+            List<BodyPartRecord> childPartsToSkip = new List<BodyPartRecord>();
+
+            foreach (Hediff currentArtificialPartHediff in artificialPartHediffs)
+            {
+                childPartsToSkip.AddRange(GetBodyPartDescendants(currentArtificialPartHediff.part));
+            }
+
+            patientTreatableHediffs.RemoveAll((Hediff x) => childPartsToSkip.Any(p => x.part == p));
+
             // Ignore hediffs/injuries that are:
             // - Not explicitly whitelisted as always treatable
             // - Blacklisted as never treatable
@@ -335,6 +352,7 @@ namespace MedPod
             // (Pawns tend to get up as soon as they are "no longer incapable of walking")
             AnesthesizePatient(patientPawn);
 
+            // Calculate individual and total cumulative treatment time for each hediff/injury
             foreach (Hediff currentHediff in patientTreatableHediffs)
             {
                 float currentSeverity = currentHediff.Severity;
@@ -342,7 +360,7 @@ namespace MedPod
                 // currentHediff.Part will throw an error if a hediff is applied to the whole body (e.g. malnutrition), as part == null
                 float currentBodyPartMaxHealth = (currentHediff.Part != null) ? currentHediff.Part.def.GetMaxHealth(patientPawn) : 1;
 
-                float currentNormalizedSeverity = (currentSeverity < 1) ? currentSeverity : currentSeverity / currentBodyPartMaxHealth;               
+                float currentNormalizedSeverity = (currentSeverity < 1) ? currentSeverity : currentSeverity / currentBodyPartMaxHealth;
 
                 totalNormalizedSeverities += currentNormalizedSeverity;
 
@@ -361,6 +379,22 @@ namespace MedPod
             float currentHediffNormalizedSeverity = (currentHediffSeverity < 1) ? currentHediffSeverity : currentHediffSeverity / currentHediffBodyPartMaxHealth;
 
             return currentHediffNormalizedSeverity;
+        }
+
+        private List<BodyPartRecord> GetBodyPartDescendants(BodyPartRecord part)
+        {
+            List<BodyPartRecord> childParts = new List<BodyPartRecord>();
+
+            if (part.parts.Count > 0)
+            {
+                foreach (BodyPartRecord currentChildPart in part.parts)
+                {
+                    childParts.Add(currentChildPart);
+                    childParts.AddRange(GetBodyPartDescendants(currentChildPart));
+                }
+            }
+
+            return childParts;
         }
 
         private void AnesthesizePatient(Pawn patientPawn)
