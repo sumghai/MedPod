@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Androids</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Prevent MedPod from treating droids and battle droids (as they are purely mechanical) -->
+				<!-- The androids themselves can still use MedPods, as they have synthetic flesh -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/disallowedRaces</xpath>
+					<value>
+						<li>ChjDroid</li>
+						<li>ChjBattleDroid</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+</Patch>
