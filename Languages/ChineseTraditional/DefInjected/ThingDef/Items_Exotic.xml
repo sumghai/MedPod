@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- EN: Isolinear Processor -->
+	<IsolinearProcessor.label>等線性處理器</IsolinearProcessor.label>
+	
+	<!-- EN: A high-density optical computational module with advanced data extrapolation and processing capabilities. The key component of MedPods. -->
+	<IsolinearProcessor.description>一個高密度光學電腦模塊，具有先進的數據外推和處理功能。是智能醫療床的核心組件。</IsolinearProcessor.description>
+
+</LanguageData>
