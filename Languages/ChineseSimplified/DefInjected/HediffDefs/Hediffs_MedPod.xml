@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- EN: delta wave induced coma -->
+	<MedPod_InducedComa.label>德尔塔脑波性昏迷</MedPod_InducedComa.label>
+
+	<!-- EN: Harmonically-shifted delta waves neuroelectrically applied to the cerebal cortex mimics the effects of chemical anesthesia, rendering creatures unconscious. -->
+	<MedPod_InducedComa.description>谐波移位的德尔塔脑波调制在大脑皮层上模仿麻醉药效，使生物失去意识。</MedPod_InducedComa.description>
+
+	<!-- EN: cortical stimulation -->
+	<MedPod_CorticalStimulation.label>大脑皮质刺激</MedPod_CorticalStimulation.label>
+
+	<!-- EN: Neuroelectrical stimulation applied to the cerebal cortex, gently restoring consciousness in creatures. -->
+	<MedPod_CorticalStimulation.description>在大脑皮层上进行神经刺激，使生物渐渐恢复意识。</MedPod_CorticalStimulation.description>
+
+	<!-- cortical stimulation (improper) -->
+	<MedPod_CorticalStimulationImproper.label>大脑皮质刺激(不良)</MedPod_CorticalStimulationImproper.label>
+
+	<!-- Neuroelectrical stimulation improperly applied to the cerebal cortex, abruptly restoring consciousness in creatures.\n\nUsually occurs when a MedPod loses power or otherwise malfunctions while in use. -->
+	<MedPod_CorticalStimulationImproper.description>在大脑皮层上进行不当的神经刺激，使生物突然恢复意识。 \n\n通常是因为智能医疗床在使用中断电或发生故障而由此引起的。</MedPod_CorticalStimulationImproper.description>
+
+</LanguageData>

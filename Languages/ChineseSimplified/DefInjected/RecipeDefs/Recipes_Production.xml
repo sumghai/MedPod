@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- EN: Disassemble AI persona core -->
+	<MedPodDisassembleAiCore.label>拆解AI人格核心</MedPodDisassembleAiCore.label>
+
+	<!-- EN: Disassemble an AI persona core for useful parts. -->
+	<MedPodDisassembleAiCore.description>将一个AI人格核心拆解以获取有用的零件。</MedPodDisassembleAiCore.description>
+
+	<!-- EN: Disassembling AI persona core. -->
+	<MedPodDisassembleAiCore.jobString>拆解AI人格核心。</MedPodDisassembleAiCore.jobString>
+
+</LanguageData>
