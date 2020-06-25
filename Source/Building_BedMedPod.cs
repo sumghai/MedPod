@@ -180,7 +180,7 @@ namespace MedPod
 
                 if (!powerComp.PowerOn)
                 {
-                    inspectorStatus = "Error: No power";
+                    inspectorStatus = "MedPod_InspectorStatus_NoPower".Translate();
                 }
                 else
                 {
@@ -188,22 +188,22 @@ namespace MedPod
                     {
                         case MedPodStatus.DiagnosisStarted:
                             float diagnosingProgress = (float)(MaxDiagnosingTicks - DiagnosingTicks) / MaxDiagnosingTicks * 100;
-                            inspectorStatus = "Diagnosing (" + (int)diagnosingProgress + "%)";
+                            inspectorStatus = "MedPod_InspectorStatus_DiagnosisProgress".Translate((int)diagnosingProgress);
                             break;
                         case MedPodStatus.DiagnosisFinished:
-                            inspectorStatus = "Diagnosis complete";
+                            inspectorStatus = "MedPod_InspectorStatus_DiagnosisComplete".Translate();
                             break;
                         case MedPodStatus.HealingStarted:
                         case MedPodStatus.HealingFinished:
                             float healingProgress = (float)ProgressHealingTicks / TotalHealingTicks * 100;
-                            inspectorStatus = "Reatomizing (" + (int)healingProgress + "%)";
+                            inspectorStatus = "MedPod_InspectorStatus_HealingProgress".Translate((int)healingProgress);
                             break;
                         case MedPodStatus.PatientDischarged:
-                            inspectorStatus = "100% Clear";
+                            inspectorStatus = "MedPod_InspectorStatus_PatientDischarged".Translate();
                             break;
                         case MedPodStatus.Idle:
                         default:
-                            inspectorStatus = "Idle";
+                            inspectorStatus = "MedPod_InspectorStatus_Idle".Translate();
                             break;
                     }
                 }

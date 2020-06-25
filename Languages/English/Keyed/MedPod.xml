@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	
+	<MedPod_InspectorStatus_NoPower>Error: No power</MedPod_InspectorStatus_NoPower>
+	
+	<MedPod_InspectorStatus_DiagnosisProgress>Diagnosing ({0}%)</MedPod_InspectorStatus_DiagnosisProgress>
+	
+	<MedPod_InspectorStatus_DiagnosisComplete>Diagnosis Complete</MedPod_InspectorStatus_DiagnosisComplete>
+	
+	<MedPod_InspectorStatus_HealingProgress>Reatomizing ({0}%)</MedPod_InspectorStatus_HealingProgress>
+	
+	<MedPod_InspectorStatus_PatientDischarged>100% Clear</MedPod_InspectorStatus_PatientDischarged>
+	
+	<MedPod_InspectorStatus_Idle>Idle</MedPod_InspectorStatus_Idle>
+	
 	<MedPod_Stat_PowerConsumptionDiagnosis_Label>Power consumption (Diagnosis)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
 	
 	<MedPod_Stat_PowerConsumptionDiagnosis_Desc>The amount of power this MedPod will draw from the power grid while operating in Diagnosis mode.</MedPod_Stat_PowerConsumptionDiagnosis_Desc>
