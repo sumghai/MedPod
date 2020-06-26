@@ -202,5 +202,18 @@ namespace MedPod
             }
         }
 
+        // Patients should always lie on their backs when using MedPods
+        [HarmonyPatch(typeof(PawnRenderer), nameof(PawnRenderer.LayingFacing))]
+        static class PawnRenderer_LayingFacing_AlwaysLieOnBackForMedPods
+        {
+            static void Postfix(ref Rot4 __result, Pawn ___pawn)
+            {
+                if (___pawn.RaceProps.Humanlike && ___pawn.CurrentBed() is Building_BedMedPod)
+                {
+                    __result = Rot4.South;
+                }
+            }
+        }
+
     }
 }
