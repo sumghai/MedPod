@@ -68,8 +68,8 @@ namespace MedPod
         // - The patient is lying on a MedPod
         // - The MedPod is powered
         // (as they would get smacked in the face by the MedPod's moving reatomizer gantry)
-        [HarmonyPatch(typeof(WorkGiver_Tend), "HasJobOnThing")]
-        static class WorkGiver_Tend_JobOnThing_IgnoreMedPods
+        [HarmonyPatch(typeof(WorkGiver_Tend), nameof(WorkGiver_Tend.HasJobOnThing))]
+        static class WorkGiver_Tend_HasJobOnThing_IgnoreMedPods
         {
             static void Postfix(ref bool __result, Pawn pawn, Thing t, bool forced = false)
             {
