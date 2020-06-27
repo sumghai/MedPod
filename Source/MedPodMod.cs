@@ -126,7 +126,7 @@ namespace MedPod
             }
         }
 
-        // Make sure pawn stays in MedPod long enough to diagnosis to be run, and to get up once treatment is complete
+        // Make sure patient stays in MedPod long enough to diagnosis to be run, and to get up once treatment is complete
         [HarmonyPatch]
         static class Toils_LayDown_LayDown_StayLyingInMedPod
         {
@@ -172,10 +172,10 @@ namespace MedPod
             }
         }
 
-        // Make sure pawns only use MedPods if:
+        // Make sure patients only use MedPods if:
         // - The MedPod has power
-        // - The pawn has a valid need to use a MedPod (i.e. MedPodHealthAIUtility.ShouldPawnSeekMedPod() returns true), which excludes surgeries
-        // - The pawn is not in the disallowedRaces blacklist
+        // - The patient has a valid need to use a MedPod (i.e. MedPodHealthAIUtility.ShouldPawnSeekMedPod() returns true), which excludes surgeries
+        // - The patient is not in the disallowedRaces blacklist
         [HarmonyPatch(typeof(RestUtility), nameof(RestUtility.IsValidBedFor))]
         static class RestUtility_IsValidBedFor_MedPodRestrictions
         {
@@ -188,7 +188,7 @@ namespace MedPod
             }
         }
 
-        // Doctors should not perform scheduled surgeries on pawns using MedPods
+        // Doctors should not perform scheduled surgeries on patients using MedPods
         [HarmonyPatch(typeof(Pawn), nameof(Pawn.CurrentlyUsableForBills))]
         static class Pawn_CurrentlyUsableForBills_IgnoreSurgeryForPatientsOnMedPods
         {
@@ -215,7 +215,7 @@ namespace MedPod
             }
         }
 
-        // Patient should prioritize using MedPods over other beds for medical needs
+        // Patients should prioritize using MedPods over other beds for medical needs
         [HarmonyPatch(typeof(RestUtility), nameof(RestUtility.FindPatientBedFor))]
         static class RestUtility_FindPatientBedFor_PrioritizeMedPodsForMedicalBeds
         {
@@ -241,7 +241,6 @@ namespace MedPod
                 return true;
             }
         }
-
 
     }
 }
