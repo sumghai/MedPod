@@ -215,5 +215,33 @@ namespace MedPod
             }
         }
 
+        // Patient should prioritize using MedPods over other beds for medical needs
+        [HarmonyPatch(typeof(RestUtility), nameof(RestUtility.FindPatientBedFor))]
+        static class RestUtility_FindPatientBedFor_PrioritizeMedPodsForMedicalBeds
+        {
+            static bool Prefix(ref Building_Bed __result, Pawn pawn)
+            {
+                Building_Bed currentBed = pawn.CurrentBed();
+                if (pawn.InBed() && (currentBed != null) && currentBed.Medical && currentBed.def.building.bed_humanlike)
+                {
+                    __result = currentBed;
+                    return false;
+                }
+                for (int i = 0; i < 2; i++)
+                {
+                    Danger maxDanger = (i == 0) ? Danger.None : Danger.Deadly;
+                    Building_Bed building_Bed = (Building_BedMedPod)GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, ThingRequest.ForGroup(ThingRequestGroup.Bed), PathEndMode.OnCell, TraverseParms.For(pawn), 9999f, (Thing b) => (int)b.Position.GetDangerFor(pawn, pawn.Map) <= (int)maxDanger && b is Building_BedMedPod && RestUtility.IsValidBedFor(b, pawn, pawn, pawn.IsPrisoner, checkSocialProperness: false, allowMedBedEvenIfSetToNoCare: true));
+                    if (building_Bed != null)
+                    {
+                        __result = building_Bed;
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
+
+
     }
 }
