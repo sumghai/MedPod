@@ -14,8 +14,10 @@ namespace MedPod
             bool hasImmunizableNotImmuneHediff = patientPawn.health.hediffSet.HasImmunizableNotImmuneHediff();
             bool hasMissingBodyParts = !patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().NullOrEmpty();
             bool hasPermanentInjuries = (patientPawn.health.hediffSet.GetHediffs<Hediff>().Where(x => x.IsPermanent()).Count() > 0) ? true : false;
+            bool hasChronicDiseases = (patientPawn.health.hediffSet.GetHediffs<Hediff>().Where(x => x.def.chronic).Count() > 0) ? true : false;
+            bool hasAddictions = (patientPawn.health.hediffSet.GetHediffs<Hediff>().Where(x => x.def.IsAddiction).Count() > 0) ? true : false;
 
-            return isDowned || hasHediffsNeedingTend || hasTendedAndHealingInjury || hasImmunizableNotImmuneHediff || hasMissingBodyParts || hasPermanentInjuries;
+            return isDowned || hasHediffsNeedingTend || hasTendedAndHealingInjury || hasImmunizableNotImmuneHediff || hasMissingBodyParts || hasPermanentInjuries || hasChronicDiseases || hasAddictions;
         }
 
         public static bool IsValidRaceForMedPod(Pawn patientPawn, List<string> disallowedRaces)
