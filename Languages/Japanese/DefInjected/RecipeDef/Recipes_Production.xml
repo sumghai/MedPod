@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MedPodDisassembleAiCore.label>AI人格コアを分解</MedPodDisassembleAiCore.label>
+  <MedPodDisassembleAiCore.description>AI人格コアを利用可能な部品に分解します。</MedPodDisassembleAiCore.description>
+  <MedPodDisassembleAiCore.jobString>AI人格コアを分解中</MedPodDisassembleAiCore.jobString>
+
+</LanguageData>

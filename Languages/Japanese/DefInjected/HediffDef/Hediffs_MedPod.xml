@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MedPod_InducedComa.label>デルタ波誘発昏睡</MedPod_InducedComa.label>
+  <MedPod_InducedComa.description>大脳皮質に神経パルスによる刺激を与える高調波変換デルタ波は、化学的な麻酔効果に似た効果を持ち、生物を意識不明にします。</MedPod_InducedComa.description>
+
+  <MedPod_CorticalStimulation.label>皮質刺激</MedPod_CorticalStimulation.label>
+  <MedPod_CorticalStimulation.description>大脳皮質に神経パルス刺激を与え、生物の意識をゆっくりと回復させます。</MedPod_CorticalStimulation.description>
+
+  <MedPod_CorticalStimulationImproper.label>皮質刺激（不正）</MedPod_CorticalStimulationImproper.label>
+  <MedPod_CorticalStimulationImproper.description>神経パルス刺激が大脳皮質に不正に与えられて、生物の意識が突然回復します。\n\n通常、治療中に治療ポッドの電源が切断されたり、誤動作した場合に発生します。</MedPod_CorticalStimulationImproper.description>
+
+</LanguageData>
