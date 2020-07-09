@@ -6,4 +6,8 @@
   <AtomicCellularRegeneration.label>分子細胞再生</AtomicCellularRegeneration.label>
   <AtomicCellularRegeneration.description>生きている細胞を原子レベルで迅速に修復することにより、様々な病気や怪我を自動的に治療することができる高度な病院ベッドである治療ポッドの建設を可能にします。</AtomicCellularRegeneration.description>
 
+  <AtomicCellularRegeneration.discoveredLetterTitle>概要：高機能医療ベッド</AtomicCellularRegeneration.discoveredLetterTitle>
+
+  <AtomicCellularRegeneration.discoveredLetterText>分子細胞再生の研究が終了して治療ポッドを建築する技術を入手しました。ただし、治療ポッドの建設には特別なコンポーネント「アイソリニア=プロセッサー」が必要です。アイソリニア=プロセッサーは、いくつかの方法で入手可能です：\n\n -エキゾチックアイテムを取り扱う軌道トレーダーかトレーダーキャラバンが販売しています。彼らを招聘したり来訪を待ちます。\n -一部のクエストで報酬に含まれています。\n -AI人格コアを分解するとアイソリニア=プロセッサーを（他の色々なコンポーネント類と一緒に）回収できます。 </AtomicCellularRegeneration.discoveredLetterText>
+
 </LanguageData>
