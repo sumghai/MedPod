@@ -5,13 +5,37 @@
 	<MedPodStandard.label>智能医疗床</MedPodStandard.label>
 
 	<!-- EN: An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
-	<MedPodStandard.description>一张先进的医疗床，采用原子再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。 \n\n这一张智能医疗床是经常在闪耀世界上的免费公共健康诊所中可找到的标准款。</MedPodStandard.description>
+	<MedPodStandard.description>一张先进的医疗床，采用原子再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。\n\n这一张智能医疗床是经常在闪耀世界上的免费公共健康诊所中可找到的标准款。</MedPodStandard.description>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_MedPodStandard.label>智能医疗床 (蓝图)</Blueprint_MedPodStandard.label>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_Install_MedPodStandard.label>智能医疗床 (蓝图)</Blueprint_Install_MedPodStandard.label>
+	
+	<!-- EN: MedPod (building)-->
+	<Frame_MedPodStandard.label>智能医疗床 (建造中)</Frame_MedPodStandard.label>
+	
+	<!-- EN: An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
+	<Frame_MedPodStandard.description>一张先进的医疗床，采用原子再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。\n\n这一张智能医疗床是经常在闪耀世界上的免费公共健康诊所中可找到的标准款。</Frame_MedPodStandard.description>
 
 	<!-- Royalty-exclusive content -->
 	<!-- EN: MedPod Lux -->
 	<MedPodLux.label>智能医疗床Lux</MedPodLux.label>
 
 	<!-- An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
-	<MedPodLux.description>一张先进的医疗床，采用原子再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。 \n\n这一张豪华版的智能医疗床，床架镶金，也具备了凝胶记忆泡沫床垫，诊断与治疗比标准款快，但耗电量更大。</MedPodLux.description>
+	<MedPodLux.description>一张先进的医疗床，采用原子再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。\n\n这一张豪华版的智能医疗床，床架镶金，也具备了凝胶记忆泡沫床垫，诊断与治疗比标准款快，但耗电量更大。</MedPodLux.description>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_MedPodStandard.label>智能医疗床Lux (蓝图)</Blueprint_MedPodStandard.label>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_Install_MedPodStandard.label>智能医疗床Lux (蓝图)</Blueprint_Install_MedPodStandard.label>
+	
+	<!-- EN: MedPod (building)-->
+	<Frame_MedPodStandard.label>智能医疗床Lux (建造中)</Frame_MedPodStandard.label>
+	
+	<!-- An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
+	<Frame_MedPodStandard.description>一张先进的医疗床，采用原子再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。\n\n这一张豪华版的智能医疗床，床架镶金，也具备了凝胶记忆泡沫床垫，诊断与治疗比标准款快，但耗电量更大。</Frame_MedPodStandard.description>
 
 </LanguageData>
