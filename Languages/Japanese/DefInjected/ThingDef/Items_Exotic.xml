@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <!-- Isolinear Processor -->
+	<!-- EN: Isolinear Processor -->
+	<IsolinearProcessor.label>等線形プロセッサー</IsolinearProcessor.label>
 
-  <IsolinearProcessor.label>アイソリニア=プロセッサー</IsolinearProcessor.label>
-  <IsolinearProcessor.description>最先端のデータ管理用の外挿機能と処理機能を備えた高密度な超光速計算モジュールです。治療ポッド建設に必要な主要コンポーネントです。</IsolinearProcessor.description>
+	<!-- EN: A high-density optical computational module with advanced data extrapolation and processing capabilities. The key component of MedPods. -->
+	<IsolinearProcessor.description>最先端のデータ管理用の外挿機能と処理機能を備えた高密度な超光速計算モジュールです。治療ポッド建設に必要な主要コンポーネントです。</IsolinearProcessor.description>
 
 </LanguageData>

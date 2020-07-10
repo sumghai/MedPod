@@ -1,13 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <MedPod_InducedComa.label>デルタ波誘発昏睡</MedPod_InducedComa.label>
-  <MedPod_InducedComa.description>大脳皮質に神経パルスによる刺激を与える高調波変換デルタ波は、化学的な麻酔効果に似た効果を持ち、生物を意識不明にします。</MedPod_InducedComa.description>
+	<!-- EN: delta wave induced coma -->
+	<MedPod_InducedComa.label>デルタ波誘発昏睡</MedPod_InducedComa.label>
 
-  <MedPod_CorticalStimulation.label>皮質刺激</MedPod_CorticalStimulation.label>
-  <MedPod_CorticalStimulation.description>大脳皮質に神経パルス刺激を与え、生物の意識をゆっくりと回復させます。</MedPod_CorticalStimulation.description>
+	<!-- EN: Harmonically-shifted delta waves neuroelectrically applied to the cerebal cortex mimics the effects of chemical anesthesia, rendering creatures unconscious. -->
+	<MedPod_InducedComa.description>大脳皮質に神経パルスによる刺激を与える高調波変換デルタ波は、化学的な麻酔効果に似た効果を持ち、生物を意識不明にします。</MedPod_InducedComa.description>
 
-  <MedPod_CorticalStimulationImproper.label>皮質刺激（不正）</MedPod_CorticalStimulationImproper.label>
-  <MedPod_CorticalStimulationImproper.description>神経パルス刺激が大脳皮質に不正に与えられて、生物の意識が突然回復します。\n\n通常、治療中に治療ポッドの電源が切断されたり、誤動作した場合に発生します。</MedPod_CorticalStimulationImproper.description>
+	<!-- EN: cortical stimulation -->
+	<MedPod_CorticalStimulation.label>皮質刺激</MedPod_CorticalStimulation.label>
+
+	<!-- EN: Neuroelectrical stimulation applied to the cerebal cortex, gently restoring consciousness in creatures. -->
+	<MedPod_CorticalStimulation.description>大脳皮質に神経パルス刺激を与え、生物の意識をゆっくりと回復させます。</MedPod_CorticalStimulation.description>
+
+	<!-- cortical stimulation (improper) -->
+	<MedPod_CorticalStimulationImproper.label>皮質刺激（不正）</MedPod_CorticalStimulationImproper.label>
+
+	<!-- Neuroelectrical stimulation improperly applied to the cerebal cortex, abruptly restoring consciousness in creatures.\n\nUsually occurs when a MedPod loses power or otherwise malfunctions while in use. -->
+	<MedPod_CorticalStimulationImproper.description>神経パルス刺激が大脳皮質に不正に与えられて、生物の意識が突然回復します。\n\n通常、治療中に治療ポッドの電源が切断されたり、誤動作した場合に発生します。</MedPod_CorticalStimulationImproper.description>
 
 </LanguageData>
