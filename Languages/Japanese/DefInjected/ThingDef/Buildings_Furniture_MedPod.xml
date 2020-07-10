@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Standard MedPod -->
+
+  <MedPodStandard.label>治療ポッド</MedPodStandard.label>
+  <MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に原子レベルの細胞再生技術を利用した高度な医療ベッドです。\n\nこれはGlitterworldでよく見られる無料の公的治療クリニックの標準的な設備です。</MedPodStandard.description>
+  <Blueprint_MedPodStandard.label>治療ポッド (設計)</Blueprint_MedPodStandard.label>
+  <Blueprint_Install_MedPodStandard.label>治療ポッド (移動先)</Blueprint_Install_MedPodStandard.label>
+  <Frame_MedPodStandard.label>治療ポッド (施工)</Frame_MedPodStandard.label>
+  <Frame_MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に原子レベルの細胞再生技術を利用した高度な医療ベッドです。\n\nこれはGlitterworldでよく見られる無料の公的治療クリニックの標準的な設備です。</Frame_MedPodStandard.description>
+
+  <!-- Royalty-exclusive content -->
+
+  <MedPodStandard.label>豪華な治療ポッド</MedPodStandard.label>
+  <MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に原子レベルの細胞再生技術を利用した高度な医療ベッドです。\nゴールドを使った豪華な装飾とジェルを包んだ形状記憶フォームマットレスを使用した贅沢な形式で、より高速に診断と治療を行えますが、消費電力が更に増えます。</MedPodStandard.description>
+  <Blueprint_MedPodStandard.label>豪華な治療ポッド (設計)</Blueprint_MedPodStandard.label>
+  <Blueprint_Install_MedPodStandard.label>豪華な治療ポッド (移動先)</Blueprint_Install_MedPodStandard.label>
+  <Frame_MedPodStandard.label>豪華な治療ポッド (施工)</Frame_MedPodStandard.label>
+  <Frame_MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に原子レベルの細胞再生技術を利用した高度な医療ベッドです。\nゴールドを使った豪華な装飾とジェルを包んだ形状記憶フォームマットレスを使用した贅沢な形式で、より高速に診断と治療を行えますが、消費電力が更に増えます。</Frame_MedPodStandard.description>
+
+</LanguageData>
