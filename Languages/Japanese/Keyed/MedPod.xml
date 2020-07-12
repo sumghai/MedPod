@@ -60,5 +60,8 @@
 	
 	<!-- EN: patient using MedPod -->
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>治療ポッド使用中の患者</MedPod_SurgeryProhibited_PatientUsingMedPod>
+	
+	<!-- EN: {0} is in use. -->
+	<MedPod_CommandGizmoDisabled_MedPodInUse>{0}は使用中です</MedPod_CommandGizmoDisabled_MedPodInUse>
 
 </LanguageData>

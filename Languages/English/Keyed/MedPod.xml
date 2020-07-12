@@ -40,5 +40,7 @@
 	<MedPod_FloatMenu_Unpowered>MedPod not powered</MedPod_FloatMenu_Unpowered>
 	
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>patient using MedPod</MedPod_SurgeryProhibited_PatientUsingMedPod>
+	
+	<MedPod_CommandGizmoDisabled_MedPodInUse>{0} is in use.</MedPod_CommandGizmoDisabled_MedPodInUse>
 
 </LanguageData>

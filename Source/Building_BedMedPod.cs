@@ -257,12 +257,19 @@ namespace MedPod
         public override IEnumerable<Gizmo> GetGizmos()
         {
             string medicalToggleStr = "CommandBedSetAsMedicalLabel".Translate();
+            string flickablePowerToggleStr = "CommandDesignateTogglePowerLabel".Translate();
             foreach (Gizmo g in base.GetGizmos())
             {
                 if (g is Command_Toggle act && (act.defaultLabel == medicalToggleStr))
                 {
                     continue; // Hide the Medical bed toggle, as MedPods are always Medical beds
                 }
+                
+                if (g is Command_Toggle act2 && (act2.defaultLabel == flickablePowerToggleStr) && PatientPawn != null)
+                {
+                    g.Disable("MedPod_CommandGizmoDisabled_MedPodInUse".Translate(def.LabelCap));
+                }
+
                 yield return g;
             }
         }
