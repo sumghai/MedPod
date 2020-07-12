@@ -19,6 +19,15 @@
 					</value>
 				</li>
 				
+				<!-- Add missing <isBad>false</isBad> to upgrade module hediffs, as ChJees couldn't be bothered to fix his own mod -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/HediffDef[@Name="ChJAndroidUpgradeBase"]</xpath>
+					<value>
+						<isBad>false</isBad>
+					</value>
+				</li>
+				
 			</operations>
 		</match>
 	</Operation>
