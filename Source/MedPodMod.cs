@@ -81,6 +81,8 @@ namespace MedPod
             }
         }
 
+        // TODO - Optimize - Identified as source of FPS drop
+        //
         // Modify the vanilla fail conditions in Toils_Bed.FailOnBedNoLongerUsable() to use different logic
         // for MedPod beds by identifying a hidden inner predicate class and method, then patching it to
         // check whether the patient's target bed is a MedPod before deciding whether to apply our own
@@ -112,18 +114,18 @@ namespace MedPod
                 return m;
             }
 
-            static bool Prefix(ref bool __result, Toil ___toil, TargetIndex ___bedIndex)
-            {
-                if (___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod bedMedPod) {
+            //static bool Prefix(ref bool __result, Toil ___toil, TargetIndex ___bedIndex)
+            //{
+            //    if (___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod bedMedPod) {
                     // Add MedPod-specific fail conditions
                     // - If the target bed is a MedPod AND
                     // - If the pawn does not need to use the MedPod OR the MedPod has no power
-                    ___toil.FailOn(() => ((Building_Bed)___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod) && (!bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor)));
-                    return false; // Skip original code
-                }
+            //        ___toil.FailOn(() => ((Building_Bed)___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod) && (!bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor)));
+            //        return false; // Skip original code
+            //    }
 
-                return true; // Run original code
-            }
+            //    return true; // Run original code
+            //}
         }
 
         // Make sure patient stays in MedPod long enough to diagnosis to be run, and to get up once treatment is complete
