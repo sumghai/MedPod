@@ -49,7 +49,8 @@
 		<size>(3,1)</size>
 		<selectable>false</selectable>
 		<canOverlapZones>false</canOverlapZones>
-		<passability>Impassable</passability>
+		<passability>PassThroughOnly</passability>
+		<pathCost>200</pathCost>
 		<defaultPlacingRot>South</defaultPlacingRot>
 		<menuHidden>true</menuHidden>
 		<building>
