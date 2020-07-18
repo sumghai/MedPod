@@ -114,19 +114,20 @@ namespace MedPod
                 return m;
             }
 
-            //static bool Prefix(ref bool __result, Toil ___toil, TargetIndex ___bedIndex)
-            //{
-            //    if (___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod bedMedPod) {
+            static bool Prefix(ref bool __result, Toil ___toil, TargetIndex ___bedIndex)
+            {
+                if (___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod bedMedPod)
+                {
                     // Add MedPod-specific fail conditions
                     // - If the target bed is a MedPod AND
                     // - If the pawn does not need to use the MedPod OR the MedPod has no power
-            //        ___toil.FailOn(() => ((Building_Bed)___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod) && (!bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor)));
-            //        return false; // Skip original code
-            //    }
-
-            //    return true; // Run original code
-            //}
+                    __result = !bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor);
+                    return false; // Skip original code
+                }
+                return true; // Run original code
+            }
         }
+
 
         // Make sure patient stays in MedPod long enough to diagnosis to be run, and to get up once treatment is complete
         [HarmonyPatch]
