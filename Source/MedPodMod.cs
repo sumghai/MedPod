@@ -81,8 +81,6 @@ namespace MedPod
             }
         }
 
-        // TODO - Optimize - Identified as source of FPS drop
-        //
         // Modify the vanilla fail conditions in Toils_Bed.FailOnBedNoLongerUsable() to use different logic
         // for MedPod beds by identifying a hidden inner predicate class and method, then patching it to
         // check whether the patient's target bed is a MedPod before deciding whether to apply our own
