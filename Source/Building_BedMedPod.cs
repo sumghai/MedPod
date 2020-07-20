@@ -386,7 +386,6 @@ namespace MedPod
 
             float currentHediffNormalizedSeverity = (currentHediffSeverity < 1) ? currentHediffSeverity : currentHediffSeverity / currentHediffBodyPartMaxHealth;
 
-            Log.Message(($"Treating: {currentHediff.Label}: {currentHediffNormalizedSeverity}"));
             return currentHediffNormalizedSeverity;
         }
 
@@ -505,8 +504,6 @@ namespace MedPod
                             break;
 
                         case MedPodStatus.HealingFinished:
-                            Log.Message($"Removing: {patientTreatableHediffs.First().def.defName}");
-
                             if (!patientTreatableHediffs.First().def.isBad)
                             {
                                 patientTreatableHediffs.First().Tended(1);
