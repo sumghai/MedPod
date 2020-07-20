@@ -338,7 +338,7 @@ namespace MedPod
             // - Find the hediffs (and the associated body parts) corresponding to implants/prosthetics
             // - Identify the child parts affected by the implants/prosthetics
             // - Remove the hediffs from the treatment list by body part
-            List<Hediff> artificialPartHediffs = patientTreatableHediffs.FindAll((Hediff x) => x.def.hediffClass.Equals(typeof(Hediff_AddedPart)) || x.def.hediffClass.Equals(typeof(Hediff_Implant)));
+            List<Hediff> artificialPartHediffs = patientTreatableHediffs.FindAll((Hediff x) => x.def.hediffClass == typeof(Hediff_AddedPart));
 
             List<BodyPartRecord> childPartsToSkip = new List<BodyPartRecord>();
 
@@ -353,7 +353,8 @@ namespace MedPod
             // - Not explicitly whitelisted as always treatable
             // - Blacklisted as never treatable
             // - Not bad (i.e isBad = false)
-            patientTreatableHediffs.RemoveAll((Hediff x) => !AlwaysTreatableHediffs.Contains(x.def) && (NeverTreatableHediffs.Contains(x.def) || !x.def.isBad));
+            patientTreatableHediffs.RemoveAll((Hediff x) =>
+                !AlwaysTreatableHediffs.Contains(x.def) && (NeverTreatableHediffs.Contains(x.def) || (!x.def.isBad && !x.TendableNow())));
 
             // Induce coma in the patient so that they don't run off during treatment
             // (Pawns tend to get up as soon as they are "no longer incapable of walking")
@@ -385,6 +386,7 @@ namespace MedPod
 
             float currentHediffNormalizedSeverity = (currentHediffSeverity < 1) ? currentHediffSeverity : currentHediffSeverity / currentHediffBodyPartMaxHealth;
 
+            Log.Message(($"Treating: {currentHediff.Label}: {currentHediffNormalizedSeverity}"));
             return currentHediffNormalizedSeverity;
         }
 
@@ -503,7 +505,17 @@ namespace MedPod
                             break;
 
                         case MedPodStatus.HealingFinished:
-                            PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
+                            Log.Message($"Removing: {patientTreatableHediffs.First().def.defName}");
+
+                            if (!patientTreatableHediffs.First().def.isBad)
+                            {
+                                patientTreatableHediffs.First().Tended(1);
+                            }
+                            else
+                            {
+                                PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
+                            }
+
                             patientTreatableHediffs.RemoveAt(0);
                             if (!patientTreatableHediffs.NullOrEmpty())
                             {
