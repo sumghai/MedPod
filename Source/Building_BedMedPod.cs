@@ -354,7 +354,7 @@ namespace MedPod
             // Ignore hediffs/injuries that are:
             // - Not explicitly whitelisted as always treatable
             // - Blacklisted as never treatable
-            // - Not bad (i.e isBad = false)
+            // - Not bad (i.e isBad = false) and not treatable
             patientTreatableHediffs.RemoveAll((Hediff x) =>
                 !AlwaysTreatableHediffs.Contains(x.def) && (NeverTreatableHediffs.Contains(x.def) || (!x.def.isBad && !x.TendableNow())));
 
@@ -506,6 +506,7 @@ namespace MedPod
                             break;
 
                         case MedPodStatus.HealingFinished:
+                            // Don't remove 'good' treatable Hediffs but instead treat them with 100% quality
                             if (!patientTreatableHediffs.First().def.isBad)
                             {
                                 patientTreatableHediffs.First().Tended(1);
