@@ -338,7 +338,12 @@ namespace MedPod
             // - Find the hediffs (and the associated body parts) corresponding to implants/prosthetics
             // - Identify the child parts affected by the implants/prosthetics
             // - Remove the hediffs from the treatment list by body part
-            List<Hediff> artificialPartHediffs = patientTreatableHediffs.FindAll((Hediff x) => x.def.hediffClass == typeof(Hediff_AddedPart));
+            //
+            // Note: We don't ignore child parts of Torsos, so that Torso implants like Stoneskin Glands from the Royalty DLC
+            // don't end up giving us an empty treatment plan and subsequently trap the pawn in a diagnosis loop
+            List<Hediff> artificialPartHediffs = patientTreatableHediffs.FindAll((Hediff x) => x.def.hediffClass.Equals(typeof(Hediff_AddedPart)) || x.def.hediffClass.Equals(typeof(Hediff_Implant)));
+
+            artificialPartHediffs.RemoveAll((Hediff x) => x.Part.def == BodyPartDefOf.Torso);
 
             List<BodyPartRecord> childPartsToSkip = new List<BodyPartRecord>();
 
