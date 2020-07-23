@@ -338,12 +338,8 @@ namespace MedPod
             // - Find the hediffs (and the associated body parts) corresponding to implants/prosthetics
             // - Identify the child parts affected by the implants/prosthetics
             // - Remove the hediffs from the treatment list by body part
-            //
-            // Note: We don't ignore child parts of Torsos, so that Torso implants like Stoneskin Glands from the Royalty DLC
-            // don't end up giving us an empty treatment plan and subsequently trap the pawn in a diagnosis loop
-            List<Hediff> artificialPartHediffs = patientTreatableHediffs.FindAll((Hediff x) => x.def.hediffClass.Equals(typeof(Hediff_AddedPart)) || x.def.hediffClass.Equals(typeof(Hediff_Implant)));
 
-            artificialPartHediffs.RemoveAll((Hediff x) => x.Part.def == BodyPartDefOf.Torso);
+            List<Hediff> artificialPartHediffs = patientTreatableHediffs.FindAll((Hediff x) => x.def.hediffClass.Equals(typeof(Hediff_AddedPart)));
 
             List<BodyPartRecord> childPartsToSkip = new List<BodyPartRecord>();
 
@@ -352,13 +348,15 @@ namespace MedPod
                 childPartsToSkip.AddRange(GetBodyPartDescendants(currentArtificialPartHediff.part));
             }
 
-            patientTreatableHediffs.RemoveAll((Hediff x) => childPartsToSkip.Any(p => x.part == p));
+            // Only ignore Missing part Hediffs from body parts that have been replaced
+            patientTreatableHediffs.RemoveAll((Hediff x) => childPartsToSkip.Any(p => x.part == p) && x.def.hediffClass == typeof(Hediff_MissingPart));
 
             // Ignore hediffs/injuries that are:
             // - Not explicitly whitelisted as always treatable
             // - Blacklisted as never treatable
-            // - Not bad (i.e isBad = false)
-            patientTreatableHediffs.RemoveAll((Hediff x) => !AlwaysTreatableHediffs.Contains(x.def) && (NeverTreatableHediffs.Contains(x.def) || !x.def.isBad));
+            // - Not bad (i.e isBad = false) and not treatable
+            patientTreatableHediffs.RemoveAll((Hediff x) =>
+                !AlwaysTreatableHediffs.Contains(x.def) && (NeverTreatableHediffs.Contains(x.def) || (!x.def.isBad && !x.TendableNow())));
 
             // Induce coma in the patient so that they don't run off during treatment
             // (Pawns tend to get up as soon as they are "no longer incapable of walking")
@@ -508,7 +506,16 @@ namespace MedPod
                             break;
 
                         case MedPodStatus.HealingFinished:
-                            PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
+                            // Don't remove 'good' treatable Hediffs but instead treat them with 100% quality
+                            if (!patientTreatableHediffs.First().def.isBad)
+                            {
+                                patientTreatableHediffs.First().Tended(1);
+                            }
+                            else
+                            {
+                                PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
+                            }
+
                             patientTreatableHediffs.RemoveAt(0);
                             if (!patientTreatableHediffs.NullOrEmpty())
                             {
