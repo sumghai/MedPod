@@ -1,13 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-	<!-- EN: Disassemble AI persona core -->
-	<ReplimatDisassembleAiCore.label>AI人格コアを分解する</ReplimatDisassembleAiCore.label>
-
-	<!-- EN: Disassemble an AI persona core for useful parts. -->
-	<ReplimatDisassembleAiCore.description>AI人格コアを部品毎に分解します.</ReplimatDisassembleAiCore.description>
-
-	<!-- EN: Disassembling AI persona core. -->
-	<ReplimatDisassembleAiCore.jobString>AI人格コアを分解中</ReplimatDisassembleAiCore.jobString>
+  <MedPodDisassembleAiCore.label>AI人格コアを分解する</MedPodDisassembleAiCore.label>
+  <MedPodDisassembleAiCore.description>AI人格コアを部品毎に分解します.</MedPodDisassembleAiCore.description>
+  <MedPodDisassembleAiCore.jobString>AI人格コアを分解中</MedPodDisassembleAiCore.jobString>
 
 </LanguageData>
