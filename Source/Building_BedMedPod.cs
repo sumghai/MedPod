@@ -375,6 +375,13 @@ namespace MedPod
                 totalNormalizedSeverities += currentNormalizedSeverity;
 
                 TotalHealingTicks += (int)Math.Ceiling(GetHediffNormalizedSeverity(currentHediff) * MaxHealingTicks);
+
+                // Tend all bleeding hediffs immediately so the pawn doesn't die after being anesthetized by the MedPod
+                // The Hediff will be completely removed once the Medpod is done with the Healing process
+                if (currentHediff.Bleeding)
+                {
+                    currentHediff.Tended(1);
+                }
             }
         }
 
