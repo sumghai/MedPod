@@ -345,11 +345,13 @@ namespace MedPod
 
             foreach (Hediff currentArtificialPartHediff in artificialPartHediffs)
             {
-                childPartsToSkip.AddRange(GetBodyPartDescendants(currentArtificialPartHediff.part));
+                //Changed part to Part because part is private and the IDE was complaining
+                childPartsToSkip.AddRange(GetBodyPartDescendants(currentArtificialPartHediff.Part));
             }
 
             // Only ignore Missing part Hediffs from body parts that have been replaced
-            patientTreatableHediffs.RemoveAll((Hediff x) => childPartsToSkip.Any(p => x.part == p) && x.def.hediffClass == typeof(Hediff_MissingPart));
+            //Changed part to Part because part is private and the IDE was complaining
+            patientTreatableHediffs.RemoveAll((Hediff x) => childPartsToSkip.Any(p => x.Part == p) && x.def.hediffClass == typeof(Hediff_MissingPart));
 
             // Ignore hediffs/injuries that are:
             // - Not explicitly whitelisted as always treatable
@@ -362,6 +364,10 @@ namespace MedPod
             // (Pawns tend to get up as soon as they are "no longer incapable of walking")
             AnesthesizePatient(patientPawn);
 
+            // Tend all bleeding hediffs immediately so the pawn doesn't die after being anesthetized by the MedPod
+            // The Hediff will be completely removed once the Medpod is done with the Healing process
+            StabilizePatient(patientPawn);
+            
             // Calculate individual and total cumulative treatment time for each hediff/injury
             foreach (Hediff currentHediff in patientTreatableHediffs)
             {
@@ -376,15 +382,26 @@ namespace MedPod
 
                 TotalHealingTicks += (int)Math.Ceiling(GetHediffNormalizedSeverity(currentHediff) * MaxHealingTicks);
 
-                // Tend all bleeding hediffs immediately so the pawn doesn't die after being anesthetized by the MedPod
-                // The Hediff will be completely removed once the Medpod is done with the Healing process
-                if (currentHediff.Bleeding)
-                {
-                    currentHediff.Tended(1);
-                }
+               
             }
         }
 
+        void StabilizePatient(Pawn patientPawn)
+        {
+            
+            foreach (Hediff currentHediff in patientTreatableHediffs.Where(currentHediff => currentHediff.Bleeding))
+            {
+                //In order to tend the injury we need to replace the Heddif since we are only are getting a copy of it
+                //We need to remove the old hediff or the part will go missing
+                patientPawn.health.RemoveHediff(currentHediff);
+                    
+                currentHediff.Tended(1);
+                    
+                //reaply Hediff with the tended injury;
+                patientPawn.health.AddHediff(currentHediff, currentHediff.Part);
+            }
+        }
+        
         private float GetHediffNormalizedSeverity(Hediff specificHediff = null)
         {
             Hediff currentHediff = (specificHediff == null) ? patientTreatableHediffs.First() : specificHediff;
