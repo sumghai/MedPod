@@ -380,7 +380,7 @@ namespace MedPod
                 // The Hediff will be completely removed once the Medpod is done with the Healing process
                 if (currentHediff.Bleeding)
                 {
-                    currentHediff.Tended(1);
+                    currentHediff.Tended(1); // TODO - Replace with new method name once it no longer has a temporary name
                 }
             }
         }
@@ -516,7 +516,7 @@ namespace MedPod
                             // Don't remove 'good' treatable Hediffs but instead treat them with 100% quality
                             if (!patientTreatableHediffs.First().def.isBad)
                             {
-                                patientTreatableHediffs.First().Tended(1);
+                                patientTreatableHediffs.First().Tended(1); // TODO - Replace with new method name once it no longer has a temporary name
                             }
                             else
                             {
