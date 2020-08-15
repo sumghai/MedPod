@@ -470,7 +470,7 @@ namespace MedPod
                     }
 
                     if (status == MedPodStatus.PatientDischarged)
-                    {
+                    {                       
                         // Wake patient up normally, as treatment was already completed when power was interrupted
                         WakePatient(PatientPawn);
                     }
@@ -513,8 +513,8 @@ namespace MedPod
                             break;
 
                         case MedPodStatus.HealingFinished:
-                            // Don't remove 'good' treatable Hediffs but instead treat them with 100% quality
-                            if (!patientTreatableHediffs.First().def.isBad)
+                            // Don't remove 'good' treatable Hediffs but instead treat them with 100% quality (unless the 'good' Hediff is whitelisted as always treatable)
+                            if (!patientTreatableHediffs.First().def.isBad && !AlwaysTreatableHediffs.Contains(patientTreatableHediffs.First().def))
                             {
                                 patientTreatableHediffs.First().Tended(1); // TODO - Replace with new method name once it no longer has a temporary name
                             }
