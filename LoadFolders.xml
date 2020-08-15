@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <loadFolders>
-	<default>
-		<li>Common</li>
-		<li IfModActive="Ludeon.Rimworld.Royalty">Royalty</li>
-	</default>
 	<v1.1>
 		<li>Common</li>
 		<li>1.1</li>
