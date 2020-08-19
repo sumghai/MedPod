@@ -223,12 +223,12 @@ namespace MedPod
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.def.label.CapitalizeFirst()) + ")", null);
                     yield break;
                 }
-                if (!MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn))
+                if (!MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn, AlwaysTreatableHediffs))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn) && !powerComp.PowerOn)
+                if (MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn, AlwaysTreatableHediffs) && !powerComp.PowerOn)
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_Unpowered".Translate() + ")", null);
                     yield break;

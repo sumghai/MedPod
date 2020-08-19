@@ -6,7 +6,7 @@ namespace MedPod
 {
     public static class MedPodHealthAIUtility
     {
-        public static bool ShouldPawnSeekMedPod(Pawn patientPawn)
+        public static bool ShouldPawnSeekMedPod(Pawn patientPawn, List<HediffDef> alwaysTreatableHediffs)
         {
             return patientPawn.Downed
                     // hasHediffsNeedingTend
@@ -22,7 +22,9 @@ namespace MedPod
                     // hasChronicDiseases
                     || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.def.chronic)
                     // hasAddictions
-                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.def.IsAddiction);
+                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.def.IsAddiction)
+                    // hasAlwaysTreatableHediffs
+                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => alwaysTreatableHediffs.Contains(x.def));
         }
 
         public static bool IsValidRaceForMedPod(Pawn patientPawn, List<string> disallowedRaces)

@@ -119,7 +119,7 @@ namespace MedPod
                     // Add MedPod-specific fail conditions
                     // - If the target bed is a MedPod AND
                     // - If the pawn does not need to use the MedPod OR the MedPod has no power
-                    __result = !bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor);
+                    __result = !bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor, bedMedPod.AlwaysTreatableHediffs);
                     return false; // Skip original code
                 }
                 return true; // Run original code
@@ -162,7 +162,7 @@ namespace MedPod
                 Building_Bed building_Bed = (Building_Bed)curJob.GetTarget(___bedOrRestSpotIndex).Thing;
                 patientPawn.GainComfortFromCellIfPossible();
 
-                if (building_Bed is Building_BedMedPod bedMedPod && bedMedPod.powerComp.PowerOn && MedPodHealthAIUtility.ShouldPawnSeekMedPod(patientPawn))
+                if (building_Bed is Building_BedMedPod bedMedPod && bedMedPod.powerComp.PowerOn && MedPodHealthAIUtility.ShouldPawnSeekMedPod(patientPawn, bedMedPod.AlwaysTreatableHediffs))
                 {
                     // Keep pawn asleep in MedPod as long as they need to use it
                     curDriver.asleep = true;
@@ -182,7 +182,7 @@ namespace MedPod
         {
             static void Postfix(ref bool __result, Thing bedThing, Pawn sleeper)
             {
-                if (bedThing is Building_BedMedPod bedMedPod && (!bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(sleeper) || !MedPodHealthAIUtility.IsValidRaceForMedPod(sleeper, bedMedPod.DisallowedRaces)))
+                if (bedThing is Building_BedMedPod bedMedPod && (!bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(sleeper, bedMedPod.AlwaysTreatableHediffs) || !MedPodHealthAIUtility.IsValidRaceForMedPod(sleeper, bedMedPod.DisallowedRaces)))
                 {
                     __result = false;
                 }
