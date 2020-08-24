@@ -101,7 +101,7 @@
 			<ComponentIndustrial>6</ComponentIndustrial>
 			<ComponentSpacer>4</ComponentSpacer>
 			<IsolinearProcessor>1</IsolinearProcessor>
-			<Plasteel>160</Plasteel>
+			<Plasteel>200</Plasteel>
 			<Steel>80</Steel>
 		</costList>
 		<building>

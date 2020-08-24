@@ -48,7 +48,7 @@
 			<ComponentSpacer>4</ComponentSpacer>
 			<Gold>50</Gold>
 			<IsolinearProcessor>1</IsolinearProcessor>
-			<Plasteel>40</Plasteel>
+			<Plasteel>150</Plasteel>
 			<Steel>80</Steel>
 		</costList>
 		<building>
