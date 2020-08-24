@@ -28,6 +28,7 @@
 		<uiIconPath>UI/MedPod_Lux</uiIconPath>
 		<castEdgeShadows>false</castEdgeShadows>
 		<statBases>
+			<MarketValue>7500</MarketValue>
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToBuild>2800</WorkToBuild>
 			<Mass>35</Mass>

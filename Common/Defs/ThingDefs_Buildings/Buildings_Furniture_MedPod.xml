@@ -87,6 +87,7 @@
 		<uiIconPath>UI/MedPod_Standard</uiIconPath>
 		<castEdgeShadows>false</castEdgeShadows>
 		<statBases>
+			<MarketValue>5000</MarketValue>
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToBuild>2800</WorkToBuild>
 			<Mass>35</Mass>
