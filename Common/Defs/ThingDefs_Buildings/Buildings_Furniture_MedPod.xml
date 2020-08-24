@@ -90,7 +90,7 @@
 			<MarketValue>5000</MarketValue>
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToBuild>2800</WorkToBuild>
-			<Mass>35</Mass>
+			<Mass>350</Mass>
 			<Flammability>1.0</Flammability>
 			<BedRestEffectiveness>1</BedRestEffectiveness>
 			<Comfort>0.80</Comfort>
