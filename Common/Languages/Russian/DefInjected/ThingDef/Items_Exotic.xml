@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: Isolinear Processor -->
+	<IsolinearProcessor.label>Изолинейный процессор</IsolinearProcessor.label>
+
+	<!-- EN: A high-density optical computational module with advanced data extrapolation and processing capabilities. The key component of MedPods. -->
+	<IsolinearProcessor.description>Вычислительный блок на основе оптоквантовых элементов высокой плотности. Обладает расширенными возможностями в экстраполировании данных и прочих расчётах. Ключевой компонент медкапсулы.</IsolinearProcessor.description>
+
+</LanguageData>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: MedPod -->
+	<MedPodStandard.label>Медкапсула</MedPodStandard.label>
+
+	<!-- EN: An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
+	<MedPodStandard.description>Продвинутая медицицинская постель, оснащённая системой клеточно-атомарной регенерации. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭто обычное устройство широко распространено в общественных клиниках миров-утопий.</MedPodStandard.description>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_MedPodStandard.label>Медкапсула (проект)</Blueprint_MedPodStandard.label>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_Install_MedPodStandard.label>Медкапсула (проект)</Blueprint_Install_MedPodStandard.label>
+	
+	<!-- EN: MedPod (building)-->
+	<Frame_MedPodStandard.label>Медкапсула (строительство)</Frame_MedPodStandard.label>
+	
+	<!-- EN: An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
+	<Frame_MedPodStandard.description>Продвинутая медицицинская постель, оснащённая системой клеточно-атомарной регенерации. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭто обычное устройство широко распространено в общественных клиниках миров-утопий.</Frame_MedPodStandard.description>
+
+	<!-- Royalty-exclusive content -->
+	<!-- EN: MedPod Lux -->
+	<MedPodLux.label>Медкапсула класса Люкс</MedPodLux.label>
+	
+	<!-- An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
+	<MedPodLux.description>Продвинутая медицицинская постель, оснащённая системой клеточно-атомарной регенерации. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭта модель - люксовая со вставками из золота и гелевой кушеткой с эффектом памяти. Скорость диагностики и лечения выше чем у стандартной модели, однако энергопотребление намного больше.</MedPodLux.description>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_MedPodLux.label>Медкапсула класса Люкс (проект)</Blueprint_MedPodLux.label>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_Install_MedPodLux.label>Медкапсула класса Люкс (проект)</Blueprint_Install_MedPodLux.label>
+	
+	<!-- EN: MedPod (building)-->
+	<Frame_MedPodLux.label>Медкапсула Люкс (строительство)</Frame_MedPodLux.label>
+	
+	<!-- An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
+	<Frame_MedPodLux.description>Продвинутая медицицинская постель, оснащённая системой клеточно-атомарной регенерации. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭта модель - люксовая со вставками из золота и гелевой кушеткой с эффектом памяти. Скорость диагностики и лечения выше чем у стандартной модели, однако энергопотребление намного больше.</Frame_MedPodLux.description>
+
+</LanguageData>

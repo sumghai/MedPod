@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	
+	<MedPod_InspectorStatus_NoPower>Ошибка: отсутствует питание</MedPod_InspectorStatus_NoPower>
+	
+	<MedPod_InspectorStatus_DiagnosisProgress>Диагностика ({0}%)</MedPod_InspectorStatus_DiagnosisProgress>
+	
+	<MedPod_InspectorStatus_DiagnosisComplete>Диагностика завершена</MedPod_InspectorStatus_DiagnosisComplete>
+	
+	<MedPod_InspectorStatus_HealingProgress>Реатомизация ({0}%)</MedPod_InspectorStatus_HealingProgress>
+	
+	<MedPod_InspectorStatus_PatientDischarged>100% завершено</MedPod_InspectorStatus_PatientDischarged>
+	
+	<MedPod_InspectorStatus_Idle>Готов к работе</MedPod_InspectorStatus_Idle>
+	
+	<MedPod_Stat_PowerConsumptionDiagnosis_Label>Энергопотребление (Диагностика)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
+	
+	<MedPod_Stat_PowerConsumptionDiagnosis_Desc>Энергопотребление медкапсулы в режиме диагностики.</MedPod_Stat_PowerConsumptionDiagnosis_Desc>
+	
+	<MedPod_Stat_PowerConsumptionHealing_Label>Энергопотребление (Лечение)</MedPod_Stat_PowerConsumptionHealing_Label>
+	
+	<MedPod_Stat_PowerConsumptionHealing_Desc>Энергопотребление медкапсулы в режиме лечения.</MedPod_Stat_PowerConsumptionHealing_Desc>
+	
+	<MedPod_Stat_DiagnosisTime_Label>Продолжительность диагностики</MedPod_Stat_DiagnosisTime_Label>
+	
+	<MedPod_Stat_DiagnosisTime_Desc>Сколько времени занимает диагностика пациента.</MedPod_Stat_DiagnosisTime_Desc>
+	
+	<MedPod_Stat_PerHediffHealingTime_Label>Среднее время лечения</MedPod_Stat_PerHediffHealingTime_Label>
+	
+	<MedPod_Stat_PerHediffHealingTime_Desc>Сколько времени в среднем уходит на лечение одного из недугов.\n\nКак правило оно зависит от тяжести этого недуга (царапину исцелить легче, чем рваную рану).</MedPod_Stat_PerHediffHealingTime_Desc>
+	
+	<MedPod_Stat_TimeSeconds>{0} сек.</MedPod_Stat_TimeSeconds>
+	
+	<MedPod_Message_TreatmentComplete>Лечение в медкапсуле завершено для {1_label}.</MedPod_Message_TreatmentComplete>
+	
+	<MedPod_Message_TreatmentInterrupted>Лечение в медкапсуле прервано для {1_label}!</MedPod_Message_TreatmentInterrupted>
+	
+	<MedPod_FloatMenu_RaceNotAllowed>Медкапсула не может восстановить {0}s!</MedPod_FloatMenu_RaceNotAllowed>
+	
+	<MedPod_FloatMenu_Unpowered>Медкапсула не подключена к сети</MedPod_FloatMenu_Unpowered>
+	
+	<MedPod_SurgeryProhibited_PatientUsingMedPod>пациент использует медкапсулу</MedPod_SurgeryProhibited_PatientUsingMedPod>
+	
+	<MedPod_CommandGizmoDisabled_MedPodInUse>{0} занято.</MedPod_CommandGizmoDisabled_MedPodInUse>
+
+</LanguageData>
