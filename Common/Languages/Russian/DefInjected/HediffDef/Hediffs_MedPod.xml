@@ -5,7 +5,7 @@
 	<MedPod_InducedComa.label>Индуцированная искусственная кома</MedPod_InducedComa.label>
 
 	<!-- EN: Harmonically-shifted delta waves neuroelectrically applied to the cerebal cortex mimics the effects of chemical anesthesia, rendering creatures unconscious. -->
-	<MedPod_InducedComa.description>Искусственная кома, вызванная воздействием внешних электромагнитных дельта-волн на кору головного мозга. Эффект схожий с действием традиционных химических анестетиков отключает у пациента сознание.</MedPod_InducedComa.description>
+	<MedPod_InducedComa.description>Искусственная кома, вызванная внешним воздействием электромагнитных дельта-волн на кору головного мозга. Эффект схожий с действием традиционных химических анестетиков отключает у пациента сознание.</MedPod_InducedComa.description>
 
 	<!-- EN: cortical stimulation -->
 	<MedPod_CorticalStimulation.label>Кортикальная стимуляция</MedPod_CorticalStimulation.label>
