@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: delta wave induced coma -->
+	<MedPod_InducedComa.label>Индуцированная искусственная кома</MedPod_InducedComa.label>
+
+	<!-- EN: Harmonically-shifted delta waves neuroelectrically applied to the cerebal cortex mimics the effects of chemical anesthesia, rendering creatures unconscious. -->
+	<MedPod_InducedComa.description>Искусственная кома, вызванная внешним воздействием электромагнитных дельта-волн на кору головного мозга. Эффект схожий с действием традиционных химических анестетиков отключает у пациента сознание.</MedPod_InducedComa.description>
+
+	<!-- EN: cortical stimulation -->
+	<MedPod_CorticalStimulation.label>Кортикальная стимуляция</MedPod_CorticalStimulation.label>
+
+	<!-- EN: Neuroelectrical stimulation applied to the cerebal cortex, gently restoring consciousness in creatures. -->
+	<MedPod_CorticalStimulation.description>Нейроэлектростимуляция коры головного мозга, направленная на возвращение пациента в сознание.</MedPod_CorticalStimulation.description>
+
+	<!-- cortical stimulation (improper) -->
+	<MedPod_CorticalStimulationImproper.label>Кортикальная стимуляция (нарушена)</MedPod_CorticalStimulationImproper.label>
+
+	<!-- Neuroelectrical stimulation improperly applied to the cerebal cortex, abruptly restoring consciousness in creatures.\n\nUsually occurs when a MedPod loses power or otherwise malfunctions while in use. -->
+	<MedPod_CorticalStimulationImproper.description>Прерванная нейроэлектростимуляция коры головного мозга. Вызывает резкое, болезненное прекращение искусственной комы. Как правило, происходит при перебоях электропитания медкапсулы.</MedPod_CorticalStimulationImproper.description>
+
+</LanguageData>

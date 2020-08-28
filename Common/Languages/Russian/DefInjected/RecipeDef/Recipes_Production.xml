@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: Disassemble AI persona core -->
+	<MedPodDisassembleAiCore.label>Разобрать Ядро ИИ</MedPodDisassembleAiCore.label>
+
+	<!-- EN: Disassemble an AI persona core for useful parts. -->
+	<MedPodDisassembleAiCore.description>Разобрать Ядро ИИ для получения полезных комплектующих.</MedPodDisassembleAiCore.description>
+
+	<!-- EN: Disassembling AI persona core. -->
+	<MedPodDisassembleAiCore.jobString>Разбирает Ядро ИИ</MedPodDisassembleAiCore.jobString>
+
+</LanguageData>
