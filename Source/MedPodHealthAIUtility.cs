@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
@@ -16,7 +17,7 @@ namespace MedPod
                     // hasImmunizableNotImmuneHediff
                     || patientPawn.health.hediffSet.HasImmunizableNotImmuneHediff()
                     // hasMissingBodyParts
-                    || !patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().NullOrEmpty()
+                    || (!patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().NullOrEmpty() && !neverTreatableHediffs.Contains(HediffDefOf.MissingBodyPart))
                     // hasPermanentInjuries
                     || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.IsPermanent() && !neverTreatableHediffs.Contains(x.def))
                     // hasChronicDiseases
