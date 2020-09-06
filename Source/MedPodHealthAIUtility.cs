@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
@@ -6,7 +7,7 @@ namespace MedPod
 {
     public static class MedPodHealthAIUtility
     {
-        public static bool ShouldPawnSeekMedPod(Pawn patientPawn, List<HediffDef> alwaysTreatableHediffs)
+        public static bool ShouldPawnSeekMedPod(Pawn patientPawn, List<HediffDef> alwaysTreatableHediffs, List<HediffDef> neverTreatableHediffs)
         {
             return patientPawn.Downed
                     // hasHediffsNeedingTend
@@ -16,13 +17,13 @@ namespace MedPod
                     // hasImmunizableNotImmuneHediff
                     || patientPawn.health.hediffSet.HasImmunizableNotImmuneHediff()
                     // hasMissingBodyParts
-                    || !patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().NullOrEmpty()
+                    || (!patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().NullOrEmpty() && !neverTreatableHediffs.Contains(HediffDefOf.MissingBodyPart))
                     // hasPermanentInjuries
-                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.IsPermanent())
+                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.IsPermanent() && !neverTreatableHediffs.Contains(x.def))
                     // hasChronicDiseases
-                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.def.chronic)
+                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.def.chronic && !neverTreatableHediffs.Contains(x.def))
                     // hasAddictions
-                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.def.IsAddiction)
+                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.def.IsAddiction && !neverTreatableHediffs.Contains(x.def))
                     // hasAlwaysTreatableHediffs
                     || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => alwaysTreatableHediffs.Contains(x.def));
         }
