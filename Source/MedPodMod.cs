@@ -166,6 +166,11 @@ namespace MedPod
                 {
                     // Keep pawn asleep in MedPod as long as they need to use it
                     curDriver.asleep = true;
+
+                    // Fulfil pawn's rest need while they are asleep in MedPod
+                    float restEffectiveness = (building_Bed == null || !building_Bed.def.statBases.StatListContains(StatDefOf.BedRestEffectiveness)) ? StatDefOf.BedRestEffectiveness.valueIfMissing : building_Bed.GetStatValue(StatDefOf.BedRestEffectiveness);
+                    patientPawn.needs.rest.TickResting(restEffectiveness);
+
                     return false; // Skip original code
                 }
 
