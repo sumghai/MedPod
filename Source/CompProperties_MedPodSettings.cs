@@ -22,6 +22,24 @@ namespace MedPod
             compClass = typeof(CompMedPodSettings);
         }
 
+        public override IEnumerable<string> ConfigErrors(ThingDef parentDef)
+        {
+            foreach (string item in base.ConfigErrors(parentDef))
+            {
+                yield return item;
+            }
+            if (maxDiagnosisTime > 30f)
+            {
+                yield return $"{nameof(CompProperties_MedPodSettings)}.{nameof(maxDiagnosisTime)} above allowed maximum; value capped at 30 seconds";
+                maxDiagnosisTime = 30f;
+            }
+            if (maxPerHediffHealingTime > 30f)
+            {
+                yield return $"{nameof(CompProperties_MedPodSettings)}.{nameof(maxPerHediffHealingTime)} above allowed maximum; value capped at 30 seconds";
+                maxPerHediffHealingTime = 30f;
+            }
+        }
+
         [DebuggerHidden]
         public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
         {
