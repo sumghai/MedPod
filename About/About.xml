@@ -4,10 +4,13 @@
 	<name>MedPod</name>
 	<author>sumghai</author>
 	<packageId>sumghai.medpod</packageId>
-	<description>Adds advanced regenerative medical beds capable of treating virtually every injury and disease.\n\nv1.1.1</description>
+	<description>Adds advanced regenerative medical beds capable of treating virtually every injury and disease.\n\nv1.1.2</description>
 	<url/>
 	<supportedVersions>
 		<li>1.1</li>
 		<li>1.2</li>
 	</supportedVersions>
+	<incompatibleWith>
+		<li>Unknown.Perevod.sumghai.medpod</li>
+	</incompatibleWith>
 </ModMetaData>
