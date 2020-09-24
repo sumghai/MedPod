@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	
+	<MedPod_InspectorStatus_NoPower>Fehler: Kein Strom</MedPod_InspectorStatus_NoPower>
+	
+	<MedPod_InspectorStatus_DiagnosisProgress>Diagnostiziere ({0}%)</MedPod_InspectorStatus_DiagnosisProgress>
+	
+	<MedPod_InspectorStatus_DiagnosisComplete>Diagnose vollständig</MedPod_InspectorStatus_DiagnosisComplete>
+	
+	<MedPod_InspectorStatus_HealingProgress>Reatomisierung ({0}%)</MedPod_InspectorStatus_HealingProgress>
+	
+	<MedPod_InspectorStatus_PatientDischarged>100% frei</MedPod_InspectorStatus_PatientDischarged>
+	
+	<MedPod_InspectorStatus_Idle>Idle</MedPod_InspectorStatus_Idle>
+	
+	<MedPod_Stat_PowerConsumptionDiagnosis_Label>Stromverbrauch (Diagnose)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
+	
+	<MedPod_Stat_PowerConsumptionDiagnosis_Desc>Die Strommenge, die dieser MedPod im Diagnosemodus aus dem Stromnetz bezieht.</MedPod_Stat_PowerConsumptionDiagnosis_Desc>
+	
+	<MedPod_Stat_PowerConsumptionHealing_Label>Stromverbrauch (Behandlung)</MedPod_Stat_PowerConsumptionHealing_Label>
+	
+	<MedPod_Stat_PowerConsumptionHealing_Desc>Die Strommenge, die dieser MedPod im Behandlungsmodus aus dem Stromnetz bezieht.</MedPod_Stat_PowerConsumptionHealing_Desc>
+	
+	<MedPod_Stat_DiagnosisTime_Label>Diagnosezeit</MedPod_Stat_DiagnosisTime_Label>
+	
+	<MedPod_Stat_DiagnosisTime_Desc>Wie lange es dauert, bis dieser MedPod einen Patienten diagnostiziert hat.</MedPod_Stat_DiagnosisTime_Desc>
+	
+	<MedPod_Stat_PerHediffHealingTime_Label>Durchschn. Behandlungszeit pro Diagnose</MedPod_Stat_PerHediffHealingTime_Label>
+	
+	<MedPod_Stat_PerHediffHealingTime_Desc>Wie lange es (im Durchschnitt) dauert, bis dieser MedPod die einzelnen Erkrankungen eines Patienten behandelt.\n\nBeachten Sie, dass dies entsprechend der Schwere der Erkrankung skaliert wird. Die Behandlung weniger schwerer Verletzungen dauert z.B. weniger lange.</MedPod_Stat_PerHediffHealingTime_Desc>
+	
+	<MedPod_Stat_TimeSeconds>{0} s</MedPod_Stat_TimeSeconds>
+	
+	<MedPod_Message_TreatmentComplete>MedPod-Behandlung abgeschlossen für {1_label}.</MedPod_Message_TreatmentComplete>
+	
+	<MedPod_Message_TreatmentInterrupted>MedPod-Behandlung unterbrochen für {1_label}.</MedPod_Message_TreatmentInterrupted>
+	
+	<MedPod_FloatMenu_RaceNotAllowed>MedPod kann {0}s nicht behandeln.</MedPod_FloatMenu_RaceNotAllowed>
+	
+	<MedPod_FloatMenu_Unpowered>MedPod hat kein Strom</MedPod_FloatMenu_Unpowered>
+	
+	<MedPod_SurgeryProhibited_PatientUsingMedPod>Patient benutzt MedPod</MedPod_SurgeryProhibited_PatientUsingMedPod>
+	
+	<MedPod_CommandGizmoDisabled_MedPodInUse>{0} wird gerade benutzt.</MedPod_CommandGizmoDisabled_MedPodInUse>
+
+</LanguageData>
