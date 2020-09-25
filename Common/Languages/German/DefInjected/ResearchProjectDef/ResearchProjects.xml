@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: Atomic Cellular Regeneration -->
+	<AtomicCellularRegeneration.label>Atomare Zellregeneration</AtomicCellularRegeneration.label>
+
+	<!-- EN: Allows the construction of MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by rapidly repairing living cells on an atomic level. -->
+	<AtomicCellularRegeneration.description>Ermöglicht den Bau von MedPods, fortschrittlichen Krankenhausbetten, die in der Lage sind, eine Vielzahl von Krankheiten und Verletzungen automatisch zu behandeln, indem lebende Zellen auf atomarer Ebene schnell repariert werden.</AtomicCellularRegeneration.description>
+
+	<!-- EN: About: Building MedPods -->
+	<AtomicCellularRegeneration.discoveredLetterTitle>Über: Erstellen von MedPods</AtomicCellularRegeneration.discoveredLetterTitle>
+
+	<!-- EN: You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors several ways:\n\n-Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n-Some quests are rewarded with Isolinear Processors.\n-Disassemble an AI persona core to extract Isolinear Processors (along with various other components). -->
+	<AtomicCellularRegeneration.discoveredLetterText>Du verfügst jetzt über die Technologie um MedPod-Betten zu bauen - aber jeder MedPod benötigt eine spezielle isolineare Prozessorkomponente. Die isolineare Prozessoren können auf verschiedene Arten gesammelt werden:\n\n-Händler für exotische Waren, Orbital- oder Caravan-Händler verkaufen isolineare Prozessoren. Lade sie ein oder warte auf sie.\n-Einige Quests werden mit isolinearen Prozessoren belohnt.\n-Zerlegen eines AI-Persona-Kerns, um isolineare Prozessoren (zusammen mit verschiedenen anderen Komponenten) zu extrahieren.</AtomicCellularRegeneration.discoveredLetterText>
+
+</LanguageData>
