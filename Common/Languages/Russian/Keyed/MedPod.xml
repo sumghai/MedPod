@@ -1,46 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	
+	<!-- EN: Error: No power -->
 	<MedPod_InspectorStatus_NoPower>Ошибка: отсутствует питание</MedPod_InspectorStatus_NoPower>
 	
+	<!-- EN: Diagnosing ({0}%) -->
 	<MedPod_InspectorStatus_DiagnosisProgress>Диагностика ({0}%)</MedPod_InspectorStatus_DiagnosisProgress>
 	
+	<!-- EN: Diagnosis Complete -->
 	<MedPod_InspectorStatus_DiagnosisComplete>Диагностика завершена</MedPod_InspectorStatus_DiagnosisComplete>
 	
+	<!-- EN: Reatomizing ({0}%) -->
 	<MedPod_InspectorStatus_HealingProgress>Реатомизация ({0}%)</MedPod_InspectorStatus_HealingProgress>
 	
+	<!-- EN: 100% Clear -->
 	<MedPod_InspectorStatus_PatientDischarged>100% завершено</MedPod_InspectorStatus_PatientDischarged>
 	
+	<!-- EN: Idle -->
 	<MedPod_InspectorStatus_Idle>Готов к работе</MedPod_InspectorStatus_Idle>
 	
+	<!-- EN: Power consumption (Diagnosis) -->
 	<MedPod_Stat_PowerConsumptionDiagnosis_Label>Энергопотребление (Диагностика)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
 	
+	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Diagnosis mode. -->
 	<MedPod_Stat_PowerConsumptionDiagnosis_Desc>Энергопотребление медкапсулы в режиме диагностики.</MedPod_Stat_PowerConsumptionDiagnosis_Desc>
 	
+	<!-- EN: Power consumption (Treatment) -->
 	<MedPod_Stat_PowerConsumptionHealing_Label>Энергопотребление (Лечение)</MedPod_Stat_PowerConsumptionHealing_Label>
 	
+	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Treatment mode. -->
 	<MedPod_Stat_PowerConsumptionHealing_Desc>Энергопотребление медкапсулы в режиме лечения.</MedPod_Stat_PowerConsumptionHealing_Desc>
 	
+	<!-- EN: Diagnosis time -->
 	<MedPod_Stat_DiagnosisTime_Label>Продолжительность диагностики</MedPod_Stat_DiagnosisTime_Label>
 	
+	<!-- EN: How long it takes for this MedPod to diagnose a patient. -->
 	<MedPod_Stat_DiagnosisTime_Desc>Сколько времени занимает диагностика пациента.</MedPod_Stat_DiagnosisTime_Desc>
 	
+	<!-- EN: Avg. per-condition treatment time -->
 	<MedPod_Stat_PerHediffHealingTime_Label>Среднее время лечения</MedPod_Stat_PerHediffHealingTime_Label>
 	
+	<!-- EN: How long it takes (on average) for this MedPod to treat each medical condition on a patient.\n\nNote that this is scaled according to the severity of the condition - for instance, less severe injuries will take less time to treat. -->
 	<MedPod_Stat_PerHediffHealingTime_Desc>Сколько времени в среднем уходит на лечение одного из недугов.\n\nКак правило оно зависит от тяжести этого недуга (царапину исцелить легче, чем рваную рану).</MedPod_Stat_PerHediffHealingTime_Desc>
 	
+	<!-- EN: {0} s -->
 	<MedPod_Stat_TimeSeconds>{0} сек.</MedPod_Stat_TimeSeconds>
 	
+	<!-- EN: MedPod treatment complete for {1_label}. -->
 	<MedPod_Message_TreatmentComplete>Лечение в медкапсуле завершено для {1_label}.</MedPod_Message_TreatmentComplete>
 	
+	<!-- EN: MedPod treatment interrupted for {1_label}. -->
 	<MedPod_Message_TreatmentInterrupted>Лечение в медкапсуле прервано для {1_label}!</MedPod_Message_TreatmentInterrupted>
 	
+	<!-- EN: MedPod cannot treat {0}s -->
 	<MedPod_FloatMenu_RaceNotAllowed>Медкапсула не может восстановить {0}s!</MedPod_FloatMenu_RaceNotAllowed>
 	
+	<!-- EN: MedPod not powered -->
 	<MedPod_FloatMenu_Unpowered>Медкапсула не подключена к сети</MedPod_FloatMenu_Unpowered>
 	
+	<!-- EN: patient using MedPod -->
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>пациент использует медкапсулу</MedPod_SurgeryProhibited_PatientUsingMedPod>
 	
+	<!-- EN: {0} is in use. -->
 	<MedPod_CommandGizmoDisabled_MedPodInUse>{0} занято.</MedPod_CommandGizmoDisabled_MedPodInUse>
 
 </LanguageData>
