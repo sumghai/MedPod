@@ -96,7 +96,7 @@ namespace MedPod
             static MethodBase TargetMethod()
             {
                 predicateClass = typeof(Toils_Bed).GetNestedTypes(AccessTools.all)
-               .FirstOrDefault(t => t.FullName.Contains("c__DisplayClass3_0"));
+               .FirstOrDefault(t => t.FullName != null && t.FullName.Contains("c__DisplayClass3_0"));
                 if (predicateClass == null)
                 {
                     Log.Error("MedPod :: Could not find Toils_Bed:c__DisplayClass3_0");
@@ -137,7 +137,7 @@ namespace MedPod
             static MethodBase TargetMethod()
             {
                 predicateClass = typeof(Toils_LayDown).GetNestedTypes(AccessTools.all)
-               .FirstOrDefault(t => t.FullName.Contains("c__DisplayClass2_0"));
+               .FirstOrDefault(t => t.FullName != null && t.FullName.Contains("c__DisplayClass2_0"));
                 if (predicateClass == null)
                 {
                     Log.Error("MedPod :: Could not find Toils_LayDown:c__DisplayClass2_0");
@@ -167,10 +167,12 @@ namespace MedPod
                     // Keep pawn asleep in MedPod as long as they need to use it
                     curDriver.asleep = true;
 
-                    // Fulfil pawn's rest need while they are asleep in MedPod
-                    float restEffectiveness = (building_Bed == null || !building_Bed.def.statBases.StatListContains(StatDefOf.BedRestEffectiveness)) ? StatDefOf.BedRestEffectiveness.valueIfMissing : building_Bed.GetStatValue(StatDefOf.BedRestEffectiveness);
-                    patientPawn.needs.rest.TickResting(restEffectiveness);
-
+                    // Fulfil pawn's rest need while they are asleep in MedPod if they're not rest immune (e.g. Circadian Half-Cycler)
+                    if (patientPawn.needs.rest != null)
+                    {
+                        float restEffectiveness = !building_Bed.def.statBases.StatListContains(StatDefOf.BedRestEffectiveness) ? StatDefOf.BedRestEffectiveness.valueIfMissing : building_Bed.GetStatValue(StatDefOf.BedRestEffectiveness);
+                        patientPawn.needs.rest.TickResting(restEffectiveness);
+                    }
                     return false; // Skip original code
                 }
 
@@ -228,14 +230,14 @@ namespace MedPod
             static bool Prefix(ref Building_Bed __result, Pawn pawn)
             {
                 Building_Bed currentBed = pawn.CurrentBed();
-                if (pawn.InBed() && (currentBed != null) && currentBed.Medical && currentBed.def.building.bed_humanlike)
+                if (pawn.InBed() && currentBed != null && currentBed.Medical && currentBed.def.building.bed_humanlike)
                 {
                     __result = currentBed;
                     return false;
                 }
                 for (int i = 0; i < 2; i++)
                 {
-                    Danger maxDanger = (i == 0) ? Danger.None : Danger.Deadly;
+                    Danger maxDanger = i == 0 ? Danger.None : Danger.Deadly;
                     Building_Bed building_Bed = (Building_BedMedPod)GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, ThingRequest.ForGroup(ThingRequestGroup.Bed), PathEndMode.OnCell, TraverseParms.For(pawn), 9999f, (Thing b) => (int)b.Position.GetDangerFor(pawn, pawn.Map) <= (int)maxDanger && b is Building_BedMedPod && RestUtility.IsValidBedFor(b, pawn, pawn, pawn.IsPrisoner, checkSocialProperness: false, allowMedBedEvenIfSetToNoCare: true));
                     if (building_Bed != null)
                     {
