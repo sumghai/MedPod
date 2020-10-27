@@ -347,11 +347,11 @@ namespace MedPod
 
             foreach (Hediff currentArtificialPartHediff in artificialPartHediffs)
             {
-                childPartsToSkip.AddRange(GetBodyPartDescendants(currentArtificialPartHediff.part));
+                childPartsToSkip.AddRange(GetBodyPartDescendants(currentArtificialPartHediff.Part));
             }
 
             // Only ignore Missing part Hediffs from body parts that have been replaced
-            patientTreatableHediffs.RemoveAll((Hediff x) => childPartsToSkip.Any(p => x.part == p) && x.def.hediffClass == typeof(Hediff_MissingPart));
+            patientTreatableHediffs.RemoveAll((Hediff x) => childPartsToSkip.Any(p => x.Part == p) && x.def.hediffClass == typeof(Hediff_MissingPart));
 
             // Ignore hediffs/injuries that are:
             // - Not explicitly whitelisted as always treatable
@@ -604,7 +604,7 @@ namespace MedPod
             {
                 DiagnosingTicks--;
                 powerComp.PowerOutput = -DiagnosingPowerConsumption;
-                PatientPawn.needs.food.CurLevelPercentage = 1f;
+                if (PatientPawn != null) PatientPawn.needs.food.CurLevelPercentage = 1f;
 
                 if (DiagnosingTicks == 0)
                 {
@@ -617,7 +617,7 @@ namespace MedPod
                 HealingTicks--;
                 ProgressHealingTicks++;
                 powerComp.PowerOutput = -HealingPowerConsumption;
-                PatientPawn.needs.food.CurLevelPercentage = 1f;
+                if (PatientPawn != null) PatientPawn.needs.food.CurLevelPercentage = 1f;
 
                 if (HealingTicks == 0)
                 {
