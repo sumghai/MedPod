@@ -604,7 +604,10 @@ namespace MedPod
             {
                 DiagnosingTicks--;
                 powerComp.PowerOutput = -DiagnosingPowerConsumption;
-                if (PatientPawn != null) PatientPawn.needs.food.CurLevelPercentage = 1f;
+                if (PatientPawn != null)
+                {
+                    PatientPawn.needs.food.CurLevelPercentage = 1f;
+                }
 
                 if (DiagnosingTicks == 0)
                 {
@@ -617,7 +620,10 @@ namespace MedPod
                 HealingTicks--;
                 ProgressHealingTicks++;
                 powerComp.PowerOutput = -HealingPowerConsumption;
-                if (PatientPawn != null) PatientPawn.needs.food.CurLevelPercentage = 1f;
+                if (PatientPawn != null)
+                {
+                    PatientPawn.needs.food.CurLevelPercentage = 1f;
+                }
 
                 if (HealingTicks == 0)
                 {

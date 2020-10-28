@@ -95,8 +95,7 @@ namespace MedPod
             // toil.FailOn(() => !HealthAIUtility.ShouldSeekMedicalRest(toil.actor) && !HealthAIUtility.ShouldSeekMedicalRestUrgent(toil.actor) && ((Building_Bed)toil.actor.CurJob.GetTarget(bedIndex).Thing).Medical);
             static MethodBase TargetMethod()
             {
-                predicateClass = typeof(Toils_Bed).GetNestedTypes(AccessTools.all)
-               .FirstOrDefault(t => t.FullName != null && t.FullName.Contains("c__DisplayClass3_0"));
+                predicateClass = typeof(Toils_Bed).GetNestedTypes(AccessTools.all).FirstOrDefault(t => t.FullName.Contains("c__DisplayClass3_0"));
                 if (predicateClass == null)
                 {
                     Log.Error("MedPod :: Could not find Toils_Bed:c__DisplayClass3_0");
@@ -136,8 +135,7 @@ namespace MedPod
             // This targets the layDown.tickAction delegate function from Toils_LayDown.LayDown()
             static MethodBase TargetMethod()
             {
-                predicateClass = typeof(Toils_LayDown).GetNestedTypes(AccessTools.all)
-               .FirstOrDefault(t => t.FullName != null && t.FullName.Contains("c__DisplayClass2_0"));
+                predicateClass = typeof(Toils_LayDown).GetNestedTypes(AccessTools.all).FirstOrDefault(t => t.FullName.Contains("c__DisplayClass2_0"));
                 if (predicateClass == null)
                 {
                     Log.Error("MedPod :: Could not find Toils_LayDown:c__DisplayClass2_0");
@@ -230,14 +228,14 @@ namespace MedPod
             static bool Prefix(ref Building_Bed __result, Pawn pawn)
             {
                 Building_Bed currentBed = pawn.CurrentBed();
-                if (pawn.InBed() && currentBed != null && currentBed.Medical && currentBed.def.building.bed_humanlike)
+                if (pawn.InBed() && (currentBed != null) && currentBed.Medical && currentBed.def.building.bed_humanlike)
                 {
                     __result = currentBed;
                     return false;
                 }
                 for (int i = 0; i < 2; i++)
                 {
-                    Danger maxDanger = i == 0 ? Danger.None : Danger.Deadly;
+                    Danger maxDanger = (i == 0) ? Danger.None : Danger.Deadly;
                     Building_Bed building_Bed = (Building_BedMedPod)GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, ThingRequest.ForGroup(ThingRequestGroup.Bed), PathEndMode.OnCell, TraverseParms.For(pawn), 9999f, (Thing b) => (int)b.Position.GetDangerFor(pawn, pawn.Map) <= (int)maxDanger && b is Building_BedMedPod && RestUtility.IsValidBedFor(b, pawn, pawn, pawn.IsPrisoner, checkSocialProperness: false, allowMedBedEvenIfSetToNoCare: true));
                     if (building_Bed != null)
                     {
