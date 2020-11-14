@@ -29,6 +29,14 @@ namespace MedPod
             }
         }
 
+        public List<HediffDef> UsageBlockingHediffs
+        {
+            get
+            {
+                return Props.usageBlockingHediffs;
+            }
+        }
+
         public List<string> DisallowedRaces
         {
             get

@@ -24,6 +24,7 @@
 					<li>MedPod_InducedComa</li>
 				</alwaysTreatableHediffs>
 				<neverTreatableHediffs />
+				<usageBlockingHediffs />
 				<disallowedRaces />
 			</li>
 		</comps>

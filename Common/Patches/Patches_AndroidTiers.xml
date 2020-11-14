@@ -21,12 +21,12 @@
 					</value>
 				</li>
 				
-				<!-- Prevent MedPods from treating the Surrogate Remote Control hediff, so that the host and the surrogate android aren't awake at the same time -->
+				<!-- Prevent pawns from being rescued to MedPods if they are unconscious from the Surrogate Remote Control hediff -->
 				
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/HediffDef[defName="ATPP_InRemoteControlMode"]</xpath>
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/usageBlockingHediffs</xpath>
 					<value>
-						<isBad>false</isBad>
+						<li>ATPP_InRemoteControlMode</li>
 					</value>
 				</li>
 				

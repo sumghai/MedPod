@@ -181,13 +181,14 @@ namespace MedPod
         // Make sure patients only use MedPods if:
         // - The MedPod has power
         // - The patient has a valid need to use a MedPod (i.e. MedPodHealthAIUtility.ShouldPawnSeekMedPod() returns true), which excludes surgeries
+        // - The patient does not have specific hediffs that prohibit them from using MedPods at all
         // - The patient is not in the disallowedRaces blacklist
         [HarmonyPatch(typeof(RestUtility), nameof(RestUtility.IsValidBedFor))]
         static class RestUtility_IsValidBedFor_MedPodRestrictions
         {
             static void Postfix(ref bool __result, Thing bedThing, Pawn sleeper)
             {
-                if (bedThing is Building_BedMedPod bedMedPod && (!bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(sleeper, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs) || !MedPodHealthAIUtility.IsValidRaceForMedPod(sleeper, bedMedPod.DisallowedRaces)))
+                if (bedThing is Building_BedMedPod bedMedPod && (!bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(sleeper, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs) || MedPodHealthAIUtility.HasUsageBlockingHediffs(sleeper, bedMedPod.UsageBlockingHediffs) || !MedPodHealthAIUtility.IsValidRaceForMedPod(sleeper, bedMedPod.DisallowedRaces)))
                 {
                     __result = false;
                 }

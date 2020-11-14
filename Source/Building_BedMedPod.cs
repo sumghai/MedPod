@@ -40,6 +40,8 @@ namespace MedPod
 
         public List<HediffDef> NeverTreatableHediffs;
 
+        public List<HediffDef> UsageBlockingHediffs;
+
         public List<string> DisallowedRaces;
 
         public int ProgressHealingTicks = 0;
@@ -107,6 +109,7 @@ namespace MedPod
 
             AlwaysTreatableHediffs = treatmentRestrictions.AlwaysTreatableHediffs;
             NeverTreatableHediffs = treatmentRestrictions.NeverTreatableHediffs;
+            UsageBlockingHediffs = treatmentRestrictions.UsageBlockingHediffs;
             DisallowedRaces = treatmentRestrictions.DisallowedRaces;
 
             // Add a blocker region for the MedPod main machinery

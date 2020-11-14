@@ -37,5 +37,10 @@ namespace MedPod
             }
             return true;
         }
+
+        public static bool HasUsageBlockingHediffs(Pawn patientPawn, List<HediffDef> usageBlockingHediffs)
+        {
+            return patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => usageBlockingHediffs.Contains(x.def));
+        }
     }
 }
