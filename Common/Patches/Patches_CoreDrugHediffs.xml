@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+		
+			<!-- Allow MedPod to treat chemical highs and tolerances from all drugs -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/alwaysTreatableHediffs</xpath>
+				<value>
+					<li>AlcoholHigh</li>
+					<li>AlcoholTolerance</li>
+					<li>AmbrosiaHigh</li>
+					<li>AmbrosiaTolerance</li>
+					<li>FlakeHigh</li>
+					<li>GoJuiceHigh</li>
+					<li>GoJuiceTolerance</li>
+					<li>LuciferiumHigh</li>
+					<li>PenoxycylineHigh</li>
+					<li>PsychiteTeaHigh</li>
+					<li>PsychiteTolerance</li>
+					<li>SmokeleafHigh</li>
+					<li>SmokeleafTolerance</li>
+					<li>WakeUpHigh</li>
+					<li>WakeUpTolerance</li>
+					<li>YayoHigh</li>
+					<li></li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>
