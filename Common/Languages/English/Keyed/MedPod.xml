@@ -7,7 +7,7 @@
 	
 	<MedPod_InspectorStatus_DiagnosisComplete>Diagnosis Complete</MedPod_InspectorStatus_DiagnosisComplete>
 	
-	<MedPod_InspectorStatus_HealingProgress>Reatomizing ({0}%)</MedPod_InspectorStatus_HealingProgress>
+	<MedPod_InspectorStatus_HealingProgress>Regenerating ({0}%)</MedPod_InspectorStatus_HealingProgress>
 	
 	<MedPod_InspectorStatus_PatientDischarged>100% Clear</MedPod_InspectorStatus_PatientDischarged>
 	

@@ -10,8 +10,8 @@
 	<!-- EN: Diagnosis Complete -->
 	<MedPod_InspectorStatus_DiagnosisComplete>Диагностика завершена</MedPod_InspectorStatus_DiagnosisComplete>
 	
-	<!-- EN: Reatomizing ({0}%) -->
-	<MedPod_InspectorStatus_HealingProgress>Реатомизация ({0}%)</MedPod_InspectorStatus_HealingProgress>
+	<!-- EN: Regenerating ({0}%) -->
+	<MedPod_InspectorStatus_HealingProgress>Регенерирующий ({0}%)</MedPod_InspectorStatus_HealingProgress>
 	
 	<!-- EN: 100% Clear -->
 	<MedPod_InspectorStatus_PatientDischarged>100% завершено</MedPod_InspectorStatus_PatientDischarged>

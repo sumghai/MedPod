@@ -45,7 +45,7 @@ namespace MedPod
         // Prevent Doctors/Wardens from feeding patients if:
         // - The patient is lying on a MedPod
         // - The MedPod is powered
-        // (as they would get smacked in the face by the MedPod's moving reatomizer gantry)
+        // (as they would get smacked in the face by the MedPod's moving gantry)
         [HarmonyPatch]
         static class ShouldBeFed_IgnoreMedPods
         {
@@ -67,7 +67,7 @@ namespace MedPod
         // Prevent Doctors/Wardens from tending patients if:
         // - The patient is lying on a MedPod
         // - The MedPod is powered
-        // (as they would get smacked in the face by the MedPod's moving reatomizer gantry)
+        // (as they would get smacked in the face by the MedPod's moving gantry)
         [HarmonyPatch(typeof(WorkGiver_Tend), nameof(WorkGiver_Tend.HasJobOnThing))]
         static class WorkGiver_Tend_HasJobOnThing_IgnoreMedPods
         {

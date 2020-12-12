@@ -4,8 +4,8 @@
 	<!-- EN: MedPod -->
 	<MedPodStandard.label>治療ポッド</MedPodStandard.label>
 
-	<!-- EN: An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
-	<MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に原子レベルの細胞再生技術を利用した高度な医療ベッドです。\n\nこれはGlitterworldでよく見られる無料の公的治療クリニックの標準的な設備です。</MedPodStandard.description>
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
+	<MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に加速された細胞再生技術を利用した高度な医療ベッドです。\n\nこれはGlitterworldでよく見られる無料の公的治療クリニックの標準的な設備です。</MedPodStandard.description>
 	
 	<!-- EN: MedPod (blueprint)-->
 	<Blueprint_MedPodStandard.label>治療ポッド(設計図)</Blueprint_MedPodStandard.label>
@@ -16,15 +16,15 @@
 	<!-- EN: MedPod (building)-->
 	<Frame_MedPodStandard.label>治療ポッド(建設中)</Frame_MedPodStandard.label>
 	
-	<!-- EN: An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
-	<Frame_MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に原子レベルの細胞再生技術を利用した高度な医療ベッドです。\n\nこれはGlitterworldでよく見られる無料の公的治療クリニックの標準的な設備です。</Frame_MedPodStandard.description>
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
+	<Frame_MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に加速された細胞再生技術を利用した高度な医療ベッドです。\n\nこれはGlitterworldでよく見られる無料の公的治療クリニックの標準的な設備です。</Frame_MedPodStandard.description>
 
 	<!-- Royalty-exclusive content -->
 	<!-- EN: MedPod Lux -->
 	<MedPodStandard.label>治療ポッド・Lux</MedPodStandard.label>
 	
-	<!-- An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
-	<MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に原子レベルの細胞再生技術を利用した高度な医療ベッドです。\nゴールドを使った豪華な装飾とジェルを包んだ形状記憶フォームマットレスを使用した贅沢な形式で、より高速に診断と治療を行えますが、消費電力が更に増えます。</MedPodStandard.description>
+	<!-- An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
+	<MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に加速された細胞再生技術を利用した高度な医療ベッドです。\nゴールドを使った豪華な装飾とジェルを包んだ形状記憶フォームマットレスを使用した贅沢な形式で、より高速に診断と治療を行えますが、消費電力が更に増えます。</MedPodStandard.description>
 	
 	<!-- EN: MedPod (blueprint)-->
 	<Blueprint_MedPodStandard.label>治療ポッド・Lux(設計図)</Blueprint_MedPodStandard.label>
@@ -35,7 +35,7 @@
 	<!-- EN: MedPod (building)-->
 	<Frame_MedPodStandard.label>治療ポッド・Lux(建設中)</Frame_MedPodStandard.label>
 	
-	<!-- An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
-	<Frame_MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に原子レベルの細胞再生技術を利用した高度な医療ベッドです。\nゴールドを使った豪華な装飾とジェルを包んだ形状記憶フォームマットレスを使用した贅沢な形式で、より高速に診断と治療を行えますが、消費電力が更に増えます。</Frame_MedPodStandard.description>
+	<!-- An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
+	<Frame_MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療に加速された細胞再生技術を利用した高度な医療ベッドです。\nゴールドを使った豪華な装飾とジェルを包んだ形状記憶フォームマットレスを使用した贅沢な形式で、より高速に診断と治療を行えますが、消費電力が更に増えます。</Frame_MedPodStandard.description>
 
 </LanguageData>

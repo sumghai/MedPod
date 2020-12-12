@@ -4,8 +4,8 @@
 	<!-- EN: MedPod -->
 	<MedPodStandard.label>MedPod</MedPodStandard.label>
 
-	<!-- EN: An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
-	<MedPodStandard.description>Ein fortschrittliches Krankenhausbett, das die atomare Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Standardmodell, das häufig in kostenlosen öffentlichen Gesundheitskliniken auf Glitterworlds zu finden ist.</MedPodStandard.description>
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
+	<MedPodStandard.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Standardmodell, das häufig in kostenlosen öffentlichen Gesundheitskliniken auf Glitterworlds zu finden ist.</MedPodStandard.description>
 
 	<!-- EN: MedPod (blueprint)-->
 	<Blueprint_MedPodStandard.label>MedPod (Blaupause)</Blueprint_MedPodStandard.label>
@@ -16,15 +16,15 @@
 	<!-- EN: MedPod (building)-->
 	<Frame_MedPodStandard.label>MedPod (Gebäude)</Frame_MedPodStandard.label>
 
-	<!-- EN: An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
-	<Frame_MedPodStandard.description>Ein fortschrittliches Krankenhausbett, das die atomare Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Standardmodell, das häufig in kostenlosen öffentlichen Gesundheitskliniken auf Glitterworlds zu finden ist.</Frame_MedPodStandard.description>
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
+	<Frame_MedPodStandard.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Standardmodell, das häufig in kostenlosen öffentlichen Gesundheitskliniken auf Glitterworlds zu finden ist.</Frame_MedPodStandard.description>
 
 	<!-- Royalty-exclusive content -->
 	<!-- EN: MedPod Lux -->
 	<MedPodStandard.label>MedPod Lux</MedPodStandard.label>
 
-	<!-- An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
-	<MedPodStandard.description>Ein fortschrittliches Krankenhausbett, das die atomare Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Luxusmodell mit gold eingelegten Armaturen und einer mit Gel infundierten Memory-Schaum-Matratze und ist in der Lage eine schnellere Diagnose und Behandlung durchzuführen, erfordert jedoch einen höheren Stromverbrauch.</MedPodStandard.description>
+	<!-- An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
+	<MedPodStandard.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Luxusmodell mit gold eingelegten Armaturen und einer mit Gel infundierten Memory-Schaum-Matratze und ist in der Lage eine schnellere Diagnose und Behandlung durchzuführen, erfordert jedoch einen höheren Stromverbrauch.</MedPodStandard.description>
 
 	<!-- EN: MedPod (blueprint)-->
 	<Blueprint_MedPodStandard.label>MedPod Lux (Blaupause)</Blueprint_MedPodStandard.label>
@@ -35,7 +35,7 @@
 	<!-- EN: MedPod (building)-->
 	<Frame_MedPodStandard.label>MedPod Lux (Gebäude)</Frame_MedPodStandard.label>
 
-	<!-- An advanced hospital bed that uses atomic cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
-	<Frame_MedPodStandard.description>Ein fortschrittliches Krankenhausbett, das die atomare Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Luxusmodell mit gold eingelegten Armaturen und einer mit Gel infundierten Memory-Schaum-Matratze und ist in der Lage eine schnellere Diagnose und Behandlung durchzuführen, erfordert jedoch einen höheren Stromverbrauch.</Frame_MedPodStandard.description>
+	<!-- An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
+	<Frame_MedPodStandard.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Luxusmodell mit gold eingelegten Armaturen und einer mit Gel infundierten Memory-Schaum-Matratze und ist in der Lage eine schnellere Diagnose und Behandlung durchzuführen, erfordert jedoch einen höheren Stromverbrauch.</Frame_MedPodStandard.description>
 
 </LanguageData>

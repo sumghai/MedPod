@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<!-- EN: Atomic Cellular Regeneration -->
-	<AtomicCellularRegeneration.label>原子细胞再生</AtomicCellularRegeneration.label>
+	<!-- EN: Accelerated Cellular Regeneration -->
+	<AcceleratedCellularRegeneration.label>加速细胞再生</AcceleratedCellularRegeneration.label>
 
-	<!-- EN: Allows the construction of MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by rapidly repairing living cells on an atomic level. -->
-	<AtomicCellularRegeneration.description>让你可以建造智能医疗床，采用原子再生技术来自动快速修复细胞，治疗多种疾病和伤势。</AtomicCellularRegeneration.description>
+	<!-- EN: Allows the construction of MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells. -->
+	<AcceleratedCellularRegeneration.description>让你可以建造智能医疗床，采用电刺激技术来自动快速修复细胞，治疗多种疾病和伤势。</AcceleratedCellularRegeneration.description>
 
 	<!-- EN: About: Building MedPods -->
-	<AtomicCellularRegeneration.discoveredLetterTitle>关于：建造智能医疗床</AtomicCellularRegeneration.discoveredLetterTitle>
+	<AcceleratedCellularRegeneration.discoveredLetterTitle>关于：建造智能医疗床</AcceleratedCellularRegeneration.discoveredLetterTitle>
 
 	<!-- EN: You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors several ways:\n\n -Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n -Some quests are rewarded with Isolinear Processors.\n -Disassemble an AI persona core to extract Isolinear Processors (along with various other components). -->
-	<AtomicCellularRegeneration.discoveredLetterText>现在你可以建造智能医疗床了，但每张智能医疗床需要一个等线性处理器零件来建造。你可以透过以下几种方式收集等线性处理器：\n\n -外贸轨道商人或拜访的外贸贸易旅队有时候会卖等线性处理器。邀请或等待他们拜访。 \n -有些任务会有等线性处理器作为奖励。 \n -拆解一个AI人格核心，以获取等线性处理器(与其他有用的零件)。 </AtomicCellularRegeneration.discoveredLetterText>
+	<AcceleratedCellularRegeneration.discoveredLetterText>现在你可以建造智能医疗床了，但每张智能医疗床需要一个等线性处理器零件来建造。你可以透过以下几种方式收集等线性处理器：\n\n -外贸轨道商人或拜访的外贸贸易旅队有时候会卖等线性处理器。邀请或等待他们拜访。 \n -有些任务会有等线性处理器作为奖励。 \n -拆解一个AI人格核心，以获取等线性处理器(与其他有用的零件)。 </AcceleratedCellularRegeneration.discoveredLetterText>
 	
 </LanguageData>

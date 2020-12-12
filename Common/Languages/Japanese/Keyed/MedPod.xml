@@ -10,7 +10,7 @@
 	<!-- EN: Diagnosis Complete -->
 	<MedPod_InspectorStatus_DiagnosisComplete>診断完了</MedPod_InspectorStatus_DiagnosisComplete>
 	
-	<!-- EN: Reatomizing ({0}%) -->
+	<!-- EN: Regenerating ({0}%) -->
 	<MedPod_InspectorStatus_HealingProgress>治療中（{0}%)</MedPod_InspectorStatus_HealingProgress>
 	
 	<!-- EN: 100% Clear -->
