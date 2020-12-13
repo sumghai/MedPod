@@ -28,9 +28,13 @@ namespace MedPod
 
         public int MaxDiagnosingTicks;
 
+        public int PatientBodySizeScaledMaxDiagnosingTicks;
+
         public int HealingTicks = 0;
 
         public int MaxHealingTicks;
+
+        public int PatientBodySizeScaledMaxHealingTicks;
 
         public float DiagnosingPowerConsumption;
 
@@ -192,7 +196,7 @@ namespace MedPod
                     switch (status)
                     {
                         case MedPodStatus.DiagnosisStarted:
-                            float diagnosingProgress = (float)(MaxDiagnosingTicks - DiagnosingTicks) / MaxDiagnosingTicks * 100;
+                            float diagnosingProgress = (float)(PatientBodySizeScaledMaxDiagnosingTicks - DiagnosingTicks) / PatientBodySizeScaledMaxDiagnosingTicks * 100;
                             inspectorStatus = "MedPod_InspectorStatus_DiagnosisProgress".Translate((int)diagnosingProgress);
                             break;
                         case MedPodStatus.DiagnosisFinished:
@@ -379,7 +383,7 @@ namespace MedPod
 
                 totalNormalizedSeverities += currentNormalizedSeverity;
 
-                TotalHealingTicks += (int)Math.Ceiling(GetHediffNormalizedSeverity(currentHediff) * MaxHealingTicks);
+                TotalHealingTicks += (int)Math.Ceiling(GetHediffNormalizedSeverity(currentHediff) * PatientBodySizeScaledMaxHealingTicks);
 
                 // Tend all bleeding hediffs immediately so the pawn doesn't die after being anesthetized by the MedPod
                 // The Hediff will be completely removed once the Medpod is done with the Healing process
@@ -495,10 +499,13 @@ namespace MedPod
 
                 if (PatientPawn != null)
                 {
+                    PatientBodySizeScaledMaxDiagnosingTicks = (int)(MaxDiagnosingTicks * PatientPawn.BodySize);
+                    PatientBodySizeScaledMaxHealingTicks = (int)(MaxHealingTicks * PatientPawn.BodySize);
+
                     switch (status)
                     {
                         case MedPodStatus.Idle:
-                            DiagnosingTicks = MaxDiagnosingTicks;
+                            DiagnosingTicks = PatientBodySizeScaledMaxDiagnosingTicks;
                             patientSavedFoodNeed = PatientPawn.needs.food.CurLevelPercentage;
                             SwitchState();
                             break;
@@ -513,9 +520,10 @@ namespace MedPod
                             }
                             else
                             {
-                                // Scale healing time for current hediff according to its (normalized) severity
-                                // i.e. More severe hediffs take longer
-                                HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * MaxHealingTicks);
+                                // Scale healing time for current hediff according to its (normalized) severity and patient body size
+                                // i.e. More severe hediffs take longer, bigger pawns also take longer
+                                HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * PatientBodySizeScaledMaxHealingTicks);
+
                                 SwitchState();
                             }
                             break;
@@ -534,9 +542,10 @@ namespace MedPod
                             patientTreatableHediffs.RemoveAt(0);
                             if (!patientTreatableHediffs.NullOrEmpty())
                             {
-                                // Scale healing time for current hediff according to its (normalized) severity
-                                // i.e. More severe hediffs take longer
-                                HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * MaxHealingTicks);
+                                // Scale healing time for current hediff according to its (normalized) severity and patient body size
+                                // i.e. More severe hediffs take longer, bigger pawns also take longer
+                                HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * PatientBodySizeScaledMaxHealingTicks);
+
                                 status = MedPodStatus.HealingStarted;
                             }
                             else
