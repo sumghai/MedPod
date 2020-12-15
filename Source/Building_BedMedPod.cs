@@ -56,6 +56,8 @@ namespace MedPod
 
         public bool gantryDirectionForwards = true;
 
+        public bool Aborted = false;
+
         public enum MedPodStatus
         {
             Idle = 0,
@@ -281,6 +283,44 @@ namespace MedPod
 
                 yield return g;
             }
+
+            yield return new Command_Action
+            {
+                defaultLabel = "Abort", // TODO - translate
+                defaultDesc = "Abort Treatment", // TODO - translate
+                disabled = (PatientPawn == null),
+                action = delegate
+                {
+                    if (PatientPawn != null)
+                    {
+                        // If the patient is incapable of walking after being kicked off the MedPod, physically push them off
+                        if (PatientPawn.Downed)
+                        {
+                            int offsetX = 0;
+                            int offsetZ = 0;
+                            if (Rotation == Rot4.North)
+                            {
+                                offsetX++;
+                            }
+                            else if (Rotation == Rot4.East)
+                            {
+                                offsetZ--;
+                            }
+                            else if (Rotation == Rot4.South)
+                            {
+                                offsetX--;
+                            }
+                            else // Default: West
+                            {
+                                offsetZ++;
+                            }
+                            PatientPawn.Position += new IntVec3(offsetX, 0, offsetZ);
+                        }
+                        Aborted = true;
+                    }
+                },
+                icon = ContentFinder<Texture2D>.Get("UI/Buttons/AbortTreatment", true)
+            };
         }
 
         private void SwitchState()
@@ -565,6 +605,9 @@ namespace MedPod
                 else
                 {
                     status = MedPodStatus.Idle;
+                    ProgressHealingTicks = 0;
+                    TotalHealingTicks = 0;
+                    Aborted = false;
                 }
             }
 
