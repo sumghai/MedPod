@@ -42,5 +42,9 @@
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>patient using MedPod</MedPod_SurgeryProhibited_PatientUsingMedPod>
 	
 	<MedPod_CommandGizmoDisabled_MedPodInUse>{0} is in use.</MedPod_CommandGizmoDisabled_MedPodInUse>
+	
+	<MedPod_CommandGizmoAbortTreatment_Label>Abort</MedPod_CommandGizmoAbortTreatment_Label>
+	
+	<MedPod_CommandGizmoAbortTreatment_Desc>Stop treating the current patient immediately.</MedPod_CommandGizmoAbortTreatment_Desc>
 
 </LanguageData>

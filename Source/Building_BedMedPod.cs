@@ -286,8 +286,8 @@ namespace MedPod
 
             yield return new Command_Action
             {
-                defaultLabel = "Abort", // TODO - translate
-                defaultDesc = "Abort Treatment", // TODO - translate
+                defaultLabel = "MedPod_CommandGizmoAbortTreatment_Label".Translate(),
+                defaultDesc = "MedPod_CommandGizmoAbortTreatment_Desc".Translate(),
                 disabled = (PatientPawn == null),
                 action = delegate
                 {

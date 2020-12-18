@@ -63,5 +63,11 @@
 	
 	<!-- EN: {0} is in use. -->
 	<MedPod_CommandGizmoDisabled_MedPodInUse>{0}在使用中</MedPod_CommandGizmoDisabled_MedPodInUse>
+	
+	<!-- EN: Abort -->
+	<MedPod_CommandGizmoAbortTreatment_Label>中止</MedPod_CommandGizmoAbortTreatment_Label>
+	
+	<!-- EN: Stop treating the current patient immediately. -->
+	<MedPod_CommandGizmoAbortTreatment_Desc>立即停止治疗病人。</MedPod_CommandGizmoAbortTreatment_Desc>
 
 </LanguageData>
