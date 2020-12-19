@@ -126,7 +126,6 @@ namespace MedPod
             }
         }
 
-
         // Make sure patient stays in MedPod long enough to diagnosis to be run, and to get up once treatment is complete
         [HarmonyPatch]
         static class Toils_LayDown_LayDown_StayLyingInMedPod
