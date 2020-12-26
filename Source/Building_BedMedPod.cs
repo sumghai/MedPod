@@ -58,6 +58,16 @@ namespace MedPod
 
         public bool Aborted = false;
 
+        // MedPod bedsheet/mattress colors are always either medical or prisoner-medical.
+        // regardless if the pawn is humanoid or not
+        public override Color DrawColorTwo
+        {
+            get
+            {
+                return ForPrisoners ? SheetColorMedicalForPrisoner : SheetColorMedical;
+            }
+        }
+
         public enum MedPodStatus
         {
             Idle = 0,
@@ -118,17 +128,20 @@ namespace MedPod
             UsageBlockingHediffs = treatmentRestrictions.UsageBlockingHediffs;
             DisallowedRaces = treatmentRestrictions.DisallowedRaces;
 
-            // Add a blocker region for the MedPod main machinery
-            // (If one already exists, then we are probably loading a save with an existing MedPod)
-            Thing something = Map.thingGrid.ThingsListAtFast(InvisibleBlockerPosition).FirstOrDefault(x => x.def.Equals(MedPodDef.MedPodInvisibleBlocker));
+            // Add a blocker region for the MedPod main machinery, if required
+            if (!medpodSettings.DisableInvisibleBlocker)
+            { 
+                // (If one already exists, then we are probably loading a save with an existing MedPod)
+                Thing something = Map.thingGrid.ThingsListAtFast(InvisibleBlockerPosition).FirstOrDefault(x => x.def.Equals(MedPodDef.MedPodInvisibleBlocker));
 
-            if (something != null)
-            {
-                something.DeSpawn();
+                if (something != null)
+                {
+                    something.DeSpawn();
+                }
+
+                Thing t = ThingMaker.MakeThing(MedPodDef.MedPodInvisibleBlocker);
+                GenPlace.TryPlaceThing(t, InvisibleBlockerPosition, Map, ThingPlaceMode.Direct, out resultingBlocker, null, null, Rotation);
             }
-
-            Thing t = ThingMaker.MakeThing(MedPodDef.MedPodInvisibleBlocker);
-            GenPlace.TryPlaceThing(t, InvisibleBlockerPosition, Map, ThingPlaceMode.Direct, out resultingBlocker, null, null, Rotation);
         }
 
         private Pawn PatientPawn
@@ -149,11 +162,14 @@ namespace MedPod
             {
                 WakePatient(PatientPawn, false);
             }
-            this.ForPrisoners = false;
-            this.Medical = false;
+            ForPrisoners = false;
+            Medical = false;
 
-            // Remove the blocker region
-            resultingBlocker.DeSpawn();
+            // Remove the blocker region, if required
+            if (!medpodSettings.DisableInvisibleBlocker)
+            {
+                resultingBlocker.DeSpawn();
+            }
 
             Room room = this.GetRoom(RegionType.Set_Passable);
             base.DeSpawn(mode);
@@ -489,21 +505,6 @@ namespace MedPod
         {
             SoundInfo info = SoundInfo.InMap(this, MaintenanceType.PerTick);
             wickSustainer = def.building.soundDispense.TrySpawnSustainer(info);
-        }
-
-        public override void Draw()
-        {
-            base.Draw();
-
-            if (powerComp.PowerOn && (Rotation == Rot4.South))
-            {
-                Graphic screenGlow = GraphicDatabase.Get<Graphic_Single>("FX/MedPod_screenGlow_south", ShaderDatabase.MoteGlow, new Vector2(4f, 5f), Color.white);
-                Mesh screenGlowMesh = screenGlow.MeshAt(Rotation);
-                Vector3 screenGlowDrawPos = DrawPos;
-                screenGlowDrawPos.y = AltitudeLayer.Building.AltitudeFor() + 0.03f;
-
-                Graphics.DrawMesh(screenGlowMesh, screenGlowDrawPos, Quaternion.identity, FadedMaterialPool.FadedVersionOf(screenGlow.MatAt(Rotation, null), 1), 0);
-            }
         }
 
         public override void Tick()

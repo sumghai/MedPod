@@ -71,6 +71,12 @@
 					<shaderType>CutoutComplex</shaderType>
 					<drawSize>(3, 3)</drawSize>
 				</gantryGraphicData>
+				<gantryGlowGraphicData>
+					<texPath>FX/MedPod_gantryGlow</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>(3, 3)</drawSize>
+				</gantryGlowGraphicData>
 				<machineLidGraphicData>
 					<texPath>Things/Building/Furniture/MedPod_Lux/MedPod_Lux_machineLid</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
@@ -84,6 +90,12 @@
 				<maxPerHediffHealingTime>7.5</maxPerHediffHealingTime>
 				<diagnosisModePowerConsumption>750</diagnosisModePowerConsumption>
 				<healingModePowerConsumption>3000</healingModePowerConsumption>
+				<screenGlowGraphicData>
+					<texPath>FX/MedPod_screenGlow</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>(4, 5)</drawSize>
+				</screenGlowGraphicData>
 			</li>
 			<li>
 				<compClass>CompQuality</compClass>

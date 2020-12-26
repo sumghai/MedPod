@@ -125,6 +125,12 @@
 					<shaderType>CutoutComplex</shaderType>
 					<drawSize>(3, 3)</drawSize>
 				</gantryGraphicData>
+				<gantryGlowGraphicData>
+					<texPath>FX/MedPod_gantryGlow</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>(3, 3)</drawSize>
+				</gantryGlowGraphicData>
 				<machineLidGraphicData>
 					<texPath>Things/Building/Furniture/MedPod_Standard/MedPod_Standard_machineLid</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
@@ -134,6 +140,12 @@
 				</machineLidGraphicData>
 			</li>
 			<li Class="MedPod.CompProperties_MedPodSettings">
+				<screenGlowGraphicData>
+					<texPath>FX/MedPod_screenGlow</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>(4, 5)</drawSize>
+				</screenGlowGraphicData>
 				<!-- Use default values -->
 			</li>
 		</comps>

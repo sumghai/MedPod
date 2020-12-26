@@ -17,6 +17,10 @@ namespace MedPod
 
         public float healingModePowerConsumption = 2000f;
 
+        public bool disableInvisibleBlocker = false;
+
+        public GraphicData screenGlowGraphicData = null;
+
         public CompProperties_MedPodSettings()
         {
             compClass = typeof(CompMedPodSettings);
