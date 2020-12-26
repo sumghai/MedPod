@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ========== VetPod ========== -->
+
+	<ThingDef ParentName="MedPodBedBase">
+		<defName>MedPodAnimal</defName>
+		<label>VetPod</label>
+		<description>An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use.</description>
+		<graphicData>
+			<texPath>Things/Building/Furniture/VetPod/VetPod</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(4,4)</drawSize>
+			<damageData>
+				<rect>(0.5,0.546875,2,2)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+			<shadowData>
+				<volume>(2,0.6,2)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>UI/VetPod</uiIconPath>
+		<castEdgeShadows>false</castEdgeShadows>
+		<statBases>
+			<MarketValue>8000</MarketValue>
+			<MaxHitPoints>450</MaxHitPoints>
+			<WorkToBuild>4000</WorkToBuild>
+			<Mass>600</Mass>
+			<Flammability>1.0</Flammability>
+			<BedRestEffectiveness>1.1</BedRestEffectiveness>
+			<Comfort>0.80</Comfort>
+		</statBases>
+		<constructEffect>ConstructMetal</constructEffect>
+		<size>(3,3)</size>
+		<costList>
+			<ComponentIndustrial>9</ComponentIndustrial>
+			<ComponentSpacer>6</ComponentSpacer>
+			<IsolinearProcessor>1</IsolinearProcessor>
+			<Plasteel>450</Plasteel>
+			<Steel>180</Steel>
+		</costList>
+		<building>
+			<bed_humanlike>false</bed_humanlike>
+			<bed_maxBodySize>0.875</bed_maxBodySize>
+			<bed_showSleeperBody>true</bed_showSleeperBody>
+			<bed_defaultMedical>true</bed_defaultMedical>
+		</building>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>true</shortCircuitInRain>
+				<basePowerConsumption>125</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="MedPod.CompProperties_AnimatedGantry">
+				<gantryGraphicData>
+					<texPath>Things/Building/Furniture/VetPod/VetPod_gantry</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<drawSize>(4, 4)</drawSize>
+				</gantryGraphicData>
+				<gantryGlowGraphicData>
+					<texPath>FX/VetPod_gantryGlow</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>(4, 4)</drawSize>
+				</gantryGlowGraphicData>
+			</li>
+			<li Class="MedPod.CompProperties_MedPodSettings">
+				<screenGlowGraphicData>
+					<texPath>FX/VetPod_screenGlow</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>(4, 4)</drawSize>
+				</screenGlowGraphicData>
+				<disableInvisibleBlocker>true</disableInvisibleBlocker>
+			</li>
+		</comps>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>60</pathCost>
+		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+		<canOverlapZones>false</canOverlapZones>
+		<researchPrerequisites>
+			<li>AcceleratedCellularRegeneration</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+		<techLevel>Spacer</techLevel>
+		<uiIconScale>1.00</uiIconScale>
+	</ThingDef>
+
+</Defs>
