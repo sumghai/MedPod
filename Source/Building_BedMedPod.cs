@@ -533,7 +533,7 @@ namespace MedPod
                 return;
             }
 
-            powerComp.PowerOutput = -125f;
+            powerComp.PowerOutput = -powerComp.Props.basePowerConsumption;
 
             if (this.IsHashIntervalTick(60))
             {
