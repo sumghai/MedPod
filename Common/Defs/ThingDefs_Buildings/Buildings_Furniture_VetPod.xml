@@ -118,7 +118,7 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
-		<uiIconPath>UI/VetPod</uiIconPath>
+		<uiIconPath>UI/VetPod_Mega</uiIconPath>
 		<castEdgeShadows>false</castEdgeShadows>
 		<statBases>
 			<MarketValue>8000</MarketValue>
