@@ -26,7 +26,6 @@
 			</shadowData>
 		</graphicData>
 		<uiIconPath>UI/MedPod_Lux</uiIconPath>
-		<castEdgeShadows>false</castEdgeShadows>
 		<statBases>
 			<MarketValue>7500</MarketValue>
 			<MaxHitPoints>250</MaxHitPoints>
@@ -61,9 +60,6 @@
 				<shortCircuitInRain>true</shortCircuitInRain>
 				<basePowerConsumption>125</basePowerConsumption>
 			</li>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_Breakdownable"/>
-			<li Class="CompProperties_Forbiddable"/>
 			<li Class="MedPod.CompProperties_AnimatedGantry">
 				<gantryGraphicData>
 					<texPath>Things/Building/Furniture/MedPod_Lux/MedPod_Lux_gantry</texPath>
@@ -109,16 +105,6 @@
 		<inspectorTabs>
 			<li>ITab_Art</li>
 		</inspectorTabs>
-		<fillPercent>0.4</fillPercent>
-		<pathCost>60</pathCost>
-		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
-		<canOverlapZones>false</canOverlapZones>
-		<researchPrerequisites>
-			<li>AcceleratedCellularRegeneration</li>
-		</researchPrerequisites>
-		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
-		<techLevel>Spacer</techLevel>
-		<uiIconScale>1.00</uiIconScale>
 	</ThingDef>
 
 </Defs>

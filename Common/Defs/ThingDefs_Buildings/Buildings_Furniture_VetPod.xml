@@ -25,7 +25,6 @@
 			</shadowData>
 		</graphicData>
 		<uiIconPath>UI/VetPod</uiIconPath>
-		<castEdgeShadows>false</castEdgeShadows>
 		<statBases>
 			<MarketValue>8000</MarketValue>
 			<MaxHitPoints>450</MaxHitPoints>
@@ -56,9 +55,6 @@
 				<shortCircuitInRain>true</shortCircuitInRain>
 				<basePowerConsumption>125</basePowerConsumption>
 			</li>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_Breakdownable"/>
-			<li Class="CompProperties_Forbiddable"/>
 			<li Class="MedPod.CompProperties_AnimatedGantry">
 				<gantryGraphicData>
 					<texPath>Things/Building/Furniture/VetPod/VetPod_gantry</texPath>
@@ -83,16 +79,6 @@
 				<disableInvisibleBlocker>true</disableInvisibleBlocker>
 			</li>
 		</comps>
-		<fillPercent>0.4</fillPercent>
-		<pathCost>60</pathCost>
-		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
-		<canOverlapZones>false</canOverlapZones>
-		<researchPrerequisites>
-			<li>AcceleratedCellularRegeneration</li>
-		</researchPrerequisites>
-		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
-		<techLevel>Spacer</techLevel>
-		<uiIconScale>1.00</uiIconScale>
 	</ThingDef>
 	
 	<!-- ========== VetPod Mega ========== -->
@@ -119,7 +105,6 @@
 			</shadowData>
 		</graphicData>
 		<uiIconPath>UI/VetPod_Mega</uiIconPath>
-		<castEdgeShadows>false</castEdgeShadows>
 		<statBases>
 			<MarketValue>8000</MarketValue>
 			<MaxHitPoints>450</MaxHitPoints>
@@ -149,9 +134,6 @@
 				<shortCircuitInRain>true</shortCircuitInRain>
 				<basePowerConsumption>125</basePowerConsumption>
 			</li>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_Breakdownable"/>
-			<li Class="CompProperties_Forbiddable"/>
 			<li Class="MedPod.CompProperties_AnimatedGantry">
 				<gantryGraphicData>
 					<texPath>Things/Building/Furniture/VetPod_Mega/VetPod_Mega_gantry</texPath>
@@ -177,16 +159,6 @@
 				<disableInvisibleBlocker>true</disableInvisibleBlocker>
 			</li>
 		</comps>
-		<fillPercent>0.4</fillPercent>
-		<pathCost>60</pathCost>
-		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
-		<canOverlapZones>false</canOverlapZones>
-		<researchPrerequisites>
-			<li>AcceleratedCellularRegeneration</li>
-		</researchPrerequisites>
-		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
-		<techLevel>Spacer</techLevel>
-		<uiIconScale>1.00</uiIconScale>
 	</ThingDef>
 
 </Defs>
