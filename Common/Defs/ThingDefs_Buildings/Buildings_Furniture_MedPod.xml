@@ -100,19 +100,19 @@
 		</graphicData>
 		<uiIconPath>UI/MedPod_Standard</uiIconPath>
 		<statBases>
-			<MarketValue>5000</MarketValue>
+			<MarketValue>500000</MarketValue>
 			<MaxHitPoints>250</MaxHitPoints>
-			<WorkToBuild>2800</WorkToBuild>
+			<WorkToBuild>10000</WorkToBuild>
 			<Mass>350</Mass>
-			<Flammability>1.0</Flammability>
+			<Flammability>0.3</Flammability>
 			<BedRestEffectiveness>1</BedRestEffectiveness>
 			<Comfort>0.80</Comfort>
 		</statBases>
 		<constructEffect>ConstructMetal</constructEffect>
 		<size>(3,3)</size>
 		<costList>
-			<ComponentIndustrial>6</ComponentIndustrial>
-			<ComponentSpacer>4</ComponentSpacer>
+			<ComponentIndustrial>12</ComponentIndustrial>
+			<ComponentSpacer>8</ComponentSpacer>
 			<IsolinearProcessor>1</IsolinearProcessor>
 			<Plasteel>200</Plasteel>
 			<Steel>80</Steel>
@@ -125,7 +125,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>true</shortCircuitInRain>
-				<basePowerConsumption>125</basePowerConsumption>
+				<basePowerConsumption>500</basePowerConsumption>
 			</li>
 			<li Class="MedPod.CompProperties_AnimatedGantry">
 				<gantryGraphicData>

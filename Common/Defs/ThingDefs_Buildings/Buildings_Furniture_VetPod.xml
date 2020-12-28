@@ -26,22 +26,22 @@
 		</graphicData>
 		<uiIconPath>UI/VetPod</uiIconPath>
 		<statBases>
-			<MarketValue>8000</MarketValue>
+			<MarketValue>600000</MarketValue>
 			<MaxHitPoints>450</MaxHitPoints>
-			<WorkToBuild>4000</WorkToBuild>
+			<WorkToBuild>12000</WorkToBuild>
 			<Mass>600</Mass>
-			<Flammability>1.0</Flammability>
+			<Flammability>0.3</Flammability>
 			<BedRestEffectiveness>1.1</BedRestEffectiveness>
 			<Comfort>0.80</Comfort>
 		</statBases>
 		<constructEffect>ConstructMetal</constructEffect>
 		<size>(3,3)</size>
 		<costList>
-			<ComponentIndustrial>9</ComponentIndustrial>
-			<ComponentSpacer>6</ComponentSpacer>
+			<ComponentIndustrial>12</ComponentIndustrial>
+			<ComponentSpacer>8</ComponentSpacer>
 			<IsolinearProcessor>1</IsolinearProcessor>
-			<Plasteel>450</Plasteel>
-			<Steel>180</Steel>
+			<Plasteel>300</Plasteel>
+			<Steel>160</Steel>
 		</costList>
 		<building>
 			<bed_humanlike>false</bed_humanlike>
@@ -53,7 +53,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>true</shortCircuitInRain>
-				<basePowerConsumption>125</basePowerConsumption>
+				<basePowerConsumption>500</basePowerConsumption>
 			</li>
 			<li Class="MedPod.CompProperties_AnimatedGantry">
 				<gantryGraphicData>
@@ -106,22 +106,22 @@
 		</graphicData>
 		<uiIconPath>UI/VetPod_Mega</uiIconPath>
 		<statBases>
-			<MarketValue>8000</MarketValue>
-			<MaxHitPoints>450</MaxHitPoints>
-			<WorkToBuild>4000</WorkToBuild>
-			<Mass>600</Mass>
-			<Flammability>1.0</Flammability>
+			<MarketValue>1200000</MarketValue>
+			<MaxHitPoints>2000</MaxHitPoints>
+			<WorkToBuild>50000</WorkToBuild>
+			<Mass>3000</Mass>
+			<Flammability>0.3</Flammability>
 			<BedRestEffectiveness>1.1</BedRestEffectiveness>
 			<Comfort>0.80</Comfort>
 		</statBases>
 		<constructEffect>ConstructMetal</constructEffect>
 		<size>(7,5)</size>
 		<costList>
-			<ComponentIndustrial>9</ComponentIndustrial>
-			<ComponentSpacer>6</ComponentSpacer>
+			<ComponentIndustrial>18</ComponentIndustrial>
+			<ComponentSpacer>14</ComponentSpacer>
 			<IsolinearProcessor>1</IsolinearProcessor>
-			<Plasteel>450</Plasteel>
-			<Steel>180</Steel>
+			<Plasteel>800</Plasteel>
+			<Steel>400</Steel>
 		</costList>
 		<building>
 			<bed_humanlike>false</bed_humanlike>
@@ -132,7 +132,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>true</shortCircuitInRain>
-				<basePowerConsumption>125</basePowerConsumption>
+				<basePowerConsumption>500</basePowerConsumption>
 			</li>
 			<li Class="MedPod.CompProperties_AnimatedGantry">
 				<gantryGraphicData>
@@ -150,6 +150,8 @@
 				<gantryMaxMoveDistance>3.71875</gantryMaxMoveDistance>
 			</li>
 			<li Class="MedPod.CompProperties_MedPodSettings">
+				<diagnosisModePowerConsumption>24000</diagnosisModePowerConsumption>
+				<healingModePowerConsumption>96000</healingModePowerConsumption>
 				<screenGlowGraphicData>
 					<texPath>FX/VetPod_Mega_screenGlow</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>

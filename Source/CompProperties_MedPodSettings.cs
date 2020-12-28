@@ -13,9 +13,9 @@ namespace MedPod
 
         public float maxPerHediffHealingTime = 10f;
 
-        public float diagnosisModePowerConsumption = 500f;
+        public float diagnosisModePowerConsumption = 8000f;
 
-        public float healingModePowerConsumption = 2000f;
+        public float healingModePowerConsumption = 32000f;
 
         public bool disableInvisibleBlocker = false;
 
