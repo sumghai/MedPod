@@ -161,6 +161,7 @@
 				<disableInvisibleBlocker>true</disableInvisibleBlocker>
 			</li>
 		</comps>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 	</ThingDef>
 
 </Defs>

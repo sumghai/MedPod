@@ -34,9 +34,9 @@
 		</comps>
 		<tickerType>Normal</tickerType>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<repairEffect>Repair</repairEffect>
 		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<passability>PassThroughOnly</passability>
 		<defaultPlacingRot>South</defaultPlacingRot>
 		<fillPercent>0.4</fillPercent>
