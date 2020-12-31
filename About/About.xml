@@ -4,7 +4,7 @@
 	<name>MedPod</name>
 	<author>sumghai</author>
 	<packageId>sumghai.medpod</packageId>
-	<description>Adds advanced regenerative medical beds capable of treating virtually every injury and disease.\n\nv1.1.5</description>
+	<description>Adds advanced regenerative medical beds capable of treating virtually every injury and disease.\n\nv1.2.0</description>
 	<url/>
 	<supportedVersions>
 		<li>1.2</li>
