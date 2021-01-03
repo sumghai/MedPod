@@ -11,7 +11,7 @@
 	<Blueprint_MedPodStandard.label>治療ポッド(設計図)</Blueprint_MedPodStandard.label>
 	
 	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_Install_MedPodStandard.label>治療ポッド(設計図)</Blueprint_Install_MedPodStandard.label>
+	<Blueprint_Install_MedPodStandard.label>治療ポッド(移動先)</Blueprint_Install_MedPodStandard.label>
 	
 	<!-- EN: MedPod (building)-->
 	<Frame_MedPodStandard.label>治療ポッド(建設中)</Frame_MedPodStandard.label>
@@ -29,7 +29,7 @@
 	<Blueprint_MedPodAnimal.label>獣医ポッド (設計図)</Blueprint_MedPodAnimal.label>
 	
 	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_Install_MedPodAnimal.label>獣医ポッド (設計図)</Blueprint_Install_MedPodAnimal.label>
+	<Blueprint_Install_MedPodAnimal.label>獣医ポッド (移動先)</Blueprint_Install_MedPodAnimal.label>
 	
 	<!-- EN: VetPod (building)-->
 	<Frame_MedPodAnimal.label>獣医ポッド (建設中)</Frame_MedPodAnimal.label>
@@ -47,7 +47,7 @@
 	<Blueprint_MedPodAnimalBig.label>獣医ポッド・Mega (設計図)</Blueprint_MedPodAnimalBig.label>
 	
 	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_Install_MedPodAnimalBig.label>獣医ポッド・Mega (設計図)</Blueprint_Install_MedPodAnimalBig.label>
+	<Blueprint_Install_MedPodAnimalBig.label>獣医ポッド・Mega (移動先)</Blueprint_Install_MedPodAnimalBig.label>
 	
 	<!-- EN: VetPod (building)-->
 	<Frame_MedPodAnimalBig.label>獣医ポッド・Mega (建設中)</Frame_MedPodAnimalBig.label>
@@ -67,7 +67,7 @@
 	<Blueprint_MedPodLux.label>治療ポッド・Lux(設計図)</Blueprint_MedPodLux.label>
 	
 	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_Install_MedPodLux.label>治療ポッド・Lux(設計図)</Blueprint_Install_MedPodLux.label>
+	<Blueprint_Install_MedPodLux.label>治療ポッド・Lux(移動先)</Blueprint_Install_MedPodLux.label>
 	
 	<!-- EN: MedPod (building)-->
 	<Frame_MedPodLux.label>治療ポッド・Lux(建設中)</Frame_MedPodLux.label>
