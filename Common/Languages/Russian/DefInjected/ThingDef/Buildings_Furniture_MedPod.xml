@@ -6,73 +6,53 @@
 
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
 	<MedPodStandard.description>Продвинутая медицицинская постель, оснащённая системой ускоренная клеточная регенерация. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭто обычное устройство широко распространено в общественных клиниках миров-утопий.</MedPodStandard.description>
-	
+
 	<!-- EN: MedPod (blueprint)-->
 	<Blueprint_MedPodStandard.label>Медкапсула (проект)</Blueprint_MedPodStandard.label>
-	
+
 	<!-- EN: MedPod (blueprint)-->
 	<Blueprint_Install_MedPodStandard.label>Медкапсула (проект)</Blueprint_Install_MedPodStandard.label>
-	
+
 	<!-- EN: MedPod (building)-->
 	<Frame_MedPodStandard.label>Медкапсула (строительство)</Frame_MedPodStandard.label>
-	
+
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
 	<Frame_MedPodStandard.description>Продвинутая медицицинская постель, оснащённая системой ускоренная клеточная регенерация. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭто обычное устройство широко распространено в общественных клиниках миров-утопий.</Frame_MedPodStandard.description>
-	
+
 	<!-- EN: VetPod -->
 	<MedPodAnimal.label>ветеринаркапсула</MedPodAnimal.label>
-	
+
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
 	<MedPodAnimal.description>Продвинутая медицицинская постель, оснащённая системой ускоренная клеточная регенерация. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭтот предназначен для домашних и других мелких животных.</MedPodAnimal.description>
-	
+
 	<!-- EN: VetPod (blueprint)-->
 	<Blueprint_MedPodAnimal.label>ветеринаркапсула (проект)</Blueprint_MedPodAnimal.label>
-	
+
 	<!-- EN: VetPod (blueprint)-->
 	<Blueprint_Install_MedPodAnimal.label>ветеринаркапсула (проект)</Blueprint_Install_MedPodAnimal.label>
-	
+
 	<!-- EN: VetPod (building)-->
 	<Frame_MedPodAnimal.label>ветеринаркапсула (строительство)</Frame_MedPodAnimal.label>
-	
+
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
 	<Frame_MedPodAnimal.description>Продвинутая медицицинская постель, оснащённая системой ускоренная клеточная регенерация. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭтот предназначен для домашних и других мелких животных.</Frame_MedPodAnimal.description>
-	
+
 	<!-- EN: VetPod Mega -->
 	<MedPodAnimalBig.label>ветеринаркапсула мега</MedPodAnimalBig.label>
-	
+
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
 	<MedPodAnimalBig.description>Продвинутая медицицинская постель, оснащённая системой ускоренная клеточная регенерация. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭтот предназначен для домашнего скота и мегафауны, но также может лечить более мелких животных.</MedPodAnimalBig.description>
-	
+
 	<!-- EN: VetPod (blueprint)-->
 	<Blueprint_MedPodAnimalBig.label>ветеринаркапсула мега (проект)</Blueprint_MedPodAnimalBig.label>
-	
+
 	<!-- EN: VetPod (blueprint)-->
 	<Blueprint_Install_MedPodAnimalBig.label>ветеринаркапсула мега (проект)</Blueprint_Install_MedPodAnimalBig.label>
-	
+
 	<!-- EN: VetPod (building)-->
 	<Frame_MedPodAnimalBig.label>ветеринаркапсула мега (строительство)</Frame_MedPodAnimalBig.label>
-	
+
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
 	<Frame_MedPodAnimalBig.description>Продвинутая медицицинская постель, оснащённая системой ускоренная клеточная регенерация. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭтот предназначен для домашнего скота и мегафауны, но также может лечить более мелких животных.</Frame_MedPodAnimalBig.description>
-
-	<!-- ========== Royalty-exclusive content ========== -->
-	
-	<!-- EN: MedPod Lux -->
-	<MedPodLux.label>Медкапсула класса Люкс</MedPodLux.label>
-	
-	<!-- An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
-	<MedPodLux.description>Продвинутая медицицинская постель, оснащённая системой ускоренная клеточная регенерация. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭта модель - люксовая со вставками из золота и гелевой кушеткой с эффектом памяти. Скорость диагностики и лечения выше чем у стандартной модели, однако энергопотребление намного больше.</MedPodLux.description>
-	
-	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_MedPodLux.label>Медкапсула класса Люкс (проект)</Blueprint_MedPodLux.label>
-	
-	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_Install_MedPodLux.label>Медкапсула класса Люкс (проект)</Blueprint_Install_MedPodLux.label>
-	
-	<!-- EN: MedPod (building)-->
-	<Frame_MedPodLux.label>Медкапсула Люкс (строительство)</Frame_MedPodLux.label>
-	
-	<!-- An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
-	<Frame_MedPodLux.description>Продвинутая медицицинская постель, оснащённая системой ускоренная клеточная регенерация. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭта модель - люксовая со вставками из золота и гелевой кушеткой с эффектом памяти. Скорость диагностики и лечения выше чем у стандартной модели, однако энергопотребление намного больше.</Frame_MedPodLux.description>
 
 </LanguageData>
