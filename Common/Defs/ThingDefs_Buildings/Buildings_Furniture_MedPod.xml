@@ -105,6 +105,7 @@
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToBuild>10000</WorkToBuild>
 			<Mass>350</Mass>
+			<Beauty>20</Beauty>
 			<Flammability>0.3</Flammability>
 			<BedRestEffectiveness>1</BedRestEffectiveness>
 			<Comfort>0.80</Comfort>
