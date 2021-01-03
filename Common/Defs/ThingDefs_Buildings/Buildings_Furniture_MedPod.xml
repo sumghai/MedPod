@@ -101,7 +101,7 @@
 		</graphicData>
 		<uiIconPath>UI/MedPod_Standard</uiIconPath>
 		<statBases>
-			<MarketValue>500000</MarketValue>
+			<MarketValue>50000</MarketValue>
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToBuild>10000</WorkToBuild>
 			<Mass>350</Mass>
