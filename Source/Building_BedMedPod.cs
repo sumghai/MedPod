@@ -290,16 +290,26 @@ namespace MedPod
         {
             string medicalToggleStr = "CommandBedSetAsMedicalLabel".Translate();
             string flickablePowerToggleStr = "CommandDesignateTogglePowerLabel".Translate();
+            string allowToggleStr = "CommandAllow".Translate();
+            string forPrisonersToggleStr = "CommandBedSetForPrisonersLabel".Translate();
+
+            var gizmosToDisableWhileInUse = new string[] 
+            {
+                flickablePowerToggleStr,
+                allowToggleStr,
+                forPrisonersToggleStr
+            };
+
             foreach (Gizmo g in base.GetGizmos())
             {
                 if (g is Command_Toggle act && (act.defaultLabel == medicalToggleStr))
                 {
                     continue; // Hide the Medical bed toggle, as MedPods are always Medical beds
                 }
-                
-                if (g is Command_Toggle act2 && (act2.defaultLabel == flickablePowerToggleStr) && PatientPawn != null)
+
+                if (g is Command_Toggle act2 && (gizmosToDisableWhileInUse.Contains(act2.defaultLabel)) && PatientPawn != null)
                 {
-                    g.Disable("MedPod_CommandGizmoDisabled_MedPodInUse".Translate(def.LabelCap));
+                    g.Disable("MedPod_CommandGizmoDisabled_MedPodInUse".Translate(def.LabelCap)); // Disable various gizmos while MedPod is in use
                 }
 
                 yield return g;
