@@ -113,13 +113,14 @@ namespace MedPod
 
             static bool Prefix(ref bool __result, Toil ___toil, TargetIndex ___bedIndex)
             {
+                // Add MedPod-specific fail conditions if the target bed is a MedPod
                 if (___toil.actor.CurJob.GetTarget(___bedIndex).Thing is Building_BedMedPod bedMedPod)
                 {
-                    // Add MedPod-specific fail conditions
-                    // - If the target bed is a MedPod AND
-                    // - If the pawn does not need to use the MedPod OR the MedPod has no power
+                    // - If the MedPod has no power OR
+                    // - If the MedPod is forbidden
+                    // - If the pawn does not need to use the MedPod OR 
                     // - If the treatment cycle was aborted
-                    __result = !bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs) || bedMedPod.Aborted;
+                    __result = !bedMedPod.powerComp.PowerOn || bedMedPod.IsForbidden(___toil.actor) || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(___toil.actor, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs) || bedMedPod.Aborted;
                     return false; // Skip original code
                 }
                 return true; // Run original code
@@ -160,7 +161,7 @@ namespace MedPod
                 Building_Bed building_Bed = (Building_Bed)curJob.GetTarget(___bedOrRestSpotIndex).Thing;
                 patientPawn.GainComfortFromCellIfPossible();
 
-                if (building_Bed is Building_BedMedPod bedMedPod && bedMedPod.powerComp.PowerOn && MedPodHealthAIUtility.ShouldPawnSeekMedPod(patientPawn, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs) && !bedMedPod.Aborted)
+                if (building_Bed is Building_BedMedPod bedMedPod && bedMedPod.powerComp.PowerOn && bedMedPod.IsForbidden(patientPawn) && MedPodHealthAIUtility.ShouldPawnSeekMedPod(patientPawn, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs) && !bedMedPod.Aborted)
                 {
                     // Keep pawn asleep in MedPod as long as they need to use it
                     curDriver.asleep = true;
@@ -179,6 +180,7 @@ namespace MedPod
 
         // Make sure patients only use MedPods if:
         // - The MedPod has power
+        // - The MedPod is not forbidden
         // - The patient has a valid need to use a MedPod (i.e. MedPodHealthAIUtility.ShouldPawnSeekMedPod() returns true), which excludes surgeries
         // - The patient does not have specific hediffs that prohibit them from using MedPods at all
         // - The patient is not in the disallowedRaces blacklist
@@ -188,7 +190,7 @@ namespace MedPod
         {
             static void Postfix(ref bool __result, Thing bedThing, Pawn sleeper)
             {
-                if (bedThing is Building_BedMedPod bedMedPod && (!bedMedPod.powerComp.PowerOn || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(sleeper, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs) || MedPodHealthAIUtility.HasUsageBlockingHediffs(sleeper, bedMedPod.UsageBlockingHediffs) || !MedPodHealthAIUtility.IsValidRaceForMedPod(sleeper, bedMedPod.DisallowedRaces) || bedMedPod.Aborted))
+                if (bedThing is Building_BedMedPod bedMedPod && (!bedMedPod.powerComp.PowerOn || bedMedPod.IsForbidden(sleeper) || !MedPodHealthAIUtility.ShouldPawnSeekMedPod(sleeper, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs) || MedPodHealthAIUtility.HasUsageBlockingHediffs(sleeper, bedMedPod.UsageBlockingHediffs) || !MedPodHealthAIUtility.IsValidRaceForMedPod(sleeper, bedMedPod.DisallowedRaces) || bedMedPod.Aborted))
                 {
                     __result = false;
                 }
