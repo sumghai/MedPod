@@ -5,7 +5,7 @@
 		<success>Always</success>
 		<operations>
 		
-			<!-- Allow MedPod to treat chemical highs and tolerances from all drugs -->
+			<!-- Allow MedPod to treat chemical highs and tolerances from selected drugs -->
 			
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/alwaysTreatableHediffs</xpath>
@@ -18,8 +18,6 @@
 					<li>GoJuiceHigh</li>
 					<li>GoJuiceTolerance</li>
 					<li>LuciferiumHigh</li>
-					<li>PenoxycylineHigh</li>
-					<li>PsychiteTeaHigh</li>
 					<li>PsychiteTolerance</li>
 					<li>SmokeleafHigh</li>
 					<li>SmokeleafTolerance</li>
