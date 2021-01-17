@@ -513,7 +513,10 @@ namespace MedPod
             Hediff corticalStimulation = HediffMaker.MakeHediff(HediffDef.Named(corticalStimulationType), patientPawn);
             patientPawn.health.AddHediff(corticalStimulation);
 
-            patientPawn.needs.food.CurLevelPercentage = patientSavedFoodNeed;
+            if (patientPawn.needs.food != null)
+            {
+                patientPawn.needs.food.CurLevelPercentage = patientSavedFoodNeed;
+            }
         }
 
         public void StartWickSustainer()
@@ -562,7 +565,10 @@ namespace MedPod
                     {
                         case MedPodStatus.Idle:
                             DiagnosingTicks = PatientBodySizeScaledMaxDiagnosingTicks;
-                            patientSavedFoodNeed = PatientPawn.needs.food.CurLevelPercentage;
+                            if (PatientPawn.needs.food != null)
+                            {
+                                patientSavedFoodNeed = PatientPawn.needs.food.CurLevelPercentage;
+                            }
                             SwitchState();
                             break;
 
@@ -675,7 +681,7 @@ namespace MedPod
             {
                 DiagnosingTicks--;
                 powerComp.PowerOutput = -DiagnosingPowerConsumption;
-                if (PatientPawn != null)
+                if (PatientPawn != null && PatientPawn.needs.food != null)
                 {
                     PatientPawn.needs.food.CurLevelPercentage = 1f;
                 }
@@ -691,7 +697,7 @@ namespace MedPod
                 HealingTicks--;
                 ProgressHealingTicks++;
                 powerComp.PowerOutput = -HealingPowerConsumption;
-                if (PatientPawn != null)
+                if (PatientPawn != null && PatientPawn.needs.food != null)
                 {
                     PatientPawn.needs.food.CurLevelPercentage = 1f;
                 }
