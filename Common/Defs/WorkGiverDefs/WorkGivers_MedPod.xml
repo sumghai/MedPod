@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ============= Patient ============= -->
+
+	<WorkGiverDef>
+		<defName>MedPodPatientGoToMedPodEmergency</defName>
+		<label>go to MedPod for emergency treatment</label>
+		<giverClass>MedPod.WorkGiver_PatientGoToMedPodEmergency</giverClass>
+		<workType>Patient</workType>
+		<emergency>true</emergency>
+		<verb>receive treatment in</verb>
+		<gerund>receiving treatment in</gerund>
+		<tagToGive>RestingForMedicalReasons</tagToGive>
+		<priorityInType>100</priorityInType>
+	</WorkGiverDef>
+
+	<!-- ============= PatientBedRest ============= -->
+
+	<!--<WorkGiverDef>
+		<defName>MedPodPatientGoToMedPodTreatment</defName>
+		<label>go to MedPod for treatment</label>
+		<giverClass>MedPod.WorkGiver_PatientGoToMedPodTreatment</giverClass>
+		<workType>PatientBedRest</workType>
+		<verb>receive treatment in</verb>
+		<gerund>receiving treatment in</gerund>
+		<tagToGive>RestingForMedicalReasons</tagToGive>
+		<priorityInType>100</priorityInType>
+	</WorkGiverDef>-->
+
+</Defs>

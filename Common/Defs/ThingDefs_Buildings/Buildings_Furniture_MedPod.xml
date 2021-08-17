@@ -68,7 +68,6 @@
 		<passability>PassThroughOnly</passability>
 		<pathCost>200</pathCost>
 		<defaultPlacingRot>South</defaultPlacingRot>
-		<menuHidden>true</menuHidden>
 		<building>
 			<isInert>true</isInert>
 			<ai_chillDestination>false</ai_chillDestination>

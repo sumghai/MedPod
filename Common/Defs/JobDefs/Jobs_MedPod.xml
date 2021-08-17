@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<JobDef>
+		<defName>PatientGoToMedPodEmergency</defName>
+		<driverClass>MedPod.JobDriver_PatientGoToMedPodEmergency</driverClass>
+		<reportString>Receiving treatment in TargetA.</reportString>
+		<suspendable>false</suspendable>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+
+</Defs>

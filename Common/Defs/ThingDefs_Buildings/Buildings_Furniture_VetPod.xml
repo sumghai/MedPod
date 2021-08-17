@@ -32,7 +32,7 @@
 			<Mass>600</Mass>
 			<Beauty>10</Beauty>
 			<Flammability>0.3</Flammability>
-			<BedRestEffectiveness>1.1</BedRestEffectiveness>
+			<BedRestEffectiveness>1</BedRestEffectiveness>
 			<Comfort>0.80</Comfort>
 		</statBases>
 		<constructEffect>ConstructMetal</constructEffect>
@@ -113,7 +113,7 @@
 			<Mass>3000</Mass>
 			<Beauty>5</Beauty>
 			<Flammability>0.3</Flammability>
-			<BedRestEffectiveness>1.1</BedRestEffectiveness>
+			<BedRestEffectiveness>1</BedRestEffectiveness>
 			<Comfort>0.80</Comfort>
 		</statBases>
 		<constructEffect>ConstructMetal</constructEffect>

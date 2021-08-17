@@ -58,16 +58,6 @@ namespace MedPod
 
         public bool Aborted = false;
 
-        // MedPod bedsheet/mattress colors are always either medical or prisoner-medical.
-        // regardless if the pawn is humanoid or not
-        public override Color DrawColorTwo
-        {
-            get
-            {
-                return ForPrisoners ? SheetColorMedicalForPrisoner : SheetColorMedical;
-            }
-        }
-
         public enum MedPodStatus
         {
             Idle = 0,
@@ -171,11 +161,12 @@ namespace MedPod
                 resultingBlocker.DeSpawn();
             }
 
-            Room room = this.GetRoom(RegionType.Set_Passable);
+            District district = this.GetDistrict();
             base.DeSpawn(mode);
-            if (room != null)
+            if (district != null)
             {
-                room.Notify_RoomShapeOrContainedBedsChanged();
+                district.Notify_RoomShapeOrContainedBedsChanged();
+                district.Room.Notify_RoomShapeChanged();
             }
         }
 
@@ -239,51 +230,6 @@ namespace MedPod
             }
 
             return stringBuilder.ToString();
-        }
-
-        public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
-        {
-            if (myPawn.RaceProps.Humanlike && !ForPrisoners && Medical && !myPawn.Drafted && Faction == Faction.OfPlayer && RestUtility.CanUseBedEver(myPawn, def))
-            {
-                if (!MedPodHealthAIUtility.IsValidRaceForMedPod(myPawn, DisallowedRaces))
-                {
-                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.def.label.CapitalizeFirst()) + ")", null);
-                    yield break;
-                }
-                if (!MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs))
-                {
-                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + ")", null);
-                    yield break;
-                }
-                if (MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs) && !powerComp.PowerOn)
-                {
-                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_Unpowered".Translate() + ")", null);
-                    yield break;
-                }
-                if (MedPodHealthAIUtility.ShouldPawnSeekMedPod(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs) && this.IsForbidden(myPawn))
-                {
-                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "ForbiddenLower".Translate() + ")", null);
-                    yield break;
-                }
-                Action action = delegate
-                {
-                    if (!ForPrisoners && Medical && myPawn.CanReserveAndReach(this, PathEndMode.ClosestTouch, Danger.Deadly, SleepingSlotsCount, -1, null, ignoreOtherReservations: true))
-                    {
-                        if (myPawn.CurJobDef == JobDefOf.LayDown && myPawn.CurJob.GetTarget(TargetIndex.A).Thing == this)
-                        {
-                            myPawn.CurJob.restUntilHealed = true;
-                        }
-                        else
-                        {
-                            Job job = JobMaker.MakeJob(JobDefOf.LayDown, this);
-                            job.restUntilHealed = true;
-                            myPawn.jobs.TryTakeOrderedJob(job);
-                        }
-                        myPawn.mindState.ResetLastDisturbanceTick();
-                    }
-                };
-                yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("UseMedicalBed".Translate(), action), myPawn, this, (AnyUnoccupiedSleepingSlot ? "ReservedBy" : "SomeoneElseSleeping").CapitalizeFirst());
-            }
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -460,7 +406,7 @@ namespace MedPod
                 // The Hediff will be completely removed once the Medpod is done with the Healing process
                 if (currentHediff.Bleeding)
                 {
-                    currentHediff.Tended(1); // TODO - Replace with new method name once it no longer has a temporary name
+                    currentHediff.Tended(1,1); // TODO - Replace with new method name once it no longer has a temporary name
                 }
             }
         }
@@ -594,7 +540,7 @@ namespace MedPod
                             // Don't remove 'good' treatable Hediffs but instead treat them with 100% quality (unless the 'good' Hediff is whitelisted as always treatable)
                             if (!patientTreatableHediffs.First().def.isBad && !AlwaysTreatableHediffs.Contains(patientTreatableHediffs.First().def))
                             {
-                                patientTreatableHediffs.First().Tended(1); // TODO - Replace with new method name once it no longer has a temporary name
+                                patientTreatableHediffs.First().Tended(1, 1); // TODO - Replace with new method name once it no longer has a temporary name
                             }
                             else
                             {
