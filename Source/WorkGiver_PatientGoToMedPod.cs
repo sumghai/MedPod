@@ -5,7 +5,7 @@ using Verse.AI;
 
 namespace MedPod
 {
-    public class WorkGiver_PatientGoToMedPodEmergency : WorkGiver_Scanner
+    public class WorkGiver_PatientGoToMedPod : WorkGiver_Scanner
     {
         public static string NoPathTrans;
 

@@ -6,7 +6,7 @@
 	<WorkGiverDef>
 		<defName>MedPodPatientGoToMedPodEmergency</defName>
 		<label>go to MedPod for emergency treatment</label>
-		<giverClass>MedPod.WorkGiver_PatientGoToMedPodEmergency</giverClass>
+		<giverClass>MedPod.WorkGiver_PatientGoToMedPod</giverClass>
 		<workType>Patient</workType>
 		<emergency>true</emergency>
 		<verb>receive treatment in</verb>
@@ -17,15 +17,15 @@
 
 	<!-- ============= PatientBedRest ============= -->
 
-	<!--<WorkGiverDef>
+	<WorkGiverDef>
 		<defName>MedPodPatientGoToMedPodTreatment</defName>
 		<label>go to MedPod for treatment</label>
-		<giverClass>MedPod.WorkGiver_PatientGoToMedPodTreatment</giverClass>
+		<giverClass>MedPod.WorkGiver_PatientGoToMedPod</giverClass>
 		<workType>PatientBedRest</workType>
 		<verb>receive treatment in</verb>
 		<gerund>receiving treatment in</gerund>
 		<tagToGive>RestingForMedicalReasons</tagToGive>
 		<priorityInType>100</priorityInType>
-	</WorkGiverDef>-->
+	</WorkGiverDef>
 
 </Defs>

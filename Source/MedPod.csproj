@@ -314,7 +314,7 @@
     <Compile Include="Patches\Harmony_Toils_Bed.cs" />
     <Compile Include="Patches\Harmony_WorkGiver_Tend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkGiver_PatientGoToMedPodEmergency.cs" />
+    <Compile Include="WorkGiver_PatientGoToMedPod.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
