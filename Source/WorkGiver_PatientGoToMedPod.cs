@@ -88,7 +88,7 @@ namespace MedPod
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            return JobMaker.MakeJob(MedPodDef.PatientGoToMedPodEmergency, t);
+            return JobMaker.MakeJob(MedPodDef.PatientGoToMedPod, t);
         }
 
         public override float GetPriority(Pawn pawn, TargetInfo t)

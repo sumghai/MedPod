@@ -11,7 +11,7 @@ namespace MedPod
             DefOfHelper.EnsureInitializedInCtor(typeof(MedPodDef));
         }
 
-        public static JobDef PatientGoToMedPodEmergency;
+        public static JobDef PatientGoToMedPod;
 
         public static ThingDef MedPodInvisibleBlocker;
     }

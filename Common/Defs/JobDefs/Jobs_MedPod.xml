@@ -2,8 +2,8 @@
 <Defs>
 
 	<JobDef>
-		<defName>PatientGoToMedPodEmergency</defName>
-		<driverClass>MedPod.JobDriver_PatientGoToMedPodEmergency</driverClass>
+		<defName>PatientGoToMedPod</defName>
+		<driverClass>MedPod.JobDriver_PatientGoToMedPod</driverClass>
 		<reportString>Receiving treatment in TargetA.</reportString>
 		<suspendable>false</suspendable>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>

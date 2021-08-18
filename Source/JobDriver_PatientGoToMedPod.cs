@@ -5,7 +5,7 @@ using Verse.AI;
 
 namespace MedPod
 {
-    public class JobDriver_PatientGoToMedPodEmergency : JobDriver
+    public class JobDriver_PatientGoToMedPod : JobDriver
     {
         private const TargetIndex MedPodInd = TargetIndex.A;
 

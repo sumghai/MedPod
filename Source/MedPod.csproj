@@ -300,7 +300,7 @@
     <Compile Include="CompProperties_MedPodSettings.cs" />
     <Compile Include="CompProperties_TreatmentRestrictions.cs" />
     <Compile Include="CompTreatmentRestrictions.cs" />
-    <Compile Include="JobDriver_PatientGoToMedPodEmergency.cs" />
+    <Compile Include="JobDriver_PatientGoToMedPod.cs" />
     <Compile Include="MedPodDef.cs" />
     <Compile Include="MedPodHealthAIUtility.cs" />
     <Compile Include="MedPodMod.cs" />
