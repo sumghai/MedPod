@@ -44,5 +44,21 @@
 		<tagToGive>RestingForMedicalReasons</tagToGive>
 		<priorityInType>100</priorityInType>
 	</WorkGiverDef>
+	
+	<!-- ============= Warden ============= -->
+	
+	<WorkGiverDef>
+		<defName>MedPodWardenRescueToMedPod</defName>
+		<label>rescue downed prisoner to MedPod</label>
+		<giverClass>MedPod.WorkGiver_WardenRescueToMedPod</giverClass>
+		<workType>Warden</workType>
+		<emergency>true</emergency>
+		<verb>rescue</verb>
+		<gerund>rescuing</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<priorityInType>95</priorityInType>
+	</WorkGiverDef>
 
 </Defs>

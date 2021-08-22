@@ -12,7 +12,7 @@ namespace MedPod
 		{
 			Pawn patient = t as Pawn;
 
-			if (patient == null || !patient.Downed || patient.Faction != pawn.Faction || patient.InBed() || !pawn.CanReserve(patient, 1, -1, null, forced) || GenAI.EnemyIsNear(patient, MinDistFromEnemy))
+			if (patient == null || !patient.Downed || patient.Faction != pawn.Faction || patient.CurrentBed()?.def.thingClass == typeof(Building_BedMedPod) || !pawn.CanReserve(patient, 1, -1, null, forced) || GenAI.EnemyIsNear(patient, MinDistFromEnemy))
 			{
 				return false;
 			}
@@ -33,7 +33,7 @@ namespace MedPod
 			return job;
 		}
 
-		public Building_BedMedPod FindBestMedPod(Pawn pawn, Pawn patient)
+		public static Building_BedMedPod FindBestMedPod(Pawn pawn, Pawn patient)
 		{
 			List<ThingDef> medPodDefsBestToWorst = RestUtility.bedDefsBestToWorst_Medical.Where(x => x.thingClass == typeof(Building_BedMedPod)).ToList();
 
