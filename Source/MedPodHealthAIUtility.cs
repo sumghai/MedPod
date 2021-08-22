@@ -100,6 +100,10 @@ namespace MedPod
                     return false;
                 }
             }
+            if (patientPawn.IsPrisoner != bedMedPod.ForPrisoners)
+            {
+                return false;
+            }
             if (!ShouldSeekMedPodRest(patientPawn, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs))
             {
                 return false;

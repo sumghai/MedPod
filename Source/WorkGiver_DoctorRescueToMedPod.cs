@@ -54,7 +54,7 @@ namespace MedPod
                     {
                         Building_BedMedPod bedMedPod = t as Building_BedMedPod;
 
-                        bool isMedicalBed = ((Building_BedMedPod)bedMedPod).Medical;
+                        bool isMedicalBed = bedMedPod.Medical;
 
                         bool patientDangerCheck = (int)bedMedPod.Position.GetDangerFor(patient, patient.Map) <= (int)maxDanger2;
 
