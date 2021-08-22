@@ -2,7 +2,6 @@
 <Patch>
 
 	<Operation Class="PatchOperationSequence">
-		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName = "TableMachining"]/recipes</xpath>

@@ -2,7 +2,6 @@
 <Patch>
 
 	<Operation Class="PatchOperationSequence">
-		<success>Always</success>
 		<operations>
 		
 			<!-- Allow MedPod to treat chemical highs and tolerances from selected drugs -->
