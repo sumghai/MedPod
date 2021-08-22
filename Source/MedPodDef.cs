@@ -12,6 +12,7 @@ namespace MedPod
         }
 
         public static JobDef PatientGoToMedPod;
+        public static JobDef RescueToMedPod;
 
         public static ThingDef MedPodInvisibleBlocker;
     }

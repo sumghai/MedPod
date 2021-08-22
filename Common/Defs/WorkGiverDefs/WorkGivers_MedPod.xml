@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<!-- ============= Patient ============= -->
@@ -13,6 +13,23 @@
 		<gerund>receiving treatment in</gerund>
 		<tagToGive>RestingForMedicalReasons</tagToGive>
 		<priorityInType>100</priorityInType>
+	</WorkGiverDef>
+
+	<!-- ============= Doctor ============= -->
+
+	<WorkGiverDef>
+		<defName>MedPodDoctorRescueToMedPod</defName>
+		<label>rescue downed allies to MedPod</label>
+		<giverClass>MedPod.WorkGiver_DoctorRescueToMedPod</giverClass>
+		<workType>Doctor</workType>
+		<emergency>true</emergency>
+		<verb>rescue</verb>
+		<gerund>rescuing</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<priorityInType>120</priorityInType>
+		<prioritizeSustains>true</prioritizeSustains>
 	</WorkGiverDef>
 
 	<!-- ============= PatientBedRest ============= -->
