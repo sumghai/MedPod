@@ -28,9 +28,7 @@ namespace MedPod
 				return null;
 			}
 
-			Log.Warning(warden + " has job on prisoner " + prisoner);
-
-			Building_BedMedPod bedMedPod = WorkGiver_DoctorRescueToMedPod.FindBestMedPod(warden, prisoner);
+			Building_BedMedPod bedMedPod = MedPodRestUtility.FindBestMedPod(warden, prisoner);
 			if (bedMedPod != null && prisoner.CanReserve(bedMedPod))
 			{
 				Job job = JobMaker.MakeJob(MedPodDef.RescueToMedPod, prisoner, bedMedPod);

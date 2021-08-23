@@ -1,6 +1,4 @@
 ﻿using RimWorld;
-using System.Collections.Generic;
-using System.Linq;
 using Verse;
 using Verse.AI;
 
@@ -16,7 +14,7 @@ namespace MedPod
 			{
 				return false;
 			}
-			Building_BedMedPod bedMedPod = FindBestMedPod(pawn, patient);
+			Building_BedMedPod bedMedPod = MedPodRestUtility.FindBestMedPod(pawn, patient);
 			if (bedMedPod != null && patient.CanReserve(bedMedPod))
 			{
 				return true;
@@ -27,54 +25,10 @@ namespace MedPod
 		public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
 		{
 			Pawn patient = t as Pawn;
-			Building_BedMedPod bedMedPod = FindBestMedPod(pawn, patient);
+			Building_BedMedPod bedMedPod = MedPodRestUtility.FindBestMedPod(pawn, patient);
 			Job job = JobMaker.MakeJob(MedPodDef.RescueToMedPod, patient, bedMedPod);
 			job.count = 1;
 			return job;
-		}
-
-		public static Building_BedMedPod FindBestMedPod(Pawn pawn, Pawn patient)
-		{
-			List<ThingDef> medPodDefsBestToWorst = RestUtility.bedDefsBestToWorst_Medical.Where(x => x.thingClass == typeof(Building_BedMedPod)).ToList();
-
-			for (int i = 0; i < medPodDefsBestToWorst.Count; i++)
-			{				
-				ThingDef thingDef = medPodDefsBestToWorst[i];
-
-				if (!RestUtility.CanUseBedEver(patient, thingDef))
-				{
-					continue;
-				}
-
-				for (int j = 0; j < 2; j++)
-				{
-					Danger maxDanger2 = (j == 0) ? Danger.None : Danger.Deadly;
-
-                    bool validator(Thing t)
-                    {
-                        Building_BedMedPod bedMedPod = t as Building_BedMedPod;
-
-                        bool isMedicalBed = bedMedPod.Medical;
-
-                        bool patientDangerCheck = (int)bedMedPod.Position.GetDangerFor(patient, patient.Map) <= (int)maxDanger2;
-
-						bool isValidBedFor = MedPodHealthAIUtility.IsValidMedPodFor(bedMedPod, patient, pawn, patient.GuestStatus);
-
-                        bool result = isMedicalBed && patientDangerCheck && isValidBedFor;
-
-                        return result;
-                    }
-
-					Building_BedMedPod bedMedPod = (Building_BedMedPod)GenClosest.ClosestThingReachable(patient.Position, patient.Map, ThingRequest.ForDef(thingDef), PathEndMode.OnCell, TraverseParms.For(pawn), 9999f, validator);
-
-					if (bedMedPod != null)
-					{
-						return bedMedPod;
-					}
-				}
-			}
-
-			return null;
 		}
 	}
 }

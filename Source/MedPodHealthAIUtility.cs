@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
-using Verse.AI;
 
 namespace MedPod
 {
     public static class MedPodHealthAIUtility
     {
-        public static string NoPathTrans;
-
-        public static void ResetStaticData()
-        {
-            NoPathTrans = "NoPath".Translate();
-        }
-
         public static bool ShouldSeekMedPodRest(Pawn patientPawn, List<HediffDef> alwaysTreatableHediffs, List<HediffDef> neverTreatableHediffs)
         {
             return 
@@ -51,80 +43,6 @@ namespace MedPod
         public static bool HasUsageBlockingHediffs(Pawn patientPawn, List<HediffDef> usageBlockingHediffs)
         {
             return patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => usageBlockingHediffs.Contains(x.def));
-        }
-
-        public static bool IsValidMedPodFor(Building_BedMedPod bedMedPod, Pawn patientPawn, Pawn travelerPawn, GuestStatus? guestStatus = null)
-        {
-            if (bedMedPod == null)
-            {
-                return false;
-            }
-            if (!bedMedPod.powerComp.PowerOn)
-            {
-                return false;
-            }
-            if (bedMedPod.IsForbidden(travelerPawn))
-            {
-                return false;
-            }
-            if (!travelerPawn.CanReserve(bedMedPod))
-            {
-                Pawn otherPawn = travelerPawn.Map.reservationManager.FirstRespectedReserver(bedMedPod, patientPawn);
-                if (otherPawn != null)
-                {
-                    JobFailReason.Is("ReservedBy".Translate(otherPawn.LabelShort, otherPawn));
-                }
-                return false;
-            }
-            if (!travelerPawn.CanReach(bedMedPod, PathEndMode.OnCell, Danger.Deadly))
-            {
-                JobFailReason.Is(NoPathTrans);
-                return false;
-            }
-            if (travelerPawn.Map.designationManager.DesignationOn(bedMedPod, DesignationDefOf.Deconstruct) != null)
-            {
-                return false;
-            }
-            if (!RestUtility.CanUseBedEver(patientPawn, bedMedPod.def))
-            {
-                return false;
-            }
-            if (guestStatus == GuestStatus.Prisoner)
-            {
-                if (!bedMedPod.ForPrisoners)
-                {
-                    return false;
-                }
-                if (!bedMedPod.Position.IsInPrisonCell(bedMedPod.Map))
-                {
-                    return false;
-                }
-            }
-            if (patientPawn.IsPrisoner != bedMedPod.ForPrisoners)
-            {
-                return false;
-            }
-            if (!ShouldSeekMedPodRest(patientPawn, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs))
-            {
-                return false;
-            }
-            if (!IsValidRaceForMedPod(patientPawn, bedMedPod.DisallowedRaces))
-            {
-                return false;
-            }
-            if (HasUsageBlockingHediffs(patientPawn, bedMedPod.UsageBlockingHediffs))
-            {
-                return false;
-            }
-            if (bedMedPod.IsBurning())
-            {
-                return false;
-            }
-            if (bedMedPod.IsBrokenDown())
-            {
-                return false;
-            }
-            return true;
         }
     }
 }

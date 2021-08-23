@@ -1,5 +1,4 @@
-﻿using RimWorld;
-using Verse;
+﻿using Verse;
 using Verse.AI;
 
 namespace MedPod
@@ -8,7 +7,7 @@ namespace MedPod
     {
         public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
         {
-            Building_BedMedPod bedMedPod = WorkGiver_DoctorRescueToMedPod.FindBestMedPod(pawn, pawn);
+            Building_BedMedPod bedMedPod = MedPodRestUtility.FindBestMedPod(pawn, pawn);
             if (bedMedPod != null)
             {
                 return new ThinkResult(JobMaker.MakeJob(MedPodDef.PatientGoToMedPod, bedMedPod), this);

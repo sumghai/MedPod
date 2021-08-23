@@ -307,6 +307,7 @@
     <Compile Include="MedPodHealthAIUtility.cs" />
     <Compile Include="MedPodMod.cs" />
     <Compile Include="Building_BedMedPod.cs" />
+    <Compile Include="MedPodRestUtility.cs" />
     <Compile Include="Patches\Harmony_Building_Bed.cs" />
     <Compile Include="Patches\Harmony_FeedingUtilities.cs" />
     <Compile Include="Patches\Harmony_JobDriver_WaitDowned.cs" />

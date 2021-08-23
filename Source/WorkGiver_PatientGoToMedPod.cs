@@ -26,7 +26,7 @@ namespace MedPod
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Building_BedMedPod bedMedPod = t as Building_BedMedPod;
-            return MedPodHealthAIUtility.IsValidMedPodFor(bedMedPod, pawn, pawn, pawn.GuestStatus);
+            return MedPodRestUtility.IsValidMedPodFor(bedMedPod, pawn, pawn, pawn.GuestStatus);
         }
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
