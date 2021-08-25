@@ -93,41 +93,51 @@ namespace MedPod
         {
             List<ThingDef> medPodDefsBestToWorst = RestUtility.bedDefsBestToWorst_Medical.Where(x => x.thingClass == typeof(Building_BedMedPod)).ToList();
 
-            for (int i = 0; i < medPodDefsBestToWorst.Count; i++)
+            float initialSearchDistance = 10f;
+
+            // Prioritize searching for usable MedPods by distance, followed by MedPod type and path danger level
+            while (initialSearchDistance <= 9999f)
             {
-                ThingDef thingDef = medPodDefsBestToWorst[i];
 
-                if (!RestUtility.CanUseBedEver(patient, thingDef))
+                for (int i = 0; i < medPodDefsBestToWorst.Count; i++)
                 {
-                    continue;
-                }
+                    ThingDef thingDef = medPodDefsBestToWorst[i];
 
-                for (int j = 0; j < 2; j++)
-                {
-                    Danger maxDanger2 = (j == 0) ? Danger.None : Danger.Deadly;
-
-                    bool validator(Thing t)
+                    if (!RestUtility.CanUseBedEver(patient, thingDef))
                     {
-                        Building_BedMedPod bedMedPod = t as Building_BedMedPod;
-
-                        bool isMedicalBed = bedMedPod.Medical;
-
-                        bool patientDangerCheck = (int)bedMedPod.Position.GetDangerFor(patient, patient.Map) <= (int)maxDanger2;
-
-                        bool isValidBedFor = IsValidMedPodFor(bedMedPod, patient, pawn, patient.GuestStatus);
-
-                        bool result = isMedicalBed && patientDangerCheck && isValidBedFor;
-
-                        return result;
+                        continue;
                     }
 
-                    Building_BedMedPod bedMedPod = (Building_BedMedPod)GenClosest.ClosestThingReachable(patient.Position, patient.Map, ThingRequest.ForDef(thingDef), PathEndMode.OnCell, TraverseParms.For(pawn), 9999f, validator);
-
-                    if (bedMedPod != null)
+                    for (int j = 0; j < 2; j++)
                     {
-                        return bedMedPod;
+                        Danger maxDanger2 = (j == 0) ? Danger.None : Danger.Deadly;
+
+                        bool validator(Thing t)
+                        {
+                            Building_BedMedPod bedMedPod = t as Building_BedMedPod;
+
+                            bool isMedicalBed = bedMedPod.Medical;
+
+                            bool patientDangerCheck = (int)bedMedPod.Position.GetDangerFor(patient, patient.Map) <= (int)maxDanger2;
+
+                            bool isValidBedFor = IsValidMedPodFor(bedMedPod, patient, pawn, patient.GuestStatus);
+
+                            bool result = isMedicalBed && patientDangerCheck && isValidBedFor;
+
+                            return result;
+                        }
+
+                        Building_BedMedPod bedMedPod = (Building_BedMedPod)GenClosest.ClosestThingReachable(patient.Position, patient.Map, ThingRequest.ForDef(thingDef), PathEndMode.OnCell, TraverseParms.For(pawn), initialSearchDistance, validator);
+
+                        if (bedMedPod != null)
+                        {
+                            return bedMedPod;
+                        }
                     }
                 }
+
+                // Double our search range for each iteration
+                initialSearchDistance *= 2;
             }
 
             return null;
