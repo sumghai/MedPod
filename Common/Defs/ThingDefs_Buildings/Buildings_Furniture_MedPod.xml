@@ -25,6 +25,8 @@
 				<alwaysTreatableHediffs>
 					<li>AlcoholHigh</li>					
 					<li>Anesthetic</li>
+					<li>FoodPoisoning</li>
+					<li>ToxicBuildup</li>
 					<li>MedPod_InducedComa</li>
 				</alwaysTreatableHediffs>
 				<neverTreatableHediffs />
