@@ -24,7 +24,6 @@ namespace MedPod.Patches
 
                 if (floatMenuOption != null)
                 {
-                    Log.Warning("Found " + floatMenuOption.Label);
                     opts.Remove(floatMenuOption);
                     opts.Add(AddRescueToMedPodOption(pawn, pawn2));
                 }

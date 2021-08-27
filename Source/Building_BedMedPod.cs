@@ -450,6 +450,13 @@ namespace MedPod
         {
             patientPawn.health.hediffSet.hediffs.RemoveAll((Hediff x) => x.def.defName == "MedPod_InducedComa");
 
+            // Clear any ongoing mental states (e.g. Manhunter)
+            if (patientPawn.InMentalState)
+            {
+                patientPawn.MentalState.RecoverFromState();
+            }
+
+            // Apply the appropriate cortical stimulation hediff, depending on whether the treatment was completed or interrupted            
             string corticalStimulationType = wakeNormally ? "MedPod_CorticalStimulation" : "MedPod_CorticalStimulationImproper";
             string popupMessage = wakeNormally ? "MedPod_Message_TreatmentComplete".Translate(patientPawn.LabelCap, patientPawn) : "MedPod_Message_TreatmentInterrupted".Translate(patientPawn.LabelCap, patientPawn);
             MessageTypeDef popupMessageType = wakeNormally ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.NegativeHealthEvent;
@@ -459,6 +466,7 @@ namespace MedPod
             Hediff corticalStimulation = HediffMaker.MakeHediff(HediffDef.Named(corticalStimulationType), patientPawn);
             patientPawn.health.AddHediff(corticalStimulation);
 
+            // Restore previously saved patient food need level
             if (patientPawn.needs.food != null)
             {
                 patientPawn.needs.food.CurLevelPercentage = patientSavedFoodNeed;
