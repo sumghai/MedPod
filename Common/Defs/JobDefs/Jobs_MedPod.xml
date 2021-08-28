@@ -12,7 +12,7 @@
 	<JobDef>
 		<defName>RescueToMedPod</defName>
 		<driverClass>JobDriver_TakeToBed</driverClass>
-		<reportString>rescuing TargetA to MedPod.</reportString>
+		<reportString>rescuing TargetA to TargetB.</reportString>
 		<casualInterruptible>false</casualInterruptible>
 		<carryThingAfterJob>true</carryThingAfterJob>
 	</JobDef>
