@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: go to MedPod for emergency treatment -->
+	<MedPodPatientGoToMedPodEmergency.label>去智能医疗床上接收紧急治疗</MedPodPatientGoToMedPodEmergency.label>
+
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodEmergency.gerund>接受治疗于</MedPodPatientGoToMedPodEmergency.gerund>
+
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodEmergency.verb>接受治疗于</MedPodPatientGoToMedPodEmergency.verb>
+
+	<!-- EN: rescue downed allies to MedPod -->
+	<MedPodDoctorRescueToMedPod.label>救援倒地的殖民者至智能医疗床上</MedPodDoctorRescueToMedPod.label>
+
+	<!-- EN: rescuing -->
+	<MedPodDoctorRescueToMedPod.gerund>救援</MedPodDoctorRescueToMedPod.gerund>
+
+	<!-- EN: rescue -->
+	<MedPodDoctorRescueToMedPod.verb>救援</MedPodDoctorRescueToMedPod.verb>
+
+	<!-- EN: go to MedPod for treatment -->
+	<MedPodPatientGoToMedPodTreatment.label>到智能医疗床上接收治疗</MedPodPatientGoToMedPodTreatment.label>
+
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodTreatment.gerund>接受治疗于</MedPodPatientGoToMedPodTreatment.gerund>
+
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodTreatment.verb>接受治疗于</MedPodPatientGoToMedPodTreatment.verb>
+
+	<!-- EN: rescue downed prisoner to MedPod -->
+	<MedPodWardenRescueToMedPod.label>救援囚犯至智能医疗床上</MedPodWardenRescueToMedPod.label>
+
+	<!-- EN: rescuing -->
+	<MedPodWardenRescueToMedPod.gerund>救援</MedPodWardenRescueToMedPod.gerund>
+
+	<!-- EN: rescue -->
+	<MedPodWardenRescueToMedPod.verb>救援</MedPodWardenRescueToMedPod.verb>
+
+</LanguageData>

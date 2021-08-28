@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: go to MedPod for emergency treatment -->
+	<MedPodPatientGoToMedPodEmergency.label>получить неотложную помощь на Медкапсула</MedPodPatientGoToMedPodEmergency.label>
+	
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodEmergency.gerund>лечиться в</MedPodPatientGoToMedPodEmergency.gerund>
+	
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodEmergency.verb>лечиться в</MedPodPatientGoToMedPodEmergency.verb>
+	
+	<!-- EN: rescue downed allies to MedPod -->
+	<MedPodDoctorRescueToMedPod.label>спасать сражённых союзников на medpod </MedPodDoctorRescueToMedPod.label>
+	
+	<!-- EN: rescuing -->
+	<MedPodDoctorRescueToMedPod.gerund>спасти</MedPodDoctorRescueToMedPod.gerund>
+	
+	<!-- EN: rescue -->
+	<MedPodDoctorRescueToMedPod.verb>спасать</MedPodDoctorRescueToMedPod.verb>
+	
+	<!-- EN: go to MedPod for treatment -->
+	<MedPodPatientGoToMedPodTreatment.label>лечиться на Медкапсула</MedPodPatientGoToMedPodTreatment.label>
+	
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodTreatment.gerund>лечиться в</MedPodPatientGoToMedPodTreatment.gerund>
+	
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodTreatment.verb>лечиться в</MedPodPatientGoToMedPodTreatment.verb>
+	
+	<!-- EN: rescue downed prisoner to MedPod -->
+	<MedPodWardenRescueToMedPod.label>спасать сражённых пленников на medpod </MedPodWardenRescueToMedPod.label>
+	
+	<!-- EN: rescuing -->
+	<MedPodWardenRescueToMedPod.gerund>спасти</MedPodWardenRescueToMedPod.gerund>
+	
+	<!-- EN: rescue -->
+	<MedPodWardenRescueToMedPod.verb>спасать</MedPodWardenRescueToMedPod.verb>
+
+</LanguageData>

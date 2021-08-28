@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: go to MedPod for emergency treatment -->
+	<MedPodPatientGoToMedPodEmergency.label>緊急治療のために治療ポッドに行く</MedPodPatientGoToMedPodEmergency.label>
+
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodEmergency.gerund>で緊急治療する</MedPodPatientGoToMedPodEmergency.gerund>
+
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodEmergency.verb>緊急治療</MedPodPatientGoToMedPodEmergency.verb>
+
+	<!-- EN: rescue downed allies to MedPod -->
+	<MedPodDoctorRescueToMedPod.label>治療ポッドに緊急搬送</MedPodDoctorRescueToMedPod.label>
+
+	<!-- EN: rescuing -->
+	<MedPodDoctorRescueToMedPod.gerund>を緊急搬送する</MedPodDoctorRescueToMedPod.gerund>
+
+	<!-- EN: rescue -->
+	<MedPodDoctorRescueToMedPod.verb>緊急搬送</MedPodDoctorRescueToMedPod.verb>
+
+	<!-- EN: go to MedPod for treatment -->
+	<MedPodPatientGoToMedPodTreatment.label>治療のために治療ポッドに行く</MedPodPatientGoToMedPodTreatment.label>
+
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodTreatment.gerund>で治療する</MedPodPatientGoToMedPodTreatment.gerund>
+
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodTreatment.verb>治療</MedPodPatientGoToMedPodTreatment.verb>
+
+	<!-- EN: rescue downed prisoner to MedPod -->
+	<MedPodWardenRescueToMedPod.label>囚人を治療ポッドに緊急搬送</MedPodWardenRescueToMedPod.label>
+
+	<!-- EN: rescuing -->
+	<MedPodWardenRescueToMedPod.gerund>を緊急搬送する</MedPodWardenRescueToMedPod.gerund>
+
+	<!-- EN: rescue -->
+	<MedPodWardenRescueToMedPod.verb>緊急搬送</MedPodWardenRescueToMedPod.verb>
+
+</LanguageData>

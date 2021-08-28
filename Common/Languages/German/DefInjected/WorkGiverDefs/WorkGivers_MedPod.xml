@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: go to MedPod for emergency treatment -->
+	<MedPodPatientGoToMedPodEmergency.label>für Notfallbehandlung ins MedPod gehen</MedPodPatientGoToMedPodEmergency.label>
+	
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodEmergency.gerund>Behandlung in</MedPodPatientGoToMedPodEmergency.gerund>
+	
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodEmergency.verb>zur Behandlung nutzen</MedPodPatientGoToMedPodEmergency.verb>
+	
+	<!-- EN: rescue downed allies to MedPod -->
+	<MedPodDoctorRescueToMedPod.label>am Boden liegende Verbündete ins MedPod bringen</MedPodDoctorRescueToMedPod.label>
+	
+	<!-- EN: rescuing -->
+	<MedPodDoctorRescueToMedPod.gerund>Retten von</MedPodDoctorRescueToMedPod.gerund>
+	
+	<!-- EN: rescue -->
+	<MedPodDoctorRescueToMedPod.verb>retten</MedPodDoctorRescueToMedPod.verb>
+	
+	<!-- EN: go to MedPod for treatment -->
+	<MedPodPatientGoToMedPodTreatment.label>für Behandlung ins MedPod gehen</MedPodPatientGoToMedPodTreatment.label>
+	
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodTreatment.gerund>Behandlung in</MedPodPatientGoToMedPodTreatment.gerund>
+	
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodTreatment.verb>zur Behandlung nutzen</MedPodPatientGoToMedPodTreatment.verb>
+	
+	<!-- EN: rescue downed prisoner to MedPod -->
+	<MedPodWardenRescueToMedPod.label>am Boden liegende Gefangene ins MedPod bringen</MedPodWardenRescueToMedPod.label>
+	
+	<!-- EN: rescuing -->
+	<MedPodWardenRescueToMedPod.gerund>Retten von</MedPodWardenRescueToMedPod.gerund>
+	
+	<!-- EN: rescue -->
+	<MedPodWardenRescueToMedPod.verb>retten</MedPodWardenRescueToMedPod.verb>
+
+</LanguageData>

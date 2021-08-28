@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+	<!-- EN: Invisible Blocker -->
+	<MedPodInvisibleBlocker.label>Unsichtbares Hindernis</MedPodInvisibleBlocker.label>
+	
 	<!-- EN: MedPod -->
 	<MedPodStandard.label>MedPod</MedPodStandard.label>
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- EN: Receiving treatment in TargetA. -->
+	<PatientGoToMedPod.reportString>Behandlung im TargetA erhalten.</PatientGoToMedPod.reportString>
+	
+	<!-- EN: rescuing TargetA to TargetB. -->
+	<RescueToMedPod.reportString>rette TargetA auf TargetB.</RescueToMedPod.reportString>
+
+</LanguageData>
