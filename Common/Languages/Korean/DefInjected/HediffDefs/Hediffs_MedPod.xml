@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- EN: delta wave induced coma -->
+	<MedPod_InducedComa.label>델타파 유발 혼수</MedPod_InducedComa.label>
+	
+	<!-- EN: Harmonically-shifted delta waves neuroelectrically applied to the cerebal cortex mimics the effects of chemical anesthesia, rendering creatures unconscious. -->
+	<MedPod_InducedComa.description>대뇌 피질에 적용된 신경전기적으로 조화롭게 이동된 델타 파동은 화학 마취의 효과를 모방하여 생물을 무의식 상태로 만듭니다.</MedPod_InducedComa.description>
+	
+	<!-- EN: cortical stimulation -->
+	<MedPod_CorticalStimulation.label>피질 자극</MedPod_CorticalStimulation.label>
+	
+	<!-- EN: Neuroelectrical stimulation applied to the cerebal cortex, gently restoring consciousness in creatures. -->
+	<MedPod_CorticalStimulation.description>신경 대뇌 피질에 전기 자극을 가하여 생물의 의식을 부드럽게 회복시킵니다.</MedPod_CorticalStimulation.description>
+	
+	<!-- cortical stimulation (improper) -->
+	<MedPod_CorticalStimulationImproper.label>피질 자극(부적절)</MedPod_CorticalStimulationImproper.label>
+	
+	<!-- Neuroelectrical stimulation improperly applied to the cerebal cortex, abruptly restoring consciousness in creatures.\n\nUsually occurs when a MedPod loses power or otherwise malfunctions while in use. -->
+	<MedPod_CorticalStimulationImproper.description>신경전기 자극이 대뇌 피질에 부적절하게 적용되어 생물의 의식이 갑자기 회복됩니다.\n\n일반적으로 메드포드가 사용 중 전원을 잃거나 오작동할 때 발생합니다.</MedPod_CorticalStimulationImproper.description>
+
+</LanguageData>

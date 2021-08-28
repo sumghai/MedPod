@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	
+	<!-- ========== Royalty DLC-exclusive content ========== -->
+	
+	<!-- EN: MedPod Lux -->
+	<MedPodLux.label>메드포드 Lux</MedPodLux.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
+	<MedPodLux.description>세포 재생 가속화를 사용하여 상실된 장기와 팔다리 재생을 포함하여 거의 모든 종류의 부상과 질병을 치료하는 고급 병원 침대입니다.\n\n금상감 피팅과 젤 주입 메모리 폼 매트리스가 있는 고급 모델입니다. 진단 및 치료가 더 빠르지만 더 높은 전력 소비가 필요합니다.</MedPodLux.description>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_MedPodLux.label>메드포드 Lux (청사진)</Blueprint_MedPodLux.label>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_Install_MedPodLux.label>메드포드 Lux (청사진)</Blueprint_Install_MedPodLux.label>
+	
+	<!-- EN: MedPod (building)-->
+	<Frame_MedPodLux.label>메드포드 Lux (공사중)</Frame_MedPodLux.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
+	<Frame_MedPodLux.description>세포 재생 가속화를 사용하여 상실된 장기와 팔다리 재생을 포함하여 거의 모든 종류의 부상과 질병을 치료하는 고급 병원 침대입니다.\n\n금상감 피팅과 젤 주입 메모리 폼 매트리스가 있는 고급 모델입니다. 진단 및 치료가 더 빠르지만 더 높은 전력 소비가 필요합니다.</Frame_MedPodLux.description>
+
+</LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- EN: Receiving treatment in TargetA. -->
+	<PatientGoToMedPod.reportString>TargetA에서 치료를 받고 있습니다.</PatientGoToMedPod.reportString>
+	
+	<!-- EN: rescuing TargetA to TargetB. -->
+	<RescueToMedPod.reportString>TargetA를 TargetB로 구출합니다.</RescueToMedPod.reportString>
+
+</LanguageData>

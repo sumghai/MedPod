@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: Invisible Blocker -->
+	<MedPodInvisibleBlocker.label>보이지 않는 장애물</MedPodInvisibleBlocker.label>
+	
+	<!-- EN: MedPod -->
+	<MedPodStandard.label>메드포드</MedPodStandard.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
+	<MedPodStandard.description>세포 재생 가속화를 사용하여 손실된 장기와 팔다리 재생을 포함하여 거의 모든 종류의 부상과 질병을 치료하는 고급 병상입니다.\n\n이것은 반짝이 세계의 무료 공중 보건 클리닉에서 자주 볼 수 있는 표준 모델입니다.</MedPodStandard.description>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_MedPodStandard.label>메드포드 (청사진)</Blueprint_MedPodStandard.label>
+	
+	<!-- EN: MedPod (blueprint)-->
+	<Blueprint_Install_MedPodStandard.label>메드포드 (청사진)</Blueprint_Install_MedPodStandard.label>
+	
+	<!-- EN: MedPod (building)-->
+	<Frame_MedPodStandard.label>메드포드 (공사중)</Frame_MedPodStandard.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
+	<Frame_MedPodStandard.description>세포 재생 가속화를 사용하여 손실된 장기와 팔다리 재생을 포함하여 거의 모든 종류의 부상과 질병을 치료하는 고급 병상입니다.\n\n이것은 반짝이 세계의 무료 공중 보건 클리닉에서 자주 볼 수 있는 표준 모델입니다.</Frame_MedPodStandard.description>
+	
+	<!-- EN: VetPod -->
+	<MedPodAnimal.label>벳포드</MedPodAnimal.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
+	<MedPodAnimal.description>세포 재생 가속화를 사용하여 상실된 장기와 팔다리 재생을 포함하여 거의 모든 종류의 부상과 질병을 치료하는 고급 병원 침대입니다.\n\n이 변형은 애완동물 및 기타 소형 가축의 수의학적 사용을 위해 설계되었습니다.</MedPodAnimal.description>
+	
+	<!-- EN: VetPod (blueprint)-->
+	<Blueprint_MedPodAnimal.label>벳포드 (청사진)</Blueprint_MedPodAnimal.label>
+	
+	<!-- EN: VetPod (blueprint)-->
+	<Blueprint_Install_MedPodAnimal.label>벳포드 (청사진)</Blueprint_Install_MedPodAnimal.label>
+	
+	<!-- EN: VetPod (building)-->
+	<Frame_MedPodAnimal.label>벳포드 (공사중)</Frame_MedPodAnimal.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
+	<Frame_MedPodAnimal.description>세포 재생 가속화를 사용하여 상실된 장기와 팔다리 재생을 포함하여 거의 모든 종류의 부상과 질병을 치료하는 고급 병원 침대입니다.\n\n이 변형은 애완동물 및 기타 소형 가축의 수의학적 사용을 위해 설계되었습니다.</Frame_MedPodAnimal.description>
+	
+	<!-- EN: VetPod Mega -->
+	<MedPodAnimalBig.label>벳포드 Mega</MedPodAnimalBig.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
+	<MedPodAnimalBig.description>세포 재생 가속화를 사용하여 손실된 장기와 팔다리 재생을 포함하여 거의 모든 종류의 부상과 질병을 치료하는 고급 병원 침대입니다.\n\n이 변종은 가축과 거대 동물의 동물용으로 설계되었지만 더 작은 동물도 치료할 수 있습니다.</MedPodAnimalBig.description>
+	
+	<!-- EN: VetPod (blueprint)-->
+	<Blueprint_MedPodAnimalBig.label>벳포드 Mega (청사진)</Blueprint_MedPodAnimalBig.label>
+	
+	<!-- EN: VetPod (blueprint)-->
+	<Blueprint_Install_MedPodAnimalBig.label>벳포드 Mega (청사진)</Blueprint_Install_MedPodAnimalBig.label>
+	
+	<!-- EN: VetPod (building)-->
+	<Frame_MedPodAnimalBig.label>벳포드 Mega (공사중)</Frame_MedPodAnimalBig.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
+	<Frame_MedPodAnimalBig.description>세포 재생 가속화를 사용하여 손실된 장기와 팔다리 재생을 포함하여 거의 모든 종류의 부상과 질병을 치료하는 고급 병원 침대입니다.\n\n이 변종은 가축과 거대 동물의 동물용으로 설계되었지만 더 작은 동물도 치료할 수 있습니다.</Frame_MedPodAnimalBig.description>
+
+</LanguageData>
