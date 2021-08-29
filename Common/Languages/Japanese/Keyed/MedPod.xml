@@ -3,71 +3,71 @@
 
 	<!-- EN: Error: No power -->
 	<MedPod_InspectorStatus_NoPower>エラー：電力無し</MedPod_InspectorStatus_NoPower>
-	
+
 	<!-- EN: Diagnosing ({0}%) -->
 	<MedPod_InspectorStatus_DiagnosisProgress>診断中（{0}%)</MedPod_InspectorStatus_DiagnosisProgress>
-	
+
 	<!-- EN: Diagnosis Complete -->
 	<MedPod_InspectorStatus_DiagnosisComplete>診断完了</MedPod_InspectorStatus_DiagnosisComplete>
-	
+
 	<!-- EN: Regenerating ({0}%) -->
 	<MedPod_InspectorStatus_HealingProgress>治療中（{0}%)</MedPod_InspectorStatus_HealingProgress>
-	
+
 	<!-- EN: 100% Clear -->
 	<MedPod_InspectorStatus_PatientDischarged>100% 完治</MedPod_InspectorStatus_PatientDischarged>
-	
+
 	<!-- EN: Idle -->
 	<MedPod_InspectorStatus_Idle>待機中</MedPod_InspectorStatus_Idle>
-	
+
 	<!-- EN: Power consumption (Diagnosis) -->
 	<MedPod_Stat_PowerConsumptionDiagnosis_Label>消費電力（診断時)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
-	
+
 	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Diagnosis mode. -->
 	<MedPod_Stat_PowerConsumptionDiagnosis_Desc>この治療ポッドが診断モードで作動中に消費する電力量です。</MedPod_Stat_PowerConsumptionDiagnosis_Desc>
-	
+
 	<!-- EN: Power consumption (Treatment) -->
 	<MedPod_Stat_PowerConsumptionHealing_Label>消費電力（治療時)</MedPod_Stat_PowerConsumptionHealing_Label>
-	
+
 	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Treatment mode. -->
 	<MedPod_Stat_PowerConsumptionHealing_Desc>この治療ポッドが治療モードで作動中に消費する電力量です。</MedPod_Stat_PowerConsumptionHealing_Desc>
-	
+
 	<!-- EN: Diagnosis time -->
 	<MedPod_Stat_DiagnosisTime_Label>診断時間</MedPod_Stat_DiagnosisTime_Label>
-	
+
 	<!-- EN: How long it takes for this MedPod to diagnose a patient. -->
 	<MedPod_Stat_DiagnosisTime_Desc>この治療ポッドが患者を診断するのにかかる時間です。</MedPod_Stat_DiagnosisTime_Desc>
-	
+
 	<!-- EN: Avg. per-condition treatment time -->
 	<MedPod_Stat_PerHediffHealingTime_Label>平均：段階ごとの治療時間</MedPod_Stat_PerHediffHealingTime_Label>
-	
+
 	<!-- EN: How long it takes (on average) for this MedPod to treat each medical condition on a patient.\n\nNote that this is scaled according to the severity of the condition - for instance, less severe injuries will take less time to treat. -->
 	<MedPod_Stat_PerHediffHealingTime_Desc>この治療ポッドが患者の怪我などの重症度を1段階治療するのに（平均的に）どれくらいの時間が必要なのかです。\n\nこれは負傷状態などの重症度に応じて変動することに注意してください。たとえば、重症度が低い軽症の負傷は治療にかかる時間が短くなります。</MedPod_Stat_PerHediffHealingTime_Desc>
-	
+
 	<!-- EN: {0} s -->
 	<MedPod_Stat_TimeSeconds>{0}秒</MedPod_Stat_TimeSeconds>
-	
+
 	<!-- EN: MedPod treatment complete for {1_label}. -->
 	<MedPod_Message_TreatmentComplete>治療ポッドによる{1_label}の治療が完了しました。</MedPod_Message_TreatmentComplete>
-	
+
 	<!-- EN: MedPod treatment interrupted for {1_label}. -->
 	<MedPod_Message_TreatmentInterrupted>治療ポッドによる{1_label}の治療が中断されました。</MedPod_Message_TreatmentInterrupted>
-	
+
 	<!-- EN: MedPod cannot treat {0}s -->
 	<MedPod_FloatMenu_RaceNotAllowed>治療ポッドでは{0}の治療は不可能</MedPod_FloatMenu_RaceNotAllowed>
-	
+
 	<!-- EN: MedPod not powered -->
 	<MedPod_FloatMenu_Unpowered>治療ポッドに電力が供給されていない</MedPod_FloatMenu_Unpowered>
-	
+
 	<!-- EN: patient using MedPod -->
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>治療ポッド使用中の患者</MedPod_SurgeryProhibited_PatientUsingMedPod>
-	
+
 	<!-- EN: {0} is in use. -->
 	<MedPod_CommandGizmoDisabled_MedPodInUse>{0}は使用中です</MedPod_CommandGizmoDisabled_MedPodInUse>
-	
+
 	<!-- EN: Abort -->
-	<MedPod_CommandGizmoAbortTreatment_Label>アボート</MedPod_CommandGizmoAbortTreatment_Label>
-	
+	<MedPod_CommandGizmoAbortTreatment_Label>中止</MedPod_CommandGizmoAbortTreatment_Label>
+
 	<!-- EN: Stop treating the current patient immediately. -->
-	<MedPod_CommandGizmoAbortTreatment_Desc>現在の患者の治療をすぐにやめる。</MedPod_CommandGizmoAbortTreatment_Desc>
+	<MedPod_CommandGizmoAbortTreatment_Desc>現在実行中の患者への治療をすぐ中止します。</MedPod_CommandGizmoAbortTreatment_Desc>
 
 </LanguageData>
