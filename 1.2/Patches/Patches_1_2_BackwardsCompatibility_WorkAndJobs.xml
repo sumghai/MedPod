@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Backwards compatibility patch for RimWorld 1.2, which disables custom Work and JobGivers introduced in the 1.3 update -->
+	
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/WorkGiverDef[
+					defName="MedPodPatientGoToMedPodEmergency" or
+					defName="MedPodDoctorRescueToMedPod" or
+					defName="MedPodPatientGoToMedPodTreatment" or
+					defName="MedPodWardenRescueToMedPod"
+				]
+				</xpath>
+			</li>
+		
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/JobDef[
+					defName="PatientGoToMedPod" or
+					defName="RescueToMedPod"
+				]
+				</xpath>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>
