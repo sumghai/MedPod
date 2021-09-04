@@ -232,6 +232,51 @@ namespace MedPod
             return stringBuilder.ToString();
         }
 
+        public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
+        {
+            if (myPawn.RaceProps.Humanlike && !ForPrisoners && Medical && !myPawn.Drafted && Faction == Faction.OfPlayer && RestUtility.CanUseBedEver(myPawn, def))
+            {
+                if (!MedPodHealthAIUtility.IsValidRaceForMedPod(myPawn, DisallowedRaces))
+                {
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.def.label.CapitalizeFirst()) + ")", null);
+                    yield break;
+                }
+                if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs))
+                {
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + ")", null);
+                    yield break;
+                }
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs) && !powerComp.PowerOn)
+                {
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_Unpowered".Translate() + ")", null);
+                    yield break;
+                }
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs) && this.IsForbidden(myPawn))
+                {
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "ForbiddenLower".Translate() + ")", null);
+                    yield break;
+                }
+                Action action = delegate
+                {
+                    if (!ForPrisoners && Medical && myPawn.CanReserveAndReach(this, PathEndMode.ClosestTouch, Danger.Deadly, SleepingSlotsCount, -1, null, ignoreOtherReservations: true))
+                    {
+                        if (myPawn.CurJobDef == JobDefOf.LayDown && myPawn.CurJob.GetTarget(TargetIndex.A).Thing == this)
+                        {
+                            myPawn.CurJob.restUntilHealed = true;
+                        }
+                        else
+                        {
+                            Job job = JobMaker.MakeJob(JobDefOf.LayDown, this);
+                            job.restUntilHealed = true;
+                            myPawn.jobs.TryTakeOrderedJob(job);
+                        }
+                        myPawn.mindState.ResetLastDisturbanceTick();
+                    }
+                };
+                yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("UseMedicalBed".Translate(), action), myPawn, this, (AnyUnoccupiedSleepingSlot ? "ReservedBy" : "SomeoneElseSleeping").CapitalizeFirst());
+            }
+        }
+
         public override IEnumerable<Gizmo> GetGizmos()
         {
             string medicalToggleStr = "CommandBedSetAsMedicalLabel".Translate();
