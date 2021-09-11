@@ -21,6 +21,16 @@
 					</value>
 				</li>
 				
+				<!-- Prevent MedPod from treating Solar Flare and Low Network Signal hediffs -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/neverTreatableHediffs</xpath>
+					<value>
+						<li>ATPP_SolarFlareAndroidImpact</li>
+						<li>ATPP_LowNetworkSignal</li>
+					</value>
+				</li>
+				
 				<!-- Prevent pawns from being rescued to MedPods if they are unconscious from the Surrogate Remote Control hediff -->
 				
 				<li Class="PatchOperationAdd">
