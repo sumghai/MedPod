@@ -295,7 +295,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompAnimatedGantry.cs" />
-    <Compile Include="CompatibilityWrapper.cs" />
+    <Compile Include="EbfCompatibilityWrapper.cs" />
     <Compile Include="CompMedPodSettings.cs" />
     <Compile Include="CompProperties_AnimatedGantry.cs" />
     <Compile Include="CompProperties_MedPodSettings.cs" />

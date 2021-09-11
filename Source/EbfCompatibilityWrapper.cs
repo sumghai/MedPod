@@ -6,7 +6,7 @@ namespace MedPod
 {
     // Wrapper class for compatibility with mods like Elite Bionics Framework
 
-    public class CompatibilityWrapper
+    public class EbfCompatibilityWrapper
     {
         public static MethodInfo makeshiftEbfEndpoint = AccessTools.Method("EBF.VanillaExtender:GetMaxHealth");
 

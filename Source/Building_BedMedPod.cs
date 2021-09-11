@@ -439,7 +439,7 @@ namespace MedPod
                 float currentSeverity = currentHediff.Severity;
 
                 // currentHediff.Part will throw an error if a hediff is applied to the whole body (e.g. malnutrition), as part == null
-                float currentBodyPartMaxHealth = (currentHediff.Part != null) ? CompatibilityWrapper.GetMaxHealth(currentHediff.Part.def, patientPawn, currentHediff.Part) : 1;
+                float currentBodyPartMaxHealth = (currentHediff.Part != null) ? EbfCompatibilityWrapper.GetMaxHealth(currentHediff.Part.def, patientPawn, currentHediff.Part) : 1;
 
                 float currentNormalizedSeverity = (currentSeverity < 1) ? currentSeverity : currentSeverity / currentBodyPartMaxHealth;
 
@@ -462,7 +462,7 @@ namespace MedPod
 
             float currentHediffSeverity = currentHediff.Severity;
 
-            float currentHediffBodyPartMaxHealth = (currentHediff.Part != null) ? CompatibilityWrapper.GetMaxHealth(currentHediff.Part.def, PatientPawn, currentHediff.Part) : 1;
+            float currentHediffBodyPartMaxHealth = (currentHediff.Part != null) ? EbfCompatibilityWrapper.GetMaxHealth(currentHediff.Part.def, PatientPawn, currentHediff.Part) : 1;
 
             float currentHediffNormalizedSeverity = (currentHediffSeverity < 1) ? currentHediffSeverity : currentHediffSeverity / currentHediffBodyPartMaxHealth;
 
