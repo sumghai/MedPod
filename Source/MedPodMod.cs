@@ -10,6 +10,11 @@ namespace MedPod
         {
             var harmony = new Harmony("com.MedPod.patches");
             harmony.PatchAll();
+
+            if (ModCompatibility.DbhIsActive)
+            {
+                Log.Message("MedPod :: Dubs Bad Hygiene detected!");
+            }
         }
     }
 }

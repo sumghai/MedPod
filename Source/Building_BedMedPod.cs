@@ -22,6 +22,8 @@ namespace MedPod
 
         private static float patientSavedFoodNeed;
 
+        private static float patientSavedDbhThirstNeed;
+
         private float totalNormalizedSeverities = 0;
 
         public int DiagnosingTicks = 0;
@@ -516,6 +518,14 @@ namespace MedPod
             {
                 patientPawn.needs.food.CurLevelPercentage = patientSavedFoodNeed;
             }
+
+            // Restore previously saved patient DBH thirst and reset DBH bladder/hygiene need levels
+            if (ModCompatibility.DbhIsActive)
+            {
+                ModCompatibility.SetThirstNeedCurLevelPercentage(patientPawn, patientSavedDbhThirstNeed);
+                ModCompatibility.SetBladderNeedCurLevelPercentage(patientPawn, 1f);
+                ModCompatibility.SetHygieneNeedCurLevelPercentage(patientPawn, 1f);
+            }
         }
 
         public void StartWickSustainer()
@@ -564,10 +574,21 @@ namespace MedPod
                     {
                         case MedPodStatus.Idle:
                             DiagnosingTicks = PatientBodySizeScaledMaxDiagnosingTicks;
+
+                            // Save initial patient food need level
                             if (PatientPawn.needs.food != null)
                             {
                                 patientSavedFoodNeed = PatientPawn.needs.food.CurLevelPercentage;
                             }
+
+                            // Save initial patient DBH thirst and reset DBH bladder/hygiene need levels
+                            if (ModCompatibility.DbhIsActive)
+                            {
+                                patientSavedDbhThirstNeed = ModCompatibility.GetThirstNeedCurLevelPercentage(PatientPawn);
+                                ModCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
+                                ModCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
+                            }
+
                             SwitchState();
                             break;
 
@@ -680,9 +701,21 @@ namespace MedPod
             {
                 DiagnosingTicks--;
                 powerComp.PowerOutput = -DiagnosingPowerConsumption;
-                if (PatientPawn != null && PatientPawn.needs.food != null)
+                if (PatientPawn != null)
                 {
-                    PatientPawn.needs.food.CurLevelPercentage = 1f;
+                    // Suspend patient food need level
+                    if (PatientPawn.needs.food != null)
+                    {
+                        PatientPawn.needs.food.CurLevelPercentage = 1f;
+                    }
+                    
+                    // Suspend patient DBH thirst, bladder and hygiene need levels
+                    if (ModCompatibility.DbhIsActive)
+                    {
+                        ModCompatibility.SetThirstNeedCurLevelPercentage(PatientPawn, 1f);
+                        ModCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
+                        ModCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
+                    }
                 }
 
                 if (DiagnosingTicks == 0)
@@ -696,9 +729,21 @@ namespace MedPod
                 HealingTicks--;
                 ProgressHealingTicks++;
                 powerComp.PowerOutput = -HealingPowerConsumption;
-                if (PatientPawn != null && PatientPawn.needs.food != null)
+                if (PatientPawn != null)
                 {
-                    PatientPawn.needs.food.CurLevelPercentage = 1f;
+                    // Suspend patient food need level
+                    if (PatientPawn.needs.food != null)
+                    {
+                        PatientPawn.needs.food.CurLevelPercentage = 1f;
+                    }
+
+                    // Suspend patient DBH thirst, bladder and hygiene need levels
+                    if (ModCompatibility.DbhIsActive)
+                    {
+                        ModCompatibility.SetThirstNeedCurLevelPercentage(PatientPawn, 1f);
+                        ModCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
+                        ModCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
+                    }
                 }
 
                 if (HealingTicks == 0)
