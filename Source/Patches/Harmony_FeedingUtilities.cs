@@ -19,6 +19,9 @@ namespace MedPod.Patches
             yield return AccessTools.Method(typeof(WardenFeedUtility), "ShouldBeFed");
         }
 
+        // Run this before Dubs Bad Hygiene, so that the mod's associated administer fluid jobs are skipped
+        // when the patient is on a MedPod
+        [HarmonyBefore(new string[] { "Dubwise.DubsBadHygiene" })]
         static void Postfix(ref bool __result, Pawn p)
         {
             if (p.CurrentBed() is Building_BedMedPod bedMedPod && bedMedPod.powerComp.PowerOn)

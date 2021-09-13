@@ -314,6 +314,7 @@
     <Compile Include="MedPodRestUtility.cs" />
     <Compile Include="ModCompatibility.cs" />
     <Compile Include="Patches\Harmony_Building_Bed.cs" />
+    <Compile Include="Patches\Harmony_DBH_Patches.cs" />
     <Compile Include="Patches\Harmony_FeedingUtilities.cs" />
     <Compile Include="Patches\Harmony_FloatMenuMakerMap.cs" />
     <Compile Include="Patches\Harmony_JobDriver_WaitDowned.cs" />
