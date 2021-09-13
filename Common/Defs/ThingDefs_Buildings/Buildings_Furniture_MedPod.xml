@@ -43,7 +43,7 @@
 		<passability>PassThroughOnly</passability>
 		<defaultPlacingRot>South</defaultPlacingRot>
 		<fillPercent>0.4</fillPercent>
-		<pathCost>60</pathCost>
+		<pathCost>42</pathCost>
 		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
 		<researchPrerequisites>
 			<li>AcceleratedCellularRegeneration</li>
