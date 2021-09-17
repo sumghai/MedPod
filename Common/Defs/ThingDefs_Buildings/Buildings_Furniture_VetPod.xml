@@ -82,6 +82,88 @@
 		</comps>
 	</ThingDef>
 	
+	<!-- ========== VetPod Large ========== -->
+
+	<ThingDef ParentName="MedPodBedBase">
+		<defName>MedPodAnimalMedium</defName>
+		<label>VetPod Large</label>
+		<description>An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock, but can also treat smaller animals.</description>
+		<graphicData>
+			<texPath>Things/Building/Furniture/VetPod_Large/VetPod_Large</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(4,5)</drawSize>
+			<damageData>
+				<rect>(0.5,0.996875,2,3)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+			<shadowData>
+				<volume>(2,0.6,3)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>UI/VetPod_Large</uiIconPath>
+		<statBases>
+			<MarketValue>75000</MarketValue>
+			<MaxHitPoints>600</MaxHitPoints>
+			<WorkToBuild>16000</WorkToBuild>
+			<Mass>800</Mass>
+			<Beauty>10</Beauty>
+			<Flammability>0.3</Flammability>
+			<BedRestEffectiveness>1</BedRestEffectiveness>
+			<Comfort>0.80</Comfort>
+		</statBases>
+		<constructEffect>ConstructMetal</constructEffect>
+		<size>(3,5)</size>
+		<costList>
+			<ComponentIndustrial>14</ComponentIndustrial>
+			<ComponentSpacer>10</ComponentSpacer>
+			<IsolinearProcessor>1</IsolinearProcessor>
+			<Plasteel>450</Plasteel>
+			<Steel>180</Steel>
+		</costList>
+		<building>
+			<bed_humanlike>false</bed_humanlike>
+			<bed_maxBodySize>2.5</bed_maxBodySize>
+			<bed_showSleeperBody>true</bed_showSleeperBody>
+			<bed_defaultMedical>true</bed_defaultMedical>
+		</building>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>true</shortCircuitInRain>
+				<basePowerConsumption>500</basePowerConsumption>
+			</li>
+			<li Class="MedPod.CompProperties_AnimatedGantry">
+				<gantryGraphicData>
+					<texPath>Things/Building/Furniture/VetPod_Large/VetPod_Large_gantry</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<drawSize>(4, 5)</drawSize>
+				</gantryGraphicData>
+				<gantryGlowGraphicData>
+					<texPath>FX/VetPod_Large_gantryGlow</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>(4, 5)</drawSize>
+				</gantryGlowGraphicData>
+				<gantryMaxMoveDistance>2.71875</gantryMaxMoveDistance>
+			</li>
+			<li Class="MedPod.CompProperties_MedPodSettings">
+				<screenGlowGraphicData>
+					<texPath>FX/VetPod_Large_screenGlow</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>(4, 5)</drawSize>
+				</screenGlowGraphicData>
+				<disableInvisibleBlocker>true</disableInvisibleBlocker>
+			</li>
+		</comps>
+	</ThingDef>
+	
 	<!-- ========== VetPod Mega ========== -->
 
 	<ThingDef ParentName="MedPodBedBase">
