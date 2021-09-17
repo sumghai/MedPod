@@ -39,21 +39,39 @@
 
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
 	<Frame_MedPodAnimal.description>動物の欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療を加速する細胞再生技術を利用した高度な医療ベッドです。\n\nこのモデルはペットやその他の家畜用に設計されています。</Frame_MedPodAnimal.description>
+	
+	<!-- EN: VetPod Large -->
+	<MedPodAnimalMedium.label>獣医ポッド・Large</MedPodAnimalMedium.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock, but can also treat smaller animals. -->
+	<MedPodAnimalMedium.description>大型動物の欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療を加速する細胞再生技術を利用した高度な医療ベッドです。\n\nこのモデルは大型家畜向けに設計されていますが、小動物の治療にも使用できます。</MedPodAnimalMedium.description>
+	
+	<!-- EN: VetPod Large (blueprint)-->
+	<Blueprint_MedPodAnimalMedium.label>獣医ポッド・Large (設計図)</Blueprint_MedPodAnimalMedium.label>
+	
+	<!-- EN: VetPod Large (blueprint)-->
+	<Blueprint_Install_MedPodAnimalMedium.label>獣医ポッド・Large (移動先)</Blueprint_Install_MedPodAnimalMedium.label>
+	
+	<!-- EN: VetPod Large (building)-->
+	<Frame_MedPodAnimalMedium.label>獣医ポッド・Large (建設中)</Frame_MedPodAnimalMedium.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock, but can also treat smaller animals. -->
+	<Frame_MedPodAnimalMedium.description>大型動物の欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療を加速する細胞再生技術を利用した高度な医療ベッドです。\n\nこのモデルは大型家畜向けに設計されていますが、小動物の治療にも使用できます。</Frame_MedPodAnimalMedium.description>
 
 	<!-- EN: VetPod Mega -->
-	<MedPodAnimalBig.label>獣医ポッド・大型</MedPodAnimalBig.label>
+	<MedPodAnimalBig.label>獣医ポッド・Mega</MedPodAnimalBig.label>
 
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
 	<MedPodAnimalBig.description>大型動物の欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療を加速する細胞再生技術を利用した高度な医療ベッドです。\n\nこのモデルは大型家畜やメガファウナ向けに設計されていますが、小動物の治療にも使用できます。</MedPodAnimalBig.description>
 
 	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_MedPodAnimalBig.label>獣医ポッド・大型 (設計図)</Blueprint_MedPodAnimalBig.label>
+	<Blueprint_MedPodAnimalBig.label>獣医ポッド・Mega (設計図)</Blueprint_MedPodAnimalBig.label>
 
 	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_Install_MedPodAnimalBig.label>獣医ポッド・大型 (移動先)</Blueprint_Install_MedPodAnimalBig.label>
+	<Blueprint_Install_MedPodAnimalBig.label>獣医ポッド・Mega (移動先)</Blueprint_Install_MedPodAnimalBig.label>
 
 	<!-- EN: VetPod (building)-->
-	<Frame_MedPodAnimalBig.label>獣医ポッド・大型 (建設中)</Frame_MedPodAnimalBig.label>
+	<Frame_MedPodAnimalBig.label>獣医ポッド・Mega (建設中)</Frame_MedPodAnimalBig.label>
 
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
 	<Frame_MedPodAnimalBig.description>大型動物の欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療を加速する細胞再生技術を利用した高度な医療ベッドです。\n\nこのモデルは大型家畜やメガファウナ向けに設計されていますが、小動物の治療にも使用できます。</Frame_MedPodAnimalBig.description>	

@@ -39,6 +39,24 @@
 
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
 	<Frame_MedPodAnimal.description>Продвинутая медицицинская постель, оснащённая системой ускоренная клеточная регенерация. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭтот предназначен для домашних и других мелких животных.</Frame_MedPodAnimal.description>
+	
+	<!-- EN: VetPod Large -->
+	<MedPodAnimalMedium.label>ветеринаркапсула большой</MedPodAnimalMedium.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock, but can also treat smaller animals. -->
+	<MedPodAnimalMedium.description>Продвинутая медицицинская постель, оснащённая системой ускоренная клеточная регенерация. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭтот предназначен для домашнего скота, но также может лечить более мелких животных.</MedPodAnimalMedium.description>
+	
+	<!-- EN: VetPod Large (blueprint)-->
+	<Blueprint_MedPodAnimalMedium.label>ветеринаркапсула большой (проект)</Blueprint_MedPodAnimalMedium.label>
+	
+	<!-- EN: VetPod Large (blueprint)-->
+	<Blueprint_Install_MedPodAnimalMedium.label>ветеринаркапсула большой (проект)</Blueprint_Install_MedPodAnimalMedium.label>
+	
+	<!-- EN: VetPod Large (building)-->
+	<Frame_MedPodAnimalMedium.label>ветеринаркапсула большой (строительство)</Frame_MedPodAnimalMedium.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock, but can also treat smaller animals. -->
+	<Frame_MedPodAnimalMedium.description>Продвинутая медицицинская постель, оснащённая системой ускоренная клеточная регенерация. Позволяет лечить практически любые виды болезней и ранений и даже восстанавливать утерянные конечности!\n\nЭтот предназначен для домашнего скота, но также может лечить более мелких животных.</Frame_MedPodAnimalMedium.description>
 
 	<!-- EN: VetPod Mega -->
 	<MedPodAnimalBig.label>ветеринаркапсула мега</MedPodAnimalBig.label>
