@@ -29,7 +29,9 @@
 					<li>ToxicBuildup</li>
 					<li>MedPod_InducedComa</li>
 				</alwaysTreatableHediffs>
-				<neverTreatableHediffs />
+				<neverTreatableHediffs>
+					<li>Sterilized</li>
+				</neverTreatableHediffs>
 				<usageBlockingHediffs />
 				<disallowedRaces />
 			</li>
