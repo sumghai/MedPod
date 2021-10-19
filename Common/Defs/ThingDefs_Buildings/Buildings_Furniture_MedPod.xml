@@ -22,12 +22,12 @@
 				<compClass>CompAssignableToPawn_Bed</compClass>
 			</li>
 			<li Class="MedPod.CompProperties_TreatmentRestrictions">
-				<alwaysTreatableHediffs>
-					<li>AlcoholHigh</li>					
+				<alwaysTreatableHediffs>					
 					<li>Anesthetic</li>
 					<li>FoodPoisoning</li>
-					<li>ToxicBuildup</li>
+					<li>LuciferiumHigh</li>
 					<li>MedPod_InducedComa</li>
+					<li>ToxicBuildup</li>
 				</alwaysTreatableHediffs>
 				<neverTreatableHediffs>
 					<li>Sterilized</li>
