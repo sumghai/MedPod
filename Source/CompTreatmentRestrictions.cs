@@ -29,6 +29,14 @@ namespace MedPod
             }
         }
 
+        public List<HediffDef> NonCriticalTreatableHediffs
+        {
+            get
+            {
+                return Props.nonCriticalTreatableHediffs;
+            }
+        }
+
         public List<HediffDef> UsageBlockingHediffs
         {
             get

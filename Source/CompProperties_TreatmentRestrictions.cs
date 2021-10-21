@@ -9,6 +9,8 @@ namespace MedPod
 
         public List<HediffDef> neverTreatableHediffs = null;
 
+        public List<HediffDef> nonCriticalTreatableHediffs = null;
+
         public List<HediffDef> usageBlockingHediffs = null;
 
         public List<string> disallowedRaces = null;
