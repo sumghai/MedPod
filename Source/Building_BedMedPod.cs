@@ -46,6 +46,8 @@ namespace MedPod
 
         public List<HediffDef> NeverTreatableHediffs;
 
+        public List<HediffDef> NonCriticalTreatableHediffs;
+
         public List<HediffDef> UsageBlockingHediffs;
 
         public List<string> DisallowedRaces;
@@ -117,6 +119,7 @@ namespace MedPod
 
             AlwaysTreatableHediffs = treatmentRestrictions.AlwaysTreatableHediffs;
             NeverTreatableHediffs = treatmentRestrictions.NeverTreatableHediffs;
+            NonCriticalTreatableHediffs = treatmentRestrictions.NonCriticalTreatableHediffs;
             UsageBlockingHediffs = treatmentRestrictions.UsageBlockingHediffs;
             DisallowedRaces = treatmentRestrictions.DisallowedRaces;
 
@@ -427,9 +430,10 @@ namespace MedPod
             // Ignore hediffs/injuries that are:
             // - Not explicitly whitelisted as always treatable
             // - Blacklisted as never treatable
+            // - Not explicitly greylisted as non-critical but treatable
             // - Not bad (i.e isBad = false) and not treatable
             patientTreatableHediffs.RemoveAll((Hediff x) =>
-                !AlwaysTreatableHediffs.Contains(x.def) && (NeverTreatableHediffs.Contains(x.def) || (!x.def.isBad && !x.TendableNow())));
+                !AlwaysTreatableHediffs.Contains(x.def) && (NeverTreatableHediffs.Contains(x.def) || (!NonCriticalTreatableHediffs.Contains(x.def) && !x.def.isBad && !x.TendableNow())));
 
             // Induce coma in the patient so that they don't run off during treatment
             // (Pawns tend to get up as soon as they are "no longer incapable of walking")
@@ -612,7 +616,7 @@ namespace MedPod
 
                         case MedPodStatus.HealingFinished:
                             // Don't remove 'good' treatable Hediffs but instead treat them with 100% quality (unless the 'good' Hediff is whitelisted as always treatable)
-                            if (!patientTreatableHediffs.First().def.isBad && !AlwaysTreatableHediffs.Contains(patientTreatableHediffs.First().def))
+                            if (!patientTreatableHediffs.First().def.isBad && !AlwaysTreatableHediffs.Contains(patientTreatableHediffs.First().def) && !NonCriticalTreatableHediffs.Contains(patientTreatableHediffs.First().def))
                             {
                                 patientTreatableHediffs.First().Tended(1, 1); // TODO - Replace with new method name once it no longer has a temporary name
                             }

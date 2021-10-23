@@ -32,6 +32,21 @@
 				<neverTreatableHediffs>
 					<li>Sterilized</li>
 				</neverTreatableHediffs>
+				<nonCriticalTreatableHediffs>
+					<li>AlcoholHigh</li>
+					<li>AlcoholTolerance</li>
+					<li>AmbrosiaHigh</li>
+					<li>AmbrosiaTolerance</li>
+					<li>FlakeHigh</li>
+					<li>GoJuiceHigh</li>
+					<li>GoJuiceTolerance</li>
+					<li>PsychiteTolerance</li>
+					<li>SmokeleafHigh</li>
+					<li>SmokeleafTolerance</li>
+					<li>WakeUpHigh</li>
+					<li>WakeUpTolerance</li>
+					<li>YayoHigh</li>
+				</nonCriticalTreatableHediffs>
 				<usageBlockingHediffs />
 				<disallowedRaces />
 			</li>
