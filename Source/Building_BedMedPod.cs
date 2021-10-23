@@ -435,20 +435,9 @@ namespace MedPod
             patientTreatableHediffs.RemoveAll((Hediff x) =>
                 !AlwaysTreatableHediffs.Contains(x.def) && (NeverTreatableHediffs.Contains(x.def) || (!NonCriticalTreatableHediffs.Contains(x.def) && !x.def.isBad && !x.TendableNow())));
 
-            string foobar = "";
-
-            foreach (Hediff curHed in patientTreatableHediffs)
-            {
-                foobar += "\t" + curHed.def + " " + curHed.Label + "\n";
-            }
-
-            Log.Warning("Treatment plan:\n" + foobar);
-
             // Induce coma in the patient so that they don't run off during treatment
             // (Pawns tend to get up as soon as they are "no longer incapable of walking")
             AnesthesizePatient(patientPawn);
-
-            Log.Warning("Checking treatable hediffs...");
 
             // Calculate individual and total cumulative treatment time for each hediff/injury
             foreach (Hediff currentHediff in patientTreatableHediffs)
@@ -470,8 +459,6 @@ namespace MedPod
                 {
                     currentHediff.Tended(1,1); // TODO - Replace with new method name once it no longer has a temporary name
                 }
-
-                Log.Warning("\t" + currentHediff + " currentBodyPartMaxHealth=" + currentBodyPartMaxHealth + ", currentNormalizedSeverity=" + currentNormalizedSeverity);
             }
         }
 
@@ -628,16 +615,13 @@ namespace MedPod
                             break;
 
                         case MedPodStatus.HealingFinished:
-                            Log.Warning("Currently treating " + patientTreatableHediffs.First().def);
                             // Don't remove 'good' treatable Hediffs but instead treat them with 100% quality (unless the 'good' Hediff is whitelisted as always treatable)
                             if (!patientTreatableHediffs.First().def.isBad && !AlwaysTreatableHediffs.Contains(patientTreatableHediffs.First().def) && !NonCriticalTreatableHediffs.Contains(patientTreatableHediffs.First().def))
                             {
-                                Log.Warning("\tCond 1 - tended");
                                 patientTreatableHediffs.First().Tended(1, 1); // TODO - Replace with new method name once it no longer has a temporary name
                             }
                             else
                             {
-                                Log.Warning("\tCond 2 - removed");
                                 PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
                             }
 
