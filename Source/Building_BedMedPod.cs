@@ -24,6 +24,8 @@ namespace MedPod
 
         private static float patientSavedDbhThirstNeed;
 
+        private static List<TraitDef> patientTraitsToRemove;
+
         private float totalNormalizedSeverities = 0;
 
         public int DiagnosingTicks = 0;
@@ -460,6 +462,9 @@ namespace MedPod
                     currentHediff.Tended(1,1); // TODO - Replace with new method name once it no longer has a temporary name
                 }
             }
+
+            // Initialize a blank list of traits to be removed
+            patientTraitsToRemove = new List<TraitDef>();
         }
 
         private float GetHediffNormalizedSeverity(Hediff specificHediff = null)
@@ -529,6 +534,19 @@ namespace MedPod
                 ModCompatibility.SetThirstNeedCurLevelPercentage(patientPawn, patientSavedDbhThirstNeed);
                 ModCompatibility.SetBladderNeedCurLevelPercentage(patientPawn, 1f);
                 ModCompatibility.SetHygieneNeedCurLevelPercentage(patientPawn, 1f);
+            }
+
+            // Remove any addiction-related VTE traits and notify the player
+            patientPawn.story?.traits?.allTraits.RemoveAll(x => patientTraitsToRemove.Contains(x.def));
+
+            if (patientTraitsToRemove.Count() > 0)
+            {
+                string letterLabel = "MedPod_Letter_TraitRemoved_Label".Translate();
+
+                string letterText = "MedPod_Letter_TraitRemoved_Desc".Translate(patientPawn.Named("PAWN")) + string.Join("", (from t in patientTraitsToRemove select "\n- " + t.degreeDatas.FirstOrDefault().LabelCap).ToArray());
+
+                Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.PositiveEvent, new TargetInfo(patientPawn));
+
             }
         }
 
@@ -622,6 +640,20 @@ namespace MedPod
                             }
                             else
                             {
+                                // Vanilla Traits Expanded Compatibility - remove addiction-related traits
+                                if (ModCompatibility.VteIsActive)
+                                {
+                                    if (patientTreatableHediffs.First().def == HediffDef.Named("SmokeleafAddiction") && (PatientPawn?.story?.traits?.HasTrait(TraitDef.Named("VTE_Stoner")) ?? false))
+                                    {
+                                        patientTraitsToRemove.Add(TraitDef.Named("VTE_Stoner"));
+                                    }
+
+                                    if (patientTreatableHediffs.First().def == HediffDef.Named("AlcoholAddiction") && (PatientPawn?.story?.traits?.HasTrait(TraitDef.Named("VTE_Lush")) ?? false))
+                                    {
+                                        patientTraitsToRemove.Add(TraitDef.Named("VTE_Lush"));
+                                    }
+                                }
+                                
                                 PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
                             }
 

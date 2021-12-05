@@ -24,6 +24,11 @@ namespace MedPod
                 HarmonyMethod postfix = new HarmonyMethod(typeof(Patches.Harmony_DBH_Patches), nameof(Patches.Harmony_DBH_Patches.ShouldBeWashedBySomeonePostfix));
                 harmony.Patch(original, postfix: postfix);
             }
+
+            if (ModCompatibility.VteIsActive)
+            {
+                Log.Message("MedPod :: Vanilla Traits Expanded detected!");
+            }
         }
 
         
