@@ -69,5 +69,11 @@
 	
 	<!-- EN: Stop treating the current patient immediately. -->
 	<MedPod_CommandGizmoAbortTreatment_Desc>немедленно прекратить лечение текущего пациента.</MedPod_CommandGizmoAbortTreatment_Desc>
+	
+	<!-- EN: Trait removed -->
+	<MedPod_Letter_TraitRemoved_Label>черты удалены</MedPod_Letter_TraitRemoved_Label>
+
+	<!-- EN: {PAWN_labelShort} has been cured of {PAWN_possessive} addiction(s) by a MedPod, and no longer has the following trait(s):\n -->
+	<MedPod_Letter_TraitRemoved_Desc>{PAWN_labelShort} был излечен от {PAWN_possessive} зависимости с помощью Медкапсула и больше не имеет следующих характеристик:\n</MedPod_Letter_TraitRemoved_Desc>
 
 </LanguageData>

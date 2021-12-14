@@ -69,5 +69,11 @@
 	
 	<!-- EN: Stop treating the current patient immediately. -->
 	<MedPod_CommandGizmoAbortTreatment_Desc>현재 환자의 치료를 즉시 중단하십시오.</MedPod_CommandGizmoAbortTreatment_Desc>
+	
+	<!-- EN: Trait removed -->
+	<MedPod_Letter_TraitRemoved_Label>제거된 특성</MedPod_Letter_TraitRemoved_Label>
+
+	<!-- EN: {PAWN_labelShort} has been cured of {PAWN_possessive} addiction(s) by a MedPod, and no longer has the following trait(s):\n -->
+	<MedPod_Letter_TraitRemoved_Desc>{PAWN_labelShort}은(는) 메드포드는에 의해 {PAWN_possessive} 중독을 치료했으며 더 이상 다음 특성을 갖지 않습니다.\n</MedPod_Letter_TraitRemoved_Desc>
 
 </LanguageData>
