@@ -71,7 +71,7 @@
 	<MedPod_CommandGizmoAbortTreatment_Desc>現在実行中の患者への治療をすぐ中止します。</MedPod_CommandGizmoAbortTreatment_Desc>
 	
 	<!-- EN: Trait removed -->
-	<MedPod_Letter_TraitRemoved_Label>特性が削除するた</MedPod_Letter_TraitRemoved_Label>
+	<MedPod_Letter_TraitRemoved_Label>特性が削除されました</MedPod_Letter_TraitRemoved_Label>
 
 	<!-- EN: {PAWN_labelShort} has been cured of {PAWN_possessive} addiction(s) by a MedPod, and no longer has the following trait(s):\n -->
 	<MedPod_Letter_TraitRemoved_Desc>{PAWN_labelShort}は、治療ポッドによって{PAWN_possessive}依存症が解消され、次の特性がなくなりました:\n</MedPod_Letter_TraitRemoved_Desc>
