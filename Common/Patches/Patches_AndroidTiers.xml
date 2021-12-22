@@ -31,12 +31,13 @@
 					</value>
 				</li>
 				
-				<!-- Prevent pawns from being rescued to MedPods if they are unconscious from the Surrogate Remote Control hediff -->
+				<!-- Prevent pawns from being rescued to MedPods if they are unconscious from the Surrogate Remote Control or Skycloud Upload hediff -->
 				
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/usageBlockingHediffs</xpath>
 					<value>
 						<li>ATPP_InRemoteControlMode</li>
+						<li>ATPP_ConsciousnessUpload</li>
 					</value>
 				</li>
 				
