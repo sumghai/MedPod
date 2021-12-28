@@ -14,6 +14,11 @@ namespace MedPod
             var harmony = new Harmony("com.MedPod.patches");
             harmony.PatchAll();
 
+            if (ModCompatibility.AndroidTiersIsActive)
+            {
+                Log.Message("MedPod :: Android Tiers detected!");
+            }
+
             if (ModCompatibility.DbhIsActive)
             {
                 Log.Message("MedPod :: Dubs Bad Hygiene detected!");

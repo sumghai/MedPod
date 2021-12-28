@@ -548,6 +548,17 @@ namespace MedPod
                 Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.PositiveEvent, new TargetInfo(patientPawn));
 
             }
+
+            // If the patient is a surrogate from Android Tiers, try to reconnect them to their last known controller
+            if (ModCompatibility.AndroidTiersIsActive)
+            {
+                Gizmo reconnectGizmo = patientPawn.GetGizmos().FirstOrDefault(x => x is Command_Action y && y.defaultLabel == "ATPP_AndroidSurrogateReconnectToLastController".Translate());
+
+                if (reconnectGizmo != null)
+                {
+                    ((Command_Action)reconnectGizmo).action();
+                }
+            }
         }
 
         public void StartWickSustainer()
