@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest>
 	<identifier>MedPod</identifier>
-	<version>1.3.4</version>
+	<version>1.3.5</version>
 	<showCrossPromotions>true</showCrossPromotions>
 	<manifestUri>https://raw.githubusercontent.com/sumghai/MedPod/master/About/Manifest.xml</manifestUri>
 	<downloadUri>https://github.com/sumghai/MedPod/releases/latest</downloadUri>
