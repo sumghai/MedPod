@@ -10,7 +10,7 @@
 	<!-- EN: About: Building MedPods -->
 	<AcceleratedCellularRegeneration.discoveredLetterTitle>關於：建造智能醫療床</AcceleratedCellularRegeneration.discoveredLetterTitle>
 	
-	<!-- EN: You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors several ways:\n\n  -Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n  -Some quests are rewarded with Isolinear Processors.\n    -Disassemble an AI persona core to extract Isolinear Processors (along with various other components). -->
-	<AcceleratedCellularRegeneration.discoveredLetterText>現在你可以建造智能醫療床了，但每張智能醫療床需要一個等線性處理器零件來建造。你可以透過以下幾種方式收集等線性處理器：\n\n -外貿軌道商人或拜訪的外貿貿易旅隊有時候會賣等線性處理器。邀請或等待他們拜訪。\n -有些任務會有等線性處理器作為獎勵。\n -拆解一個AI人格核心，以獲取等線性處理器(與其他有用的零件)。</AcceleratedCellularRegeneration.discoveredLetterText>
+	<!-- EN: You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors several ways:\n\n  -Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n  -Some quests are rewarded with Isolinear Processors. -->
+	<AcceleratedCellularRegeneration.discoveredLetterText>現在你可以建造智能醫療床了，但每張智能醫療床需要一個等線性處理器零件來建造。你可以透過以下幾種方式收集等線性處理器：\n\n -外貿軌道商人或拜訪的外貿貿易旅隊有時候會賣等線性處理器。邀請或等待他們拜訪。\n -有些任務會有等線性處理器作為獎勵。</AcceleratedCellularRegeneration.discoveredLetterText>
 
 </LanguageData>

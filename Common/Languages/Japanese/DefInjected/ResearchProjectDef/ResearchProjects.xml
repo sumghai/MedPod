@@ -10,7 +10,7 @@
 	<!-- EN: About: Building MedPods -->
 	<AcceleratedCellularRegeneration.discoveredLetterTitle>治療ポッドの建設について</AcceleratedCellularRegeneration.discoveredLetterTitle>
 
-	<!-- EN: You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors several ways:\n\n-Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n-Some quests are rewarded with Isolinear Processors.\n-Disassemble an AI persona core to extract Isolinear Processors (along with various other components). -->
-	<AcceleratedCellularRegeneration.discoveredLetterText>あなたは治療ポッドを作成できるテクノロジーを入手しました。ただし、治療ポッドの建設には、特別な等線形プロセッサーコンポーネントが必要です。色々な方法で等線形プロセッサーを集める事ができます:\n\n-軌道トレーダーやキャラバントレーダーのエキゾチックトレーダーは等線形プロセッサーを販売しています.彼らを呼出すか来訪を待ってください.\n-クエストの一部では等線形プロセッサーが報酬になっています.\n-AI人格コアを分解して、等線形プロセッサーを取り出す事も可能です（他の色々なコンポーネントも一緒に）。 </AcceleratedCellularRegeneration.discoveredLetterText>
+	<!-- EN: You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors several ways:\n\n-Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n-Some quests are rewarded with Isolinear Processors. -->
+	<AcceleratedCellularRegeneration.discoveredLetterText>あなたは治療ポッドを作成できるテクノロジーを入手しました。ただし、治療ポッドの建設には、特別な等線形プロセッサーコンポーネントが必要です。色々な方法で等線形プロセッサーを集める事ができます:\n\n-軌道トレーダーやキャラバントレーダーのエキゾチックトレーダーは等線形プロセッサーを販売しています.彼らを呼出すか来訪を待ってください.\n-クエストの一部では等線形プロセッサーが報酬になっています.</AcceleratedCellularRegeneration.discoveredLetterText>
 
 </LanguageData>
