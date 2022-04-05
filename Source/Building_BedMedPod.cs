@@ -248,17 +248,17 @@ namespace MedPod
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.def.label.CapitalizeFirst()) + ")", null);
                     yield break;
                 }
-                if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs))
+                if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs) && !powerComp.PowerOn)
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs) && !powerComp.PowerOn)
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_Unpowered".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs) && this.IsForbidden(myPawn))
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs) && this.IsForbidden(myPawn))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "ForbiddenLower".Translate() + ")", null);
                     yield break;

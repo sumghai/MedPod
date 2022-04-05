@@ -66,7 +66,7 @@ namespace MedPod
             {
                 return false;
             }
-            if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(patientPawn, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs))
+            if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(patientPawn, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs, bedMedPod.NonCriticalTreatableHediffs))
             {
                 return false;
             }

@@ -47,7 +47,7 @@ namespace MedPod.Patches
                 // - If the MedPod is forbidden
                 // - If the pawn does not need to use the MedPod OR 
                 // - If the treatment cycle was aborted
-                __result = !bedMedPod.powerComp.PowerOn || bedMedPod.IsForbidden(___toil.actor) || !MedPodHealthAIUtility.ShouldSeekMedPodRest(___toil.actor, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs) || bedMedPod.Aborted;
+                __result = !bedMedPod.powerComp.PowerOn || bedMedPod.IsForbidden(___toil.actor) || !MedPodHealthAIUtility.ShouldSeekMedPodRest(___toil.actor, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs, bedMedPod.NonCriticalTreatableHediffs) || bedMedPod.Aborted;
                 return false; // Skip original code
             }
             return true; // Run original code
