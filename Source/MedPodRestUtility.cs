@@ -78,6 +78,10 @@ namespace MedPod
             {
                 return false;
             }
+            if (MedPodHealthAIUtility.HasUsageBlockingTraits(patientPawn, bedMedPod.UsageBlockingTraits))
+            {
+                return false;
+            }
             if (bedMedPod.IsBurning())
             {
                 return false;

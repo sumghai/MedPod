@@ -48,6 +48,8 @@
 					<li>YayoHigh</li>
 				</nonCriticalTreatableHediffs>
 				<usageBlockingHediffs />
+				<usageBlockingTraits />
+				<alwaysTreatableTraits />
 				<disallowedRaces />
 			</li>
 		</comps>

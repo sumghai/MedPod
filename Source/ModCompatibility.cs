@@ -57,8 +57,5 @@ namespace MedPod
                 thirstNeed.CurLevelPercentage = value;
             }
         }
-
-        // Vanilla Traits Expanded
-        public static bool VteIsActive => ModLister.AllInstalledMods.Where(x => x.Active && x.PackageId.Contains("VanillaExpanded.VanillaTraitsExpanded".ToLower())).Any();
     }
 }

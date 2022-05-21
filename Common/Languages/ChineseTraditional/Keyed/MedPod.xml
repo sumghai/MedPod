@@ -70,10 +70,10 @@
 	<!-- EN: Stop treating the current patient immediately. -->
 	<MedPod_CommandGizmoAbortTreatment_Desc>立即停止治療病人。</MedPod_CommandGizmoAbortTreatment_Desc>
 	
-	<!-- EN: Trait removed -->
+	<!-- EN: Trait(s) removed -->
 	<MedPod_Letter_TraitRemoved_Label>特性消除</MedPod_Letter_TraitRemoved_Label>
 
-	<!-- EN: {PAWN_labelShort} has been cured of {PAWN_possessive} addiction(s) by a MedPod, and no longer has the following trait(s):\n -->
-	<MedPod_Letter_TraitRemoved_Desc>{PAWN_labelShort}已被智能醫療床治癒了{PAWN_possessive}癮，並且不再具有以下特性:\n</MedPod_Letter_TraitRemoved_Desc>
+	<!-- EN: {PAWN_labelShort} has had the following trait(s) removed via MedPod treatment:\n -->
+	<MedPod_Letter_TraitRemoved_Desc>{PAWN_labelShort}已經通過智能醫療床治療去除以下特性:\n</MedPod_Letter_TraitRemoved_Desc>
 
 </LanguageData>

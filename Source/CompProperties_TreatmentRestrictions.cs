@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace MedPod
@@ -11,7 +12,11 @@ namespace MedPod
 
         public List<HediffDef> nonCriticalTreatableHediffs = null;
 
+        public List<TraitDef> alwaysTreatableTraits = null;
+
         public List<HediffDef> usageBlockingHediffs = null;
+
+        public List<TraitDef> usageBlockingTraits = null;
 
         public List<string> disallowedRaces = null;
 

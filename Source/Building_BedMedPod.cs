@@ -24,7 +24,7 @@ namespace MedPod
 
         private static float patientSavedDbhThirstNeed;
 
-        private static List<TraitDef> patientTraitsToRemove;
+        private static List<Trait> patientTraitsToRemove;
 
         private float totalNormalizedSeverities = 0;
 
@@ -51,6 +51,10 @@ namespace MedPod
         public List<HediffDef> NonCriticalTreatableHediffs;
 
         public List<HediffDef> UsageBlockingHediffs;
+
+        public List<TraitDef> UsageBlockingTraits;
+
+        public List<TraitDef> AlwaysTreatableTraits;
 
         public List<string> DisallowedRaces;
 
@@ -123,6 +127,8 @@ namespace MedPod
             NeverTreatableHediffs = treatmentRestrictions.NeverTreatableHediffs;
             NonCriticalTreatableHediffs = treatmentRestrictions.NonCriticalTreatableHediffs;
             UsageBlockingHediffs = treatmentRestrictions.UsageBlockingHediffs;
+            UsageBlockingTraits = treatmentRestrictions.UsageBlockingTraits;
+            AlwaysTreatableTraits = treatmentRestrictions.AlwaysTreatableTraits;
             DisallowedRaces = treatmentRestrictions.DisallowedRaces;
 
             // Add a blocker region for the MedPod main machinery, if required
@@ -463,8 +469,8 @@ namespace MedPod
                 }
             }
 
-            // Initialize a blank list of traits to be removed
-            patientTraitsToRemove = new List<TraitDef>();
+            // Identify treatable traits for removal
+            patientTraitsToRemove = patientPawn.story?.traits.allTraits.FindAll(x => AlwaysTreatableTraits.Contains(x.def));
         }
 
         private float GetHediffNormalizedSeverity(Hediff specificHediff = null)
@@ -536,17 +542,13 @@ namespace MedPod
                 ModCompatibility.SetHygieneNeedCurLevelPercentage(patientPawn, 1f);
             }
 
-            // Remove any addiction-related VTE traits and notify the player
-            patientPawn.story?.traits?.allTraits.RemoveAll(x => patientTraitsToRemove.Contains(x.def));
-
-            if (patientTraitsToRemove.Count() > 0)
-            {
+            // Remove treatable traits only if treatment was completed normally
+            if (!patientTraitsToRemove.NullOrEmpty() && wakeNormally)
+            { 
+                patientPawn.story?.traits.allTraits.RemoveAll(x => patientTraitsToRemove.Contains(x));
                 string letterLabel = "MedPod_Letter_TraitRemoved_Label".Translate();
-
-                string letterText = "MedPod_Letter_TraitRemoved_Desc".Translate(patientPawn.Named("PAWN")) + string.Join("", (from t in patientTraitsToRemove select "\n- " + t.degreeDatas.FirstOrDefault().LabelCap).ToArray());
-
+                string letterText = "MedPod_Letter_TraitRemoved_Desc".Translate(patientPawn.Named("PAWN")) + string.Join("", (from t in patientTraitsToRemove select "\n- " + t.def.degreeDatas.FirstOrDefault().LabelCap).ToArray());
                 Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.PositiveEvent, new TargetInfo(patientPawn));
-
             }
 
             // If the patient is a surrogate from Android Tiers, try to reconnect them to their last known controller
@@ -647,24 +649,10 @@ namespace MedPod
                             // Don't remove 'good' treatable Hediffs but instead treat them with 100% quality (unless the 'good' Hediff is whitelisted as always treatable)
                             if (!patientTreatableHediffs.First().def.isBad && !AlwaysTreatableHediffs.Contains(patientTreatableHediffs.First().def) && !NonCriticalTreatableHediffs.Contains(patientTreatableHediffs.First().def))
                             {
-                                patientTreatableHediffs.First().Tended(1, 1); // TODO - Replace with new method name once it no longer has a temporary name
+                                patientTreatableHediffs.First().Tended(1, 1);
                             }
                             else
-                            {
-                                // Vanilla Traits Expanded Compatibility - remove addiction-related traits
-                                if (ModCompatibility.VteIsActive)
-                                {
-                                    if (patientTreatableHediffs.First().def == HediffDef.Named("SmokeleafAddiction") && (PatientPawn?.story?.traits?.HasTrait(TraitDef.Named("VTE_Stoner")) ?? false))
-                                    {
-                                        patientTraitsToRemove.Add(TraitDef.Named("VTE_Stoner"));
-                                    }
-
-                                    if (patientTreatableHediffs.First().def == HediffDef.Named("AlcoholAddiction") && (PatientPawn?.story?.traits?.HasTrait(TraitDef.Named("VTE_Lush")) ?? false))
-                                    {
-                                        patientTraitsToRemove.Add(TraitDef.Named("VTE_Lush"));
-                                    }
-                                }
-                                
+                            {                                
                                 PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
                             }
 

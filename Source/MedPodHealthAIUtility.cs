@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -43,6 +44,11 @@ namespace MedPod
         public static bool HasUsageBlockingHediffs(Pawn patientPawn, List<HediffDef> usageBlockingHediffs)
         {
             return patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => usageBlockingHediffs.Contains(x.def));
+        }
+
+        public static bool HasUsageBlockingTraits(Pawn patientPawn, List<TraitDef> usageBlockingTraits)
+        {
+            return patientPawn.story?.traits.allTraits.Any(x => usageBlockingTraits.Contains(x.def)) ?? false;
         }
     }
 }

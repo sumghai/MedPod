@@ -70,10 +70,10 @@
 	<!-- EN: Stop treating the current patient immediately. -->
 	<MedPod_CommandGizmoAbortTreatment_Desc>Beenden Sie die Behandlung des aktuellen Patienten sofort.</MedPod_CommandGizmoAbortTreatment_Desc>
 	
-	<!-- EN: Trait removed -->
-	<MedPod_Letter_TraitRemoved_Label>Merkmal entfernt</MedPod_Letter_TraitRemoved_Label>
+	<!-- EN: Trait(s) removed -->
+	<MedPod_Letter_TraitRemoved_Label>Merkmale entfernt</MedPod_Letter_TraitRemoved_Label>
 
-	<!-- EN: {PAWN_labelShort} has been cured of {PAWN_possessive} addiction(s) by a MedPod, and no longer has the following trait(s):\n -->
-	<MedPod_Letter_TraitRemoved_Desc>{PAWN_labelShort} wurde von einem MedPod von {PAWN_possessive} Süchten geheilt und hat nicht mehr die folgende(n) Eigenschaft(en):\n</MedPod_Letter_TraitRemoved_Desc>
+	<!-- EN: {PAWN_labelShort} has had the following trait(s) removed via MedPod treatment:\n -->
+	<MedPod_Letter_TraitRemoved_Desc>Für {PAWN_labelShort} wurden die folgenden Merkmale durch die MedPod-Behandlung entfernt:\n</MedPod_Letter_TraitRemoved_Desc>
 
 </LanguageData>

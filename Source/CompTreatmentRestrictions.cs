@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace MedPod
@@ -37,11 +38,27 @@ namespace MedPod
             }
         }
 
+        public List<TraitDef> AlwaysTreatableTraits
+        {
+            get
+            {
+                return Props.alwaysTreatableTraits;
+            }
+        }
+
         public List<HediffDef> UsageBlockingHediffs
         {
             get
             {
                 return Props.usageBlockingHediffs;
+            }
+        }
+
+        public List<TraitDef> UsageBlockingTraits
+        {
+            get
+            {
+                return Props.usageBlockingTraits;
             }
         }
 
