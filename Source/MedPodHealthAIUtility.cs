@@ -19,6 +19,8 @@ namespace MedPod
                     || patientPawn.health.hediffSet.HasTendedAndHealingInjury()
                     // Has immunizable but not yet immune hediffs
                     || patientPawn.health.hediffSet.HasImmunizableNotImmuneHediff()
+                    // Has hediffs causing sick thoughts
+                    || patientPawn.health.hediffSet.AnyHediffMakesSickThought
                     // Has missing body parts
                     || (!patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().NullOrEmpty() && !neverTreatableHediffs.Contains(HediffDefOf.MissingBodyPart))
                     // Has permanent injuries (excluding those blacklisted from MedPod treatment)
