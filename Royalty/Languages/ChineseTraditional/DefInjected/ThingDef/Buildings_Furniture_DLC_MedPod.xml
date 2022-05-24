@@ -8,17 +8,5 @@
 	
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
 	<MedPodLux.description>一張先進的醫療床，采用加速細胞再生技術來自動快速修復細胞，治療多種疾病和傷勢，甚至可以再生缺失的器官和四肢。\n\n這一張豪華版的智能醫療床，床架鑲金，也具備了凝膠記憶泡沫床墊，診斷與治療比標準款快，但耗電量更大。</MedPodLux.description>
-	
-	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_MedPodLux.label>智能醫療床Lux (藍圖)</Blueprint_MedPodLux.label>
-	
-	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_Install_MedPodLux.label>智能醫療床Lux (藍圖)</Blueprint_Install_MedPodLux.label>
-	
-	<!-- EN: MedPod (building)-->
-	<Frame_MedPodLux.label>智能醫療床Lux (建造中)</Frame_MedPodLux.label>
-	
-	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
-	<Frame_MedPodLux.description>一張先進的醫療床，采用加速細胞再生來自動快速修復細胞，治療多種疾病和傷勢，甚至可以再生缺失的器官和四肢。\n\n這一張豪華版的智能醫療床，床架鑲金，也具備了凝膠記憶泡沫床墊，診斷與治療比標準款快，但耗電量更大。</Frame_MedPodLux.description>
 
 </LanguageData>

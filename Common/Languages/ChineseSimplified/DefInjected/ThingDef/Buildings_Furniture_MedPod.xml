@@ -10,70 +10,22 @@
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
 	<MedPodStandard.description>一张先进的医疗床，采用加速细胞再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。\n\n这一张智能医疗床是经常在闪耀世界上的免费公共健康诊所中可找到的标准款。</MedPodStandard.description>
 
-	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_MedPodStandard.label>智能医疗床 (蓝图)</Blueprint_MedPodStandard.label>
-
-	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_Install_MedPodStandard.label>智能医疗床 (蓝图)</Blueprint_Install_MedPodStandard.label>
-
-	<!-- EN: MedPod (building)-->
-	<Frame_MedPodStandard.label>智能医疗床 (建造中)</Frame_MedPodStandard.label>
-
-	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
-	<Frame_MedPodStandard.description>一张先进的医疗床，采用加速细胞再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。\n\n这一张智能医疗床是经常在闪耀世界上的免费公共健康诊所中可找到的标准款。</Frame_MedPodStandard.description>
-
 	<!-- EN: VetPod -->
 	<MedPodAnimal.label>智能兽医床</MedPodAnimal.label>
 
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
 	<MedPodAnimal.description>一张先进的医疗床，采用加速细胞再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。 \n\n这一张智能医疗床适用于宠物和其他小型的驯化动物。</MedPodAnimal.description>
-
-	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_MedPodAnimal.label>智能兽医床 (蓝图)</Blueprint_MedPodAnimal.label>
-
-	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_Install_MedPodAnimal.label>智能兽医床 (蓝图)</Blueprint_Install_MedPodAnimal.label>
-
-	<!-- EN: VetPod (building)-->
-	<Frame_MedPodAnimal.label>智能兽医床 (建造中)</Frame_MedPodAnimal.label>
-
-	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
-	<Frame_MedPodAnimal.description>一张先进的医疗床，采用加速细胞再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。 \n\n这一张智能医疗床适用于宠物和其他小型的驯化动物。</Frame_MedPodAnimal.description>
 	
 	<!-- EN: VetPod Large -->
 	<MedPodAnimalMedium.label>智能兽医床Large</MedPodAnimalMedium.label>
 	
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock, but can also treat smaller animals. -->
 	<MedPodAnimalMedium.description>一张先进的医疗床，采用加速细胞再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。 \n\n这一张智能医疗床适用于牲畜，但也可以治愈小的动物。</MedPodAnimalMedium.description>
-	
-	<!-- EN: VetPod Large (blueprint)-->
-	<Blueprint_MedPodAnimalMedium.label>智能兽医床Large (蓝图)</Blueprint_MedPodAnimalMedium.label>
-	
-	<!-- EN: VetPod Large (blueprint)-->
-	<Blueprint_Install_MedPodAnimalMedium.label>智能兽医床Large (蓝图)</Blueprint_Install_MedPodAnimalMedium.label>
-	
-	<!-- EN: VetPod Large (building)-->
-	<Frame_MedPodAnimalMedium.label>智能兽医床Large (建造中)</Frame_MedPodAnimalMedium.label>
-	
-	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock, but can also treat smaller animals. -->
-	<Frame_MedPodAnimalMedium.description>一张先进的医疗床，采用加速细胞再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。 \n\n这一张智能医疗床适用于牲畜，但也可以治愈小的动物。</Frame_MedPodAnimalMedium.description>
 
 	<!-- EN: VetPod Mega -->
 	<MedPodAnimalBig.label>智能兽医床Mega</MedPodAnimalBig.label>
 
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
 	<MedPodAnimalBig.description>一张先进的医疗床，采用加速细胞再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。 \n\n这一张智能医疗床适用于牲畜和大型动物，但也可以治愈小的动物。</MedPodAnimalBig.description>
-
-	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_MedPodAnimalBig.label>智能兽医床Mega (蓝图)</Blueprint_MedPodAnimalBig.label>
-
-	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_Install_MedPodAnimalBig.label>智能兽医床Mega (蓝图)</Blueprint_Install_MedPodAnimalBig.label>
-
-	<!-- EN: VetPod (building)-->
-	<Frame_MedPodAnimalBig.label>智能兽医床Mega (建造中)</Frame_MedPodAnimalBig.label>
-
-	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
-	<Frame_MedPodAnimalBig.description>一张先进的医疗床，采用加速细胞再生技术来自动快速修复细胞，治疗多种疾病和伤势，甚至可以再生缺失的器官和四肢。 \n\n这一张智能医疗床适用于牲畜和大型动物，但也可以治愈小的动物。</Frame_MedPodAnimalBig.description>
-
+	
 </LanguageData>

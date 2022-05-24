@@ -9,16 +9,4 @@
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
 	<MedPodLux.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Luxusmodell mit gold eingelegten Armaturen und einer mit Gel infundierten Memory-Schaum-Matratze und ist in der Lage eine schnellere Diagnose und Behandlung durchzuführen, erfordert jedoch einen höheren Stromverbrauch.</MedPodLux.description>
 
-	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_MedPodLux.label>MedPod Lux (Blaupause)</Blueprint_MedPodLux.label>
-
-	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_Install_MedPodLux.label>MedPod Lux (Blaupause)</Blueprint_Install_MedPodLux.label>
-
-	<!-- EN: MedPod (building)-->
-	<Frame_MedPodLux.label>MedPod Lux (Gebäude)</Frame_MedPodLux.label>
-
-	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
-	<Frame_MedPodLux.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Luxusmodell mit gold eingelegten Armaturen und einer mit Gel infundierten Memory-Schaum-Matratze und ist in der Lage eine schnellere Diagnose und Behandlung durchzuführen, erfordert jedoch einen höheren Stromverbrauch.</Frame_MedPodLux.description>
-
 </LanguageData>

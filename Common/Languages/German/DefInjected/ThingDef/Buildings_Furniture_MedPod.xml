@@ -9,18 +9,6 @@
 
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
 	<MedPodStandard.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Standardmodell, das häufig in kostenlosen öffentlichen Gesundheitskliniken auf Glitterworlds zu finden ist.</MedPodStandard.description>
-
-	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_MedPodStandard.label>MedPod (Blaupause)</Blueprint_MedPodStandard.label>
-
-	<!-- EN: MedPod (blueprint)-->
-	<Blueprint_Install_MedPodStandard.label>MedPod (Blaupause)</Blueprint_Install_MedPodStandard.label>
-
-	<!-- EN: MedPod (building)-->
-	<Frame_MedPodStandard.label>MedPod (Gebäude)</Frame_MedPodStandard.label>
-
-	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
-	<Frame_MedPodStandard.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDies ist ein Standardmodell, das häufig in kostenlosen öffentlichen Gesundheitskliniken auf Glitterworlds zu finden ist.</Frame_MedPodStandard.description>
 	
 	<!-- EN: VetPod -->
 	<MedPodAnimal.label>VetPod</MedPodAnimal.label>
@@ -28,52 +16,16 @@
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
 	<MedPodAnimal.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDiese Variante ist für Haustiere und andere kleine domestizierte Tiere konzipiert.</MedPodAnimal.description>
 	
-	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_MedPodAnimal.label>VetPod (Blaupause)</Blueprint_MedPodAnimal.label>
-	
-	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_Install_MedPodAnimal.label>VetPod (Blaupause)</Blueprint_Install_MedPodAnimal.label>
-	
-	<!-- EN: VetPod (building)-->
-	<Frame_MedPodAnimal.label>VetPod (Gebäude)</Frame_MedPodAnimal.label>
-	
-	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
-	<Frame_MedPodAnimal.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDiese Variante ist für Haustiere und andere kleine domestizierte Tiere konzipiert.</Frame_MedPodAnimal.description>
-	
 	<!-- EN: VetPod Large -->
 	<MedPodAnimalMedium.label>VetPod Large</MedPodAnimalMedium.label>
 	
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock, but can also treat smaller animals. -->
 	<MedPodAnimalMedium.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDiese Variante ist für Nutztiere konzipiert, kann aber auch Kleintiere behandeln.</MedPodAnimalMedium.description>
 	
-	<!-- EN: VetPod Large (blueprint)-->
-	<Blueprint_MedPodAnimalMedium.label>VetPod Large (Blaupause)</Blueprint_MedPodAnimalMedium.label>
-	
-	<!-- EN: VetPod Large (blueprint)-->
-	<Blueprint_Install_MedPodAnimalMedium.label>VetPod Large (Blaupause)</Blueprint_Install_MedPodAnimalMedium.label>
-	
-	<!-- EN: VetPod Large (building)-->
-	<Frame_MedPodAnimalMedium.label>VetPod Large (Gebäude)</Frame_MedPodAnimalMedium.label>
-	
-	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock, but can also treat smaller animals. -->
-	<Frame_MedPodAnimalMedium.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDiese Variante ist für Nutztiere konzipiert, kann aber auch Kleintiere behandeln.</Frame_MedPodAnimalMedium.description>
-	
 	<!-- EN: VetPod Mega -->
 	<MedPodAnimalBig.label>VetPod Mega</MedPodAnimalBig.label>
 	
 	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
 	<MedPodAnimalBig.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDiese Variante ist für Nutztiere und Megafauna konzipiert, kann aber auch Kleintiere behandeln.</MedPodAnimalBig.description>
-	
-	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_MedPodAnimalBig.label>VetPod Mega (Blaupause)</Blueprint_MedPodAnimalBig.label>
-	
-	<!-- EN: VetPod (blueprint)-->
-	<Blueprint_Install_MedPodAnimalBig.label>VetPod Mega (Blaupause)</Blueprint_Install_MedPodAnimalBig.label>
-	
-	<!-- EN: VetPod (building)-->
-	<Frame_MedPodAnimalBig.label>VetPod Mega (Gebäude)</Frame_MedPodAnimalBig.label>
-	
-	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
-	<Frame_MedPodAnimalBig.description>Ein fortschrittliches Krankenhausbett, das die Beschleunigte Zellregeneration zur Behandlung nahezu aller Arten von Verletzungen und Krankheiten verwendet, einschließlich der Regeneration fehlender Organe und Gliedmaßen.\n\nDiese Variante ist für Nutztiere und Megafauna konzipiert, kann aber auch Kleintiere behandeln.</Frame_MedPodAnimalBig.description>
 
 </LanguageData>
