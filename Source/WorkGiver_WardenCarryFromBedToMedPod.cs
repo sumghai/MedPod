@@ -4,7 +4,7 @@ using Verse.AI;
 
 namespace MedPod
 {
-    public class WorkGiver_WardenRescueToMedPod : WorkGiver_Warden
+    public class WorkGiver_WardenCarryFromBedToMedPod : WorkGiver_Warden
     {
 		public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
 		{
@@ -15,15 +15,15 @@ namespace MedPod
 			{
 				return null;
 			}
-			if (!prisoner.Downed)
-			{
-				return null;
-			}
-			if (prisoner.InBed())
+			if (!prisoner.InBed())
 			{
 				return null;
 			}
 			if (prisoner.CurrentBed()?.def.thingClass == typeof(Building_BedMedPod))
+			{
+				return null;
+			}
+			if (prisoner.health.surgeryBills.Bills.Any(x => x.suspended == false))
 			{
 				return null;
 			}
@@ -33,9 +33,9 @@ namespace MedPod
 			}
 
 			Building_BedMedPod bedMedPod = MedPodRestUtility.FindBestMedPod(warden, prisoner);
-			if (bedMedPod != null && prisoner.CanReserve(bedMedPod))
+			if (bedMedPod != null && MedPodHealthAIUtility.ShouldSeekMedPodRest(prisoner, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs, bedMedPod.NonCriticalTreatableHediffs) && prisoner.CanReserve(bedMedPod))
 			{
-				Job job = JobMaker.MakeJob(MedPodDef.RescueToMedPod, prisoner, bedMedPod);
+				Job job = JobMaker.MakeJob(MedPodDef.CarryToMedPod, prisoner, bedMedPod);
 				job.count = 1;
 				return job;
 			}

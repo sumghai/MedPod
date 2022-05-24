@@ -37,6 +37,7 @@
 		<label>carry patients from bed to MedPod</label>
 		<giverClass>MedPod.WorkGiver_DoctorCarryFromBedToMedPod</giverClass>
 		<workType>Doctor</workType>
+		<emergency>true</emergency>
 		<verb>carry</verb>
 		<gerund>carrying</gerund>
 		<requiredCapacities>
@@ -72,7 +73,23 @@
 		<requiredCapacities>
 			<li>Manipulation</li>
 		</requiredCapacities>
-		<priorityInType>95</priorityInType>
+		<priorityInType>120</priorityInType>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	
+	<WorkGiverDef>
+		<defName>MedPodWardenCarryFromBedToMedPod</defName>
+		<label>carry prisoners from bed to MedPod</label>
+		<giverClass>MedPod.WorkGiver_WardenCarryFromBedToMedPod</giverClass>
+		<workType>Warden</workType>
+		<emergency>true</emergency>
+		<verb>carry</verb>
+		<gerund>carrying</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<priorityInType>115</priorityInType>
+		<prioritizeSustains>true</prioritizeSustains>
 	</WorkGiverDef>
 
 </Defs>

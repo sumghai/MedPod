@@ -327,6 +327,7 @@
     <Compile Include="WorkGiver_DoctorCarryFromBedToMedPod.cs" />
     <Compile Include="WorkGiver_DoctorRescueToMedPod.cs" />
     <Compile Include="WorkGiver_PatientGoToMedPod.cs" />
+    <Compile Include="WorkGiver_WardenCarryFromBedToMedPod.cs" />
     <Compile Include="WorkGiver_WardenRescueToMedPod.cs" />
   </ItemGroup>
   <ItemGroup />
