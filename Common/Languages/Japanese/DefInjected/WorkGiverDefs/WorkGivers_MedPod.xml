@@ -18,6 +18,15 @@
 
 	<!-- EN: rescue -->
 	<MedPodDoctorRescueToMedPod.verb>緊急搬送</MedPodDoctorRescueToMedPod.verb>
+	
+	<!-- EN: carry patients from bed to MedPod -->
+	<MedPodDoctorCarryFromBedToMedPod.label>ベッドから治療ポッドへ患者を運ぶ</MedPodDoctorCarryFromBedToMedPod.label>
+	
+	<!-- EN: carrying -->
+	<MedPodDoctorCarryFromBedToMedPod.gerund>を運ぶ</MedPodDoctorCarryFromBedToMedPod.gerund>
+	
+	<!-- EN: carry -->
+	<MedPodDoctorCarryFromBedToMedPod.verb>運ぶ</MedPodDoctorCarryFromBedToMedPod.verb>
 
 	<!-- EN: go to MedPod for treatment -->
 	<MedPodPatientGoToMedPodTreatment.label>治療のために治療ポッドに行く</MedPodPatientGoToMedPodTreatment.label>
@@ -36,5 +45,14 @@
 
 	<!-- EN: rescue -->
 	<MedPodWardenRescueToMedPod.verb>緊急搬送</MedPodWardenRescueToMedPod.verb>
+	
+	<!-- EN: carry prisoners from bed to MedPod -->
+	<MedPodWardenCarryFromBedToMedPod.label>ベッドから治療ポッドへ囚人を運ぶ</MedPodWardenCarryFromBedToMedPod.label>
+	
+	<!-- EN: carrying -->
+	<MedPodWardenCarryFromBedToMedPod.gerund>を運ぶ</MedPodWardenCarryFromBedToMedPod.gerund>
+	
+	<!-- EN: carry -->
+	<MedPodWardenCarryFromBedToMedPod.verb>運ぶ</MedPodWardenCarryFromBedToMedPod.verb>
 
 </LanguageData>

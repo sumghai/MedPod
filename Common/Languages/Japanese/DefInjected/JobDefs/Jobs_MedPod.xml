@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+	<!-- EN: carrying TargetA to TargetB. -->
+	<CarryToMedPod.reportString>TargetAをTargetBに運ぶ</CarryToMedPod.reportString>
+
 	<!-- EN: Receiving treatment in TargetA. -->
 	<PatientGoToMedPod.reportString>TargetAで治療中</PatientGoToMedPod.reportString>
 

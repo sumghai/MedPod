@@ -19,6 +19,15 @@
 	<!-- EN: rescue -->
 	<MedPodDoctorRescueToMedPod.verb>救援</MedPodDoctorRescueToMedPod.verb>
 	
+	<!-- EN: carry patients from bed to MedPod -->
+	<MedPodDoctorCarryFromBedToMedPod.label>將病患帶至智能醫療床上</MedPodDoctorCarryFromBedToMedPod.label>
+	
+	<!-- EN: carrying -->
+	<MedPodDoctorCarryFromBedToMedPod.gerund>帶</MedPodDoctorCarryFromBedToMedPod.gerund>
+	
+	<!-- EN: carry -->
+	<MedPodDoctorCarryFromBedToMedPod.verb>帶</MedPodDoctorCarryFromBedToMedPod.verb>
+	
 	<!-- EN: go to MedPod for treatment -->
 	<MedPodPatientGoToMedPodTreatment.label>到智能醫療床上接受治療</MedPodPatientGoToMedPodTreatment.label>
 	
@@ -36,5 +45,14 @@
 	
 	<!-- EN: rescue -->
 	<MedPodWardenRescueToMedPod.verb>救援</MedPodWardenRescueToMedPod.verb>
+	
+	<!-- EN: carry prisoners from bed to MedPod -->
+	<MedPodWardenCarryFromBedToMedPod.label>將俘虜帶至智能醫療床上</MedPodWardenCarryFromBedToMedPod.label>
+	
+	<!-- EN: carrying -->
+	<MedPodWardenCarryFromBedToMedPod.gerund>帶</MedPodWardenCarryFromBedToMedPod.gerund>
+	
+	<!-- EN: carry -->
+	<MedPodWardenCarryFromBedToMedPod.verb>帶</MedPodWardenCarryFromBedToMedPod.verb>
 
 </LanguageData>

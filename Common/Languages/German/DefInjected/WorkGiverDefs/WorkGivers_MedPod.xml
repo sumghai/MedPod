@@ -19,6 +19,15 @@
 	<!-- EN: rescue -->
 	<MedPodDoctorRescueToMedPod.verb>retten</MedPodDoctorRescueToMedPod.verb>
 	
+	<!-- EN: carry patients from bed to MedPod -->
+	<MedPodDoctorCarryFromBedToMedPod.label>Tragen Sie Patienten vom Bett zum MedPod</MedPodDoctorCarryFromBedToMedPod.label>
+	
+	<!-- EN: carrying -->
+	<MedPodDoctorCarryFromBedToMedPod.gerund>Tragen</MedPodDoctorCarryFromBedToMedPod.gerund>
+	
+	<!-- EN: carry -->
+	<MedPodDoctorCarryFromBedToMedPod.verb>Tragen</MedPodDoctorCarryFromBedToMedPod.verb>
+	
 	<!-- EN: go to MedPod for treatment -->
 	<MedPodPatientGoToMedPodTreatment.label>für Behandlung ins MedPod gehen</MedPodPatientGoToMedPodTreatment.label>
 	
@@ -36,5 +45,14 @@
 	
 	<!-- EN: rescue -->
 	<MedPodWardenRescueToMedPod.verb>retten</MedPodWardenRescueToMedPod.verb>
+	
+	<!-- EN: carry prisoners from bed to MedPod -->
+	<MedPodWardenCarryFromBedToMedPod.label>Tragen Sie Gefangene vom Bett zum MedPod</MedPodWardenCarryFromBedToMedPod.label>
+	
+	<!-- EN: carrying -->
+	<MedPodWardenCarryFromBedToMedPod.gerund>Tragen</MedPodWardenCarryFromBedToMedPod.gerund>
+	
+	<!-- EN: carry -->
+	<MedPodWardenCarryFromBedToMedPod.verb>Tragen</MedPodWardenCarryFromBedToMedPod.verb>
 
 </LanguageData>

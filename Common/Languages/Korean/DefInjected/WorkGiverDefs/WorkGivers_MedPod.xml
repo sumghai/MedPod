@@ -19,6 +19,15 @@
 	<!-- EN: rescue -->
 	<MedPodDoctorRescueToMedPod.verb>구조</MedPodDoctorRescueToMedPod.verb>
 	
+	<!-- EN: carry patients from bed to MedPod -->
+	<MedPodDoctorCarryFromBedToMedPod.label>환자를 침대에서 메드포드로 옮기다</MedPodDoctorCarryFromBedToMedPod.label>
+	
+	<!-- EN: carrying -->
+	<MedPodDoctorCarryFromBedToMedPod.gerund>나르다</MedPodDoctorCarryFromBedToMedPod.gerund>
+	
+	<!-- EN: carry -->
+	<MedPodDoctorCarryFromBedToMedPod.verb>나르다</MedPodDoctorCarryFromBedToMedPod.verb>
+	
 	<!-- EN: go to MedPod for treatment -->
 	<MedPodPatientGoToMedPodTreatment.label>치료를 위해 메드포드로 가기</MedPodPatientGoToMedPodTreatment.label>
 	
@@ -36,5 +45,14 @@
 	
 	<!-- EN: rescue -->
 	<MedPodWardenRescueToMedPod.verb>구조</MedPodWardenRescueToMedPod.verb>
+	
+	<!-- EN: carry prisoners from bed to MedPod -->
+	<MedPodWardenCarryFromBedToMedPod.label>포로를 침대에서 메드포드로 옮기다</MedPodWardenCarryFromBedToMedPod.label>
+	
+	<!-- EN: carrying -->
+	<MedPodWardenCarryFromBedToMedPod.gerund>나르다</MedPodWardenCarryFromBedToMedPod.gerund>
+	
+	<!-- EN: carry -->
+	<MedPodWardenCarryFromBedToMedPod.verb>나르다</MedPodWardenCarryFromBedToMedPod.verb>
 
 </LanguageData>

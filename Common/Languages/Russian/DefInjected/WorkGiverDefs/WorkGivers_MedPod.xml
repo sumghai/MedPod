@@ -3,38 +3,56 @@
 
 	<!-- EN: go to MedPod for emergency treatment -->
 	<MedPodPatientGoToMedPodEmergency.label>получить неотложную помощь на Медкапсула</MedPodPatientGoToMedPodEmergency.label>
-	
+
 	<!-- EN: receiving treatment in -->
 	<MedPodPatientGoToMedPodEmergency.gerund>лечиться в</MedPodPatientGoToMedPodEmergency.gerund>
-	
+
 	<!-- EN: receive treatment in -->
 	<MedPodPatientGoToMedPodEmergency.verb>лечиться в</MedPodPatientGoToMedPodEmergency.verb>
-	
+
 	<!-- EN: rescue downed allies to MedPod -->
-	<MedPodDoctorRescueToMedPod.label>спасать сражённых союзников на medpod </MedPodDoctorRescueToMedPod.label>
-	
+	<MedPodDoctorRescueToMedPod.label>спасать сражённых союзников на Медкапсула</MedPodDoctorRescueToMedPod.label>
+
 	<!-- EN: rescuing -->
 	<MedPodDoctorRescueToMedPod.gerund>спасти</MedPodDoctorRescueToMedPod.gerund>
-	
+
 	<!-- EN: rescue -->
 	<MedPodDoctorRescueToMedPod.verb>спасать</MedPodDoctorRescueToMedPod.verb>
-	
+
+	<!-- EN: carry patients from bed to MedPod -->
+	<MedPodDoctorCarryFromBedToMedPod.label>переносить пациентов с кровати на Медкапсула</MedPodDoctorCarryFromBedToMedPod.label>
+
+	<!-- EN: carrying -->
+	<MedPodDoctorCarryFromBedToMedPod.gerund>перенос</MedPodDoctorCarryFromBedToMedPod.gerund>
+
+	<!-- EN: carry -->
+	<MedPodDoctorCarryFromBedToMedPod.verb>перенос</MedPodDoctorCarryFromBedToMedPod.verb>
+
 	<!-- EN: go to MedPod for treatment -->
 	<MedPodPatientGoToMedPodTreatment.label>лечиться на Медкапсула</MedPodPatientGoToMedPodTreatment.label>
-	
+
 	<!-- EN: receiving treatment in -->
 	<MedPodPatientGoToMedPodTreatment.gerund>лечиться в</MedPodPatientGoToMedPodTreatment.gerund>
-	
+
 	<!-- EN: receive treatment in -->
 	<MedPodPatientGoToMedPodTreatment.verb>лечиться в</MedPodPatientGoToMedPodTreatment.verb>
-	
+
 	<!-- EN: rescue downed prisoner to MedPod -->
-	<MedPodWardenRescueToMedPod.label>спасать сражённых пленников на medpod </MedPodWardenRescueToMedPod.label>
-	
+	<MedPodWardenRescueToMedPod.label>спасать сражённых пленников на Медкапсула</MedPodWardenRescueToMedPod.label>
+
 	<!-- EN: rescuing -->
 	<MedPodWardenRescueToMedPod.gerund>спасти</MedPodWardenRescueToMedPod.gerund>
-	
+
 	<!-- EN: rescue -->
 	<MedPodWardenRescueToMedPod.verb>спасать</MedPodWardenRescueToMedPod.verb>
+
+	<!-- EN: carry prisoners from bed to MedPod -->
+	<MedPodWardenCarryFromBedToMedPod.label>переносить пленников с кровати на Медкапсула</MedPodWardenCarryFromBedToMedPod.label>
+
+	<!-- EN: carrying -->
+	<MedPodWardenCarryFromBedToMedPod.gerund>перенос</MedPodWardenCarryFromBedToMedPod.gerund>
+
+	<!-- EN: carry -->
+	<MedPodWardenCarryFromBedToMedPod.verb>перенос</MedPodWardenCarryFromBedToMedPod.verb>
 
 </LanguageData>
