@@ -2,6 +2,14 @@
 <Defs>
 
 	<JobDef>
+		<defName>CarryToMedPod</defName>
+		<driverClass>JobDriver_TakeToBed</driverClass>
+		<reportString>carrying TargetA to TargetB.</reportString>
+		<casualInterruptible>false</casualInterruptible>
+		<carryThingAfterJob>true</carryThingAfterJob>
+	</JobDef>
+	
+	<JobDef>
 		<defName>PatientGoToMedPod</defName>
 		<driverClass>MedPod.JobDriver_PatientGoToMedPod</driverClass>
 		<reportString>Receiving treatment in TargetA.</reportString>

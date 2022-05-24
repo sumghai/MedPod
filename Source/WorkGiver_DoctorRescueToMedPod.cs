@@ -4,13 +4,13 @@ using Verse.AI;
 
 namespace MedPod
 {
-    public class WorkGiver_DoctorRescueToMedPod : WorkGiver_RescueDowned
-    {
+	public class WorkGiver_DoctorRescueToMedPod : WorkGiver_RescueDowned
+	{
 		public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
 		{
 			Pawn patient = t as Pawn;
 
-			if (patient == null || !patient.Downed || patient.Faction != pawn.Faction || patient.CurrentBed()?.def.thingClass == typeof(Building_BedMedPod) || !pawn.CanReserve(patient, 1, -1, null, forced) || GenAI.EnemyIsNear(patient, MinDistFromEnemy))
+			if (patient == null || !patient.Downed || patient == pawn || patient.Faction != pawn.Faction || patient.CurrentBed()?.def.thingClass == typeof(Building_BedMedPod) || !pawn.CanReserve(patient, 1, -1, null, forced) || GenAI.EnemyIsNear(patient, MinDistFromEnemy))
 			{
 				return false;
 			}

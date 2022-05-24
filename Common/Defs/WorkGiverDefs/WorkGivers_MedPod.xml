@@ -31,6 +31,20 @@
 		<priorityInType>120</priorityInType>
 		<prioritizeSustains>true</prioritizeSustains>
 	</WorkGiverDef>
+	
+	<WorkGiverDef>
+		<defName>MedPodDoctorCarryFromBedToMedPod</defName>
+		<label>carry patients from bed to MedPod</label>
+		<giverClass>MedPod.WorkGiver_DoctorCarryFromBedToMedPod</giverClass>
+		<workType>Doctor</workType>
+		<verb>carry</verb>
+		<gerund>carrying</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<priorityInType>115</priorityInType>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
 
 	<!-- ============= PatientBedRest ============= -->
 

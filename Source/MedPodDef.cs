@@ -11,6 +11,7 @@ namespace MedPod
             DefOfHelper.EnsureInitializedInCtor(typeof(MedPodDef));
         }
 
+        public static JobDef CarryToMedPod;
         public static JobDef PatientGoToMedPod;
         public static JobDef RescueToMedPod;
 
