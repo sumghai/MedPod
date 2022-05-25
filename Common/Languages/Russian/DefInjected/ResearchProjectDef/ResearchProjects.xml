@@ -11,6 +11,6 @@
 	<AcceleratedCellularRegeneration.discoveredLetterTitle>Создание медкапсул</AcceleratedCellularRegeneration.discoveredLetterTitle>
 
 	<!-- EN: You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors via the following ways:\n\n-Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n-Some quests are rewarded with Isolinear Processors. -->
-	<AcceleratedCellularRegeneration.discoveredLetterText>Теперь у вас есть технология создания медкапсул! К сожалению для конструирования одной такой необходим специфический компонент: изолинейный процессор. Его можно получить несколькими способами: купить у орбитальных торговцев или караванов, возможно кто-то предложит такой процессор в награду за задание. </AcceleratedCellularRegeneration.discoveredLetterText>
+	<AcceleratedCellularRegeneration.discoveredLetterText>Теперь у вас есть технология создания медкапсул! К сожалению для конструирования одной такой необходим специфический компонент: изолинейный процессор. Его можно получить несколькими способами: купить у орбитальных торговцев или караванов, возможно кто-то предложит такой процессор в награду за задание.</AcceleratedCellularRegeneration.discoveredLetterText>
 
 </LanguageData>

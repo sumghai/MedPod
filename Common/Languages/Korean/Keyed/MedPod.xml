@@ -14,7 +14,7 @@
 	<MedPod_InspectorStatus_HealingProgress>재생({0}%)</MedPod_InspectorStatus_HealingProgress>
 	
 	<!-- EN: 100% Clear -->
-	<MedPod_InspectorStatus_PatientDischarged>100％완료 </MedPod_InspectorStatus_PatientDischarged>
+	<MedPod_InspectorStatus_PatientDischarged>100％완료</MedPod_InspectorStatus_PatientDischarged>
 	
 	<!-- EN: Idle -->
 	<MedPod_InspectorStatus_Idle>게으른</MedPod_InspectorStatus_Idle>
