@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>c43b4b1a-9251-4db7-9519-1233635fab59</ID>
   <ModName>MedPod</ModName>
-  <Version>1.4.0</Version>
+  <Version>1.4.1</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>sumghai</Owner>
