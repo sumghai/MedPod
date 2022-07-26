@@ -11,10 +11,7 @@
 				<value>
 					<li Class="StockGenerator_SingleDef">
 						<thingDef>IsolinearProcessor</thingDef>
-						<countRange>
-							<min>4</min>
-							<max>8</max>
-						</countRange>
+						<countRange>0~1</countRange>
 					</li>
 				</value>
 			</li>
