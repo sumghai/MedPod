@@ -3,27 +3,25 @@
 
 	<!--=============================== MedPod Research Projects ===================================-->
 
-	<ResearchProjectDef Name="MedPodResearchProjectBase" Abstract="True">
+	<ResearchProjectDef>
+		<defName>AcceleratedCellularRegeneration</defName>
+		<label>Accelerated Cellular Regeneration</label>
+		<description>Allows the construction of MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells.</description>
+		<baseCost>6000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>AdvancedFabrication</li>
+		</prerequisites>
+		<hiddenPrerequisites>
+			<li>HospitalBed</li>
+			<li>VitalsMonitor</li>
+		</hiddenPrerequisites>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<requiredResearchFacilities>
 			<li>MultiAnalyzer</li>
 		</requiredResearchFacilities>
-	</ResearchProjectDef>
-
-	<ResearchProjectDef ParentName="MedPodResearchProjectBase">
-		<defName>AcceleratedCellularRegeneration</defName>
-		<label>Accelerated Cellular Regeneration</label>
-		<description>Allows the construction of MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells.</description>
-		<tab>MedPod</tab>
-		<baseCost>6000</baseCost>
-		<techLevel>Spacer</techLevel>
-		<prerequisites>
-			<li>HospitalBed</li>
-			<li>VitalsMonitor</li>
-			<li>AdvancedFabrication</li>
-		</prerequisites>
-		<researchViewX>0</researchViewX>
-		<researchViewY>0</researchViewY>
+		<researchViewX>18.00</researchViewX>
+		<researchViewY>0.80</researchViewY>
 		<discoveredLetterTitle>About: Building MedPods</discoveredLetterTitle>
 		<discoveredLetterText>You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors via the following ways:\n\n  -Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n  -Some quests are rewarded with Isolinear Processors.</discoveredLetterText>
 	</ResearchProjectDef>
