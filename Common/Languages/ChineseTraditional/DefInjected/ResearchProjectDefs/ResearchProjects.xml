@@ -4,8 +4,8 @@
 	<!-- EN: Accelerated Cellular Regeneration -->
 	<AcceleratedCellularRegeneration.label>加速細胞再生</AcceleratedCellularRegeneration.label>
 	
-	<!-- EN: Allows the construction of MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells. -->
-	<AcceleratedCellularRegeneration.description>讓你可以建造智能醫療床，採用電刺激技術來自動快速修復細胞，治療多種疾病和傷勢。</AcceleratedCellularRegeneration.description>
+	<!-- EN: Construct MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells. -->
+	<AcceleratedCellularRegeneration.description>建造智能醫療床，採用電刺激技術來自動快速修復細胞，治療多種疾病和傷勢。</AcceleratedCellularRegeneration.description>
 	
 	<!-- EN: About: Building MedPods -->
 	<AcceleratedCellularRegeneration.discoveredLetterTitle>關於：建造智能醫療床</AcceleratedCellularRegeneration.discoveredLetterTitle>

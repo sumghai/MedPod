@@ -6,7 +6,7 @@
 	<ResearchProjectDef>
 		<defName>AcceleratedCellularRegeneration</defName>
 		<label>Accelerated Cellular Regeneration</label>
-		<description>Allows the construction of MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells.</description>
+		<description>Construct MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells.</description>
 		<baseCost>6000</baseCost>
 		<techLevel>Spacer</techLevel>
 		<prerequisites>

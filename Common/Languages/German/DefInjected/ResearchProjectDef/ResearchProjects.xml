@@ -4,8 +4,8 @@
 	<!-- EN: Accelerated Cellular Regeneration -->
 	<AcceleratedCellularRegeneration.label>Beschleunigte Zellregeneration</AcceleratedCellularRegeneration.label>
 
-	<!-- EN: Allows the construction of MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells. -->
-	<AcceleratedCellularRegeneration.description>Ermöglicht den Bau von MedPods, fortschrittlichen Krankenhausbetten, die in der Lage sind, eine Vielzahl von Krankheiten und Verletzungen automatisch zu behandeln, indem sie die Reparaturprozesse lebender Zellen elektrisch stimulieren und steuern.</AcceleratedCellularRegeneration.description>
+	<!-- EN: Construct MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells. -->
+	<AcceleratedCellularRegeneration.description>Baue MedPods, fortschrittlichen Krankenhausbetten, die in der Lage sind, eine Vielzahl von Krankheiten und Verletzungen automatisch zu behandeln, indem sie die Reparaturprozesse lebender Zellen elektrisch stimulieren und steuern.</AcceleratedCellularRegeneration.description>
 
 	<!-- EN: About: Building MedPods -->
 	<AcceleratedCellularRegeneration.discoveredLetterTitle>Über: Erstellen von MedPods</AcceleratedCellularRegeneration.discoveredLetterTitle>
