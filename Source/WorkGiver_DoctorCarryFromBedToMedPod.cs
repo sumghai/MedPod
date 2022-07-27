@@ -25,7 +25,7 @@ namespace MedPod
 		{
 			Pawn patient = t as Pawn;
 
-			if (patient == null || patient == pawn || patient.Faction != pawn.Faction || !patient.InBed() || patient.CurrentBed()?.def.thingClass == typeof(Building_BedMedPod) || patient.health.surgeryBills.Bills.Any(x => x.suspended == false) || !pawn.CanReserve(patient, 1, -1, null, forced) || GenAI.EnemyIsNear(patient, MinDistFromEnemy))
+			if (patient == null || patient == pawn || !patient.InBed() || patient.CurrentBed()?.def.thingClass == typeof(Building_BedMedPod) || patient.health.surgeryBills.Bills.Any(x => x.suspended == false) || !pawn.CanReserve(patient, 1, -1, null, forced) || GenAI.EnemyIsNear(patient, MinDistFromEnemy))
 			{
 				return false;
 			}
