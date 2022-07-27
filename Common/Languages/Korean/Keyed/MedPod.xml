@@ -46,6 +46,12 @@
 	<!-- EN: {0} s -->
 	<MedPod_Stat_TimeSeconds>{0}초</MedPod_Stat_TimeSeconds>
 	
+	<!-- EN: No reachable, un-reserved non-prisoner MedPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoNonPrisonerMedPod>도달 가능하고, 사용 중이지 않고, 전원이 켜진 안전한 온도의 메드포드가 없음</MedPod_Message_CannotRescue_NoNonPrisonerMedPod>
+	
+	<!-- EN: No reachable, un-reserved VetPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoVetPod>도달 가능하고, 사용 중이지 않고, 전원이 켜진 안전한 온도의 벳포드 없음</MedPod_Message_CannotRescue_NoVetPod>
+	
 	<!-- EN: MedPod treatment complete for {1_label}. -->
 	<MedPod_Message_TreatmentComplete>{1_label}에 대한 메드포드 치료 완료.</MedPod_Message_TreatmentComplete>
 	
@@ -54,6 +60,9 @@
 	
 	<!-- EN: MedPod cannot treat {0}s -->
 	<MedPod_FloatMenu_RaceNotAllowed>메드포드는 {0}을(를) 치료할 수 없습니다.</MedPod_FloatMenu_RaceNotAllowed>
+	
+	<!-- EN: Rescue {0} to MedPod -->
+	<MedPod_FloatMenu_Rescue>메드포드가에 {0} 구조</MedPod_FloatMenu_Rescue>
 	
 	<!-- EN: MedPod not powered -->
 	<MedPod_FloatMenu_Unpowered>메드포드에 전원이 공급되지 않음</MedPod_FloatMenu_Unpowered>

@@ -45,6 +45,12 @@
 
 	<!-- EN: {0} s -->
 	<MedPod_Stat_TimeSeconds>{0} s</MedPod_Stat_TimeSeconds>
+	
+	<!-- EN: No reachable, un-reserved non-prisoner MedPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoNonPrisonerMedPod>Keine Kolonist MedPod verfügbar, die erreichbar, nicht reserviert, angetriebenen und in sicherer Temperatur sind.</MedPod_Message_CannotRescue_NoNonPrisonerMedPod>
+	
+	<!-- EN: No reachable, un-reserved VetPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoVetPod>Keine VetPod für Tiere verfügbar, die erreichbar, nicht reserviert, angetriebenen und in sicherer Temperatur sind.</MedPod_Message_CannotRescue_NoVetPod>
 
 	<!-- EN: MedPod treatment complete for {1_label}. -->
 	<MedPod_Message_TreatmentComplete>MedPod-Behandlung abgeschlossen für {1_label}.</MedPod_Message_TreatmentComplete>
@@ -54,6 +60,9 @@
 
 	<!-- EN: MedPod cannot treat {0}s -->
 	<MedPod_FloatMenu_RaceNotAllowed>MedPod kann {0}s nicht behandeln.</MedPod_FloatMenu_RaceNotAllowed>
+	
+	<!-- EN: Rescue {0} to MedPod -->
+	<MedPod_FloatMenu_Rescue>Rette {0} ins MedPod</MedPod_FloatMenu_Rescue>
 
 	<!-- EN: MedPod not powered -->
 	<MedPod_FloatMenu_Unpowered>MedPod hat kein Strom</MedPod_FloatMenu_Unpowered>

@@ -31,11 +31,17 @@
 	
 	<MedPod_Stat_TimeSeconds>{0} s</MedPod_Stat_TimeSeconds>
 	
+	<MedPod_Message_CannotRescue_NoNonPrisonerMedPod>No reachable, un-reserved non-prisoner MedPod with power in safe temperature.</MedPod_Message_CannotRescue_NoNonPrisonerMedPod>
+	
+	<MedPod_Message_CannotRescue_NoVetPod>No reachable, un-reserved VetPod with power in safe temperature.</MedPod_Message_CannotRescue_NoVetPod>
+	
 	<MedPod_Message_TreatmentComplete>MedPod treatment complete for {1_label}.</MedPod_Message_TreatmentComplete>
 	
 	<MedPod_Message_TreatmentInterrupted>MedPod treatment interrupted for {1_label}.</MedPod_Message_TreatmentInterrupted>
 	
 	<MedPod_FloatMenu_RaceNotAllowed>MedPod cannot treat {0}s</MedPod_FloatMenu_RaceNotAllowed>
+	
+	<MedPod_FloatMenu_Rescue>Rescue {0} to MedPod</MedPod_FloatMenu_Rescue>
 	
 	<MedPod_FloatMenu_Unpowered>MedPod not powered</MedPod_FloatMenu_Unpowered>
 	

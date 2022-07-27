@@ -46,6 +46,12 @@
 	<!-- EN: {0} s -->
 	<MedPod_Stat_TimeSeconds>{0} сек.</MedPod_Stat_TimeSeconds>
 	
+	<!-- EN: No reachable, un-reserved non-prisoner MedPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoNonPrisonerMedPod>Нет доступных свободных Медкапсула с электричеством для поселенцев в местах с безопасной температурой.</MedPod_Message_CannotRescue_NoNonPrisonerMedPod>
+	
+	<!-- EN: No reachable, un-reserved VetPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoVetPod>Нет доступных свободных ветеринаркапсула с электричеством в местах с безопасной температурой.</MedPod_Message_CannotRescue_NoVetPod>
+	
 	<!-- EN: MedPod treatment complete for {1_label}. -->
 	<MedPod_Message_TreatmentComplete>Лечение в медкапсуле завершено для {1_label}.</MedPod_Message_TreatmentComplete>
 	
@@ -54,6 +60,9 @@
 	
 	<!-- EN: MedPod cannot treat {0}s -->
 	<MedPod_FloatMenu_RaceNotAllowed>Медкапсула не может восстановить {0}s!</MedPod_FloatMenu_RaceNotAllowed>
+	
+	<!-- EN: Rescue {0} to MedPod -->
+	<MedPod_FloatMenu_Rescue>Спасти {0} до Медкапсула</MedPod_FloatMenu_Rescue>
 	
 	<!-- EN: MedPod not powered -->
 	<MedPod_FloatMenu_Unpowered>Медкапсула не подключена к сети</MedPod_FloatMenu_Unpowered>
