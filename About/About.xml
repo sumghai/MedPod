@@ -12,4 +12,7 @@
 	<incompatibleWith>
 		<li>Unknown.Perevod.sumghai.medpod</li>
 	</incompatibleWith>
+	<loadAfter>
+		<li>weaponstorage.kv.rw</li>
+	</loadAfter>
 </ModMetaData>
