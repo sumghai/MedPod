@@ -3,17 +3,12 @@ using Verse.AI;
 
 namespace MedPod
 {
-    public class JobGiver_PatientGoToMedPod : ThinkNode
+    public class JobGiver_PatientGoToMedPod : ThinkNode_JobGiver
     {
-        public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
+        public override Job TryGiveJob(Pawn pawn)
         {
             Building_BedMedPod bedMedPod = MedPodRestUtility.FindBestMedPod(pawn, pawn);
-            if (bedMedPod != null)
-            {
-                return new ThinkResult(JobMaker.MakeJob(MedPodDef.PatientGoToMedPod, bedMedPod), this);
-            }
-                        
-            return ThinkResult.NoJob;
+            return (bedMedPod != null) ? JobMaker.MakeJob(MedPodDef.PatientGoToMedPod, bedMedPod) : null;
         }
     }
 }

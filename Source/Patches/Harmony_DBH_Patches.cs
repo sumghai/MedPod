@@ -1,9 +1,9 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace MedPod.Patches
+namespace MedPod
 {
-    static class Harmony_DBH_Patches
+    public static class Harmony_DBH_Patches
     {
         public static void ShouldBeWashedBySomeonePostfix(Pawn pawn, ref bool __result)
         {

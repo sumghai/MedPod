@@ -2,14 +2,14 @@
 using RimWorld;
 using Verse;
 
-namespace MedPod.Patches
+namespace MedPod
 {
     // Humanoid patients should always lie on their backs when using MedPods,
     // while non-humanoid (animal) pawns should always lie on their sides
     [HarmonyPatch(typeof(PawnRenderer), nameof(PawnRenderer.LayingFacing))]
-    static class PawnRenderer_LayingFacing_AlwaysLieOnBackForMedPods
+    public static class PawnRenderer_LayingFacing_AlwaysLieOnBackForMedPods
     {
-        static void Postfix(ref Rot4 __result, Pawn ___pawn)
+        public static void Postfix(ref Rot4 __result, Pawn ___pawn)
         {
             if (___pawn.CurrentBed() is Building_BedMedPod bedMedPod)
             {

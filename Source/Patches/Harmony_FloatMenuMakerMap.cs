@@ -5,13 +5,13 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace MedPod.Patches
+namespace MedPod
 {
     // Adds a "Rescue [pawn] to MedPod" float menu option to pawns
     [HarmonyPatch(typeof(FloatMenuMakerMap), nameof(FloatMenuMakerMap.AddHumanlikeOrders))]
-    static class Harmony_FloatMenuMakerMap_OverrideRescueWithMedPodVersion
+    public static class Harmony_FloatMenuMakerMap_OverrideRescueWithMedPodVersion
     {
-        static void Postfix(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> opts)
+        public static void Postfix(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> opts)
         {                      
             // Only for pawns capable of manipulation
             if (pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))

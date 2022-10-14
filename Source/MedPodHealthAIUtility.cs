@@ -9,7 +9,10 @@ namespace MedPod
     public static class MedPodHealthAIUtility
     {
         public static bool ShouldSeekMedPodRest(Pawn patientPawn, List<HediffDef> alwaysTreatableHediffs, List<HediffDef> neverTreatableHediffs, List<HediffDef> nonCriticalTreatableHediffs)
-        {           
+        {
+            List<Hediff> patientHediffs = new();
+            patientPawn.health.hediffSet.GetHediffs(ref patientHediffs);
+
             return 
                     // Is downed
                     patientPawn.Downed
@@ -24,13 +27,13 @@ namespace MedPod
                     // Has missing body parts
                     || (!patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().NullOrEmpty() && !neverTreatableHediffs.Contains(HediffDefOf.MissingBodyPart))
                     // Has permanent injuries (excluding those blacklisted from MedPod treatment)
-                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.IsPermanent() && !neverTreatableHediffs.Contains(x.def))
+                    || patientHediffs.Any(x => x.IsPermanent() && !neverTreatableHediffs.Contains(x.def))
                     // Has chronic diseases (excluding those blacklisted or greylisted from MedPod treatment)
-                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.def.chronic && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
+                    || patientHediffs.Any(x => x.def.chronic && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
                     // Has addictions (excluding those blacklisted or greylisted from MedPod treatment)
-                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => x.def.IsAddiction && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
+                    || patientHediffs.Any(x => x.def.IsAddiction && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
                     // Has hediffs that are always treatable by MedPods
-                    || patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => alwaysTreatableHediffs.Contains(x.def));
+                    || patientHediffs.Any(x => alwaysTreatableHediffs.Contains(x.def));
         }
 
         public static bool IsValidRaceForMedPod(Pawn patientPawn, List<string> disallowedRaces)
@@ -45,7 +48,10 @@ namespace MedPod
 
         public static bool HasUsageBlockingHediffs(Pawn patientPawn, List<HediffDef> usageBlockingHediffs)
         {
-            return patientPawn.health.hediffSet.GetHediffs<Hediff>().Any(x => usageBlockingHediffs.Contains(x.def));
+            List<Hediff> patientHediffs = new();
+            patientPawn.health.hediffSet.GetHediffs(ref patientHediffs);
+
+            return patientHediffs.Any(x => usageBlockingHediffs.Contains(x.def));
         }
 
         public static bool HasUsageBlockingTraits(Pawn patientPawn, List<TraitDef> usageBlockingTraits)

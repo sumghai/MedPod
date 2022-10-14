@@ -26,7 +26,7 @@ namespace MedPod
                 // Conditionally patch WorkGiver_washPatient to ignore MedPods
                 workGiver_washPatientType = AccessTools.TypeByName("WorkGiver_washPatient");
                 MethodInfo original = AccessTools.Method(workGiver_washPatientType, "ShouldBeWashedBySomeone");
-                HarmonyMethod postfix = new HarmonyMethod(typeof(Patches.Harmony_DBH_Patches), nameof(Patches.Harmony_DBH_Patches.ShouldBeWashedBySomeonePostfix));
+                HarmonyMethod postfix = new HarmonyMethod(typeof(Harmony_DBH_Patches), nameof(Harmony_DBH_Patches.ShouldBeWashedBySomeonePostfix));
                 harmony.Patch(original, postfix: postfix);
             }
         } 
