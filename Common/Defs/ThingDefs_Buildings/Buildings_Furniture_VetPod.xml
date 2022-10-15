@@ -11,7 +11,7 @@
 			<texPath>Things/Building/Furniture/VetPod/VetPod</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(4,4)</drawSize>
+			<drawSize>(3,3)</drawSize>
 			<damageData>
 				<rect>(0.5,0.546875,2,2)</rect>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -61,13 +61,13 @@
 					<texPath>Things/Building/Furniture/VetPod/VetPod_gantry</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
-					<drawSize>(4, 4)</drawSize>
+					<drawSize>(3, 3)</drawSize>
 				</gantryGraphicData>
 				<gantryGlowGraphicData>
 					<texPath>FX/VetPod_gantryGlow</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>MoteGlow</shaderType>
-					<drawSize>(4, 4)</drawSize>
+					<drawSize>(3, 3)</drawSize>
 				</gantryGlowGraphicData>
 			</li>
 			<li Class="MedPod.CompProperties_MedPodSettings">
@@ -75,7 +75,7 @@
 					<texPath>FX/VetPod_screenGlow</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>MoteGlow</shaderType>
-					<drawSize>(4, 4)</drawSize>
+					<drawSize>(3, 3)</drawSize>
 				</screenGlowGraphicData>
 				<disableInvisibleBlocker>true</disableInvisibleBlocker>
 			</li>
@@ -92,7 +92,7 @@
 			<texPath>Things/Building/Furniture/VetPod_Large/VetPod_Large</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(4,5)</drawSize>
+			<drawSize>(3,4)</drawSize>
 			<damageData>
 				<rect>(0.5,0.996875,2,3)</rect>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -117,7 +117,7 @@
 			<Comfort>0.80</Comfort>
 		</statBases>
 		<constructEffect>ConstructMetal</constructEffect>
-		<size>(3,5)</size>
+		<size>(3,3)</size>
 		<costList>
 			<ComponentIndustrial>14</ComponentIndustrial>
 			<ComponentSpacer>10</ComponentSpacer>
@@ -142,13 +142,13 @@
 					<texPath>Things/Building/Furniture/VetPod_Large/VetPod_Large_gantry</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
-					<drawSize>(4, 5)</drawSize>
+					<drawSize>(3, 4)</drawSize>
 				</gantryGraphicData>
 				<gantryGlowGraphicData>
 					<texPath>FX/VetPod_Large_gantryGlow</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>MoteGlow</shaderType>
-					<drawSize>(4, 5)</drawSize>
+					<drawSize>(3, 4)</drawSize>
 				</gantryGlowGraphicData>
 				<gantryMaxMoveDistance>2.71875</gantryMaxMoveDistance>
 			</li>
@@ -157,7 +157,7 @@
 					<texPath>FX/VetPod_Large_screenGlow</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>MoteGlow</shaderType>
-					<drawSize>(4, 5)</drawSize>
+					<drawSize>(3, 4)</drawSize>
 				</screenGlowGraphicData>
 				<disableInvisibleBlocker>true</disableInvisibleBlocker>
 			</li>
@@ -174,16 +174,16 @@
 			<texPath>Things/Building/Furniture/VetPod_Mega/VetPod_Mega</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(6,5)</drawSize>
+			<drawSize>(5,5)</drawSize>
 			<damageData>
-				<rect>(1,0.546875,5,4)</rect>
+				<rect>(1,0.546875,4,4)</rect>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
 				<cornerBL>Damage/Corner</cornerBL>
 				<cornerBR>Damage/Corner</cornerBR>
 			</damageData>
 			<shadowData>
-				<volume>(5,0.6,4)</volume>
+				<volume>(4,0.6,4)</volume>
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
@@ -199,7 +199,7 @@
 			<Comfort>0.80</Comfort>
 		</statBases>
 		<constructEffect>ConstructMetal</constructEffect>
-		<size>(7,5)</size>
+		<size>(5,5)</size>
 		<costList>
 			<ComponentIndustrial>18</ComponentIndustrial>
 			<ComponentSpacer>14</ComponentSpacer>
@@ -223,13 +223,13 @@
 					<texPath>Things/Building/Furniture/VetPod_Mega/VetPod_Mega_gantry</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
-					<drawSize>(6, 5)</drawSize>
+					<drawSize>(5, 5)</drawSize>
 				</gantryGraphicData>
 				<gantryGlowGraphicData>
 					<texPath>FX/VetPod_Mega_gantryGlow</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>MoteGlow</shaderType>
-					<drawSize>(6, 5)</drawSize>
+					<drawSize>(5, 5)</drawSize>
 				</gantryGlowGraphicData>
 				<gantryMaxMoveDistance>3.71875</gantryMaxMoveDistance>
 			</li>
@@ -240,7 +240,7 @@
 					<texPath>FX/VetPod_Mega_screenGlow</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>MoteGlow</shaderType>
-					<drawSize>(6, 5)</drawSize>
+					<drawSize>(5, 5)</drawSize>
 				</screenGlowGraphicData>
 				<disableInvisibleBlocker>true</disableInvisibleBlocker>
 			</li>
