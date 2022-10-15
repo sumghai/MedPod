@@ -80,6 +80,9 @@
 				<disableInvisibleBlocker>true</disableInvisibleBlocker>
 			</li>
 		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_NeverAdjacentUnstandable</li>
+		</placeWorkers>
 	</ThingDef>
 	
 	<!-- ========== VetPod Large ========== -->
@@ -162,6 +165,9 @@
 				<disableInvisibleBlocker>true</disableInvisibleBlocker>
 			</li>
 		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_NeverAdjacentUnstandable</li>
+		</placeWorkers>
 	</ThingDef>
 	
 	<!-- ========== VetPod Mega ========== -->
@@ -246,6 +252,9 @@
 			</li>
 		</comps>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<placeWorkers>
+			<li>PlaceWorker_NeverAdjacentUnstandable</li>
+		</placeWorkers>
 	</ThingDef>
 
 </Defs>
