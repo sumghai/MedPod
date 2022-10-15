@@ -248,6 +248,9 @@
 					<shaderType>MoteGlow</shaderType>
 					<drawSize>(5, 5)</drawSize>
 				</screenGlowGraphicData>
+				<animalRestingDrawOffsets>
+					<Thrumbo>(-0.75, 0, 0)</Thrumbo>
+				</animalRestingDrawOffsets>
 				<disableInvisibleBlocker>true</disableInvisibleBlocker>
 			</li>
 		</comps>

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 
 namespace MedPod
@@ -50,6 +51,14 @@ namespace MedPod
             get
             {
                 return Props.disableInvisibleBlocker;
+            }
+        }
+
+        public List<AnimalRestingDrawOffset> AnimalRestingDrawOffsets
+        { 
+            get
+            {
+                return Props.animalRestingDrawOffsets;
             }
         }
 
