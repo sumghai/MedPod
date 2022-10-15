@@ -80,7 +80,7 @@
 		<thingClass>Building</thingClass>
 		<category>Mote</category>
 		<graphicData>
-			<texPath>Things/Building/InvisibleTexture</texPath>
+			<texPath>Things/Mote/Transparent</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<size>(3,1)</size>
