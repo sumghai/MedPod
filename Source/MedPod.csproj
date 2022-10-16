@@ -313,6 +313,7 @@
     <Compile Include="Building_BedMedPod.cs" />
     <Compile Include="MedPodRestUtility.cs" />
     <Compile Include="ModCompatibility.cs" />
+    <Compile Include="Patches\Harmony_BedInteractionCellSearchPattern_BedCellOffsets.cs" />
     <Compile Include="Patches\Harmony_Building_Bed.cs" />
     <Compile Include="Patches\Harmony_DBH_Patches.cs" />
     <Compile Include="Patches\Harmony_FeedingUtilities.cs" />
