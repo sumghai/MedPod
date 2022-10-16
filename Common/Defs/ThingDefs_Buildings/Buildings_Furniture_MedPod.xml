@@ -69,7 +69,6 @@
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
 		<techLevel>Spacer</techLevel>
-		<uiIconScale>1.00</uiIconScale>
 	</ThingDef>
 
 	<!-- ========== Invisible Blocker, which adds a high pathCost to the main machinery part of the MedPod, and is dynamically spawned/despawned with the MedPod itself ========== -->
