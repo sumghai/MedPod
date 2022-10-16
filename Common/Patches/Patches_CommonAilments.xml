@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Common Ailments (Continued)</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				
+				<!-- Allow MedPods to treat all common ailments (no idea why they were marked as isBad=false in the first place...) -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/alwaysTreatableHediffs</xpath>
+					<value>
+						<li>CA_CommonCold</li>
+						<li>CA_Conjunctivitis</li>
+						<li>CA_Earache</li>
+						<li>CA_Fatigue</li>
+						<li>CA_Hayfever</li>
+						<li>CA_Headache</li>
+						<li>CA_Indigestion</li>
+						<li>CA_Knick_Arm</li>
+						<li>CA_Knick_Foot</li>
+						<li>CA_Knick_Hand</li>
+						<li>CA_Knick_Leg</li>
+						<li>CA_Migraine</li>
+						<li>CA_Minor_STD</li>
+						<li>CA_PhantomPain</li>
+						<li>CA_Restless</li>
+						<li>CA_Sinusitis</li>
+						<li>CA_SkinRash</li>
+						<li>CA_SoreThroat</li>
+						<li>CA_Sprain_Arm</li>
+						<li>CA_Sprain_Foot</li>
+						<li>CA_Sprain_Hand</li>
+						<li>CA_Sprain_Leg</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+</Patch>
