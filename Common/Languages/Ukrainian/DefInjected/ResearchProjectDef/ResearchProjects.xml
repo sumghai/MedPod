@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: Accelerated Cellular Regeneration -->
+	<AcceleratedCellularRegeneration.label>прискорена клітинна регенерація</AcceleratedCellularRegeneration.label>
+
+	<!-- EN: Construct MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells. -->
+	<AcceleratedCellularRegeneration.description>медпод - це просунуті медичні ліжка, здатні повністю автоматично зцілювати широкий спектр хвороб і травм шляхом електричної стимуляції та управління процесами відновлення живих клітин.</AcceleratedCellularRegeneration.description>
+
+	<!-- EN: About: Building MedPods -->
+	<AcceleratedCellularRegeneration.discoveredLetterTitle>Про: Створення медпод</AcceleratedCellularRegeneration.discoveredLetterTitle>
+
+	<!-- EN: You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors via the following ways:\n\n-Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n-Some quests are rewarded with Isolinear Processors. -->
+	<AcceleratedCellularRegeneration.discoveredLetterText>Тепер у вас є технологія створення медпод. На жаль, для конструювання однієї такої необхідний специфічний компонент: ізолінійний процесор. Його можна отримати кількома способами: купити в орбітальних торговців або караванів, можливо хтось запропонує такий процесор як нагороду за завдання.</AcceleratedCellularRegeneration.discoveredLetterText>
+
+</LanguageData>

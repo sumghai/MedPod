@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- ========== Royalty DLC-exclusive content ========== -->
+
+	<!-- EN: MedPod Lux -->
+	<MedPodLux.label>медпод люкс</MedPodLux.label>
+
+	<!-- An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is an luxury model with gold-inlaid fittings and a gel-infused memory foam mattress, capable of faster diagnosis and treatment but requires higher power consumption. -->
+	<MedPodLux.description>Просунуте медичне ліжко, оснащене системою прискореної клітинної регенерації. Дозволяє лікувати практично будь-які види хвороб і поранень і навіть відновлювати загублені кінцівки.\n\nЦя модель - люксова зі вставками із золота і гелевою кушеткою з ефектом пам'яті. Швидкість діагностики та лікування вища, ніж у стандартної моделі, проте енергоспоживання набагато більше.</MedPodLux.description>
+
+</LanguageData>

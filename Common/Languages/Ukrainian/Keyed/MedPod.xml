@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	
+	<!-- EN: Error: No power -->
+	<MedPod_InspectorStatus_NoPower>Помилка: відсутнє живлення</MedPod_InspectorStatus_NoPower>
+	
+	<!-- EN: Diagnosing ({0}%) -->
+	<MedPod_InspectorStatus_DiagnosisProgress>діагностування ({0}%)</MedPod_InspectorStatus_DiagnosisProgress>
+	
+	<!-- EN: Diagnosis Complete -->
+	<MedPod_InspectorStatus_DiagnosisComplete>діагностика завершена</MedPod_InspectorStatus_DiagnosisComplete>
+	
+	<!-- EN: Regenerating ({0}%) -->
+	<MedPod_InspectorStatus_HealingProgress>регенеруючий ({0}%)</MedPod_InspectorStatus_HealingProgress>
+	
+	<!-- EN: 100% Clear -->
+	<MedPod_InspectorStatus_PatientDischarged>100% завершено</MedPod_InspectorStatus_PatientDischarged>
+	
+	<!-- EN: Idle -->
+	<MedPod_InspectorStatus_Idle>бездіяльний</MedPod_InspectorStatus_Idle>
+	
+	<!-- EN: Power consumption (Diagnosis) -->
+	<MedPod_Stat_PowerConsumptionDiagnosis_Label>Енергоспоживання (діагностика)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
+	
+	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Diagnosis mode. -->
+	<MedPod_Stat_PowerConsumptionDiagnosis_Desc>Енергоспоживання при роботі медпод в режимі діагностики.</MedPod_Stat_PowerConsumptionDiagnosis_Desc>
+	
+	<!-- EN: Power consumption (Treatment) -->
+	<MedPod_Stat_PowerConsumptionHealing_Label>Енергоспоживання (Лечение)</MedPod_Stat_PowerConsumptionHealing_Label>
+	
+	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Treatment mode. -->
+	<MedPod_Stat_PowerConsumptionHealing_Desc>Енергоспоживання при роботі медпод в режимі Лечение.</MedPod_Stat_PowerConsumptionHealing_Desc>
+	
+	<!-- EN: Diagnosis time -->
+	<MedPod_Stat_DiagnosisTime_Label>Тривалість діагностики</MedPod_Stat_DiagnosisTime_Label>
+	
+	<!-- EN: How long it takes for this MedPod to diagnose a patient. -->
+	<MedPod_Stat_DiagnosisTime_Desc>Скільки часу займає діагностика пацієнта.</MedPod_Stat_DiagnosisTime_Desc>
+	
+	<!-- EN: Avg. per-condition treatment time -->
+	<MedPod_Stat_PerHediffHealingTime_Label>Середній час лікування</MedPod_Stat_PerHediffHealingTime_Label>
+	
+	<!-- EN: How long it takes (on average) for this MedPod to treat each medical condition on a patient.\n\nNote that this is scaled according to the severity of the condition - for instance, less severe injuries will take less time to treat. -->
+	<MedPod_Stat_PerHediffHealingTime_Desc>Скільки часу в середньому йде на лікування однієї з недуг.\n\nЯк правило, він залежить від тяжкості цієї недуги (подряпину зцілити легше, ніж рвану рану).</MedPod_Stat_PerHediffHealingTime_Desc>
+	
+	<!-- EN: {0} s -->
+	<MedPod_Stat_TimeSeconds>{0} с</MedPod_Stat_TimeSeconds>
+	
+	<!-- EN: No reachable, un-reserved non-prisoner MedPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoNonPrisonerMedPod>Немає доступних вільних медпод з електрикою для поселенців у місцях із безпечною температурою.</MedPod_Message_CannotRescue_NoNonPrisonerMedPod>
+	
+	<!-- EN: No reachable, un-reserved VetPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoVetPod>Немає безкоштовних ветпод з електрикою в місцях з безпечною температурою.</MedPod_Message_CannotRescue_NoVetPod>
+	
+	<!-- EN: MedPod treatment complete for {1_label}. -->
+	<MedPod_Message_TreatmentComplete>Лікування в медпод завершено для {1_label}.</MedPod_Message_TreatmentComplete>
+	
+	<!-- EN: MedPod treatment interrupted for {1_label}. -->
+	<MedPod_Message_TreatmentInterrupted>Лікування в медпод перервано для {1_label}.</MedPod_Message_TreatmentInterrupted>
+	
+	<!-- EN: MedPod cannot treat {0}s -->
+	<MedPod_FloatMenu_RaceNotAllowed>медпод не може лікувати {0}s.</MedPod_FloatMenu_RaceNotAllowed>
+	
+	<!-- EN: Rescue {0} to MedPod -->
+	<MedPod_FloatMenu_Rescue>Врятувати {0} на медпод</MedPod_FloatMenu_Rescue>
+	
+	<!-- EN: MedPod not powered -->
+	<MedPod_FloatMenu_Unpowered>медпод не має живлення</MedPod_FloatMenu_Unpowered>
+	
+	<!-- EN: patient using MedPod -->
+	<MedPod_SurgeryProhibited_PatientUsingMedPod>пацієнт використовує медпод</MedPod_SurgeryProhibited_PatientUsingMedPod>
+	
+	<!-- EN: {0} is in use. -->
+	<MedPod_CommandGizmoDisabled_MedPodInUse>{0} використовується.</MedPod_CommandGizmoDisabled_MedPodInUse>
+	
+	<!-- EN: Abort -->
+	<MedPod_CommandGizmoAbortTreatment_Label>скасувати</MedPod_CommandGizmoAbortTreatment_Label>
+	
+	<!-- EN: Stop treating the current patient immediately. -->
+	<MedPod_CommandGizmoAbortTreatment_Desc>негайно припинити лікування поточного пацієнта.</MedPod_CommandGizmoAbortTreatment_Desc>
+	
+	<!-- EN: Trait(s) removed-->
+	<MedPod_Letter_TraitRemoved_Label>риси видалено</MedPod_Letter_TraitRemoved_Label>
+
+	<!-- EN: {PAWN_labelShort} has had the following trait(s) removed via MedPod treatment:\n -->
+	<MedPod_Letter_TraitRemoved_Desc>{PAWN_labelShort} було видалено наступну(і) ознаку(и) за допомогою лікування медпод:\n</MedPod_Letter_TraitRemoved_Desc>
+
+</LanguageData>

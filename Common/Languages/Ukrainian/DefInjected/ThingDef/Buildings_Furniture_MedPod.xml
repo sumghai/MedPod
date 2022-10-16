@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: Invisible Blocker -->
+	<MedPodInvisibleBlocker.label>невидима перешкода</MedPodInvisibleBlocker.label>
+	
+	<!-- EN: MedPod -->
+	<MedPodStandard.label>медпод</MedPodStandard.label>
+
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
+	<MedPodStandard.description>Просунуте медичне ліжко, оснащене системою прискореної клітинної регенерації. Дозволяє лікувати практично будь-які види хвороб і поранень і навіть відновлювати загублені кінцівки.\n\nця стандартна модель часто зустрічається в безкоштовних медичних клініках на гліттерсвітів.</MedPodStandard.description>
+
+	<!-- EN: VetPod -->
+	<MedPodAnimal.label>ветпод</MedPodAnimal.label>
+
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
+	<MedPodAnimal.description>Просунуте медичне ліжко, оснащене системою прискореної клітинної регенерації. Дозволяє лікувати практично будь-які види хвороб і поранень і навіть відновлювати загублені кінцівки.\n\nЦей призначений для домашніх та інших дрібних тварин.</MedPodAnimal.description>
+	
+	<!-- EN: VetPod Large -->
+	<MedPodAnimalMedium.label>ветпод великий</MedPodAnimalMedium.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock, but can also treat smaller animals. -->
+	<MedPodAnimalMedium.description>Просунуте медичне ліжко, оснащене системою прискореної клітинної регенерації. Дозволяє лікувати практично будь-які види хвороб і поранень і навіть відновлювати загублені кінцівки.\n\nЦей призначений для домашньої худоби, але також може лікувати дрібніших тварин.</MedPodAnimalMedium.description>
+
+	<!-- EN: VetPod Mega -->
+	<MedPodAnimalBig.label>ветпод мега</MedPodAnimalBig.label>
+
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
+	<MedPodAnimalBig.description>Просунуте медичне ліжко, оснащене системою прискореної клітинної регенерації. Дозволяє лікувати практично будь-які види хвороб і поранень і навіть відновлювати загублені кінцівки.\n\nЦей призначений для домашньої худоби та мегафауни, але також може лікувати дрібніших тварин.</MedPodAnimalBig.description>
+
+</LanguageData>

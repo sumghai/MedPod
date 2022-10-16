@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: carrying TargetA to TargetB. -->
+	<CarryToMedPod.reportString>перенесення TargetA до TargetB</CarryToMedPod.reportString>
+
+	<!-- EN: Receiving treatment in TargetA. -->
+	<PatientGoToMedPod.reportString>лікується на TargetA</PatientGoToMedPod.reportString>
+
+	<!-- EN: rescuing TargetA to TargetB. -->
+	<RescueToMedPod.reportString>порятунок TargetA до TargetB</RescueToMedPod.reportString>
+
+</LanguageData>
