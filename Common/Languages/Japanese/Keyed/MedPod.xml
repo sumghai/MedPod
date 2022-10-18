@@ -46,8 +46,8 @@
 	<!-- EN: {0} s -->
 	<MedPod_Stat_TimeSeconds>{0}秒</MedPod_Stat_TimeSeconds>
 	
-	<!-- EN: No reachable, un-reserved non-prisoner MedPod with power in safe temperature. -->
-	<MedPod_Message_CannotRescue_NoNonPrisonerMedPod>到達可能な、安全な温度の、電源供給な、予約されていない入植者用治療ポッドがない</MedPod_Message_CannotRescue_NoNonPrisonerMedPod>
+	<!-- EN: No reachable, un-reserved {0} MedPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoMedPod>到達可能な、安全な温度の、電源供給な、予約されていない{0}用治療ポッドがない</MedPod_Message_CannotRescue_NoMedPod>
 	
 	<!-- EN: No reachable, un-reserved VetPod with power in safe temperature. -->
 	<MedPod_Message_CannotRescue_NoVetPod>到達可能な、安全な温度の、電源供給な、予約されていない獣医ポッドがない</MedPod_Message_CannotRescue_NoVetPod>

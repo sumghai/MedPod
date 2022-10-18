@@ -46,8 +46,8 @@
 	<!-- EN: {0} s -->
 	<MedPod_Stat_TimeSeconds>{0}秒</MedPod_Stat_TimeSeconds>
 	
-	<!-- EN: No reachable, un-reserved non-prisoner MedPod with power in safe temperature. -->
-	<MedPod_Message_CannotRescue_NoNonPrisonerMedPod>無法前往、沒有通電及可用的非俘虜智能醫療床。</MedPod_Message_CannotRescue_NoNonPrisonerMedPod>
+	<!-- EN: No reachable, un-reserved {0} MedPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoMedPod>無法前往、沒有通電及可用的{0}專用智能醫療床。</MedPod_Message_CannotRescue_NoMedPod>
 	
 	<!-- EN: No reachable, un-reserved VetPod with power in safe temperature. -->
 	<MedPod_Message_CannotRescue_NoVetPod>無法前往、沒有通電及可用的智能獸醫床。</MedPod_Message_CannotRescue_NoVetPod>

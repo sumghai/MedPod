@@ -31,7 +31,7 @@
 	
 	<MedPod_Stat_TimeSeconds>{0} s</MedPod_Stat_TimeSeconds>
 	
-	<MedPod_Message_CannotRescue_NoNonPrisonerMedPod>No reachable, un-reserved non-prisoner MedPod with power in safe temperature.</MedPod_Message_CannotRescue_NoNonPrisonerMedPod>
+	<MedPod_Message_CannotRescue_NoMedPod>No reachable, un-reserved {0} MedPod with power in safe temperature.</MedPod_Message_CannotRescue_NoMedPod>
 	
 	<MedPod_Message_CannotRescue_NoVetPod>No reachable, un-reserved VetPod with power in safe temperature.</MedPod_Message_CannotRescue_NoVetPod>
 	

@@ -199,13 +199,20 @@ namespace MedPod
 
                 if (def.building.bed_humanlike)
                 {
-                    if (ForPrisoners)
+                    switch (ForOwnerType)
                     {
-                        stringBuilder.AppendInNewLine("ForPrisonerUse".Translate());
-                    }
-                    else
-                    {
-                        stringBuilder.AppendInNewLine("ForColonistUse".Translate());
+                        case BedOwnerType.Prisoner:
+                            stringBuilder.AppendInNewLine("ForPrisonerUse".Translate());
+                            break;
+                        case BedOwnerType.Slave:
+                            stringBuilder.AppendInNewLine("ForSlaveUse".Translate());
+                            break;
+                        case BedOwnerType.Colonist:
+                            stringBuilder.AppendInNewLine("ForColonistUse".Translate());
+                            break;
+                        default:
+                            Log.Error($"Unknown bed owner type: {ForOwnerType}");
+                            break;
                     }
                 }
 

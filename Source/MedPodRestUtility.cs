@@ -62,6 +62,10 @@ namespace MedPod
                     return false;
                 }
             }
+            if (patientPawn.IsSlave != bedMedPod.ForSlaves)
+            {
+                return false;
+            }
             if (patientPawn.IsPrisoner != bedMedPod.ForPrisoners)
             {
                 return false;

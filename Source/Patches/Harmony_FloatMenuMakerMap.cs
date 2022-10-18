@@ -50,7 +50,9 @@ namespace MedPod
                                 // Display message on top screen if no valid MedPod is found
                                 if (building_BedMedPod == null)
                                 {
-                                    string reason = (!victim.RaceProps.Animal) ? ((string)"MedPod_Message_CannotRescue_NoNonPrisonerMedPod".Translate()) : ((string)"MedPod_Message_CannotRescue_NoVetPod".Translate());
+                                    string pawnType = victim.IsSlave ? "Slave".Translate() : victim.IsPrisoner ? "PrisonerLower".Translate() : "Colonist".Translate();
+                                   
+                                    string reason = (!victim.RaceProps.Animal) ? ((string)"MedPod_Message_CannotRescue_NoMedPod".Translate(pawnType.ToLower())) : ((string)"MedPod_Message_CannotRescue_NoVetPod".Translate());
                                     Messages.Message("CannotRescue".Translate() + ": " + reason, victim, MessageTypeDefOf.RejectInput, historical: false);
                                 }
                                 // Assign a MedPod rescue job to the pawn

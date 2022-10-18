@@ -10,7 +10,22 @@ namespace MedPod
     {
         public static bool Postfix(bool __result, Thing bedThing, Pawn sleeper)
         {
-            return (bedThing is Building_BedMedPod bedMedPod) ? bedMedPod.powerComp.PowerOn && !bedMedPod.IsForbidden(sleeper) && MedPodHealthAIUtility.ShouldSeekMedPodRest(sleeper, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs, bedMedPod.NonCriticalTreatableHediffs) && !bedMedPod.Aborted : __result;
+            return (bedThing is Building_BedMedPod bedMedPod) ? CanUseMedPod(bedMedPod, sleeper): __result;
+        }
+
+        public static bool CanUseMedPod(Building_BedMedPod bedMedPod, Pawn pawn)
+        {
+            return 
+                // MedPod has power
+                bedMedPod.powerComp.PowerOn
+                // MedPod is not forbidden for the pawn
+                && !bedMedPod.IsForbidden(pawn) 
+                // Pawn actually has a medical need for a MedPod
+                && MedPodHealthAIUtility.ShouldSeekMedPodRest(pawn, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs, bedMedPod.NonCriticalTreatableHediffs) 
+                // Pawn type (colonist, slave, prisoner) matches bedtype
+                && (pawn.IsColonist == bedMedPod.ForColonists || pawn.IsSlave == bedMedPod.ForSlaves || pawn.IsPrisoner == bedMedPod.ForPrisoners)
+                // MedPod hasn't been aborted
+                && !bedMedPod.Aborted;
         }
     }
     

@@ -46,8 +46,8 @@
 	<!-- EN: {0} s -->
 	<MedPod_Stat_TimeSeconds>{0}초</MedPod_Stat_TimeSeconds>
 	
-	<!-- EN: No reachable, un-reserved non-prisoner MedPod with power in safe temperature. -->
-	<MedPod_Message_CannotRescue_NoNonPrisonerMedPod>도달 가능하고, 사용 중이지 않고, 전원이 켜진 안전한 온도의 메드포드가 없음</MedPod_Message_CannotRescue_NoNonPrisonerMedPod>
+	<!-- EN: No reachable, un-reserved {0} MedPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoMedPod>안전한 온도에서 전원이 공급되는 접근 가능한 예약되지 않은 {0} 메드포드가 없습니다</MedPod_Message_CannotRescue_NoMedPod>
 	
 	<!-- EN: No reachable, un-reserved VetPod with power in safe temperature. -->
 	<MedPod_Message_CannotRescue_NoVetPod>도달 가능하고, 사용 중이지 않고, 전원이 켜진 안전한 온도의 벳포드 없음</MedPod_Message_CannotRescue_NoVetPod>
