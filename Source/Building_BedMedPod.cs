@@ -318,7 +318,7 @@ namespace MedPod
                     continue; // Hide the Medical bed toggle, as MedPods are always Medical beds
                 }
 
-                if (g is Command_Toggle act2 && (gizmosToDisableWhileInUse.Contains(act2.defaultLabel)) && PatientPawn != null)
+                if ((g is Command_Toggle act2 && (gizmosToDisableWhileInUse.Contains(act2.defaultLabel)) || g is Command_SetBedOwnerType) && PatientPawn != null)
                 {
                     g.Disable("MedPod_CommandGizmoDisabled_MedPodInUse".Translate(def.LabelCap)); // Disable various gizmos while MedPod is in use
                 }
