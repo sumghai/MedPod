@@ -14,8 +14,8 @@ namespace MedPod
             patientPawn.health.hediffSet.GetHediffs(ref patientHediffs);
 
             return 
-                    // Is downed
-                    patientPawn.Downed
+                    // Is downed and not meant to be always downed (e.g. babies)
+                    (patientPawn.Downed && !LifeStageUtility.AlwaysDowned(patientPawn))
                     // Has hediffs requiring tending
                     || patientPawn.health.HasHediffsNeedingTend(false)
                     // Has tended and healing injuries
