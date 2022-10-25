@@ -335,29 +335,8 @@ namespace MedPod
                 {
                     if (PatientPawn != null)
                     {
-                        // If the patient is incapable of walking after being kicked off the MedPod, physically push them off
-                        if (PatientPawn.Downed)
-                        {
-                            int offsetX = 0;
-                            int offsetZ = 0;
-                            if (Rotation == Rot4.North)
-                            {
-                                offsetX++;
-                            }
-                            else if (Rotation == Rot4.East)
-                            {
-                                offsetZ--;
-                            }
-                            else if (Rotation == Rot4.South)
-                            {
-                                offsetX--;
-                            }
-                            else // Default: West
-                            {
-                                offsetZ++;
-                            }
-                            PatientPawn.Position += new IntVec3(offsetX, 0, offsetZ);
-                        }
+                        // Kick non-ambulatory patients off the MedPod when aborting MedPod treatment
+                        RestUtility.KickOutOfBed(PatientPawn, this);
                         Aborted = true;
                     }
                 },
