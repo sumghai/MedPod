@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+				
+			<!-- Prevent Sanguophages from being rescued to MedPods if they are Deathresting -->
+				
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/usageBlockingHediffs</xpath>
+				<value>
+					<li>Deathrest</li>
+				</value>
+			</li>
+				
+		</operations>
+	</Operation>
+</Patch>

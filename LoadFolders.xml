@@ -9,5 +9,6 @@
 		<li>Common</li>
 		<li>1.4</li>
 		<li IfModActive="Ludeon.Rimworld.Royalty">Royalty</li>
+		<li IfModActive="Ludeon.Rimworld.Biotech">Biotech</li>
 	</v1.4>
 </loadFolders>
