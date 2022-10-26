@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -18,17 +19,23 @@ namespace MedPod
             {
                 // Only if there is at least one player-owned MedPod on the pawn's current map
                 if (pawn.Map.listerBuildings.ColonistsHaveBuilding((Thing building) => building is Building_BedMedPod))
-                { 
+                {
+                    // Get the first MedPod on the map
+                    Building_BedMedPod building_BedMedPod = pawn.Map.listerBuildings.AllBuildingsColonistOfClass<Building_BedMedPod>().First();
+                    
                     // Loop through each rescuable victim on the cell the player has right-clicked on
                     foreach (LocalTargetInfo item in GenUI.TargetsAt(clickPos, TargetingParameters.ForRescue(pawn), thingsOnly: true))
                     {
                         Pawn victim = (Pawn)item.Thing;
-                    
+
                         // Skip victims:
                         // - Who are already in beds
                         // - Who are unreachable
                         // - Who will automatically join the player when rescued
-                        if (victim.InBed() || !pawn.CanReserveAndReach(victim, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, ignoreOtherReservations: true) || victim.mindState.WillJoinColonyIfRescued)
+                        // - Who have hediffs or traits that prevent them from using MedPods
+                        // - Who are of races that can't use MedPods
+                        if (victim.InBed() || !pawn.CanReserveAndReach(victim, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, ignoreOtherReservations: true) || victim.mindState.WillJoinColonyIfRescued || MedPodHealthAIUtility.HasUsageBlockingHediffs(victim, building_BedMedPod.UsageBlockingHediffs) || MedPodHealthAIUtility.HasUsageBlockingTraits(victim, building_BedMedPod.UsageBlockingTraits) ||
+                          MedPodHealthAIUtility.IsValidRaceForMedPod(victim, building_BedMedPod.DisallowedRaces))
                         {
                             continue;
                         }
@@ -45,7 +52,7 @@ namespace MedPod
 
                             opts.Insert(insertIndex, FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("MedPod_FloatMenu_Rescue".Translate(victim.LabelCap, victim), delegate
                             {
-                                Building_Bed building_BedMedPod = MedPodRestUtility.FindBestMedPod(pawn, victim);
+                                Building_BedMedPod building_BedMedPod = MedPodRestUtility.FindBestMedPod(pawn, victim);
                             
                                 // Display message on top screen if no valid MedPod is found
                                 if (building_BedMedPod == null)
