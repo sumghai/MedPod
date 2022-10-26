@@ -4,15 +4,36 @@
 	<Operation Class="PatchOperationSequence">
 		<operations>
 				
-			<!-- Prevent Sanguophages from being rescued to MedPods if they are Deathresting -->
-				
+			<!-- Handle various Biotech DLC hediffs -->
+			
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/usageBlockingHediffs</xpath>
+				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/neverTreatableHediffs</xpath>
 				<value>
-					<li>Deathrest</li>
+					<li>Lactating</li> <!-- MedPods are designed not to interfere with lactation -->
 				</value>
 			</li>
 				
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/alwaysTreatableHediffs</xpath>
+				<value>
+					<li>BloodfeederMark</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/usageBlockingHediffs</xpath>
+				<value>
+					<li>Deathrest</li> <!-- Would otherwise cause Sanguophages to get stuck in MedPods -->
+					<li>ImplantedIUD</li> <!-- Implants are ignored -->
+					<!-- MedPods are designed not to interfere with childbirth -->
+					<li>PregnancyLabor</li> 
+					<li>PregnancyLaborPushing</li>
+					<!-- Elective medical procedures -->
+					<li>TubalLigation</li>
+					<li>Vasectomy</li>
+				</value>
+			</li>
+			
 		</operations>
 	</Operation>
 </Patch>
