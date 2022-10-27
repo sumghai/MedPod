@@ -17,6 +17,7 @@
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/alwaysTreatableHediffs</xpath>
 				<value>
+					<li>BioStarvation</li>
 					<li>BloodfeederMark</li>
 					<li>HemogenCraving</li> <!-- Treated in conjunction with hardcoded Hemogen refill on treatment completion / interruption -->
 					<li>XenogermLossShock</li>
@@ -34,6 +35,9 @@
 					<!-- Elective medical procedures -->
 					<li>TubalLigation</li>
 					<li>Vasectomy</li>
+					<!-- Patient should be in a vat, not a MedPod -->
+					<li>VatGrowing</li>
+					<li>VatLearning</li>
 					<li>XenogerminationComa</li> <!-- MedPods have safeguards against treating patients undergoing xenogerm adaptation -->
 				</value>
 			</li>
