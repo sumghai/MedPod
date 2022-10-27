@@ -17,6 +17,7 @@
 				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/alwaysTreatableHediffs</xpath>
 				<value>
 					<li>BloodfeederMark</li>
+					<li>HemogenCraving</li> <!-- Treated in conjunction with hardcoded Hemogen refill on treatment completion / interruption -->
 				</value>
 			</li>
 			

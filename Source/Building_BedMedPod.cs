@@ -547,6 +547,16 @@ namespace MedPod
                     ((Command_Action)reconnectGizmo).action();
                 }
             }
+
+            // If the patient is a Sanguophage, top up their Hemogen
+            if (ModsConfig.BiotechActive && patientPawn.RaceProps.Humanlike)
+            {
+                Gene_Hemogen gene_Hemogen = patientPawn.genes?.GetFirstGeneOfType<Gene_Hemogen>();
+                if (gene_Hemogen != null)
+                {
+                    gene_Hemogen.Value = gene_Hemogen.InitialResourceMax;
+                }
+            }
         }
 
         public void StartWickSustainer()
