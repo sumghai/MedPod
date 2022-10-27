@@ -10,6 +10,7 @@
 				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/neverTreatableHediffs</xpath>
 				<value>
 					<li>Lactating</li> <!-- MedPods are designed not to interfere with lactation -->
+					<li>XenogermReplicating</li> <!-- MedPods cannot speed up gene regrowing -->
 				</value>
 			</li>
 				
@@ -18,6 +19,7 @@
 				<value>
 					<li>BloodfeederMark</li>
 					<li>HemogenCraving</li> <!-- Treated in conjunction with hardcoded Hemogen refill on treatment completion / interruption -->
+					<li>XenogermLossShock</li>
 				</value>
 			</li>
 			
@@ -32,6 +34,7 @@
 					<!-- Elective medical procedures -->
 					<li>TubalLigation</li>
 					<li>Vasectomy</li>
+					<li>XenogerminationComa</li> <!-- MedPods have safeguards against treating patients undergoing xenogerm adaptation -->
 				</value>
 			</li>
 			
