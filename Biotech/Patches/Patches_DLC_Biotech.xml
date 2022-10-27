@@ -20,6 +20,7 @@
 					<li>BioStarvation</li>
 					<li>BloodfeederMark</li>
 					<li>HemogenCraving</li> <!-- Treated in conjunction with hardcoded Hemogen refill on treatment completion / interruption -->
+					<li>ScanningSickness</li>
 					<li>XenogermLossShock</li>
 				</value>
 			</li>
