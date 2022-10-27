@@ -9,6 +9,7 @@
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/neverTreatableHediffs</xpath>
 				<value>
+					<li>GeneticDrugNeed</li> <!-- MedPods cannot remove genetic drug dependencies -->
 					<li>Lactating</li> <!-- MedPods are designed not to interfere with lactation -->
 					<li>XenogermReplicating</li> <!-- MedPods cannot speed up gene regrowing -->
 				</value>
