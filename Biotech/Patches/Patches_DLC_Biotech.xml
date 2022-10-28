@@ -10,7 +10,11 @@
 				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/neverTreatableHediffs</xpath>
 				<value>
 					<li>GeneticDrugNeed</li> <!-- MedPods cannot remove genetic drug dependencies -->
+					<li>ImplantedIUD</li> <!-- Implants are ignored -->
 					<li>Lactating</li> <!-- MedPods are designed not to interfere with lactation -->
+					<!-- Elective medical procedures -->
+					<li>TubalLigation</li>
+					<li>Vasectomy</li>
 					<li>XenogermReplicating</li> <!-- MedPods cannot speed up gene regrowing -->
 				</value>
 			</li>
@@ -30,13 +34,9 @@
 				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/usageBlockingHediffs</xpath>
 				<value>
 					<li>Deathrest</li> <!-- Would otherwise cause Sanguophages to get stuck in MedPods -->
-					<li>ImplantedIUD</li> <!-- Implants are ignored -->
 					<!-- MedPods are designed not to interfere with childbirth -->
 					<li>PregnancyLabor</li> 
 					<li>PregnancyLaborPushing</li>
-					<!-- Elective medical procedures -->
-					<li>TubalLigation</li>
-					<li>Vasectomy</li>
 					<!-- Patient should be in a vat, not a MedPod -->
 					<li>VatGrowing</li>
 					<li>VatLearning</li>
