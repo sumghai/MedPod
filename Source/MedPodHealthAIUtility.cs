@@ -16,14 +16,14 @@ namespace MedPod
             return 
                     // Is downed and not meant to be always downed (e.g. babies)
                     (patientPawn.Downed && !LifeStageUtility.AlwaysDowned(patientPawn))
-                    // Has hediffs requiring tending
-                    || patientPawn.health.HasHediffsNeedingTend(false)
+                    // Has hediffs requiring tending (excluding those blacklisted or greylisted from MedPod treatment)
+                    || patientHediffs.Any(x => x.TendableNow() && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
                     // Has tended and healing injuries
                     || patientPawn.health.hediffSet.HasTendedAndHealingInjury()
                     // Has immunizable but not yet immune hediffs
                     || patientPawn.health.hediffSet.HasImmunizableNotImmuneHediff()
-                    // Has hediffs causing sick thoughts
-                    || patientPawn.health.hediffSet.AnyHediffMakesSickThought
+                    // Has (visible) hediffs causing sick thoughts (excluding those blacklisted or greylisted from MedPod treatment)
+                    || patientHediffs.Any(x => x.def.makesSickThought && x.Visible && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
                     // Has missing body parts
                     || (!patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().NullOrEmpty() && !neverTreatableHediffs.Contains(HediffDefOf.MissingBodyPart))
                     // Has permanent injuries (excluding those blacklisted from MedPod treatment)
