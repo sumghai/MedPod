@@ -7,8 +7,8 @@
 	<!-- EN: MedPod -->
 	<MedPodStandard.label>治療ポッド</MedPodStandard.label>
 
-	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds. -->
-	<MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療を加速する細胞再生技術を利用した高度な医療ベッドです。\n\nこれはGlitterworldでよく見られる無料の公的治療クリニックの標準的な設備です。</MedPodStandard.description>
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on glitterworlds. -->
+	<MedPodStandard.description>欠損した臓器や手足の再生など、ほぼすべての負傷や疾患の治療を加速する細胞再生技術を利用した高度な医療ベッドです。\n\nこれはグリッターワールドでよく見られる無料の公的治療クリニックの標準的な設備です。</MedPodStandard.description>
 
 	<!-- EN: VetPod -->
 	<MedPodAnimal.label>獣医ポッド</MedPodAnimal.label>

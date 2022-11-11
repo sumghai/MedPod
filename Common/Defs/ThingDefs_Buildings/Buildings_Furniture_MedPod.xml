@@ -99,7 +99,7 @@
 	<ThingDef ParentName="MedPodBedBase">
 		<defName>MedPodStandard</defName>
 		<label>MedPod</label>
-		<description>An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on Glitterworlds.</description>
+		<description>An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on glitterworlds.</description>
 		<graphicData>
 			<texPath>Things/Building/Furniture/MedPod_Standard/MedPod_Standard</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
