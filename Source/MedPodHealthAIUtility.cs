@@ -16,6 +16,8 @@ namespace MedPod
             return 
                     // Is downed and not meant to be always downed (e.g. babies)
                     (patientPawn.Downed && !LifeStageUtility.AlwaysDowned(patientPawn))
+                    // Has "bad" hediffs in general (excluding those blacklisted or greylisted from MedPod treatment)
+                    || patientHediffs.Any(x => x.def.isBad && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
                     // Has hediffs requiring tending (excluding those blacklisted or greylisted from MedPod treatment)
                     || patientHediffs.Any(x => x.TendableNow() && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
                     // Has tended and healing injuries
