@@ -24,10 +24,15 @@
 			<li Class="MedPod.CompProperties_TreatmentRestrictions">
 				<alwaysTreatableHediffs>					
 					<li>Anesthetic</li>
+					<li>ChemicalDamageModerate</li>
+					<li>ChemicalDamageSevere</li>
+					<li>Cirrhosis</li>
 					<li>FoodPoisoning</li>
 					<li>LuciferiumHigh</li>
 					<li>MedPod_InducedComa</li>
+					<li>ResurrectionPsychosis</li>
 					<li>ToxicBuildup</li>
+					<li>TraumaSavant</li>
 				</alwaysTreatableHediffs>
 				<neverTreatableHediffs>
 					<li>Sterilized</li>
