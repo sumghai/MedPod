@@ -298,21 +298,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompAnimatedGantry.cs" />
-    <Compile Include="EbfCompatibilityWrapper.cs" />
-    <Compile Include="CompMedPodSettings.cs" />
-    <Compile Include="CompProperties_AnimatedGantry.cs" />
-    <Compile Include="CompProperties_MedPodSettings.cs" />
-    <Compile Include="CompProperties_TreatmentRestrictions.cs" />
-    <Compile Include="CompTreatmentRestrictions.cs" />
-    <Compile Include="JobDriver_PatientGoToMedPod.cs" />
-    <Compile Include="JobGiver_PatientGoToMedPod.cs" />
+    <Compile Include="Comps\CompAnimatedGantry.cs" />
+    <Compile Include="Compatibility\EbfCompatibilityWrapper.cs" />
+    <Compile Include="Comps\CompMedPodSettings.cs" />
+    <Compile Include="Comps\CompProperties_AnimatedGantry.cs" />
+    <Compile Include="Comps\CompProperties_MedPodSettings.cs" />
+    <Compile Include="Comps\CompProperties_TreatmentRestrictions.cs" />
+    <Compile Include="Comps\CompTreatmentRestrictions.cs" />
+    <Compile Include="Jobs\JobDriver_PatientGoToMedPod.cs" />
+    <Compile Include="Jobs\JobGiver_PatientGoToMedPod.cs" />
     <Compile Include="MedPodDef.cs" />
     <Compile Include="MedPodHealthAIUtility.cs" />
     <Compile Include="MedPodMod.cs" />
     <Compile Include="Building_BedMedPod.cs" />
     <Compile Include="MedPodRestUtility.cs" />
-    <Compile Include="ModCompatibility.cs" />
+    <Compile Include="Compatibility\ModCompatibility.cs" />
     <Compile Include="Patches\Harmony_BedInteractionCellSearchPattern_BedCellOffsets.cs" />
     <Compile Include="Patches\Harmony_Building_Bed.cs" />
     <Compile Include="Patches\Harmony_DBH_Patches.cs" />
@@ -324,11 +324,11 @@
     <Compile Include="Patches\Harmony_RestUtility.cs" />
     <Compile Include="Patches\Harmony_WorkGiver_Tend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkGiver_DoctorCarryFromBedToMedPod.cs" />
-    <Compile Include="WorkGiver_DoctorRescueToMedPod.cs" />
-    <Compile Include="WorkGiver_PatientGoToMedPod.cs" />
-    <Compile Include="WorkGiver_WardenCarryFromBedToMedPod.cs" />
-    <Compile Include="WorkGiver_WardenRescueToMedPod.cs" />
+    <Compile Include="Jobs\WorkGiver_DoctorCarryFromBedToMedPod.cs" />
+    <Compile Include="Jobs\WorkGiver_DoctorRescueToMedPod.cs" />
+    <Compile Include="Jobs\WorkGiver_PatientGoToMedPod.cs" />
+    <Compile Include="Jobs\WorkGiver_WardenCarryFromBedToMedPod.cs" />
+    <Compile Include="Jobs\WorkGiver_WardenRescueToMedPod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
