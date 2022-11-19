@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Expanded Prosthetics and Organ Engineering - Forked</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				
+				<!-- Patch optimization hediffs to not render pawns unconscious shortly after surgery -->
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/HediffDef[
+						defName="EPOE_OrganicOptimized" or
+						defName="EPOE_InstinctOptimizedEyes" or
+						defName="EPOE_InstinctOptimizedHand" or
+						defName="EPOE_InstinctOptimizedFoot"
+					]/stages/li[label="Fresh"]/capMods/li[capacity="Consciousness"]/setMax</xpath>
+					<value>
+						<setMax>0.3</setMax>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+</Patch>
