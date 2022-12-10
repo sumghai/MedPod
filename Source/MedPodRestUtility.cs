@@ -74,6 +74,10 @@ namespace MedPod
             {
                 return false;
             }
+            if (!MedPodHealthAIUtility.HasAllowedMedicalCareCategory(patientPawn))
+            {
+                return false;
+            }
             if (!MedPodHealthAIUtility.IsValidRaceForMedPod(patientPawn, bedMedPod.DisallowedRaces))
             {
                 return false;

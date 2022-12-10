@@ -67,6 +67,9 @@
 	<!-- EN: MedPod not powered -->
 	<MedPod_FloatMenu_Unpowered>Медкапсула не подключена к сети</MedPod_FloatMenu_Unpowered>
 	
+	<!-- EN: Patient care quality must be Industrial medicine or above -->
+	<MedPod_FloatMenu_MedicalCareCategoryTooLow>Качество обслуживания пациентов должно быть на уровне или выше уровня медицины индустриальной эпохи</MedPod_FloatMenu_MedicalCareCategoryTooLow>
+	
 	<!-- EN: patient using MedPod -->
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>пациент использует медкапсулу</MedPod_SurgeryProhibited_PatientUsingMedPod>
 	

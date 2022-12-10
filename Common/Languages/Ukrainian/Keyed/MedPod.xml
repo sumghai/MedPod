@@ -67,6 +67,9 @@
 	<!-- EN: MedPod not powered -->
 	<MedPod_FloatMenu_Unpowered>медпод не має живлення</MedPod_FloatMenu_Unpowered>
 	
+	<!-- EN: Patient care quality must be Industrial medicine or above -->
+	<MedPod_FloatMenu_MedicalCareCategoryTooLow>Якість надання медичної допомоги пацієнтам має бути на рівні Промислові ліки або вище</MedPod_FloatMenu_MedicalCareCategoryTooLow>
+	
 	<!-- EN: patient using MedPod -->
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>пацієнт використовує медпод</MedPod_SurgeryProhibited_PatientUsingMedPod>
 	

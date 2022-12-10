@@ -67,6 +67,9 @@
 	<!-- EN: MedPod not powered -->
 	<MedPod_FloatMenu_Unpowered>MedPod não alimentado</MedPod_FloatMenu_Unpowered>
 	
+	<!-- EN: Patient care quality must be Industrial medicine or above -->
+	<MedPod_FloatMenu_MedicalCareCategoryTooLow>Qualidade do atendimento ao paciente deve ser a medicina normal ou melhor</MedPod_FloatMenu_MedicalCareCategoryTooLow>
+	
 	<!-- EN: patient using MedPod -->
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>paciente usando MedPod</MedPod_SurgeryProhibited_PatientUsingMedPod>
 	

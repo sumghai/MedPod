@@ -1,5 +1,4 @@
 ﻿using RimWorld;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -44,6 +43,11 @@ namespace MedPod
                 return !disallowedRaces.Contains(patientRace);
             }
             return true;
+        }
+
+        public static bool HasAllowedMedicalCareCategory(Pawn patientPawn)
+        {
+            return WorkGiver_DoBill.GetMedicalCareCategory(patientPawn) >= MedicalCareCategory.NormalOrWorse;
         }
 
         public static bool HasUsageBlockingHediffs(Pawn patientPawn, List<HediffDef> usageBlockingHediffs)

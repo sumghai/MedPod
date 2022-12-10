@@ -276,6 +276,11 @@ namespace MedPod
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "ForbiddenLower".Translate() + ")", null);
                     yield break;
                 }
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs) && !MedPodHealthAIUtility.HasAllowedMedicalCareCategory(myPawn))
+                {
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_MedicalCareCategoryTooLow".Translate() + ")", null);
+                    yield break;
+                }
                 Action action = delegate
                 {
                     if (!ForPrisoners && Medical && myPawn.CanReserveAndReach(this, PathEndMode.ClosestTouch, Danger.Deadly, SleepingSlotsCount, -1, null, ignoreOtherReservations: true))

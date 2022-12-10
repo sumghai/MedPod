@@ -67,6 +67,9 @@
 	<!-- EN: MedPod not powered -->
 	<MedPod_FloatMenu_Unpowered>메드포드에 전원이 공급되지 않음</MedPod_FloatMenu_Unpowered>
 	
+	<!-- EN: Patient care quality must be Industrial medicine or above -->
+	<MedPod_FloatMenu_MedicalCareCategoryTooLow>환자 진료 품질은 최소한 정상 진료여야 합니다</MedPod_FloatMenu_MedicalCareCategoryTooLow>
+	
 	<!-- EN: patient using MedPod -->
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>메드포드를 사용하는 환자</MedPod_SurgeryProhibited_PatientUsingMedPod>
 	

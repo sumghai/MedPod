@@ -67,6 +67,9 @@
 	<!-- EN: MedPod not powered -->
 	<MedPod_FloatMenu_Unpowered>智能醫療床沒有電力</MedPod_FloatMenu_Unpowered>
 	
+	<!-- EN: Patient care quality must be Industrial medicine or above -->
+	<MedPod_FloatMenu_MedicalCareCategoryTooLow>病人醫療照顧設置必須是普通醫療包或以上</MedPod_FloatMenu_MedicalCareCategoryTooLow>
+	
 	<!-- EN: patient using MedPod -->
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>病人正在使用智能醫療床</MedPod_SurgeryProhibited_PatientUsingMedPod>
 	

@@ -30,7 +30,7 @@ namespace MedPod
 				return false;
 			}
 			Building_BedMedPod bedMedPod = MedPodRestUtility.FindBestMedPod(pawn, patient);
-			if (bedMedPod != null && MedPodHealthAIUtility.ShouldSeekMedPodRest(patient, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs, bedMedPod.NonCriticalTreatableHediffs) && patient.CanReserve(bedMedPod))
+			if (bedMedPod != null && MedPodHealthAIUtility.ShouldSeekMedPodRest(patient, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs, bedMedPod.NonCriticalTreatableHediffs) && MedPodHealthAIUtility.HasAllowedMedicalCareCategory(patient) && patient.CanReserve(bedMedPod))
 			{
 				return true;
 			}
