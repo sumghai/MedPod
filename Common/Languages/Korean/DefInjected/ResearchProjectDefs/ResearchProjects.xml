@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-
+	
 	<!-- EN: Accelerated Cellular Regeneration -->
-	<AcceleratedCellularRegeneration.label>가속화된 세포 재생</AcceleratedCellularRegeneration.label>
+	<AcceleratedCellularRegeneration.label>세포 재생 가속화</AcceleratedCellularRegeneration.label>
 	
 	<!-- EN: Construct MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells. -->
-	<AcceleratedCellularRegeneration.description>살아있는 세포의 복구 과정을 전기적으로 자극하고 안내하여 광범위한 질병과 부상을 자동으로 치료할 수 있는 첨단 병상인 메드포드를 구축할 수 있습니다.</AcceleratedCellularRegeneration.description>
+	<AcceleratedCellularRegeneration.description>살아있는 세포들의 피해 복구 과정을 자극하고 유도하여 아주 다양한 질환과 부상을 자동으로 치료하는 메드포드를 건설합니다.</AcceleratedCellularRegeneration.description>
 	
 	<!-- EN: About: Building MedPods -->
-	<AcceleratedCellularRegeneration.discoveredLetterTitle>정보: 메드포드 구축</AcceleratedCellularRegeneration.discoveredLetterTitle>
+	<AcceleratedCellularRegeneration.discoveredLetterTitle>정보: 메드포드 제작</AcceleratedCellularRegeneration.discoveredLetterTitle>
 	
 	<!-- EN: You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors via the following ways:\n\n  -Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n  -Some quests are rewarded with Isolinear Processors. -->
-	<AcceleratedCellularRegeneration.discoveredLetterText>이제 메드포드 침대를 구축할 수 있는 기술이 있지만 각 메드포드에는 특별한 등선형 프로세서  구성 요소가 필요합니다. 다음과 같은 여러 가지 방법으로 등선형 프로세서를 수집할 수 있습니다.\n\n -궤도 또는 캐러밴 경이 상품 상인은 등선형 프로세서를 판매합니다. 그들을 초대하거나 기다리십시오.\n -일부 퀘스트는 등선형 프로세서로 보상됩니다.</AcceleratedCellularRegeneration.discoveredLetterText>
-
+	<AcceleratedCellularRegeneration.discoveredLetterText>이제 메드포드를 제작할 수 있는 기술이 생겼지만 메드포드 제작에는 등선형 처리 장치가 필요합니다. 다음 방법을 통해 특수 등선형 처리 장치를 얻을 수 있습니다.\n\n -궤도 희귀품 상선 또는 희귀품 상단이 등선형 처리 장치를 판매합니다. 그들을 초대하거나 기다리십시오.\n -일부 임무는 등선형 처리 장치를 보상으로 얻을 수 있습니다.</AcceleratedCellularRegeneration.discoveredLetterText>
+	
 </LanguageData>

@@ -2,12 +2,12 @@
 <LanguageData>
 
 	<!-- EN: carrying TargetA to TargetB. -->
-	<CarryToMedPod.reportString>TargetA를 TargetB로 옮기기.</CarryToMedPod.reportString>
+	<CarryToMedPod.reportString>TargetA(을)를 TargetB로 운반 중</CarryToMedPod.reportString>
 
 	<!-- EN: Receiving treatment in TargetA. -->
-	<PatientGoToMedPod.reportString>TargetA에서 치료를 받고 있습니다.</PatientGoToMedPod.reportString>
+	<PatientGoToMedPod.reportString>TargetA에서 치료받는 중</PatientGoToMedPod.reportString>
 
 	<!-- EN: rescuing TargetA to TargetB. -->
-	<RescueToMedPod.reportString>TargetA를 TargetB로 구출합니다.</RescueToMedPod.reportString>
+	<RescueToMedPod.reportString>TargetA을(를) TargetB로 구조 중</RescueToMedPod.reportString>
 
 </LanguageData>

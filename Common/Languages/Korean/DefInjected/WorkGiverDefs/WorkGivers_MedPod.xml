@@ -2,7 +2,7 @@
 <LanguageData>
 
 	<!-- EN: go to MedPod for emergency treatment -->
-	<MedPodPatientGoToMedPodEmergency.label>응급치료를 위해 메드포드로 가기</MedPodPatientGoToMedPodEmergency.label>
+	<MedPodPatientGoToMedPodEmergency.label>응급 치료를 위해 메드포드로 이동</MedPodPatientGoToMedPodEmergency.label>
 	
 	<!-- EN: receiving treatment in -->
 	<MedPodPatientGoToMedPodEmergency.gerund>요양</MedPodPatientGoToMedPodEmergency.gerund>
@@ -11,25 +11,25 @@
 	<MedPodPatientGoToMedPodEmergency.verb>요양</MedPodPatientGoToMedPodEmergency.verb>
 	
 	<!-- EN: rescue downed allies to MedPod -->
-	<MedPodDoctorRescueToMedPod.label>쓰러진 아군을 메드포드로 구출</MedPodDoctorRescueToMedPod.label>
+	<MedPodDoctorRescueToMedPod.label>쓰러진 동맹을 메드포드로 구조</MedPodDoctorRescueToMedPod.label>
 	
 	<!-- EN: rescuing -->
-	<MedPodDoctorRescueToMedPod.gerund>구조</MedPodDoctorRescueToMedPod.gerund>
+	<MedPodDoctorRescueToMedPod.gerund>구조 중</MedPodDoctorRescueToMedPod.gerund>
 	
 	<!-- EN: rescue -->
 	<MedPodDoctorRescueToMedPod.verb>구조</MedPodDoctorRescueToMedPod.verb>
 	
 	<!-- EN: carry patients from bed to MedPod -->
-	<MedPodDoctorCarryFromBedToMedPod.label>환자를 침대에서 메드포드로 옮기다</MedPodDoctorCarryFromBedToMedPod.label>
+	<MedPodDoctorCarryFromBedToMedPod.label>환자를 침대에서 메드포드로 운반</MedPodDoctorCarryFromBedToMedPod.label>
 	
 	<!-- EN: carrying -->
-	<MedPodDoctorCarryFromBedToMedPod.gerund>나르다</MedPodDoctorCarryFromBedToMedPod.gerund>
+	<MedPodDoctorCarryFromBedToMedPod.gerund>운반 중</MedPodDoctorCarryFromBedToMedPod.gerund>
 	
 	<!-- EN: carry -->
-	<MedPodDoctorCarryFromBedToMedPod.verb>나르다</MedPodDoctorCarryFromBedToMedPod.verb>
+	<MedPodDoctorCarryFromBedToMedPod.verb>운반</MedPodDoctorCarryFromBedToMedPod.verb>
 	
 	<!-- EN: go to MedPod for treatment -->
-	<MedPodPatientGoToMedPodTreatment.label>치료를 위해 메드포드로 가기</MedPodPatientGoToMedPodTreatment.label>
+	<MedPodPatientGoToMedPodTreatment.label>치료를 위해 메드포드로 이동</MedPodPatientGoToMedPodTreatment.label>
 	
 	<!-- EN: receiving treatment in -->
 	<MedPodPatientGoToMedPodTreatment.gerund>요양</MedPodPatientGoToMedPodTreatment.gerund>
@@ -38,21 +38,21 @@
 	<MedPodPatientGoToMedPodTreatment.verb>요양</MedPodPatientGoToMedPodTreatment.verb>
 	
 	<!-- EN: rescue downed prisoner to MedPod -->
-	<MedPodWardenRescueToMedPod.label>쓰러진 수감자 메드포드로 구출</MedPodWardenRescueToMedPod.label>
+	<MedPodWardenRescueToMedPod.label>쓰러진 죄수를 메드포드로 구조</MedPodWardenRescueToMedPod.label>
 	
 	<!-- EN: rescuing -->
-	<MedPodWardenRescueToMedPod.gerund>구조</MedPodWardenRescueToMedPod.gerund>
+	<MedPodWardenRescueToMedPod.gerund>구조 중</MedPodWardenRescueToMedPod.gerund>
 	
 	<!-- EN: rescue -->
 	<MedPodWardenRescueToMedPod.verb>구조</MedPodWardenRescueToMedPod.verb>
 	
 	<!-- EN: carry prisoners from bed to MedPod -->
-	<MedPodWardenCarryFromBedToMedPod.label>포로를 침대에서 메드포드로 옮기다</MedPodWardenCarryFromBedToMedPod.label>
+	<MedPodWardenCarryFromBedToMedPod.label>죄수를 침대에서 메드포드로 운반</MedPodWardenCarryFromBedToMedPod.label>
 	
 	<!-- EN: carrying -->
-	<MedPodWardenCarryFromBedToMedPod.gerund>나르다</MedPodWardenCarryFromBedToMedPod.gerund>
+	<MedPodWardenCarryFromBedToMedPod.gerund>운반 중</MedPodWardenCarryFromBedToMedPod.gerund>
 	
 	<!-- EN: carry -->
-	<MedPodWardenCarryFromBedToMedPod.verb>나르다</MedPodWardenCarryFromBedToMedPod.verb>
-
+	<MedPodWardenCarryFromBedToMedPod.verb>운반</MedPodWardenCarryFromBedToMedPod.verb>
+	
 </LanguageData>

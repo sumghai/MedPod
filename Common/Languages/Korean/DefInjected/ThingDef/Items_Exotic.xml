@@ -2,9 +2,9 @@
 <LanguageData>
 
 	<!-- EN: Isolinear Processor -->
-	<IsolinearProcessor.label>등선형 프로세서</IsolinearProcessor.label>
+	<IsolinearProcessor.label>등선형 처리 장치</IsolinearProcessor.label>
 	
 	<!-- EN: A high-density optical computational module with advanced data extrapolation and processing capabilities. The key component of MedPods. -->
-	<IsolinearProcessor.description>고급 데이터 외삽 및 처리 기능을 갖춘 고밀도 광학 계산 모듈입니다. 메드포드의 핵심 구성 요소.</IsolinearProcessor.description>
+	<IsolinearProcessor.description>첨담 데이터 추론과 처리 기능을 갖춘 고밀도 광학 계산 모듈입니다. 메드포드의  핵심 부품입니다.</IsolinearProcessor.description>
 
 </LanguageData>

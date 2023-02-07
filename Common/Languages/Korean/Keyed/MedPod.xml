@@ -2,90 +2,90 @@
 <LanguageData>
 	
 	<!-- EN: Error: No power -->
-	<MedPod_InspectorStatus_NoPower>오류: 전원이 들어오지 않음</MedPod_InspectorStatus_NoPower>
+	<MedPod_InspectorStatus_NoPower>오류: 전력 없음</MedPod_InspectorStatus_NoPower>
 	
 	<!-- EN: Diagnosing ({0}%) -->
-	<MedPod_InspectorStatus_DiagnosisProgress>진단({0}%)</MedPod_InspectorStatus_DiagnosisProgress>
+	<MedPod_InspectorStatus_DiagnosisProgress>진단 중: ({0}%)</MedPod_InspectorStatus_DiagnosisProgress>
 	
 	<!-- EN: Diagnosis Complete -->
 	<MedPod_InspectorStatus_DiagnosisComplete>진단 완료</MedPod_InspectorStatus_DiagnosisComplete>
 	
 	<!-- EN: Regenerating ({0}%) -->
-	<MedPod_InspectorStatus_HealingProgress>재생({0}%)</MedPod_InspectorStatus_HealingProgress>
+	<MedPod_InspectorStatus_HealingProgress>재생 중: ({0}%)</MedPod_InspectorStatus_HealingProgress>
 	
 	<!-- EN: 100% Clear -->
-	<MedPod_InspectorStatus_PatientDischarged>100％완료</MedPod_InspectorStatus_PatientDischarged>
+	<MedPod_InspectorStatus_PatientDischarged>재생 완료</MedPod_InspectorStatus_PatientDischarged>
 	
 	<!-- EN: Idle -->
-	<MedPod_InspectorStatus_Idle>게으른</MedPod_InspectorStatus_Idle>
+	<MedPod_InspectorStatus_Idle>대기 중</MedPod_InspectorStatus_Idle>
 	
 	<!-- EN: Power consumption (Diagnosis) -->
-	<MedPod_Stat_PowerConsumptionDiagnosis_Label>전력 소비 (진단)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
+	<MedPod_Stat_PowerConsumptionDiagnosis_Label>전력 소비량 (진단)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
 	
 	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Diagnosis mode. -->
-	<MedPod_Stat_PowerConsumptionDiagnosis_Desc>진단 모드에서 작동하는 동안 이 메드포드가 전력망에서 끌어오는 전력의 양입니다.</MedPod_Stat_PowerConsumptionDiagnosis_Desc>
+	<MedPod_Stat_PowerConsumptionDiagnosis_Desc>이 메드포드가 진단 모드로 가동하는 동안 전력망에서 끌어올 전력량입니다.</MedPod_Stat_PowerConsumptionDiagnosis_Desc>
 	
 	<!-- EN: Power consumption (Treatment) -->
-	<MedPod_Stat_PowerConsumptionHealing_Label>전력 소비 (치료)</MedPod_Stat_PowerConsumptionHealing_Label>
+	<MedPod_Stat_PowerConsumptionHealing_Label>전력 소비량 (치료)</MedPod_Stat_PowerConsumptionHealing_Label>
 	
 	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Treatment mode. -->
-	<MedPod_Stat_PowerConsumptionHealing_Desc>이 메드포드가 치료 모드에서 작동하는 동안 전력망에서 끌어오는 전력의 양.</MedPod_Stat_PowerConsumptionHealing_Desc>
+	<MedPod_Stat_PowerConsumptionHealing_Desc>메드포드 이 치료 모드로 가동하는 동안 전력망에서 끌어올 전력량입니다.</MedPod_Stat_PowerConsumptionHealing_Desc>
 	
 	<!-- EN: Diagnosis time -->
-	<MedPod_Stat_DiagnosisTime_Label>진단 시간</MedPod_Stat_DiagnosisTime_Label>
+	<MedPod_Stat_DiagnosisTime_Label>진단 소요 시간</MedPod_Stat_DiagnosisTime_Label>
 	
 	<!-- EN: How long it takes for this MedPod to diagnose a patient. -->
 	<MedPod_Stat_DiagnosisTime_Desc>이 메드포드가 환자를 진단하는 데 걸리는 시간입니다.</MedPod_Stat_DiagnosisTime_Desc>
 	
 	<!-- EN: Avg. per-condition treatment time -->
-	<MedPod_Stat_PerHediffHealingTime_Label>상태별 평균 치료 시간</MedPod_Stat_PerHediffHealingTime_Label>
+	<MedPod_Stat_PerHediffHealingTime_Label>건강 이상당 평균 치료 소요 시간</MedPod_Stat_PerHediffHealingTime_Label>
 	
 	<!-- EN: How long it takes (on average) for this MedPod to treat each medical condition on a patient.\n\nNote that this is scaled according to the severity of the condition - for instance, less severe injuries will take less time to treat. -->
-	<MedPod_Stat_PerHediffHealingTime_Desc>이 메드포드가 환자의 각 의학적 상태를 치료하는 데 걸리는 평균 시간입니다.\n\n이 값은 상태의 심각도에 따라 조정됩니다. 예를 들어, 덜 심각한 부상은 치료하는 데 더 적은 시간이 소요됩니다.</MedPod_Stat_PerHediffHealingTime_Desc>
+	<MedPod_Stat_PerHediffHealingTime_Desc>이 메드포드가 환자의 각 건강 이상을 치료하는 데 (평균적으로) 걸리는 시간입니다.\n\n이 수치는 건강 이상의 심각함에 따라 조정된다는 것을 유념하십시오. 예를 들어, 덜 심각한 부상을 치료하는 데에는 더 적은 시간이 걸립니다.</MedPod_Stat_PerHediffHealingTime_Desc>
 	
 	<!-- EN: {0} s -->
-	<MedPod_Stat_TimeSeconds>{0}초</MedPod_Stat_TimeSeconds>
+	<MedPod_Stat_TimeSeconds>{0} 초</MedPod_Stat_TimeSeconds>
 	
 	<!-- EN: No reachable, un-reserved {0} MedPod with power in safe temperature. -->
-	<MedPod_Message_CannotRescue_NoMedPod>안전한 온도에서 전원이 공급되는 접근 가능한 예약되지 않은 {0} 메드포드가 없습니다</MedPod_Message_CannotRescue_NoMedPod>
+	<MedPod_Message_CannotRescue_NoMedPod>도달 가능하고, 사용 중이지 않고, 안전한 온도의 전력을 공급받고 있는 메드포드 없음</MedPod_Message_CannotRescue_NoMedPod>
 	
 	<!-- EN: No reachable, un-reserved VetPod with power in safe temperature. -->
-	<MedPod_Message_CannotRescue_NoVetPod>도달 가능하고, 사용 중이지 않고, 전원이 켜진 안전한 온도의 벳포드 없음</MedPod_Message_CannotRescue_NoVetPod>
+	<MedPod_Message_CannotRescue_NoVetPod>도달 가능하고, 사용 중이지 않고, 안전한 온도의 전력을 공급받고 있는 벳포드 없음</MedPod_Message_CannotRescue_NoVetPod>
 	
 	<!-- EN: MedPod treatment complete for {1_label}. -->
-	<MedPod_Message_TreatmentComplete>{1_label}에 대한 메드포드 치료 완료.</MedPod_Message_TreatmentComplete>
+	<MedPod_Message_TreatmentComplete>{1_label}의 메드포드 치료가 완료되었습니다.</MedPod_Message_TreatmentComplete>
 	
 	<!-- EN: MedPod treatment interrupted for {1_label}. -->
-	<MedPod_Message_TreatmentInterrupted>{1_label}에 대한 메드포드 치료가 중단되었습니다.</MedPod_Message_TreatmentInterrupted>
+	<MedPod_Message_TreatmentInterrupted>{1_label}의 메드포드 치료가 중단되었습니다.</MedPod_Message_TreatmentInterrupted>
 	
 	<!-- EN: MedPod cannot treat {0}s -->
-	<MedPod_FloatMenu_RaceNotAllowed>메드포드는 {0}을(를) 치료할 수 없습니다.</MedPod_FloatMenu_RaceNotAllowed>
+	<MedPod_FloatMenu_RaceNotAllowed>메드포드는 {0} 인종형을 치료할 수 없습니다.</MedPod_FloatMenu_RaceNotAllowed>
 	
 	<!-- EN: Rescue {0} to MedPod -->
-	<MedPod_FloatMenu_Rescue>메드포드가에 {0} 구조</MedPod_FloatMenu_Rescue>
+	<MedPod_FloatMenu_Rescue>메드포드로 {0} 구조</MedPod_FloatMenu_Rescue>
 	
 	<!-- EN: MedPod not powered -->
-	<MedPod_FloatMenu_Unpowered>메드포드에 전원이 공급되지 않음</MedPod_FloatMenu_Unpowered>
+	<MedPod_FloatMenu_Unpowered>메드포드에 전력이 공급되지 않음</MedPod_FloatMenu_Unpowered>
 	
 	<!-- EN: Patient care quality must be Industrial medicine or above -->
-	<MedPod_FloatMenu_MedicalCareCategoryTooLow>환자 진료 품질은 최소한 정상 진료여야 합니다</MedPod_FloatMenu_MedicalCareCategoryTooLow>
+	<MedPod_FloatMenu_MedicalCareCategoryTooLow>환자 간호 품질은 통상 치료 이상이어야 합니다.</MedPod_FloatMenu_MedicalCareCategoryTooLow>
 	
 	<!-- EN: patient using MedPod -->
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>메드포드를 사용하는 환자</MedPod_SurgeryProhibited_PatientUsingMedPod>
 	
 	<!-- EN: {0} is in use. -->
-	<MedPod_CommandGizmoDisabled_MedPodInUse>{0}이(가) 사용 중입니다</MedPod_CommandGizmoDisabled_MedPodInUse>
+	<MedPod_CommandGizmoDisabled_MedPodInUse>{0}는 사용 중입니다.</MedPod_CommandGizmoDisabled_MedPodInUse>
 	
 	<!-- EN: Abort -->
-	<MedPod_CommandGizmoAbortTreatment_Label>중단하다</MedPod_CommandGizmoAbortTreatment_Label>
+	<MedPod_CommandGizmoAbortTreatment_Label>강제 중지</MedPod_CommandGizmoAbortTreatment_Label>
 	
 	<!-- EN: Stop treating the current patient immediately. -->
-	<MedPod_CommandGizmoAbortTreatment_Desc>현재 환자의 치료를 즉시 중단하십시오.</MedPod_CommandGizmoAbortTreatment_Desc>
+	<MedPod_CommandGizmoAbortTreatment_Desc>현재 환자의 치료를 즉시 중지합니다.</MedPod_CommandGizmoAbortTreatment_Desc>
 	
 	<!-- EN: Trait(s) removed -->
-	<MedPod_Letter_TraitRemoved_Label>제거된 특성</MedPod_Letter_TraitRemoved_Label>
+	<MedPod_Letter_TraitRemoved_Label>특성 제거됨</MedPod_Letter_TraitRemoved_Label>
 
 	<!-- EN: {PAWN_labelShort} has had the following trait(s) removed via MedPod treatment:\n -->
-	<MedPod_Letter_TraitRemoved_Desc>{PAWN_labelShort}는 메드포드가 치료를 통해 다음 특성을 제거했습니다.</MedPod_Letter_TraitRemoved_Desc>
+	<MedPod_Letter_TraitRemoved_Desc>{PAWN_labelShort}(은)는 메드포드 치료를 통해 다음 특성을 제거했습니다.\n</MedPod_Letter_TraitRemoved_Desc>
 
 </LanguageData>
