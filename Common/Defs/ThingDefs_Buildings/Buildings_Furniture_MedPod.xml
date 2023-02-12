@@ -58,7 +58,6 @@
 				<disallowedRaces />
 			</li>
 		</comps>
-		<tradeability>Buyable</tradeability>
 		<tickerType>Normal</tickerType>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<repairEffect>Repair</repairEffect>
