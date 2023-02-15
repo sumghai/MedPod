@@ -15,8 +15,8 @@ namespace MedPod
             return 
                     // Is downed and not meant to be always downed (e.g. babies)
                     (patientPawn.Downed && !LifeStageUtility.AlwaysDowned(patientPawn))
-                    // Has hediffs requiring tending (excluding those blacklisted or greylisted from MedPod treatment)
-                    || patientHediffs.Any(x => x.TendableNow() && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
+                    // Has (visible) hediffs requiring tending (excluding those blacklisted or greylisted from MedPod treatment)
+                    || patientHediffs.Any(x => x.Visible && x.TendableNow() && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
                     // Has tended and healing injuries
                     || patientPawn.health.hediffSet.HasTendedAndHealingInjury()
                     // Has immunizable but not yet immune hediffs
@@ -31,8 +31,8 @@ namespace MedPod
                     || patientHediffs.Any(x => x.def.chronic && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
                     // Has addictions (excluding those blacklisted or greylisted from MedPod treatment)
                     || patientHediffs.Any(x => x.def.IsAddiction && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
-                    // Has hediffs that are always treatable by MedPods
-                    || patientHediffs.Any(x => alwaysTreatableHediffs.Contains(x.def));
+                    // Has (visible) hediffs that are always treatable by MedPods
+                    || patientHediffs.Any(x => x.Visible && alwaysTreatableHediffs.Contains(x.def));
         }
 
         public static bool IsValidRaceForMedPod(Pawn patientPawn, List<string> disallowedRaces)
