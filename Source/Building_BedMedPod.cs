@@ -528,9 +528,9 @@ namespace MedPod
             // Restore previously saved patient DBH thirst and reset DBH bladder/hygiene need levels
             if (ModCompatibility.DbhIsActive)
             {
-                ModCompatibility.SetThirstNeedCurLevelPercentage(patientPawn, patientSavedDbhThirstNeed);
-                ModCompatibility.SetBladderNeedCurLevelPercentage(patientPawn, 1f);
-                ModCompatibility.SetHygieneNeedCurLevelPercentage(patientPawn, 1f);
+                DbhCompatibility.SetThirstNeedCurLevelPercentage(patientPawn, patientSavedDbhThirstNeed);
+                DbhCompatibility.SetBladderNeedCurLevelPercentage(patientPawn, 1f);
+                DbhCompatibility.SetHygieneNeedCurLevelPercentage(patientPawn, 1f);
             }
 
             // Remove treatable traits only if treatment was completed normally
@@ -620,9 +620,9 @@ namespace MedPod
                             // Save initial patient DBH thirst and reset DBH bladder/hygiene need levels
                             if (ModCompatibility.DbhIsActive)
                             {
-                                patientSavedDbhThirstNeed = ModCompatibility.GetThirstNeedCurLevelPercentage(PatientPawn);
-                                ModCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
-                                ModCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
+                                patientSavedDbhThirstNeed = DbhCompatibility.GetThirstNeedCurLevelPercentage(PatientPawn);
+                                DbhCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
+                                DbhCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
                             }
 
                             SwitchState();
@@ -748,9 +748,9 @@ namespace MedPod
                     // Suspend patient DBH thirst, bladder and hygiene need levels
                     if (ModCompatibility.DbhIsActive)
                     {
-                        ModCompatibility.SetThirstNeedCurLevelPercentage(PatientPawn, 1f);
-                        ModCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
-                        ModCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
+                        DbhCompatibility.SetThirstNeedCurLevelPercentage(PatientPawn, 1f);
+                        DbhCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
+                        DbhCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
                     }
                 }
 
@@ -776,9 +776,9 @@ namespace MedPod
                     // Suspend patient DBH thirst, bladder and hygiene need levels
                     if (ModCompatibility.DbhIsActive)
                     {
-                        ModCompatibility.SetThirstNeedCurLevelPercentage(PatientPawn, 1f);
-                        ModCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
-                        ModCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
+                        DbhCompatibility.SetThirstNeedCurLevelPercentage(PatientPawn, 1f);
+                        DbhCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
+                        DbhCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
                     }
                 }
 

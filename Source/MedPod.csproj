@@ -47,7 +47,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="BadHygiene">
-      <HintPath>..\..\Dubs Bad Hygiene\1.3\Assemblies\BadHygiene.dll</HintPath>
+      <HintPath>..\..\Dubs Bad Hygiene\1.4\Assemblies\BadHygiene.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -315,7 +315,7 @@
     <Compile Include="Compatibility\ModCompatibility.cs" />
     <Compile Include="Patches\Harmony_BedInteractionCellSearchPattern_BedCellOffsets.cs" />
     <Compile Include="Patches\Harmony_Building_Bed.cs" />
-    <Compile Include="Patches\Harmony_DBH_Patches.cs" />
+    <Compile Include="Compatibility\DbhCompatibility.cs" />
     <Compile Include="Patches\Harmony_FeedingUtilities.cs" />
     <Compile Include="Patches\Harmony_FloatMenuMakerMap.cs" />
     <Compile Include="Patches\Harmony_JobDriver_WaitDowned.cs" />
