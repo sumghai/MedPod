@@ -495,13 +495,13 @@ namespace MedPod
 
         public static void AnesthesizePatient(Pawn patientPawn)
         {
-            Hediff inducedComa = HediffMaker.MakeHediff(HediffDef.Named("MedPod_InducedComa"), patientPawn);
+            Hediff inducedComa = HediffMaker.MakeHediff(MedPodDef.MedPod_InducedComa, patientPawn);
             patientPawn.health.AddHediff(inducedComa);
         }
 
         public static void WakePatient(Pawn patientPawn, bool wakeNormally = true)
         {
-            patientPawn.health.hediffSet.hediffs.RemoveAll((Hediff x) => x.def.defName == "MedPod_InducedComa");
+            patientPawn.health.hediffSet.hediffs.RemoveAll((Hediff x) => x.def == MedPodDef.MedPod_InducedComa);
 
             // Clear any ongoing mental states (e.g. Manhunter)
             if (patientPawn.InMentalState)

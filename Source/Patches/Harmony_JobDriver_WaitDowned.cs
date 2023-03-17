@@ -11,7 +11,7 @@ namespace MedPod
     {
         public static void Prefix(Pawn ___pawn)
         {
-            if (___pawn.health.hediffSet.hediffs.Any((Hediff x) => x.def.defName == "MedPod_InducedComa"))
+            if (___pawn.health.hediffSet.hediffs.Any((Hediff x) => x.def == MedPodDef.MedPod_InducedComa))
             {
                 Building_BedMedPod.WakePatient(___pawn, false);
             }
