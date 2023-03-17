@@ -298,6 +298,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compatibility\AlphaGenesCompatibility.cs" />
     <Compile Include="Comps\CompAnimatedGantry.cs" />
     <Compile Include="Compatibility\EbfCompatibilityWrapper.cs" />
     <Compile Include="Comps\CompMedPodSettings.cs" />

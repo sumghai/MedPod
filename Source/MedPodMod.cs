@@ -8,11 +8,23 @@ namespace MedPod
     public class MedPodMod : Mod
     {
         private static Type workGiver_washPatientType;
+        private static Type targetPatchClass;
 
         public MedPodMod(ModContentPack content) : base(content)
         {
             var harmony = new Harmony("com.MedPod.patches");
             harmony.PatchAll();
+
+            if (ModCompatibility.AlphaGenesIsActive)
+            {
+                Log.Message("MedPod :: Alpha Genes detected!");
+
+                // Conditionally patch BreakSomeBones patch to ignore delta-wave coma
+                targetPatchClass = AccessTools.TypeByName("AlphaGenes_Pawn_HealthTracker_MakeDowned_Patch");
+                MethodInfo original = AccessTools.Method(targetPatchClass, "BreakSomeBones");
+                HarmonyMethod prefix = new HarmonyMethod(typeof(AlphaGenesCompatibility), nameof(AlphaGenesCompatibility.SkipIfPawnHasDeltaWaveComa));
+                harmony.Patch(original, prefix);
+            }
 
             if (ModCompatibility.AndroidTiersIsActive)
             {

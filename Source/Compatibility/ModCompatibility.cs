@@ -5,6 +5,9 @@ namespace MedPod
 {
     public class ModCompatibility
     {
+        // Alpha Genes
+        public static bool AlphaGenesIsActive => ModLister.AllInstalledMods.Where(x => x.Active && x.PackageId.Contains("sarg.alphagenes".ToLower())).Any();
+
         // Android Tiers
         public static bool AndroidTiersIsActive => ModLister.AllInstalledMods.Where(x => x.Active && x.PackageId.Contains("Atlas.AndroidTiers".ToLower())).Any();
         
