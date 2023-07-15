@@ -82,6 +82,10 @@ namespace MedPod
             {
                 return false;
             }
+            if (!MedPodHealthAIUtility.IsValidXenotypeForMedPod(patientPawn, bedMedPod.DisallowedXenotypes))
+            {
+                return false;
+            }
             if (MedPodHealthAIUtility.HasUsageBlockingHediffs(patientPawn, bedMedPod.UsageBlockingHediffs))
             {
                 return false;

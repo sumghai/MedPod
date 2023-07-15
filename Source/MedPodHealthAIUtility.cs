@@ -45,6 +45,16 @@ namespace MedPod
             return true;
         }
 
+        public static bool IsValidXenotypeForMedPod(Pawn patientPawn, List<XenotypeDef> disallowedXenotypes)
+        {
+            XenotypeDef patientXenotype = patientPawn.genes.xenotype;
+            if (!disallowedXenotypes.NullOrEmpty())
+            {
+                return !disallowedXenotypes.Contains(patientXenotype);
+            }
+            return true;
+        }
+
         public static bool HasAllowedMedicalCareCategory(Pawn patientPawn)
         {
             return WorkGiver_DoBill.GetMedicalCareCategory(patientPawn) >= MedicalCareCategory.NormalOrWorse;

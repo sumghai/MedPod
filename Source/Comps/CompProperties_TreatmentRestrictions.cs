@@ -20,6 +20,9 @@ namespace MedPod
 
         public List<string> disallowedRaces = null;
 
+        [MayRequireBiotech]
+        public List<XenotypeDef> disallowedXenotypes = null;
+
         public CompProperties_TreatmentRestrictions()
         {
             compClass = typeof(CompTreatmentRestrictions);

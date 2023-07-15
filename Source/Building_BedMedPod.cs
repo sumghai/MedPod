@@ -58,6 +58,9 @@ namespace MedPod
 
         public List<string> DisallowedRaces;
 
+        [MayRequireBiotech]
+        public List<XenotypeDef> DisallowedXenotypes;
+
         public int ProgressHealingTicks = 0;
 
         public int TotalHealingTicks = 0;
@@ -130,6 +133,7 @@ namespace MedPod
             UsageBlockingTraits = treatmentRestrictions.UsageBlockingTraits;
             AlwaysTreatableTraits = treatmentRestrictions.AlwaysTreatableTraits;
             DisallowedRaces = treatmentRestrictions.DisallowedRaces;
+            DisallowedXenotypes = treatmentRestrictions.DisallowedXenotypes;
 
             // Add a blocker region for the MedPod main machinery, if required
             if (!medpodSettings.DisableInvisibleBlocker)
@@ -259,6 +263,11 @@ namespace MedPod
                 if (!MedPodHealthAIUtility.IsValidRaceForMedPod(myPawn, DisallowedRaces))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.def.label.CapitalizeFirst()) + ")", null);
+                    yield break;
+                }
+                if (!MedPodHealthAIUtility.IsValidXenotypeForMedPod(myPawn, DisallowedXenotypes))
+                {
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.genes.xenotype.label.CapitalizeFirst()) + ")", null);
                     yield break;
                 }
                 if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs))

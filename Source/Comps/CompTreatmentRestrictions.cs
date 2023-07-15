@@ -69,5 +69,13 @@ namespace MedPod
                 return Props.disallowedRaces;
             }
         }
+
+        public List<XenotypeDef> DisallowedXenotypes
+        {
+            get
+            {
+                return Props.disallowedXenotypes;
+            }
+        }
     }
 }

@@ -56,6 +56,7 @@
 				<usageBlockingTraits />
 				<alwaysTreatableTraits />
 				<disallowedRaces />
+				<disallowedXenotypes />
 			</li>
 		</comps>
 		<tickerType>Normal</tickerType>

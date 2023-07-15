@@ -34,8 +34,14 @@ namespace MedPod
                         // - Who will automatically join the player when rescued
                         // - Who have hediffs or traits that prevent them from using MedPods
                         // - Who are of races that can't use MedPods
-                        if (victim.InBed() || !pawn.CanReserveAndReach(victim, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, ignoreOtherReservations: true) || victim.mindState.WillJoinColonyIfRescued || MedPodHealthAIUtility.HasUsageBlockingHediffs(victim, building_BedMedPod.UsageBlockingHediffs) || MedPodHealthAIUtility.HasUsageBlockingTraits(victim, building_BedMedPod.UsageBlockingTraits) ||
-                          MedPodHealthAIUtility.IsValidRaceForMedPod(victim, building_BedMedPod.DisallowedRaces))
+                        // - Who are of xenotypes that can't use MedPods
+                        if (victim.InBed() || 
+                            !pawn.CanReserveAndReach(victim, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, ignoreOtherReservations: true) || 
+                            victim.mindState.WillJoinColonyIfRescued || 
+                            MedPodHealthAIUtility.HasUsageBlockingHediffs(victim, building_BedMedPod.UsageBlockingHediffs) || 
+                            MedPodHealthAIUtility.HasUsageBlockingTraits(victim, building_BedMedPod.UsageBlockingTraits) ||
+                            MedPodHealthAIUtility.IsValidRaceForMedPod(victim, building_BedMedPod.DisallowedRaces) ||
+                            MedPodHealthAIUtility.IsValidXenotypeForMedPod(victim, building_BedMedPod.DisallowedXenotypes))
                         {
                             continue;
                         }
