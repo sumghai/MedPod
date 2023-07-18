@@ -47,7 +47,14 @@ namespace MedPod
 
         public static bool IsValidXenotypeForMedPod(Pawn patientPawn, List<XenotypeDef> disallowedXenotypes)
         {
-            XenotypeDef patientXenotype = patientPawn.genes.xenotype;
+            XenotypeDef patientXenotype = patientPawn.genes?.xenotype;
+
+            // For pawns without genes and/or xenotypes (usually animals)
+            if (patientXenotype == null)
+            {
+                return true;
+            }
+
             if (!disallowedXenotypes.NullOrEmpty())
             {
                 return !disallowedXenotypes.Contains(patientXenotype);
