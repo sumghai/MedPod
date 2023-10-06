@@ -9,6 +9,7 @@
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/neverTreatableHediffs</xpath>
 				<value>
+					<li>DeathrestExhaustion</li> <!-- Auto-regenerates, and would otherwise cause Sanguophages to get stuck in MedPods  -->
 					<li>GeneticDrugNeed</li> <!-- MedPods cannot remove genetic drug dependencies -->
 					<li>ImplantedIUD</li> <!-- Implants are ignored -->
 					<li>Lactating</li> <!-- MedPods are designed not to interfere with lactation -->
