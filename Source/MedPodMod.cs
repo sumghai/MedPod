@@ -41,6 +41,11 @@ namespace MedPod
                 HarmonyMethod postfix = new HarmonyMethod(typeof(DbhCompatibility), nameof(DbhCompatibility.ShouldBeWashedBySomeonePostfix));
                 harmony.Patch(original, postfix: postfix);
             }
+
+            if (ModCompatibility.MechanitePersonaTraitsIsActive)
+            {
+                Log.Message("MedPod :: Mechanite Persona Traits detected!");
+            }
         } 
     }
 }

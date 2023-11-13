@@ -13,5 +13,8 @@ namespace MedPod
         
         // Applies to both DBH and DBH Lite (with Thirst module)
         public static bool DbhIsActive => ModLister.AllInstalledMods.Where(x => x.Active && x.PackageId.Contains("Dubwise.DubsBadHygiene".ToLower())).Any();
+
+        // Mechanite Persona Traits
+        public static bool MechanitePersonaTraitsIsActive => ModLister.AllInstalledMods.Where(x => x.Active && x.PackageId.Contains("ImJustJoshin.MechanitePersonaTraits".ToLower())).Any();
     }
 }

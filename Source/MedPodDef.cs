@@ -6,6 +6,13 @@ namespace MedPod
     [DefOf]
     public static class MedPodDef
     {
+        public class MayRequireMechanitePersonaTraitsModAttribute : MayRequireAttribute
+        {
+            public MayRequireMechanitePersonaTraitsModAttribute()
+                : base("ImJustJoshin.MechanitePersonaTraits")
+            { }
+        }
+        
         static MedPodDef()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(MedPodDef));
@@ -18,5 +25,8 @@ namespace MedPod
         public static JobDef RescueToMedPod;
 
         public static ThingDef MedPodInvisibleBlocker;
+
+        [MayRequireMechanitePersonaTraitsMod]
+        public static NeedDef MPT_Need_MechaniteFactory;
     }
 }

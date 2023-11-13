@@ -562,6 +562,12 @@ namespace MedPod
                 }
             }
 
+            // If the patient has the Plaguelust need from Mechanite Persona Traits, remove it
+            if (ModCompatibility.MechanitePersonaTraitsIsActive)
+            {
+                patientPawn.needs.RemoveNeed(MedPodDef.MPT_Need_MechaniteFactory);
+            }
+
             // If the patient is a Sanguophage, top up their Hemogen
             if (ModsConfig.BiotechActive && patientPawn.RaceProps.Humanlike)
             {
