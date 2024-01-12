@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Diseases+</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Prevent MedPods from treating various benign hediffs -->
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/neverTreatableHediffs</xpath>
+					<value>
+						<li>DimonSever000_Genius</li>
+						<li>DimonSever000_Inspiration</li>
+					</value>
+				</li>
+				
+				<!-- Allow MedPods to always treat various psychological hediffs -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/alwaysTreatableHediffs</xpath>
+					<value>
+						<li>DimonSever000_Alienation</li>
+						<li>DimonSever000_EpilepsySeizure</li>
+						<li>DimonSever000_Hallucinosis</li>
+						<li>DimonSever000_Hypomania</li>
+						<li>DimonSever000_Hypotimia</li>
+						<li>DimonSever000_Ravings</li>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+</Patch>
