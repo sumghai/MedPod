@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>MH: Mechanical Biomimetics</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Prevent MedPod from treating mechanical animals -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/disallowedRaces</xpath>
+					<value>
+						<li>ATB_DroneChemUnit</li>
+						<li>ATB_DroneMineralUnit</li>
+						<li>ATB_DroneNutritionUnit</li>
+						<li>ATB_DroneTORT</li>
+						<li>ATB_DroneWatchdog</li>
+						<li>ATB_MicroScyther</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+</Patch>
