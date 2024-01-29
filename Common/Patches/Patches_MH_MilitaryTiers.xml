@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>MH: Military Tiers</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Prevent MedPod from treating Military Androids -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/disallowedRaces</xpath>
+					<value>
+						<li>ATM_Mark1Warrior</li>
+						<li>ATM_Mark2Bishop</li>
+						<li>ATM_Mark3Paladin</li>
+						<li>ATM_Mark4Jellyman</li>
+						<li>ATM_Mark5Titan</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+</Patch>
