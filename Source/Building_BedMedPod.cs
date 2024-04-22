@@ -577,6 +577,12 @@ namespace MedPod
                     gene_Hemogen.Value = gene_Hemogen.InitialResourceMax;
                 }
             }
+
+            // Refresh pawn renderer (especially important for Anomaly DLC not updating visuals from removed hediffs)
+            patientPawn.drawer.renderer.SetAllGraphicsDirty();
+
+            // Refreshed pawn disabled work tags (especially important for Anomaly DLC not updating work tags from removed hediffs)
+            patientPawn.Notify_DisabledWorkTypesChanged();
         }
 
         public void StartWickSustainer()

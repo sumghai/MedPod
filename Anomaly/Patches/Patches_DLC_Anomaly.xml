@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+				
+			<!-- Handle various Anomaly DLC hediffs -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/neverTreatableHediffs</xpath>
+				<value>
+					<li>Inhumanized</li>
+					<li>PsychicallyDead</li>
+				</value>
+			</li>
+				
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/alwaysTreatableHediffs</xpath>
+				<value>
+					<li>BloodRage</li>
+					<li>CrumbledMind</li> <!-- Uses C# code to restore work tags -->
+					<li>CrumblingMind</li>
+					<li>CrumblingMindUndiagnosedCreepjoiner</li>
+					<li>CrumblingMindUndiagnosedDuplication</li>
+					<li>DeathRefusalSickness</li>
+					<li>DuplicateSickness</li>
+					<li>FleshWhip</li>
+					<li>FleshmassLung</li>
+					<li>FleshmassStomach</li>
+					<li>Tentacle</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/nonCriticalTreatableHediffs</xpath>
+				<value>
+					<li>RageSpeed</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+</Patch>
