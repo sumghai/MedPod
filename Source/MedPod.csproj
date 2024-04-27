@@ -322,6 +322,7 @@
     <Compile Include="Patches\Harmony_JobDriver_WaitDowned.cs" />
     <Compile Include="Patches\Harmony_Pawn.cs" />
     <Compile Include="Patches\Harmony_PawnRenderer.cs" />
+    <Compile Include="Patches\Harmony_Pawn_EquipmentTracker_TryDropEquipment.cs" />
     <Compile Include="Patches\Harmony_RestUtility.cs" />
     <Compile Include="Patches\Harmony_WorkGiver_Tend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
