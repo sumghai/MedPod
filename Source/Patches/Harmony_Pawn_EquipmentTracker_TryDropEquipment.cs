@@ -11,7 +11,7 @@ namespace MedPod.Patches
         static bool Prefix(Pawn_EquipmentTracker __instance, IntVec3 pos)
         {
             Pawn pawn = __instance.pawn;
-            if (pos.GetThingList(pawn.Map).Where(t => t.def.thingClass == typeof(Building_BedMedPod)) != null)
+            if (pos.GetThingList(pawn.MapHeld).Where(t => t.def.thingClass == typeof(Building_BedMedPod)) != null)
             {
                 return false;
             }
