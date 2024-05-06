@@ -27,9 +27,9 @@
 		</graphicData>
 		<uiIconPath>UI/MedPod_Lux</uiIconPath>
 		<statBases>
-			<MarketValue>3000000</MarketValue>
+			<MarketValue>95000</MarketValue>
 			<!-- Ensures market value is reflected in colony wealth calculations -->
-			<MarketValueIgnoreHp>3000000</MarketValueIgnoreHp>
+			<MarketValueIgnoreHp>95000</MarketValueIgnoreHp>
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToBuild>50000</WorkToBuild>
 			<Mass>350</Mass>

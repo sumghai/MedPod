@@ -26,9 +26,9 @@
 		</graphicData>
 		<uiIconPath>UI/VetPod</uiIconPath>
 		<statBases>
-			<MarketValue>2400000</MarketValue>
+			<MarketValue>85000</MarketValue>
 			<!-- Ensures market value is reflected in colony wealth calculations -->
-			<MarketValueIgnoreHp>2400000</MarketValueIgnoreHp>
+			<MarketValueIgnoreHp>85000</MarketValueIgnoreHp>
 			<MaxHitPoints>450</MaxHitPoints>
 			<WorkToBuild>36000</WorkToBuild>
 			<Mass>600</Mass>
@@ -112,9 +112,9 @@
 		</graphicData>
 		<uiIconPath>UI/VetPod_Large</uiIconPath>
 		<statBases>
-			<MarketValue>3000000</MarketValue>
+			<MarketValue>87500</MarketValue>
 			<!-- Ensures market value is reflected in colony wealth calculations -->
-			<MarketValueIgnoreHp>3000000</MarketValueIgnoreHp>
+			<MarketValueIgnoreHp>87500</MarketValueIgnoreHp>
 			<MaxHitPoints>600</MaxHitPoints>
 			<WorkToBuild>48000</WorkToBuild>
 			<Mass>800</Mass>
@@ -199,9 +199,9 @@
 		</graphicData>
 		<uiIconPath>UI/VetPod_Mega</uiIconPath>
 		<statBases>
-			<MarketValue>4800000</MarketValue>
+			<MarketValue>97500</MarketValue>
 			<!-- Ensures market value is reflected in colony wealth calculations -->
-			<MarketValueIgnoreHp>4800000</MarketValueIgnoreHp>
+			<MarketValueIgnoreHp>97500</MarketValueIgnoreHp>
 			<MaxHitPoints>2000</MaxHitPoints>
 			<WorkToBuild>150000</WorkToBuild>
 			<Mass>3000</Mass>
