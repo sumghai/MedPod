@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageInfo>
+  <friendlyNameNative>Español (Latino)</friendlyNameNative>
+  <friendlyNameEnglish>Latin American Spanish</friendlyNameEnglish>
+  <languageWorkerClass>LanguageWorker_Spanish</languageWorkerClass>
+  <canBeTiny>true</canBeTiny>
+  <credits>
+     <li Class="CreditRecord_Role">
+        <roleKey>Credit_Translator</roleKey>
+        <creditee>Zerstrick</creditee>
+    </li>
+	<li Class="CreditRecord_Role">
+        <roleKey>Credit_Translator</roleKey>
+        <creditee>PlayRapture</creditee>
+    </li>
+  </credits>
+</LanguageInfo>

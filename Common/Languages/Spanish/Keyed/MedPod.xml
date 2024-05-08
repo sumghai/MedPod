@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	
+	<MedPod_InspectorStatus_NoPower>Error: sin energía</MedPod_InspectorStatus_NoPower>
+	<!-- EN: Diagnosing ({0}%) -->
+	<MedPod_InspectorStatus_DiagnosisProgress>Diagnóstico ({0}%)</MedPod_InspectorStatus_DiagnosisProgress>
+	<!-- EN: Diagnosis Complete -->
+	<MedPod_InspectorStatus_DiagnosisComplete>Diagnóstico Completado</MedPod_InspectorStatus_DiagnosisComplete>
+	<!-- EN: Regenerating ({0}%) -->
+	<MedPod_InspectorStatus_HealingProgress>Regenerando ({0}%)</MedPod_InspectorStatus_HealingProgress>
+	<!-- EN: 100% Clear -->
+	<MedPod_InspectorStatus_PatientDischarged>100% Limpio</MedPod_InspectorStatus_PatientDischarged>
+	<!-- EN: Idle -->
+	<MedPod_InspectorStatus_Idle>En espera</MedPod_InspectorStatus_Idle>
+	<!-- EN: Power consumption (Diagnosis) -->
+	<MedPod_Stat_PowerConsumptionDiagnosis_Label>Consumo de energía (Diagnóstico)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
+	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Diagnosis mode. -->
+	<MedPod_Stat_PowerConsumptionDiagnosis_Desc>La cantidad de energía que esta cápsula médica consumirá de la red eléctrica mientras funcione en modo Diagnóstico.</MedPod_Stat_PowerConsumptionDiagnosis_Desc>
+	<!-- EN: Power consumption (Treatment) -->
+	<MedPod_Stat_PowerConsumptionHealing_Label>Consumo de energía (Tratamiento)</MedPod_Stat_PowerConsumptionHealing_Label>
+	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Treatment mode. -->
+	<MedPod_Stat_PowerConsumptionHealing_Desc>La cantidad de energía que esta cápsula médica consumirá de la red eléctrica mientras funcione en modo Tratamiento.</MedPod_Stat_PowerConsumptionHealing_Desc>
+	<!-- EN: Diagnosis time -->
+	<MedPod_Stat_DiagnosisTime_Label>Tiempo de diagnóstico</MedPod_Stat_DiagnosisTime_Label>
+	<!-- EN: How long it takes for this MedPod to diagnose a patient. -->
+	<MedPod_Stat_DiagnosisTime_Desc>Cuánto tarda esta cápsula médica en diagnosticar a un paciente.</MedPod_Stat_DiagnosisTime_Desc>
+	<!-- EN: Avg. per-condition treatment time -->
+	<MedPod_Stat_PerHediffHealingTime_Label>Tiempo de tratamiento medio por afección</MedPod_Stat_PerHediffHealingTime_Label>
+	<!-- EN: How long it takes (on average) for this MedPod to treat each medical condition on a patient.\n\nNote that this is scaled according to the severity of the condition - for instance, less severe injuries will take less time to treat. -->
+	<MedPod_Stat_PerHediffHealingTime_Desc>Tiempo que tarda (en promedio) esta cápsula médica en tratar cada condición médica en un paciente.\n\nTen en cuenta que esto se escala según la gravedad de la condición, por ejemplo, lesiones menos graves tardaran menos tiempo en tratarse.</MedPod_Stat_PerHediffHealingTime_Desc>
+	<!-- EN: {0} s -->
+	<MedPod_Stat_TimeSeconds>{0} s</MedPod_Stat_TimeSeconds>
+	<!-- EN: No reachable, un-reserved {0} MedPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoMedPod>No hay ninguna cápsula médica {0} alcanzable y sin reservar, con energía a temperatura segura.</MedPod_Message_CannotRescue_NoMedPod>
+	<!-- EN: No reachable, un-reserved VetPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoVetPod>No hay ninguna cápsula veterinaria alcanzable y sin reservar, con energía a temperatura segura.</MedPod_Message_CannotRescue_NoVetPod>
+	<!-- EN: MedPod treatment complete for {1_label}. -->
+	<MedPod_Message_TreatmentComplete>cápsula médica tratamiento completado para {1_label}.</MedPod_Message_TreatmentComplete>
+	<!-- EN: MedPod treatment interrupted for {1_label}. -->
+	<MedPod_Message_TreatmentInterrupted>cápsula médica, tratamiento interrumpido para {1_label}.</MedPod_Message_TreatmentInterrupted>
+	<!-- EN: MedPod cannot treat {0}s -->
+	<MedPod_FloatMenu_RaceNotAllowed>No se puede tratar con una cápsula médica {0}s</MedPod_FloatMenu_RaceNotAllowed>
+	<!-- EN: Rescue {0} to MedPod -->
+	<MedPod_FloatMenu_Rescue>Llevar a {0} a cápsula médica</MedPod_FloatMenu_Rescue>
+	<!-- EN: MedPod not powered -->
+	<MedPod_FloatMenu_Unpowered>cápsula médica sin energía</MedPod_FloatMenu_Unpowered>
+	<!-- EN: Patient care quality must be Industrial medicine or above -->
+	<MedPod_FloatMenu_MedicalCareCategoryTooLow>La calidad del cuidado del paciente debe ser con medicina industrial o superior</MedPod_FloatMenu_MedicalCareCategoryTooLow>
+	<!-- EN: patient using MedPod -->
+	<MedPod_SurgeryProhibited_PatientUsingMedPod>El paciente está utilizando la cápsula médica</MedPod_SurgeryProhibited_PatientUsingMedPod>
+	<!-- EN: {0} is in use. -->
+	<MedPod_CommandGizmoDisabled_MedPodInUse>{0_definite} está en uso.</MedPod_CommandGizmoDisabled_MedPodInUse>
+	<!-- EN: Abort -->
+	<MedPod_CommandGizmoAbortTreatment_Label>Abortar</MedPod_CommandGizmoAbortTreatment_Label>
+	<!-- EN: Stop treating the current patient immediately. -->
+	<MedPod_CommandGizmoAbortTreatment_Desc>Detener el tratamiento del paciente actual inmediatamente.</MedPod_CommandGizmoAbortTreatment_Desc>
+	<!-- EN: Trait(s) removed -->
+	<MedPod_Letter_TraitRemoved_Label>Rasgos eliminados</MedPod_Letter_TraitRemoved_Label>
+	<!-- EN: {PAWN_labelShort} has had the following trait(s) removed via MedPod treatment:\n -->
+	<MedPod_Letter_TraitRemoved_Desc>{PAWN_labelShort} Se han eliminado los siguientes rasgos mediante tratamiento con cápsula médica:\n</MedPod_Letter_TraitRemoved_Desc>
+
+</LanguageData>
