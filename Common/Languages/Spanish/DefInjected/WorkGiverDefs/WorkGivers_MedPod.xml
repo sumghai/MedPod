@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: go to MedPod for emergency treatment -->
+	<MedPodPatientGoToMedPodEmergency.label>ir a la cápsula médica para recibir tratamiento de urgencia</MedPodPatientGoToMedPodEmergency.label>
+
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodEmergency.gerund>recibiendo tratamiendo en</MedPodPatientGoToMedPodEmergency.gerund>
+
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodEmergency.verb>recibir tratamiento en</MedPodPatientGoToMedPodEmergency.verb>
+
+	<!-- EN: rescue downed allies to MedPod -->
+	<MedPodDoctorRescueToMedPod.label>rescatar aliados derribados y llevarlos a la cápsula médica</MedPodDoctorRescueToMedPod.label>
+
+	<!-- EN: rescuing -->
+	<MedPodDoctorRescueToMedPod.gerund>rescatando</MedPodDoctorRescueToMedPod.gerund>
+
+	<!-- EN: rescue -->
+	<MedPodDoctorRescueToMedPod.verb>rescatar</MedPodDoctorRescueToMedPod.verb>
+
+	<!-- EN: carry patients from bed to MedPod -->
+	<MedPodDoctorCarryFromBedToMedPod.label>llevar pacientes a cápsula médica</MedPodDoctorCarryFromBedToMedPod.label>
+
+	<!-- EN: carrying -->
+	<MedPodDoctorCarryFromBedToMedPod.gerund>llevando</MedPodDoctorCarryFromBedToMedPod.gerund>
+
+	<!-- EN: carry -->
+	<MedPodDoctorCarryFromBedToMedPod.verb>llevar</MedPodDoctorCarryFromBedToMedPod.verb>
+
+	<!-- EN: go to MedPod for treatment -->
+	<MedPodPatientGoToMedPodTreatment.label>ir a la cápsula médica para recibir tratamiento</MedPodPatientGoToMedPodTreatment.label>
+
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodTreatment.gerund>recibiendo tratamiendo en</MedPodPatientGoToMedPodTreatment.gerund>
+
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodTreatment.verb>recibir tratamiendo en</MedPodPatientGoToMedPodTreatment.verb>
+
+	<!-- EN: rescue downed prisoner to MedPod -->
+	<MedPodWardenRescueToMedPod.label>rescatar prioneros derribados llevarlos a la cápsula médica</MedPodWardenRescueToMedPod.label>
+
+	<!-- EN: rescuing -->
+	<MedPodWardenRescueToMedPod.gerund>rescatando</MedPodWardenRescueToMedPod.gerund>
+
+	<!-- EN: rescue -->
+	<MedPodWardenRescueToMedPod.verb>rescatar</MedPodWardenRescueToMedPod.verb>
+
+	<!-- EN: carry prisoners from bed to MedPod -->
+	<MedPodWardenCarryFromBedToMedPod.label>llevar prisioneros de la cama hasta la cápsula médica</MedPodWardenCarryFromBedToMedPod.label>
+
+	<!-- EN: carrying -->
+	<MedPodWardenCarryFromBedToMedPod.gerund>llevando</MedPodWardenCarryFromBedToMedPod.gerund>
+
+	<!-- EN: carry -->
+	<MedPodWardenCarryFromBedToMedPod.verb>llevar</MedPodWardenCarryFromBedToMedPod.verb>
+
+</LanguageData>
