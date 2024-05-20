@@ -10,6 +10,8 @@ namespace MedPod
 
         // Android Tiers
         public static bool AndroidTiersIsActive => ModLister.AllInstalledMods.Where(x => x.Active && x.PackageId.Contains("Atlas.AndroidTiers".ToLower())).Any();
+
+        public static bool CombatExtendedIsActive => ModLister.AllInstalledMods.Where(x => x.Active && x.PackageId.Contains("CETeam.CombatExtended".ToLower())).Any();
         
         // Applies to both DBH and DBH Lite (with Thirst module)
         public static bool DbhIsActive => ModLister.AllInstalledMods.Where(x => x.Active && x.PackageId.Contains("Dubwise.DubsBadHygiene".ToLower())).Any();

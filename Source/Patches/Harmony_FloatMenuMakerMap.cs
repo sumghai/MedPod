@@ -8,7 +8,8 @@ using Verse.AI;
 
 namespace MedPod
 {
-    // Adds a "Rescue [pawn] to MedPod" float menu option to pawns
+    // Adds a "Rescue [pawn] to MedPod" float menu option to pawns,
+    // and remove any arresting/carrying/stripping/tending options for patients already lying on MedPods
     [HarmonyPatch(typeof(FloatMenuMakerMap), nameof(FloatMenuMakerMap.AddHumanlikeOrders))]
     public static class Harmony_FloatMenuMakerMap_OverrideRescueWithMedPodVersion
     {
@@ -77,6 +78,67 @@ namespace MedPod
                                     PlayerKnowledgeDatabase.KnowledgeDemonstrated(ConceptDefOf.Rescuing, KnowledgeAmount.Total);
                                 }
                             }, MenuOptionPriority.RescueOrCapture, null, victim), pawn, victim));
+                        }
+
+                        // Combat Extended compatibility
+                        // Loop through each pawn that needs stabilizing on the cell the player has right-clicked on, and disallow stabilizing pawns currently on MedPods
+                        if (ModCompatibility.CombatExtendedIsActive && victim.CurrentBed() is Building_BedMedPod)
+                        {
+                            opts.RemoveAll(opt =>
+                                opt.Label.Contains("CE_Stabilize".Translate(victim.LabelCap)) ||
+                                opt.Label.Contains("CE_CannotStabilize".Translate())
+                            );
+                        }
+                    }
+
+                    // Loop through each pawn that needs arresting on the cell the player has right-clicked on, and disallow arresting pawns currently on MedPods
+                    foreach (LocalTargetInfo item in GenUI.TargetsAt(clickPos, TargetingParameters.ForArrest(pawn), thingsOnly: true))
+                    {
+                        Pawn arrestTarget = (Pawn)item.Thing;
+                        if (arrestTarget.CurrentBed() is Building_BedMedPod)
+                        {
+                            opts.RemoveAll(opt =>
+                                opt.Label.Contains("TryToArrest".Translate(arrestTarget.LabelCap, arrestTarget, arrestTarget.GetAcceptArrestChance(pawn).ToStringPercent()))
+                            );
+                        }
+                    }
+
+                    // Loop through each pawn that needs carrying on the cell the player has right-clicked on, and disallow carrying pawns currently on MedPods
+                    foreach (LocalTargetInfo item in GenUI.TargetsAt(clickPos, TargetingParameters.ForCarry(pawn), thingsOnly: true))
+                    {
+                        Pawn carryTarget = (Pawn)item.Thing;
+                        if (carryTarget.CurrentBed() is Building_BedMedPod)
+                        {
+                            opts.RemoveAll(opt =>
+                                opt.Label.Contains("Carry".Translate(carryTarget)) ||
+                                opt.Label.Contains("CannotCarry".Translate(carryTarget))
+                            );
+                        }
+                    }
+
+                    // Loop through each pawn that needs stripping on the cell the player has right-clicked on, and disallow stripping pawns currently on MedPods
+                    foreach (LocalTargetInfo item in GenUI.TargetsAt(clickPos, TargetingParameters.ForStrip(pawn), thingsOnly: true))
+                    {
+                        Pawn stripTarget = (Pawn)item.Thing;
+                        if (stripTarget.CurrentBed() is Building_BedMedPod)
+                        {
+                            opts.RemoveAll(opt =>
+                                opt.Label.Contains("Strip".Translate(stripTarget.LabelCap, stripTarget)) ||
+                                opt.Label.Contains("CannotStrip".Translate(stripTarget.LabelCap, stripTarget))
+                            );
+                        }
+                    }
+
+                    // Loop through each pawn that needs tending on the cell the player has right-clicked on, and disallow tending pawns currently on MedPods
+                    foreach (LocalTargetInfo item in GenUI.TargetsAt(clickPos, TargetingParameters.ForTend(pawn), thingsOnly: true))
+                    { 
+                        Pawn tendTarget = (Pawn)item.Thing;
+                        if (tendTarget.CurrentBed() is Building_BedMedPod) 
+                        {
+                            opts.RemoveAll(opt => 
+                                opt.Label.Contains("Tend".Translate(tendTarget)) || 
+                                opt.Label.Contains("CannotTend".Translate(tendTarget))
+                            );
                         }
                     }
                 }

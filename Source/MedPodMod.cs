@@ -31,6 +31,11 @@ namespace MedPod
                 Log.Message("MedPod :: Android Tiers detected!");
             }
 
+            if (ModCompatibility.CombatExtendedIsActive) 
+            {
+                Log.Message("MedPod :: Combat Extended detected!");
+            }
+
             if (ModCompatibility.DbhIsActive)
             {
                 Log.Message("MedPod :: Dubs Bad Hygiene detected!");
