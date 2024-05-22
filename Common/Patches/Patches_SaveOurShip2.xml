@@ -8,12 +8,14 @@
 		<match Class="PatchOperationSequence">
 			<operations>
 
-				<!-- Prevent MedPod from treating Holograms -->
+				<!-- Prevent MedPods from treating formgel pawns (SOS2 uses hediffs to identify them) -->
 
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/disallowedRaces</xpath>
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/usageBlockingHediffs</xpath>
 					<value>
-						<li>SoSHologramRace</li>
+						<li>SoSHologram</li>
+						<li>SoSHologramMachine</li>
+						<li>SoSHologramArchotech</li>
 					</value>
 				</li>
 
