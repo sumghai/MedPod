@@ -57,6 +57,12 @@
 
 	<!-- EN: MedPod treatment interrupted for {1_label}. -->
 	<MedPod_Message_TreatmentInterrupted>MedPod-Behandlung unterbrochen für {1_label}.</MedPod_Message_TreatmentInterrupted>
+	
+	<!-- EN: MedPod cannot treat patients with {0} hediff -->
+	<MedPod_FloatMenu_PatientWithHediffNotAllowed>MedPod kann Patienten mit {0} nicht behandeln</MedPod_FloatMenu_PatientWithHediffNotAllowed>
+	
+	<!-- EN: MedPod cannot treat patients with {0} trait -->
+	<MedPod_FloatMenu_PatientWithTraitNotAllowed>MedPod kann keine Patienten mit {0} Merkmalen behandeln</MedPod_FloatMenu_PatientWithTraitNotAllowed>
 
 	<!-- EN: MedPod cannot treat {0}s -->
 	<MedPod_FloatMenu_RaceNotAllowed>MedPod kann {0}s nicht behandeln.</MedPod_FloatMenu_RaceNotAllowed>

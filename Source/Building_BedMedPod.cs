@@ -260,9 +260,17 @@ namespace MedPod
         {
             if (myPawn.RaceProps.Humanlike && !ForPrisoners && Medical && !myPawn.Drafted && Faction == Faction.OfPlayer && RestUtility.CanUseBedEver(myPawn, def))
             {
-                if (!MedPodHealthAIUtility.IsValidRaceForMedPod(myPawn, DisallowedRaces))
+                if (MedPodHealthAIUtility.HasUsageBlockingHediffs(myPawn, UsageBlockingHediffs))
                 {
-                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.def.label.CapitalizeFirst()) + ")", null);
+                    List<Hediff> blockedHediffs = new();
+                    myPawn.health.hediffSet.GetHediffs(ref blockedHediffs);
+
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_PatientWithHediffNotAllowed".Translate(blockedHediffs.First(h => UsageBlockingHediffs.Contains(h.def)).LabelCap) + ")", null);
+                    yield break;
+                }
+                if (MedPodHealthAIUtility.HasUsageBlockingTraits(myPawn, UsageBlockingTraits))
+                {
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " blocking traits (" + "MedPod_FloatMenu_PatientWithTraitNotAllowed".Translate(myPawn.story?.traits.allTraits.First(t => UsageBlockingTraits.Contains(t.def)).LabelCap) + ")", null);
                     yield break;
                 }
                 if (!MedPodHealthAIUtility.IsValidXenotypeForMedPod(myPawn, DisallowedXenotypes))
@@ -270,22 +278,27 @@ namespace MedPod
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.genes.xenotype.label.CapitalizeFirst()) + ")", null);
                     yield break;
                 }
-                if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs))
+                if (!MedPodHealthAIUtility.IsValidRaceForMedPod(myPawn, DisallowedRaces))
+                {
+                    yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.def.label.CapitalizeFirst()) + ")", null);
+                    yield break;
+                }
+                if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs) && !powerComp.PowerOn)
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits) && !powerComp.PowerOn)
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_Unpowered".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs) && this.IsForbidden(myPawn))
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits) && this.IsForbidden(myPawn))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "ForbiddenLower".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs) && !MedPodHealthAIUtility.HasAllowedMedicalCareCategory(myPawn))
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits) && !MedPodHealthAIUtility.HasAllowedMedicalCareCategory(myPawn))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_MedicalCareCategoryTooLow".Translate() + ")", null);
                     yield break;

@@ -7,12 +7,12 @@ namespace MedPod
 {
     public static class MedPodHealthAIUtility
     {
-        public static bool ShouldSeekMedPodRest(Pawn patientPawn, List<HediffDef> alwaysTreatableHediffs, List<HediffDef> neverTreatableHediffs, List<HediffDef> nonCriticalTreatableHediffs)
+        public static bool ShouldSeekMedPodRest(Pawn patientPawn, List<HediffDef> alwaysTreatableHediffs, List<HediffDef> neverTreatableHediffs, List<HediffDef> nonCriticalTreatableHediffs, List<HediffDef> usageBlockingHediffs, List<TraitDef> usageBlockingTraits)
         {
             List<Hediff> patientHediffs = new();
             patientPawn.health.hediffSet.GetHediffs(ref patientHediffs);
 
-            return 
+            return (
                     // Is downed and not meant to be always downed (e.g. babies)
                     (patientPawn.Downed && !LifeStageUtility.AlwaysDowned(patientPawn))
                     // Has (visible) hediffs requiring tending (excluding those blacklisted or greylisted from MedPod treatment)
@@ -32,7 +32,13 @@ namespace MedPod
                     // Has addictions (excluding those blacklisted or greylisted from MedPod treatment)
                     || patientHediffs.Any(x => x.def.IsAddiction && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
                     // Has (visible) hediffs that are always treatable by MedPods
-                    || patientHediffs.Any(x => x.Visible && alwaysTreatableHediffs.Contains(x.def));
+                    || patientHediffs.Any(x => x.Visible && alwaysTreatableHediffs.Contains(x.def))
+                    )
+                    &&
+                    // Does not have hediffs or traits that block the pawn from using MedPods
+                    (
+                    !HasUsageBlockingHediffs(patientPawn, usageBlockingHediffs) && !HasUsageBlockingTraits(patientPawn, usageBlockingTraits)
+                    );
         }
 
         public static bool IsValidRaceForMedPod(Pawn patientPawn, List<string> disallowedRaces)

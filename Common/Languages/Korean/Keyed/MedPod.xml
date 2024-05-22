@@ -58,8 +58,14 @@
 	<!-- EN: MedPod treatment interrupted for {1_label}. -->
 	<MedPod_Message_TreatmentInterrupted>{1_label}의 메드포드 치료가 중단되었습니다.</MedPod_Message_TreatmentInterrupted>
 	
+	<!-- EN: MedPod cannot treat patients with {0} hediff -->
+	<MedPod_FloatMenu_PatientWithHediffNotAllowed>메드포드는 {0} 상태의 환자를 치료할 수 없습니다</MedPod_FloatMenu_PatientWithHediffNotAllowed>
+	
+	<!-- EN: MedPod cannot treat patients with {0} trait -->
+	<MedPod_FloatMenu_PatientWithTraitNotAllowed>메드포드는 {0} 특성을 가진 환자를 치료할 수 없습니다</MedPod_FloatMenu_PatientWithTraitNotAllowed>
+	
 	<!-- EN: MedPod cannot treat {0}s -->
-	<MedPod_FloatMenu_RaceNotAllowed>메드포드는 {0} 인종형을 치료할 수 없습니다.</MedPod_FloatMenu_RaceNotAllowed>
+	<MedPod_FloatMenu_RaceNotAllowed>메드포드는 {0} 인종형을 치료할 수 없습니다</MedPod_FloatMenu_RaceNotAllowed>
 	
 	<!-- EN: Rescue {0} to MedPod -->
 	<MedPod_FloatMenu_Rescue>메드포드로 {0} 구조</MedPod_FloatMenu_Rescue>

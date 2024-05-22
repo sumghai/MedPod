@@ -58,6 +58,12 @@
 	<!-- EN: MedPod treatment interrupted for {1_label}. -->
 	<MedPod_Message_TreatmentInterrupted>Лечение в медкапсуле прервано для {1_label}!</MedPod_Message_TreatmentInterrupted>
 	
+	<!-- EN: MedPod cannot treat patients with {0} hediff -->
+	<MedPod_FloatMenu_PatientWithHediffNotAllowed>Медкапсулы не могут лечить пациентов с {0}!</MedPod_FloatMenu_PatientWithHediffNotAllowed>
+	
+	<!-- EN: MedPod cannot treat patients with {0} trait -->
+	<MedPod_FloatMenu_PatientWithTraitNotAllowed>Медкапсулы не могут лечить пациентов с признаком {0}!</MedPod_FloatMenu_PatientWithTraitNotAllowed>
+	
 	<!-- EN: MedPod cannot treat {0}s -->
 	<MedPod_FloatMenu_RaceNotAllowed>Медкапсула не может восстановить {0}s!</MedPod_FloatMenu_RaceNotAllowed>
 	

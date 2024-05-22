@@ -33,7 +33,7 @@ namespace MedPod
 			}
 
 			Building_BedMedPod bedMedPod = MedPodRestUtility.FindBestMedPod(warden, prisoner);
-			if (bedMedPod != null && MedPodHealthAIUtility.ShouldSeekMedPodRest(prisoner, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs, bedMedPod.NonCriticalTreatableHediffs) && MedPodHealthAIUtility.HasAllowedMedicalCareCategory(prisoner) && prisoner.CanReserve(bedMedPod))
+			if (bedMedPod != null && MedPodHealthAIUtility.ShouldSeekMedPodRest(prisoner, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs, bedMedPod.NonCriticalTreatableHediffs, bedMedPod.UsageBlockingHediffs, bedMedPod.UsageBlockingTraits) && MedPodHealthAIUtility.HasAllowedMedicalCareCategory(prisoner) && prisoner.CanReserve(bedMedPod))
 			{
 				Job job = JobMaker.MakeJob(MedPodDef.CarryToMedPod, prisoner, bedMedPod);
 				job.count = 1;

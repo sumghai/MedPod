@@ -39,6 +39,10 @@
 	
 	<MedPod_Message_TreatmentInterrupted>MedPod treatment interrupted for {1_label}.</MedPod_Message_TreatmentInterrupted>
 	
+	<MedPod_FloatMenu_PatientWithHediffNotAllowed>MedPod cannot treat patients with {0} hediff</MedPod_FloatMenu_PatientWithHediffNotAllowed>
+	
+	<MedPod_FloatMenu_PatientWithTraitNotAllowed>MedPod cannot treat patients with {0} trait</MedPod_FloatMenu_PatientWithTraitNotAllowed>
+	
 	<MedPod_FloatMenu_RaceNotAllowed>MedPod cannot treat {0}s</MedPod_FloatMenu_RaceNotAllowed>
 	
 	<MedPod_FloatMenu_Rescue>Rescue {0} to MedPod</MedPod_FloatMenu_Rescue>
