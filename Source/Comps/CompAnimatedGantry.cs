@@ -1,12 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
 
 namespace MedPod
 {
     public class CompAnimatedGantry : ThingComp
     {
-        private CompProperties_AnimatedGantry Props
+        public CompProperties_AnimatedGantry Props
         {
             get
             {

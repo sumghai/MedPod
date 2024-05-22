@@ -4,7 +4,7 @@ using Verse;
 
 namespace MedPod
 {
-    class CompProperties_TreatmentRestrictions : CompProperties
+    public class CompProperties_TreatmentRestrictions : CompProperties
     {
         public List<HediffDef> alwaysTreatableHediffs = null;
 

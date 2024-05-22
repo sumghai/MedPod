@@ -121,22 +121,22 @@ namespace MedPod
             medpodSettings = GetComp<CompMedPodSettings>();
             treatmentRestrictions = GetComp<CompTreatmentRestrictions>();
 
-            MaxDiagnosingTicks = GenTicks.SecondsToTicks(medpodSettings.MaxDiagnosisTime);
-            MaxHealingTicks = GenTicks.SecondsToTicks(medpodSettings.MaxPerHediffHealingTime);
-            DiagnosingPowerConsumption = medpodSettings.DiagnosisModePowerConsumption;
-            HealingPowerConsumption = medpodSettings.HealingModePowerConsumption;
+            MaxDiagnosingTicks = GenTicks.SecondsToTicks(medpodSettings.Props.maxDiagnosisTime);
+            MaxHealingTicks = GenTicks.SecondsToTicks(medpodSettings.Props.maxPerHediffHealingTime);
+            DiagnosingPowerConsumption = medpodSettings.Props.diagnosisModePowerConsumption;
+            HealingPowerConsumption = medpodSettings.Props.healingModePowerConsumption;
 
-            AlwaysTreatableHediffs = treatmentRestrictions.AlwaysTreatableHediffs;
-            NeverTreatableHediffs = treatmentRestrictions.NeverTreatableHediffs;
-            NonCriticalTreatableHediffs = treatmentRestrictions.NonCriticalTreatableHediffs;
-            UsageBlockingHediffs = treatmentRestrictions.UsageBlockingHediffs;
-            UsageBlockingTraits = treatmentRestrictions.UsageBlockingTraits;
-            AlwaysTreatableTraits = treatmentRestrictions.AlwaysTreatableTraits;
-            DisallowedRaces = treatmentRestrictions.DisallowedRaces;
-            DisallowedXenotypes = treatmentRestrictions.DisallowedXenotypes;
+            AlwaysTreatableHediffs = treatmentRestrictions.Props.alwaysTreatableHediffs;
+            NeverTreatableHediffs = treatmentRestrictions.Props.neverTreatableHediffs;
+            NonCriticalTreatableHediffs = treatmentRestrictions.Props.nonCriticalTreatableHediffs;
+            UsageBlockingHediffs = treatmentRestrictions.Props.usageBlockingHediffs;
+            UsageBlockingTraits = treatmentRestrictions.Props.usageBlockingTraits;
+            AlwaysTreatableTraits = treatmentRestrictions.Props.alwaysTreatableTraits;
+            DisallowedRaces = treatmentRestrictions.Props.disallowedRaces;
+            DisallowedXenotypes = treatmentRestrictions.Props.disallowedXenotypes;
 
             // Add a blocker region for the MedPod main machinery, if required
-            if (!medpodSettings.DisableInvisibleBlocker)
+            if (!medpodSettings.Props.disableInvisibleBlocker)
             { 
                 // (If one already exists, then we are probably loading a save with an existing MedPod)
                 Thing something = Map.thingGrid.ThingsListAtFast(InvisibleBlockerPosition).FirstOrDefault(x => x.def.Equals(MedPodDef.MedPodInvisibleBlocker));
@@ -173,7 +173,7 @@ namespace MedPod
             Medical = false;
 
             // Remove the blocker region, if required
-            if (!medpodSettings.DisableInvisibleBlocker)
+            if (!medpodSettings.Props.disableInvisibleBlocker)
             {
                 resultingBlocker.DeSpawn();
             }

@@ -62,7 +62,7 @@ namespace MedPod
             if (pawn.GetPosture() == PawnPosture.LayingInBed && building_Bed != null && building_Bed is Building_BedMedPod bedMedPod)
             { 
                 CompMedPodSettings medpodSettings = bedMedPod.GetComp<CompMedPodSettings>();
-                var animalWithOffset = medpodSettings?.AnimalRestingDrawOffsets?.Find(x => x.animalRace == pawn.def);
+                var animalWithOffset = medpodSettings?.Props.animalRestingDrawOffsets?.Find(x => x.animalRace == pawn.def);
 
                 if (animalWithOffset != null)
                 {
