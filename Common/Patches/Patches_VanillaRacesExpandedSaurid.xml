@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Saurid</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Prevent MedPods from treating egg fatigue and hyperthermic/hypothermic slowdowns in Saurid pawns -->
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/neverTreatableHediffs</xpath>
+					<value>
+						<li>VRESaurids_EggFatigue</li>
+						<li>VRESaurids_HyperthermicSlowdown</li>
+						<li>VRESaurids_HypothermicSlowdown</li>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+</Patch>
