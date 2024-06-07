@@ -116,11 +116,11 @@ namespace MedPod
                         }
                     }
 
-                    // Loop through each pawn that needs stripping on the cell the player has right-clicked on, and disallow stripping pawns currently on MedPods
+                    // Loop through each pawn/corpse that needs stripping on the cell the player has right-clicked on, and disallow stripping pawns currently on MedPods
                     foreach (LocalTargetInfo item in GenUI.TargetsAt(clickPos, TargetingParameters.ForStrip(pawn), thingsOnly: true))
                     {
-                        Pawn stripTarget = (Pawn)item.Thing;
-                        if (stripTarget.CurrentBed() is Building_BedMedPod)
+                        Thing stripTarget = item.Thing;
+                        if (stripTarget is Pawn stripTargetPawn && stripTargetPawn.CurrentBed() is Building_BedMedPod)
                         {
                             opts.RemoveAll(opt =>
                                 opt.Label.Contains("Strip".Translate(stripTarget.LabelCap, stripTarget)) ||
