@@ -82,6 +82,12 @@
 	<!-- EN: {0} is in use. -->
 	<MedPod_CommandGizmoDisabled_MedPodInUse>{0}는 사용 중입니다.</MedPod_CommandGizmoDisabled_MedPodInUse>
 	
+	<!-- EN: Allow guests -->
+	<MedPod_CommandGizmoAllowGuests_Label>방문객 허용</MedPod_CommandGizmoAllowGuests_Label>
+	
+	<!-- EN: Allow this {0} to be used by guests and other non-colony visitors. -->
+	<MedPod_CommandGizmoAllowGuests_Desc>게스트가 {0}을 사용하도록 허용합니다.</MedPod_CommandGizmoAllowGuests_Desc>
+	
 	<!-- EN: Abort -->
 	<MedPod_CommandGizmoAbortTreatment_Label>강제 중지</MedPod_CommandGizmoAbortTreatment_Label>
 	

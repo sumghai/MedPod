@@ -51,6 +51,10 @@ namespace MedPod
             {
                 return false;
             }
+            if ((!patientPawn.IsColonist || guestStatus == GuestStatus.Guest) && !bedMedPod.allowGuests)
+            {
+                return false;
+            }
             if (guestStatus == GuestStatus.Prisoner)
             {
                 if (!bedMedPod.ForPrisoners)

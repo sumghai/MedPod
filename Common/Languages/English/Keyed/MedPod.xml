@@ -55,6 +55,10 @@
 	
 	<MedPod_CommandGizmoDisabled_MedPodInUse>{0} is in use.</MedPod_CommandGizmoDisabled_MedPodInUse>
 	
+	<MedPod_CommandGizmoAllowGuests_Label>Allow guests</MedPod_CommandGizmoAllowGuests_Label>
+	
+	<MedPod_CommandGizmoAllowGuests_Desc>Allow this {0} to be used by guests and other non-colony visitors.</MedPod_CommandGizmoAllowGuests_Desc>
+	
 	<MedPod_CommandGizmoAbortTreatment_Label>Abort</MedPod_CommandGizmoAbortTreatment_Label>
 	
 	<MedPod_CommandGizmoAbortTreatment_Desc>Stop treating the current patient immediately.</MedPod_CommandGizmoAbortTreatment_Desc>

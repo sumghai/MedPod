@@ -69,6 +69,8 @@ namespace MedPod
 
         public bool gantryDirectionForwards = true;
 
+        public bool allowGuests = false;
+
         public bool Aborted = false;
 
         public enum MedPodStatus
@@ -185,6 +187,13 @@ namespace MedPod
                 district.Notify_RoomShapeOrContainedBedsChanged();
                 district.Room.Notify_RoomShapeChanged();
             }
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref allowGuests, "allowGuests", false);
+            BackCompatibility.PostExposeData(this);
         }
 
         public override string GetInspectString()
@@ -353,6 +362,23 @@ namespace MedPod
                 yield return g;
             }
 
+            // Allow guests gizmo - only available on MedPods for humanlike non-prisoners
+            if (!ForPrisoners && def.building.bed_humanlike)
+            {
+                yield return new Command_Toggle
+                {
+                    defaultLabel = "MedPod_CommandGizmoAllowGuests_Label".Translate(),
+                    defaultDesc = "MedPod_CommandGizmoAllowGuests_Desc".Translate(this.LabelCap),
+                    isActive = () => allowGuests,
+                    toggleAction = delegate
+                    {
+                        allowGuests = !allowGuests;
+                    },
+                    icon = ContentFinder<Texture2D>.Get(BaseContent.BadTexPath, true),
+                    activateSound = SoundDefOf.Tick_Tiny
+                };
+            }
+
             yield return new Command_Action
             {
                 defaultLabel = "MedPod_CommandGizmoAbortTreatment_Label".Translate(),
@@ -367,7 +393,8 @@ namespace MedPod
                         Aborted = true;
                     }
                 },
-                icon = ContentFinder<Texture2D>.Get("UI/Buttons/AbortTreatment", true)
+                icon = ContentFinder<Texture2D>.Get("UI/Buttons/AbortTreatment", true),
+                activateSound = SoundDefOf.Click
             };
         }
 
@@ -632,9 +659,15 @@ namespace MedPod
 
             powerComp.PowerOutput = -powerComp.Props.basePowerConsumption;
 
+            // Clear the allow guest flag if the MedPod is restricted to prisoners (and don't restore the flag)
+            if (ForPrisoners)
+            {
+                allowGuests = false;
+            }
+
             if (this.IsHashIntervalTick(60))
             {
-
+                
                 if (PatientPawn != null)
                 {
                     PatientBodySizeScaledMaxDiagnosingTicks = (int)(MaxDiagnosingTicks * PatientPawn.BodySize);

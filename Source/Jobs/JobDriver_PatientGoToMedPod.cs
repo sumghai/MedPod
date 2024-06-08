@@ -26,8 +26,8 @@ namespace MedPod
             this.FailOnBurningImmobile(MedPodInd);
             this.FailOn(delegate
             {
-                //Fail if MedPod has no power
-                return !BedMedPod.powerComp.PowerOn;
+                //Fail if MedPod has no power, or if a non-colony guest tries to use a MedPod that disallows guests
+                return !BedMedPod.powerComp.PowerOn || ((!pawn.IsColonist || pawn.GuestStatus == GuestStatus.Guest) && !BedMedPod.allowGuests);
             });
             yield return Toils_General.DoAtomic(delegate
             {

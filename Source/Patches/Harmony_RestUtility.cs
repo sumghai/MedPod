@@ -14,7 +14,7 @@ namespace MedPod
         }
 
         public static bool CanUseMedPod(Building_BedMedPod bedMedPod, Pawn pawn)
-        {          
+        {
             return 
                 // MedPod has power
                 bedMedPod.powerComp.PowerOn
@@ -24,8 +24,8 @@ namespace MedPod
                 && MedPodHealthAIUtility.ShouldSeekMedPodRest(pawn, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs, bedMedPod.NonCriticalTreatableHediffs, bedMedPod.UsageBlockingHediffs, bedMedPod.UsageBlockingTraits)
                 // Pawn has medical care category that allows MedPod use
                 && MedPodHealthAIUtility.HasAllowedMedicalCareCategory(pawn)
-                // Pawn type (colonist, slave, prisoner) matches bedtype
-                && (pawn.IsColonist == bedMedPod.ForColonists || pawn.IsSlave == bedMedPod.ForSlaves || pawn.IsPrisoner == bedMedPod.ForPrisoners)
+                // Pawn type (colonist, slave, prisoner, guest) matches bedtype
+                && (pawn.IsColonist == bedMedPod.ForColonists || pawn.IsSlave == bedMedPod.ForSlaves || pawn.IsPrisoner == bedMedPod.ForPrisoners || ((!pawn.IsColonist || pawn.GuestStatus == GuestStatus.Guest) && bedMedPod.allowGuests))
                 // MedPod hasn't been aborted
                 && !bedMedPod.Aborted;
         }
