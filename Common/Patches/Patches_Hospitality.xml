@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Hospitality</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Allow Hospitality visitors to use MedPods -->
+				
+				<li Class="PatchOperationInsert">
+					<xpath>Defs/DutyDef[defName="Relax"]/thinkNode/subNodes/li[@Class="Hospitality.ThinkNode_OnlyAllowed"]/subNodes/li[@Class="ThinkNode_SubtreesByTag" and insertTag="Humanlike_PreMain"]</xpath>
+					<value>
+						<li Class="MedPod.JobGiver_PatientGoToMedPod" />
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+</Patch>
