@@ -169,7 +169,7 @@ namespace MedPod
         {
             if (powerComp.PowerOn && ((status == MedPodStatus.DiagnosisFinished) || (status == MedPodStatus.HealingStarted) || (status == MedPodStatus.HealingFinished)))
             {
-                WakePatient(PatientPawn, false);
+                DischargePatient(PatientPawn, false);
             }
             ForPrisoners = false;
             Medical = false;
@@ -483,9 +483,9 @@ namespace MedPod
             patientTreatableHediffs.RemoveAll((Hediff x) =>
                 !AlwaysTreatableHediffs.Contains(x.def) && (NeverTreatableHediffs.Contains(x.def) || (!NonCriticalTreatableHediffs.Contains(x.def) && !x.def.isBad && !x.TendableNow())));
 
-            // Induce coma in the patient so that they don't run off during treatment
-            // (Pawns tend to get up as soon as they are "no longer incapable of walking")
-            AnesthesizePatient(patientPawn);
+            // Immediately treat blood loss hediff
+            patientTreatableHediffs.RemoveAll(x => x.def == HediffDefOf.BloodLoss);
+            PatientPawn.health.hediffSet.hediffs.RemoveAll(x => x.def == HediffDefOf.BloodLoss);
 
             // Calculate individual and total cumulative treatment time for each hediff/injury
             foreach (Hediff currentHediff in patientTreatableHediffs)
@@ -501,11 +501,11 @@ namespace MedPod
 
                 TotalHealingTicks += (int)Math.Ceiling(GetHediffNormalizedSeverity(currentHediff) * PatientBodySizeScaledMaxHealingTicks);
 
-                // Tend all bleeding hediffs immediately so the pawn doesn't die after being anesthetized by the MedPod
+                // Tend all bleeding hediffs immediately so the pawn doesn't bleed out while on MedPod
                 // The Hediff will be completely removed once the Medpod is done with the Healing process
                 if (currentHediff.Bleeding)
                 {
-                    currentHediff.Tended(1,1); // TODO - Replace with new method name once it no longer has a temporary name
+                    currentHediff.Tended(1,1);
                 }
             }
 
@@ -542,16 +542,8 @@ namespace MedPod
             return childParts;
         }
 
-        public static void AnesthesizePatient(Pawn patientPawn)
+        public void DischargePatient(Pawn patientPawn, bool finishTreatmentNormally = true)
         {
-            Hediff inducedComa = HediffMaker.MakeHediff(MedPodDef.MedPod_InducedComa, patientPawn);
-            patientPawn.health.AddHediff(inducedComa);
-        }
-
-        public static void WakePatient(Pawn patientPawn, bool wakeNormally = true)
-        {
-            patientPawn.health.hediffSet.hediffs.RemoveAll((Hediff x) => x.def == MedPodDef.MedPod_InducedComa);
-
             // Clear any ongoing mental states (e.g. Manhunter)
             if (patientPawn.InMentalState)
             {
@@ -559,14 +551,10 @@ namespace MedPod
             }
 
             // Apply the appropriate cortical stimulation hediff, depending on whether the treatment was completed or interrupted            
-            string corticalStimulationType = wakeNormally ? "MedPod_CorticalStimulation" : "MedPod_CorticalStimulationImproper";
-            string popupMessage = wakeNormally ? "MedPod_Message_TreatmentComplete".Translate(patientPawn.LabelCap, patientPawn) : "MedPod_Message_TreatmentInterrupted".Translate(patientPawn.LabelCap, patientPawn);
-            MessageTypeDef popupMessageType = wakeNormally ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.NegativeHealthEvent;
+            string popupMessage = finishTreatmentNormally ? "MedPod_Message_TreatmentComplete".Translate(patientPawn.LabelCap, patientPawn) : "MedPod_Message_TreatmentInterrupted".Translate(patientPawn.LabelCap, patientPawn);
+            MessageTypeDef popupMessageType = finishTreatmentNormally ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.NegativeHealthEvent;
 
             Messages.Message(popupMessage, patientPawn, popupMessageType, true);
-
-            Hediff corticalStimulation = HediffMaker.MakeHediff(HediffDef.Named(corticalStimulationType), patientPawn);
-            patientPawn.health.AddHediff(corticalStimulation);
 
             // Restore previously saved patient food need level
             if (patientPawn.needs.food != null)
@@ -583,7 +571,7 @@ namespace MedPod
             }
 
             // Remove treatable traits only if treatment was completed normally
-            if (!patientTraitsToRemove.NullOrEmpty() && wakeNormally)
+            if (!patientTraitsToRemove.NullOrEmpty() && finishTreatmentNormally)
             { 
                 patientPawn.story?.traits.allTraits.RemoveAll(x => patientTraitsToRemove.Contains(x));
                 string letterLabel = "MedPod_Letter_TraitRemoved_Label".Translate();
@@ -621,6 +609,9 @@ namespace MedPod
             // Refresh pawn renderer (especially important for Anomaly DLC not updating visuals from removed hediffs)
             patientPawn.drawer.renderer.SetAllGraphicsDirty();
 
+            // Clear hediff cache
+            patientPawn.health.hediffSet.DirtyCache();
+
             // Refreshed pawn disabled work tags (especially important for Anomaly DLC not updating work tags from removed hediffs)
             patientPawn.Notify_DisabledWorkTypesChanged();
         }
@@ -642,13 +633,13 @@ namespace MedPod
                     if ((status == MedPodStatus.DiagnosisFinished) || (status == MedPodStatus.HealingStarted) || (status == MedPodStatus.HealingFinished))
                     {
                         // Wake patient up abruptly, as power was interrupted during treatment
-                        WakePatient(PatientPawn, false);
+                        DischargePatient(PatientPawn, false);
                     }
 
                     if (status == MedPodStatus.PatientDischarged)
                     {                       
                         // Wake patient up normally, as treatment was already completed when power was interrupted
-                        WakePatient(PatientPawn);
+                        DischargePatient(PatientPawn);
                     }
                 }
 
@@ -740,7 +731,7 @@ namespace MedPod
                             break;
 
                         case MedPodStatus.PatientDischarged:
-                            WakePatient(PatientPawn);
+                            DischargePatient(PatientPawn);
                             SwitchState();
                             ProgressHealingTicks = 0;
                             TotalHealingTicks = 0;

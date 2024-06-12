@@ -4,6 +4,18 @@
 	<Operation Class="PatchOperationSequence">
 		<operations>
 			
+			<!-- Allow injured but ambulatory non-colony guests to prioritize using MedPods (that allow guests) over self-tending -->
+			<li Class="PatchOperationInsert">
+				<xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot/subNodes/li[@Class="ThinkNode_QueuedJob"]</xpath>
+				<value>
+					<li Class="ThinkNode_ConditionalNonPlayerNonHostileFactionOrFactionless">
+						<subNodes>
+							<li Class="MedPod.JobGiver_PatientGoToMedPod" />
+						</subNodes>
+					</li>
+				</value>
+			</li>
+			
 			<!-- Allow injured but ambulatory prisoners to use MedPods -->
 			
 			<li Class="PatchOperationAdd">

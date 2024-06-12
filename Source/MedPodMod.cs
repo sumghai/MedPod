@@ -19,10 +19,10 @@ namespace MedPod
             {
                 Log.Message("MedPod :: Alpha Genes detected!");
 
-                // Conditionally patch BreakSomeBones patch to ignore delta-wave coma
+                // Conditionally patch BreakSomeBones patch to patients on MedPods
                 targetPatchClass = AccessTools.TypeByName("AlphaGenes_Pawn_HealthTracker_MakeDowned_Patch");
                 MethodInfo original = AccessTools.Method(targetPatchClass, "BreakSomeBones");
-                HarmonyMethod prefix = new HarmonyMethod(typeof(AlphaGenesCompatibility), nameof(AlphaGenesCompatibility.SkipIfPawnHasDeltaWaveComa));
+                HarmonyMethod prefix = new HarmonyMethod(typeof(AlphaGenesCompatibility), nameof(AlphaGenesCompatibility.SkipIfPawnIsOnMedPod));
                 harmony.Patch(original, prefix);
             }
 

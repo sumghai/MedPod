@@ -319,7 +319,6 @@
     <Compile Include="Compatibility\DbhCompatibility.cs" />
     <Compile Include="Patches\Harmony_FeedingUtilities.cs" />
     <Compile Include="Patches\Harmony_FloatMenuMakerMap.cs" />
-    <Compile Include="Patches\Harmony_JobDriver_WaitDowned.cs" />
     <Compile Include="Patches\Harmony_Pawn.cs" />
     <Compile Include="Patches\Harmony_PawnRenderer.cs" />
     <Compile Include="Patches\Harmony_RestUtility.cs" />

@@ -29,12 +29,16 @@ namespace MedPod
                 //Fail if MedPod has no power, or if a non-colony guest tries to use a MedPod that disallows guests
                 return !BedMedPod.powerComp.PowerOn || ((!pawn.IsColonist || pawn.GuestStatus == GuestStatus.Guest) && !BedMedPod.allowGuests);
             });
+            AddFinishAction(delegate 
+            {
+                BedMedPod.DischargePatient(pawn, !BedMedPod.Aborted);
+            });
             yield return Toils_General.DoAtomic(delegate
             {
                 job.count = 1;
             });
             yield return Toils_Bed.GotoBed(MedPodInd);
-            yield return Toils_LayDown.LayDown(MedPodInd, true, lookForOtherJobs: false);
+            yield return Toils_LayDown.LayDown(MedPodInd, true, false);
         }
     }
 }
