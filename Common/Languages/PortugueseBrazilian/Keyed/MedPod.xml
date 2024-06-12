@@ -79,6 +79,9 @@
 	<!-- EN: patient using MedPod -->
 	<MedPod_SurgeryProhibited_PatientUsingMedPod>paciente usando MedPod</MedPod_SurgeryProhibited_PatientUsingMedPod>
 	
+	<!-- EN: {0} is receiving treatment in {1}. -->
+	<MedPod_CommandGizmoDisabled_PatientReceivingTreatment>{0} está recebendo tratamento em um {1}.</MedPod_CommandGizmoDisabled_PatientReceivingTreatment>
+	
 	<!-- EN: {0} is in use. -->
 	<MedPod_CommandGizmoDisabled_MedPodInUse>{0} está em uso.</MedPod_CommandGizmoDisabled_MedPodInUse>
 	

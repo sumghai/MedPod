@@ -317,10 +317,12 @@
     <Compile Include="Patches\Harmony_BedInteractionCellSearchPattern_BedCellOffsets.cs" />
     <Compile Include="Patches\Harmony_Building_Bed.cs" />
     <Compile Include="Compatibility\DbhCompatibility.cs" />
+    <Compile Include="Patches\Harmony_Designator_Strip.cs" />
     <Compile Include="Patches\Harmony_FeedingUtilities.cs" />
     <Compile Include="Patches\Harmony_FloatMenuMakerMap.cs" />
     <Compile Include="Patches\Harmony_Pawn.cs" />
     <Compile Include="Patches\Harmony_PawnRenderer.cs" />
+    <Compile Include="Patches\Harmony_Pawn_DraftController.cs" />
     <Compile Include="Patches\Harmony_RestUtility.cs" />
     <Compile Include="Patches\Harmony_WorkGiver_Tend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
