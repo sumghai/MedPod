@@ -609,11 +609,12 @@ namespace MedPod
             // Refresh pawn renderer (especially important for Anomaly DLC not updating visuals from removed hediffs)
             patientPawn.drawer.renderer.SetAllGraphicsDirty();
 
-            // Clear hediff cache
-            patientPawn.health.hediffSet.DirtyCache();
-
             // Refreshed pawn disabled work tags (especially important for Anomaly DLC not updating work tags from removed hediffs)
             patientPawn.Notify_DisabledWorkTypesChanged();
+
+            // Clear pawn hediff cache and try to get them off the MedPod
+            patientPawn.health.hediffSet.DirtyCache();
+            patientPawn.health.healthState = PawnHealthState.Mobile;
         }
 
         public void StartWickSustainer()
@@ -791,7 +792,7 @@ namespace MedPod
                 }
             }
 
-            if (DiagnosingTicks > 0)
+            while (DiagnosingTicks > 0)
             {
                 DiagnosingTicks--;
                 powerComp.PowerOutput = -DiagnosingPowerConsumption;
@@ -818,7 +819,7 @@ namespace MedPod
                 }
             }
 
-            if (HealingTicks > 0)
+            while (HealingTicks > 0)
             {
                 HealingTicks--;
                 ProgressHealingTicks++;
