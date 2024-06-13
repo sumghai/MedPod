@@ -7,10 +7,16 @@ namespace MedPod
 {
     public static class MedPodHealthAIUtility
     {
-        public static bool ShouldSeekMedPodRest(Pawn patientPawn, List<HediffDef> alwaysTreatableHediffs, List<HediffDef> neverTreatableHediffs, List<HediffDef> nonCriticalTreatableHediffs, List<HediffDef> usageBlockingHediffs, List<TraitDef> usageBlockingTraits)
+        public static bool ShouldSeekMedPodRest(Pawn patientPawn, Building_BedMedPod bedMedPod)
         {
             List<Hediff> patientHediffs = new();
             patientPawn.health.hediffSet.GetHediffs(ref patientHediffs);
+
+            List<HediffDef> alwaysTreatableHediffs = bedMedPod.GetComp<CompTreatmentRestrictions>().Props.alwaysTreatableHediffs;
+            List<HediffDef> neverTreatableHediffs = bedMedPod.GetComp<CompTreatmentRestrictions>().Props.neverTreatableHediffs;
+            List<HediffDef> nonCriticalTreatableHediffs = bedMedPod.GetComp<CompTreatmentRestrictions>().Props.nonCriticalTreatableHediffs;
+            List<HediffDef> usageBlockingHediffs = bedMedPod.GetComp<CompTreatmentRestrictions>().Props.usageBlockingHediffs;
+            List<TraitDef> usageBlockingTraits = bedMedPod.GetComp<CompTreatmentRestrictions>().Props.usageBlockingTraits;
 
             return (
                     // Is downed and not meant to be always downed (e.g. babies)

@@ -292,22 +292,22 @@ namespace MedPod
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.def.label.CapitalizeFirst()) + ")", null);
                     yield break;
                 }
-                if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits))
+                if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, this))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits) && !powerComp.PowerOn)
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, this) && !powerComp.PowerOn)
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_Unpowered".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits) && this.IsForbidden(myPawn))
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, this) && this.IsForbidden(myPawn))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "ForbiddenLower".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits) && !MedPodHealthAIUtility.HasAllowedMedicalCareCategory(myPawn))
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, this) && !MedPodHealthAIUtility.HasAllowedMedicalCareCategory(myPawn))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_MedicalCareCategoryTooLow".Translate() + ")", null);
                     yield break;
