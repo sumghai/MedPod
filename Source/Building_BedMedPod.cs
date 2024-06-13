@@ -374,7 +374,7 @@ namespace MedPod
                     {
                         allowGuests = !allowGuests;
                     },
-                    icon = ContentFinder<Texture2D>.Get(BaseContent.BadTexPath, true),
+                    icon = ContentFinder<Texture2D>.Get("UI/Buttons/MedPod_AllowGuests", true),
                     activateSound = SoundDefOf.Tick_Tiny
                 };
             }
