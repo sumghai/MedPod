@@ -25,10 +25,9 @@ namespace MedPod
                 // Pawn has medical care category that allows MedPod use
                 && MedPodHealthAIUtility.HasAllowedMedicalCareCategory(pawn)
                 // Pawn type (colonist, slave, prisoner, guest) matches bedtype
-                && (pawn.IsColonist == bedMedPod.ForColonists || pawn.IsSlave == bedMedPod.ForSlaves || pawn.IsPrisoner == bedMedPod.ForPrisoners || ((!pawn.IsColonist || pawn.GuestStatus == GuestStatus.Guest) && bedMedPod.allowGuests))
+                && MedPodRestUtility.IsValidBedForUserType(bedMedPod, pawn)
                 // MedPod hasn't been aborted
                 && !bedMedPod.Aborted;
         }
     }
- 
 }

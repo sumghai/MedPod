@@ -15,6 +15,27 @@ namespace MedPod
             NoPathTrans = "NoPath".Translate();
         }
 
+        public static bool IsValidBedForUserType(Building_BedMedPod bedMedPod, Pawn pawn)
+        {
+            bool isSlave = pawn.GuestStatus == GuestStatus.Slave;
+            bool isPrisoner = pawn.GuestStatus == GuestStatus.Prisoner;
+
+            if (bedMedPod.ForSlaves != isSlave)
+            {
+                return false;
+            }
+            if (bedMedPod.ForPrisoners != isPrisoner)
+            {
+                return false;
+            }
+            if (bedMedPod.ForColonists && (!pawn.IsColonist || pawn.GuestStatus == GuestStatus.Guest) && !bedMedPod.allowGuests)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public static bool IsValidMedPodFor(Building_BedMedPod bedMedPod, Pawn patientPawn, Pawn travelerPawn, GuestStatus? guestStatus = null)
         {
             if (bedMedPod == null)
@@ -51,26 +72,7 @@ namespace MedPod
             {
                 return false;
             }
-            if ((!patientPawn.IsColonist && !patientPawn.IsPrisoner || guestStatus == GuestStatus.Guest) && !bedMedPod.allowGuests)
-            {
-                return false;
-            }
-            if (guestStatus == GuestStatus.Prisoner)
-            {
-                if (!bedMedPod.ForPrisoners)
-                {
-                    return false;
-                }
-                if (!bedMedPod.Position.IsInPrisonCell(bedMedPod.Map))
-                {
-                    return false;
-                }
-            }
-            if (patientPawn.IsSlave != bedMedPod.ForSlaves)
-            {
-                return false;
-            }
-            if (patientPawn.IsPrisoner != bedMedPod.ForPrisoners)
+            if (!IsValidBedForUserType(bedMedPod, patientPawn))
             {
                 return false;
             }
@@ -95,6 +97,10 @@ namespace MedPod
                 return false;
             }
             if (MedPodHealthAIUtility.HasUsageBlockingTraits(patientPawn, bedMedPod.UsageBlockingTraits))
+            {
+                return false;
+            }
+            if (bedMedPod.Aborted) 
             {
                 return false;
             }

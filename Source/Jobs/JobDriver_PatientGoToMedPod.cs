@@ -26,8 +26,8 @@ namespace MedPod
             this.FailOnBurningImmobile(MedPodInd);
             this.FailOn(delegate
             {
-                // Fail if MedPod has lost power, or has Allow Guest disabled while the pawn is en route
-                return !BedMedPod.powerComp.PowerOn || ((!pawn.IsColonist && !pawn.IsPrisoner || pawn.GuestStatus == GuestStatus.Guest) && !BedMedPod.allowGuests);
+                // Fail if MedPod has lost power, or is not the right user type (colonist / guest / slave / prisoner) for the patient
+                return !BedMedPod.powerComp.PowerOn || !MedPodRestUtility.IsValidBedForUserType(BedMedPod, pawn);
             });
             AddFinishAction(delegate 
             {
