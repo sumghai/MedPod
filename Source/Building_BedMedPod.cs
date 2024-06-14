@@ -362,8 +362,8 @@ namespace MedPod
                 yield return g;
             }
 
-            // Allow guests gizmo - only available on MedPods for humanlike non-prisoners
-            if (!ForPrisoners && def.building.bed_humanlike)
+            // Allow guests gizmo - only available on MedPods for humanlike colonists
+            if (def.building.bed_humanlike && ForColonists)
             {
                 yield return new Command_Toggle
                 {
@@ -650,12 +650,6 @@ namespace MedPod
             }
 
             powerComp.PowerOutput = -powerComp.Props.basePowerConsumption;
-
-            // Clear the allow guest flag if the MedPod is restricted to prisoners (and don't restore the flag)
-            if (ForPrisoners)
-            {
-                allowGuests = false;
-            }
 
             if (this.IsHashIntervalTick(60))
             {
