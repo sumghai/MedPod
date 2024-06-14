@@ -3,7 +3,7 @@
 <ModMetaData>
 	<name>MedPod</name>
 	<author>sumghai</author>
-	<packageId>sumghai.medpod</packageId>
+	<packageId>sumghai.Medpod</packageId>
 	<description>Adds advanced regenerative medical beds capable of treating virtually every injury and disease.\n\nv1.5.26</description>
 	<url>https://github.com/sumghai/MedPod/</url>
 	<supportedVersions>

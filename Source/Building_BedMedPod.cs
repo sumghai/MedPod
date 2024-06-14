@@ -69,6 +69,8 @@ namespace MedPod
 
         public bool gantryDirectionForwards = true;
 
+        public bool allowGuests = false;
+
         public bool Aborted = false;
 
         public enum MedPodStatus
@@ -167,7 +169,7 @@ namespace MedPod
         {
             if (powerComp.PowerOn && ((status == MedPodStatus.DiagnosisFinished) || (status == MedPodStatus.HealingStarted) || (status == MedPodStatus.HealingFinished)))
             {
-                WakePatient(PatientPawn, false);
+                DischargePatient(PatientPawn, false);
             }
             ForPrisoners = false;
             Medical = false;
@@ -185,6 +187,13 @@ namespace MedPod
                 district.Notify_RoomShapeOrContainedBedsChanged();
                 district.Room.Notify_RoomShapeChanged();
             }
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref allowGuests, "allowGuests", false);
+            BackCompatibility.PostExposeData(this);
         }
 
         public override string GetInspectString()
@@ -283,22 +292,22 @@ namespace MedPod
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_RaceNotAllowed".Translate(myPawn.def.label.CapitalizeFirst()) + ")", null);
                     yield break;
                 }
-                if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits))
+                if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, this))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "NotInjured".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits) && !powerComp.PowerOn)
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, this) && !powerComp.PowerOn)
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_Unpowered".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits) && this.IsForbidden(myPawn))
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, this) && this.IsForbidden(myPawn))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "ForbiddenLower".Translate() + ")", null);
                     yield break;
                 }
-                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, AlwaysTreatableHediffs, NeverTreatableHediffs, NonCriticalTreatableHediffs, UsageBlockingHediffs, UsageBlockingTraits) && !MedPodHealthAIUtility.HasAllowedMedicalCareCategory(myPawn))
+                if (MedPodHealthAIUtility.ShouldSeekMedPodRest(myPawn, this) && !MedPodHealthAIUtility.HasAllowedMedicalCareCategory(myPawn))
                 {
                     yield return new FloatMenuOption("UseMedicalBed".Translate() + " (" + "MedPod_FloatMenu_MedicalCareCategoryTooLow".Translate() + ")", null);
                     yield break;
@@ -353,6 +362,23 @@ namespace MedPod
                 yield return g;
             }
 
+            // Allow guests gizmo - only available on MedPods for humanlike colonists
+            if (def.building.bed_humanlike && ForColonists)
+            {
+                yield return new Command_Toggle
+                {
+                    defaultLabel = "MedPod_CommandGizmoAllowGuests_Label".Translate(),
+                    defaultDesc = "MedPod_CommandGizmoAllowGuests_Desc".Translate(this.LabelCap),
+                    isActive = () => allowGuests,
+                    toggleAction = delegate
+                    {
+                        allowGuests = !allowGuests;
+                    },
+                    icon = ContentFinder<Texture2D>.Get("UI/Buttons/MedPod_AllowGuests", true),
+                    activateSound = SoundDefOf.Tick_Tiny
+                };
+            }
+
             yield return new Command_Action
             {
                 defaultLabel = "MedPod_CommandGizmoAbortTreatment_Label".Translate(),
@@ -367,7 +393,8 @@ namespace MedPod
                         Aborted = true;
                     }
                 },
-                icon = ContentFinder<Texture2D>.Get("UI/Buttons/AbortTreatment", true)
+                icon = ContentFinder<Texture2D>.Get("UI/Buttons/AbortTreatment", true),
+                activateSound = SoundDefOf.Click
             };
         }
 
@@ -456,9 +483,9 @@ namespace MedPod
             patientTreatableHediffs.RemoveAll((Hediff x) =>
                 !AlwaysTreatableHediffs.Contains(x.def) && (NeverTreatableHediffs.Contains(x.def) || (!NonCriticalTreatableHediffs.Contains(x.def) && !x.def.isBad && !x.TendableNow())));
 
-            // Induce coma in the patient so that they don't run off during treatment
-            // (Pawns tend to get up as soon as they are "no longer incapable of walking")
-            AnesthesizePatient(patientPawn);
+            // Immediately treat blood loss hediff
+            patientTreatableHediffs.RemoveAll(x => x.def == HediffDefOf.BloodLoss);
+            PatientPawn.health.hediffSet.hediffs.RemoveAll(x => x.def == HediffDefOf.BloodLoss);
 
             // Calculate individual and total cumulative treatment time for each hediff/injury
             foreach (Hediff currentHediff in patientTreatableHediffs)
@@ -474,11 +501,11 @@ namespace MedPod
 
                 TotalHealingTicks += (int)Math.Ceiling(GetHediffNormalizedSeverity(currentHediff) * PatientBodySizeScaledMaxHealingTicks);
 
-                // Tend all bleeding hediffs immediately so the pawn doesn't die after being anesthetized by the MedPod
+                // Tend all bleeding hediffs immediately so the pawn doesn't bleed out while on MedPod
                 // The Hediff will be completely removed once the Medpod is done with the Healing process
                 if (currentHediff.Bleeding)
                 {
-                    currentHediff.Tended(1,1); // TODO - Replace with new method name once it no longer has a temporary name
+                    currentHediff.Tended(1,1);
                 }
             }
 
@@ -515,16 +542,8 @@ namespace MedPod
             return childParts;
         }
 
-        public static void AnesthesizePatient(Pawn patientPawn)
+        public void DischargePatient(Pawn patientPawn, bool finishTreatmentNormally = true)
         {
-            Hediff inducedComa = HediffMaker.MakeHediff(MedPodDef.MedPod_InducedComa, patientPawn);
-            patientPawn.health.AddHediff(inducedComa);
-        }
-
-        public static void WakePatient(Pawn patientPawn, bool wakeNormally = true)
-        {
-            patientPawn.health.hediffSet.hediffs.RemoveAll((Hediff x) => x.def == MedPodDef.MedPod_InducedComa);
-
             // Clear any ongoing mental states (e.g. Manhunter)
             if (patientPawn.InMentalState)
             {
@@ -532,14 +551,10 @@ namespace MedPod
             }
 
             // Apply the appropriate cortical stimulation hediff, depending on whether the treatment was completed or interrupted            
-            string corticalStimulationType = wakeNormally ? "MedPod_CorticalStimulation" : "MedPod_CorticalStimulationImproper";
-            string popupMessage = wakeNormally ? "MedPod_Message_TreatmentComplete".Translate(patientPawn.LabelCap, patientPawn) : "MedPod_Message_TreatmentInterrupted".Translate(patientPawn.LabelCap, patientPawn);
-            MessageTypeDef popupMessageType = wakeNormally ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.NegativeHealthEvent;
+            string popupMessage = finishTreatmentNormally ? "MedPod_Message_TreatmentComplete".Translate(patientPawn.LabelCap, patientPawn) : "MedPod_Message_TreatmentInterrupted".Translate(patientPawn.LabelCap, patientPawn);
+            MessageTypeDef popupMessageType = finishTreatmentNormally ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.NegativeHealthEvent;
 
             Messages.Message(popupMessage, patientPawn, popupMessageType, true);
-
-            Hediff corticalStimulation = HediffMaker.MakeHediff(HediffDef.Named(corticalStimulationType), patientPawn);
-            patientPawn.health.AddHediff(corticalStimulation);
 
             // Restore previously saved patient food need level
             if (patientPawn.needs.food != null)
@@ -556,7 +571,7 @@ namespace MedPod
             }
 
             // Remove treatable traits only if treatment was completed normally
-            if (!patientTraitsToRemove.NullOrEmpty() && wakeNormally)
+            if (!patientTraitsToRemove.NullOrEmpty() && finishTreatmentNormally)
             { 
                 patientPawn.story?.traits.allTraits.RemoveAll(x => patientTraitsToRemove.Contains(x));
                 string letterLabel = "MedPod_Letter_TraitRemoved_Label".Translate();
@@ -596,6 +611,10 @@ namespace MedPod
 
             // Refreshed pawn disabled work tags (especially important for Anomaly DLC not updating work tags from removed hediffs)
             patientPawn.Notify_DisabledWorkTypesChanged();
+
+            // Clear pawn hediff cache and try to get them off the MedPod
+            patientPawn.health.hediffSet.DirtyCache();
+            patientPawn.health.healthState = PawnHealthState.Mobile;
         }
 
         public void StartWickSustainer()
@@ -615,13 +634,13 @@ namespace MedPod
                     if ((status == MedPodStatus.DiagnosisFinished) || (status == MedPodStatus.HealingStarted) || (status == MedPodStatus.HealingFinished))
                     {
                         // Wake patient up abruptly, as power was interrupted during treatment
-                        WakePatient(PatientPawn, false);
+                        DischargePatient(PatientPawn, false);
                     }
 
                     if (status == MedPodStatus.PatientDischarged)
                     {                       
                         // Wake patient up normally, as treatment was already completed when power was interrupted
-                        WakePatient(PatientPawn);
+                        DischargePatient(PatientPawn);
                     }
                 }
 
@@ -634,7 +653,7 @@ namespace MedPod
 
             if (this.IsHashIntervalTick(60))
             {
-
+                
                 if (PatientPawn != null)
                 {
                     PatientBodySizeScaledMaxDiagnosingTicks = (int)(MaxDiagnosingTicks * PatientPawn.BodySize);
@@ -707,7 +726,7 @@ namespace MedPod
                             break;
 
                         case MedPodStatus.PatientDischarged:
-                            WakePatient(PatientPawn);
+                            DischargePatient(PatientPawn);
                             SwitchState();
                             ProgressHealingTicks = 0;
                             TotalHealingTicks = 0;
@@ -767,7 +786,7 @@ namespace MedPod
                 }
             }
 
-            if (DiagnosingTicks > 0)
+            while (DiagnosingTicks > 0)
             {
                 DiagnosingTicks--;
                 powerComp.PowerOutput = -DiagnosingPowerConsumption;
@@ -794,7 +813,7 @@ namespace MedPod
                 }
             }
 
-            if (HealingTicks > 0)
+            while (HealingTicks > 0)
             {
                 HealingTicks--;
                 ProgressHealingTicks++;

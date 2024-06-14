@@ -26,15 +26,22 @@ namespace MedPod
             this.FailOnBurningImmobile(MedPodInd);
             this.FailOn(delegate
             {
-                //Fail if MedPod has no power
-                return !BedMedPod.powerComp.PowerOn;
+                // Fail if MedPod has lost power, or has Allow Guest disabled while the pawn is en route
+                return !BedMedPod.powerComp.PowerOn || ((!pawn.IsColonist && !pawn.IsPrisoner || pawn.GuestStatus == GuestStatus.Guest) && !BedMedPod.allowGuests);
+            });
+            AddFinishAction(delegate 
+            {
+                if(BedMedPod.status != Building_BedMedPod.MedPodStatus.Idle && BedMedPod.status != Building_BedMedPod.MedPodStatus.Error)
+                {
+                    BedMedPod.DischargePatient(pawn, !BedMedPod.Aborted);
+                }
             });
             yield return Toils_General.DoAtomic(delegate
             {
                 job.count = 1;
             });
             yield return Toils_Bed.GotoBed(MedPodInd);
-            yield return Toils_LayDown.LayDown(MedPodInd, true, lookForOtherJobs: false);
+            yield return Toils_LayDown.LayDown(MedPodInd, true, false);
         }
     }
 }

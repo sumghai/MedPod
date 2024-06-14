@@ -51,6 +51,10 @@ namespace MedPod
             {
                 return false;
             }
+            if ((!patientPawn.IsColonist && !patientPawn.IsPrisoner || guestStatus == GuestStatus.Guest) && !bedMedPod.allowGuests)
+            {
+                return false;
+            }
             if (guestStatus == GuestStatus.Prisoner)
             {
                 if (!bedMedPod.ForPrisoners)
@@ -70,7 +74,7 @@ namespace MedPod
             {
                 return false;
             }
-            if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(patientPawn, bedMedPod.AlwaysTreatableHediffs, bedMedPod.NeverTreatableHediffs, bedMedPod.NonCriticalTreatableHediffs, bedMedPod.UsageBlockingHediffs, bedMedPod.UsageBlockingTraits))
+            if (!MedPodHealthAIUtility.ShouldSeekMedPodRest(patientPawn, bedMedPod))
             {
                 return false;
             }

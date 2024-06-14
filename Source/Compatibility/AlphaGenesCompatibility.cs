@@ -6,11 +6,11 @@ namespace MedPod
     public static class AlphaGenesCompatibility
     {
         // __0 refers to ___pawn in original Alpha Genes code
-        public static bool SkipIfPawnHasDeltaWaveComa(Pawn __0)
+        public static bool SkipIfPawnIsOnMedPod(Pawn __0)
         {            
-            if (__0.CurrentBed() is Building_BedMedPod || __0.health.hediffSet.HasHediff(MedPodDef.MedPod_InducedComa))
+            if (__0.CurrentBed() is Building_BedMedPod)
             {
-                // Skip if the pawn is lying on or sedated by a MedPod
+                // Skip if the pawn is lying on a MedPod
                 return false;
             }
             return true; // Otherwise continue to break bones upon being downed
