@@ -34,7 +34,9 @@ namespace MedPod
             {
                 if(BedMedPod.status != Building_BedMedPod.MedPodStatus.Idle && BedMedPod.status != Building_BedMedPod.MedPodStatus.Error)
                 {
-                    BedMedPod.DischargePatient(pawn, !BedMedPod.Aborted);
+                    // Discharge patient normally if the power was on and the treatment was not aborted;
+                    // otherwise trigger the abnormal version of the procedures (e.g. no trait cleanup)
+                    BedMedPod.DischargePatient(pawn, BedMedPod.powerComp.PowerOn && !BedMedPod.Aborted);
                 }
             });
             yield return Toils_General.DoAtomic(delegate

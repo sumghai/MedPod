@@ -400,6 +400,7 @@ namespace MedPod
 
         private void SwitchState()
         {
+            MedPodStatus oldStatus = status;
             switch (status)
             {
                 case MedPodStatus.Idle:
@@ -429,6 +430,10 @@ namespace MedPod
                 default:
                     status = MedPodStatus.Error;
                     break;
+            }
+            if (DebugSettings.godMode)
+            {
+                Log.Message(this + " :: state change from " + oldStatus.ToStringSafe().Colorize(Color.red) + " to " + status.ToStringSafe().Colorize(Color.red));
             }
         }
 
@@ -627,121 +632,150 @@ namespace MedPod
         {
             base.Tick();
 
-            if (!powerComp.PowerOn)
+            // State-dependent power consumption
+            if (status == MedPodStatus.DiagnosisStarted || status == MedPodStatus.DiagnosisFinished)
             {
-                if (PatientPawn != null)
-                {
-                    if ((status == MedPodStatus.DiagnosisFinished) || (status == MedPodStatus.HealingStarted) || (status == MedPodStatus.HealingFinished))
-                    {
-                        // Wake patient up abruptly, as power was interrupted during treatment
-                        DischargePatient(PatientPawn, false);
-                    }
+                powerComp.PowerOutput = -DiagnosingPowerConsumption;
+            }
+            else if (status == MedPodStatus.HealingStarted || status == MedPodStatus.HealingFinished)
+            {
+                powerComp.PowerOutput = -HealingPowerConsumption;
+            }
+            else
+            {
+                powerComp.PowerOutput = -powerComp.Props.basePowerConsumption;
+            }
 
-                    if (status == MedPodStatus.PatientDischarged)
-                    {                       
-                        // Wake patient up normally, as treatment was already completed when power was interrupted
+            // Main patient treatment cycle logic
+            if (PatientPawn != null)
+            {
+                PatientBodySizeScaledMaxDiagnosingTicks = (int)(MaxDiagnosingTicks * PatientPawn.BodySize);
+                PatientBodySizeScaledMaxHealingTicks = (int)(MaxHealingTicks * PatientPawn.BodySize);
+
+                switch (status) 
+                {
+                    case MedPodStatus.Idle:
+                        DiagnosingTicks = PatientBodySizeScaledMaxDiagnosingTicks;
+                        // Save initial patient food need level
+                        if (PatientPawn.needs.food != null)
+                        {
+                            patientSavedFoodNeed = PatientPawn.needs.food.CurLevelPercentage;
+                        }
+                        // Save initial patient DBH thirst and reset DBH bladder/hygiene need levels
+                        if (ModCompatibility.DbhIsActive)
+                        {
+                            patientSavedDbhThirstNeed = DbhCompatibility.GetThirstNeedCurLevelPercentage(PatientPawn);
+                            DbhCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
+                            DbhCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
+                        }
+                        if (DebugSettings.godMode)
+                        {
+                            Log.Message("\t" + PatientPawn + " :: initial DiagnosingTicks = " + DiagnosingTicks); 
+                        }
+                        SwitchState();
+                        break;
+
+                    case MedPodStatus.DiagnosisStarted:
+                        DiagnosingTicks--;
+                        if (DiagnosingTicks == 0) 
+                        { 
+                            SwitchState();
+                        }
+                        break;
+
+                    case MedPodStatus.DiagnosisFinished:
+                        DiagnosePatient(PatientPawn);
+                        if (patientTreatableHediffs.NullOrEmpty())
+                        {
+                            // Skip treatment if no treatable hediffs are found
+                            status = MedPodStatus.PatientDischarged;
+                        }
+                        else
+                        {
+                            // Scale healing time for the first hediff according to its (normalized) severity and patient body size
+                            // i.e. More severe hediffs take longer, bigger pawns also take longer
+                            HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * PatientBodySizeScaledMaxHealingTicks);
+                            if (DebugSettings.godMode)
+                            {
+                                Log.Message("\t" + PatientPawn + " :: first hediff HealingTicks = " + HealingTicks + " (hediff count: " + patientTreatableHediffs.Count() + ")");
+                            }
+                            SwitchState();
+                        }
+                        break;
+
+                    case MedPodStatus.HealingStarted:
+                        HealingTicks--;
+                        ProgressHealingTicks++;
+                        if (HealingTicks == 0)
+                        {
+                            SwitchState();
+                        }
+                        break;
+
+                    case MedPodStatus.HealingFinished:
+                        // Don't remove 'good' treatable Hediffs but instead treat them with 100% quality (unless the 'good' Hediff is whitelisted as always treatable)
+                        if (!patientTreatableHediffs.First().def.isBad && !AlwaysTreatableHediffs.Contains(patientTreatableHediffs.First().def) && !NonCriticalTreatableHediffs.Contains(patientTreatableHediffs.First().def))
+                        {
+                            patientTreatableHediffs.First().Tended(1, 1);
+                        }
+                        else
+                        {
+                            PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
+                        }
+                        patientTreatableHediffs.RemoveAt(0);
+                        if (!patientTreatableHediffs.NullOrEmpty())
+                        {
+                            // Scale healing time for the next hediff according to its (normalized) severity and patient body size
+                            // i.e. More severe hediffs take longer, bigger pawns also take longer
+                            HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * PatientBodySizeScaledMaxHealingTicks);
+                            if (DebugSettings.godMode)
+                            {
+                                Log.Message("\t" + PatientPawn + " :: next hediff HealingTicks = " + HealingTicks + " (hediff count: " + patientTreatableHediffs.Count() + ")");
+                            }
+                            // Jump back to the previous state to start healing the next hediff
+                            status = MedPodStatus.HealingStarted;
+                        }
+                        else
+                        {
+                            SwitchState();
+                        }
+                        break;
+                    
+                    case MedPodStatus.PatientDischarged:
                         DischargePatient(PatientPawn);
-                    }
+                        SwitchState();
+                        ProgressHealingTicks = 0;
+                        TotalHealingTicks = 0;
+                        break;
                 }
 
-                status = MedPodStatus.Idle;
-
-                return;
-            }
-
-            powerComp.PowerOutput = -powerComp.Props.basePowerConsumption;
-
-            if (this.IsHashIntervalTick(60))
-            {
-                
-                if (PatientPawn != null)
+                // Suspend patient needs during diagnosis and treatment
+                if (status == MedPodStatus.DiagnosisStarted || status == MedPodStatus.DiagnosisFinished || status == MedPodStatus.HealingStarted || status == MedPodStatus.HealingFinished)
                 {
-                    PatientBodySizeScaledMaxDiagnosingTicks = (int)(MaxDiagnosingTicks * PatientPawn.BodySize);
-                    PatientBodySizeScaledMaxHealingTicks = (int)(MaxHealingTicks * PatientPawn.BodySize);
-
-                    switch (status)
+                    // Food
+                    if (PatientPawn.needs.food != null)
                     {
-                        case MedPodStatus.Idle:
-                            DiagnosingTicks = PatientBodySizeScaledMaxDiagnosingTicks;
+                        PatientPawn.needs.food.CurLevelPercentage = 1f;
+                    }
 
-                            // Save initial patient food need level
-                            if (PatientPawn.needs.food != null)
-                            {
-                                patientSavedFoodNeed = PatientPawn.needs.food.CurLevelPercentage;
-                            }
-
-                            // Save initial patient DBH thirst and reset DBH bladder/hygiene need levels
-                            if (ModCompatibility.DbhIsActive)
-                            {
-                                patientSavedDbhThirstNeed = DbhCompatibility.GetThirstNeedCurLevelPercentage(PatientPawn);
-                                DbhCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
-                                DbhCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
-                            }
-
-                            SwitchState();
-                            break;
-
-                        case MedPodStatus.DiagnosisFinished:
-                            DiagnosePatient(PatientPawn);
-
-                            if (patientTreatableHediffs.NullOrEmpty())
-                            {
-                                // Skip treatment if no treatable hediffs are found
-                                status = MedPodStatus.PatientDischarged;
-                            }
-                            else
-                            {
-                                // Scale healing time for current hediff according to its (normalized) severity and patient body size
-                                // i.e. More severe hediffs take longer, bigger pawns also take longer
-                                HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * PatientBodySizeScaledMaxHealingTicks);
-
-                                SwitchState();
-                            }
-                            break;
-
-                        case MedPodStatus.HealingFinished:
-                            // Don't remove 'good' treatable Hediffs but instead treat them with 100% quality (unless the 'good' Hediff is whitelisted as always treatable)
-                            if (!patientTreatableHediffs.First().def.isBad && !AlwaysTreatableHediffs.Contains(patientTreatableHediffs.First().def) && !NonCriticalTreatableHediffs.Contains(patientTreatableHediffs.First().def))
-                            {
-                                patientTreatableHediffs.First().Tended(1, 1);
-                            }
-                            else
-                            {                                
-                                PatientPawn.health.hediffSet.hediffs.Remove(patientTreatableHediffs.First());
-                            }
-
-                            patientTreatableHediffs.RemoveAt(0);
-                            if (!patientTreatableHediffs.NullOrEmpty())
-                            {
-                                // Scale healing time for current hediff according to its (normalized) severity and patient body size
-                                // i.e. More severe hediffs take longer, bigger pawns also take longer
-                                HealingTicks = (int)Math.Ceiling(GetHediffNormalizedSeverity() * PatientBodySizeScaledMaxHealingTicks);
-
-                                status = MedPodStatus.HealingStarted;
-                            }
-                            else
-                            {
-                                SwitchState();
-                            }
-                            break;
-
-                        case MedPodStatus.PatientDischarged:
-                            DischargePatient(PatientPawn);
-                            SwitchState();
-                            ProgressHealingTicks = 0;
-                            TotalHealingTicks = 0;
-                            break;
+                    // Dubs Bad Hygiene thirst, bladder and hygiene
+                    if (ModCompatibility.DbhIsActive)
+                    {
+                        DbhCompatibility.SetThirstNeedCurLevelPercentage(PatientPawn, 1f);
+                        DbhCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
+                        DbhCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
                     }
                 }
-                else
-                {
-                    status = MedPodStatus.Idle;
-                    ProgressHealingTicks = 0;
-                    TotalHealingTicks = 0;
-                    Aborted = false;
-                }
+            }
+            else
+            {
+                status = MedPodStatus.Idle;
+                ProgressHealingTicks = 0;
+                TotalHealingTicks = 0;
+                Aborted = false;
             }
 
+            // Gantry animation
             if (this.IsHashIntervalTick(2))
             {
                 if (GantryMoving())
@@ -783,61 +817,6 @@ namespace MedPod
                     // Reset gantry
                     gantryPositionPercentInt = 0;
                     gantryDirectionForwards = true;
-                }
-            }
-
-            while (DiagnosingTicks > 0)
-            {
-                DiagnosingTicks--;
-                powerComp.PowerOutput = -DiagnosingPowerConsumption;
-                if (PatientPawn != null)
-                {
-                    // Suspend patient food need level
-                    if (PatientPawn.needs.food != null)
-                    {
-                        PatientPawn.needs.food.CurLevelPercentage = 1f;
-                    }
-                    
-                    // Suspend patient DBH thirst, bladder and hygiene need levels
-                    if (ModCompatibility.DbhIsActive)
-                    {
-                        DbhCompatibility.SetThirstNeedCurLevelPercentage(PatientPawn, 1f);
-                        DbhCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
-                        DbhCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
-                    }
-                }
-
-                if (DiagnosingTicks == 0)
-                {
-                    SwitchState();
-                }
-            }
-
-            while (HealingTicks > 0)
-            {
-                HealingTicks--;
-                ProgressHealingTicks++;
-                powerComp.PowerOutput = -HealingPowerConsumption;
-                if (PatientPawn != null)
-                {
-                    // Suspend patient food need level
-                    if (PatientPawn.needs.food != null)
-                    {
-                        PatientPawn.needs.food.CurLevelPercentage = 1f;
-                    }
-
-                    // Suspend patient DBH thirst, bladder and hygiene need levels
-                    if (ModCompatibility.DbhIsActive)
-                    {
-                        DbhCompatibility.SetThirstNeedCurLevelPercentage(PatientPawn, 1f);
-                        DbhCompatibility.SetBladderNeedCurLevelPercentage(PatientPawn, 1f);
-                        DbhCompatibility.SetHygieneNeedCurLevelPercentage(PatientPawn, 1f);
-                    }
-                }
-
-                if (HealingTicks == 0)
-                {
-                    SwitchState();
                 }
             }
         }
