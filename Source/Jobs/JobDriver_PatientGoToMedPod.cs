@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using Verse;
 using Verse.AI;
 
 namespace MedPod
@@ -26,8 +27,8 @@ namespace MedPod
             this.FailOnBurningImmobile(MedPodInd);
             this.FailOn(delegate
             {
-                // Fail if MedPod has lost power, or is not the right user type (colonist / guest / slave / prisoner) for the patient
-                return !BedMedPod.powerComp.PowerOn || !MedPodRestUtility.IsValidBedForUserType(BedMedPod, pawn);
+                // Fail if MedPod has lost power, is no longer unreachable, or is no longer the right user type (colonist / guest / slave / prisoner) for the patient
+                return !BedMedPod.powerComp.PowerOn || !pawn.CanReach(BedMedPod, PathEndMode.OnCell, Danger.Deadly) || !MedPodRestUtility.IsValidBedForUserType(BedMedPod, pawn);
             });
             AddFinishAction(delegate 
             {
