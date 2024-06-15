@@ -171,8 +171,9 @@ namespace MedPod
             {
                 DischargePatient(PatientPawn, false);
             }
-            ForPrisoners = false;
+            ForOwnerType = BedOwnerType.Colonist; 
             Medical = false;
+            allowGuests = false;
 
             // Remove the blocker region, if required
             if (!medpodSettings.Props.disableInvisibleBlocker)
