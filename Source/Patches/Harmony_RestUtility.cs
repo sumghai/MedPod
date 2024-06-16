@@ -6,7 +6,7 @@ namespace MedPod
 {
     // Check if patient is (still) allowed to use the MedPod
     [HarmonyPatch(typeof(RestUtility), nameof(RestUtility.CanUseBedNow))]
-    public static class RestUtility_CanUseBedNow_AddMedPodFailConditions
+    public static class Harmony_RestUtility_CanUseBedNow_AddMedPodFailConditions
     {
         public static bool Postfix(bool __result, Thing bedThing, Pawn sleeper)
         {
@@ -28,6 +28,21 @@ namespace MedPod
                 && MedPodRestUtility.IsValidBedForUserType(bedMedPod, pawn)
                 // MedPod hasn't been aborted
                 && !bedMedPod.Aborted;
+        }
+    }
+
+    // Exclude MedPod beds as possible prisoner beds when capturing new prisoners
+    [HarmonyPatch(typeof(RestUtility), nameof(RestUtility.IsValidBedFor))]
+    public static class Harmony_RestUtility_IsValidBedFor_ExcludeMedPodsWhenCapturingNewPrisoners
+    {
+        public static void Postfix(ref bool __result, Thing bedThing, Pawn sleeper, GuestStatus? guestStatus = null) 
+        {
+            // !sleeper.IsPrisonerOfColony and GuestStatus.Prisoner indicates that the target sleeper pawn
+            // is currently not a prisoner of the player colony (but is about to be!)
+            if (__result && !sleeper.IsPrisonerOfColony && guestStatus == GuestStatus.Prisoner && bedThing is Building_BedMedPod)
+            {
+                __result = false;
+            }
         }
     }
 }
