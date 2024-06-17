@@ -18,13 +18,13 @@ namespace MedPod
 
         public CompTreatmentRestrictions treatmentRestrictions;
 
-        private List<Hediff> patientTreatableHediffs;
+        private List<Hediff> patientTreatableHediffs = new();
 
         private static float patientSavedFoodNeed;
 
         private static float patientSavedDbhThirstNeed;
 
-        private static List<Trait> patientTraitsToRemove;
+        private static List<Trait> patientTraitsToRemove = new();
 
         private float totalNormalizedSeverities = 0;
 
@@ -261,6 +261,11 @@ namespace MedPod
                 }
 
                 stringBuilder.AppendInNewLine(inspectorStatus);
+
+                if (DebugSettings.godMode)
+                {
+                    stringBuilder.AppendInNewLine("DEBUG: " + status.ToStringSafe() + " / aborted = " + Aborted.ToStringYesNo());
+                }
             }
 
             return stringBuilder.ToString();
@@ -380,6 +385,7 @@ namespace MedPod
                 };
             }
 
+            // Abort gizmo - kick out patient if treatment is aborted
             yield return new Command_Action
             {
                 defaultLabel = "MedPod_CommandGizmoAbortTreatment_Label".Translate(),
@@ -389,9 +395,10 @@ namespace MedPod
                 {
                     if (PatientPawn != null)
                     {
-                        // Kick non-ambulatory patients off the MedPod when aborting MedPod treatment
-                        RestUtility.KickOutOfBed(PatientPawn, this);
+                        DischargePatient(PatientPawn, false);
+                        KickDownedPatientOffMedpod(); // For non-ambulatory patients
                         Aborted = true;
+                        Reset();
                     }
                 },
                 icon = ContentFinder<Texture2D>.Get("UI/Buttons/AbortTreatment", true),
@@ -434,7 +441,7 @@ namespace MedPod
             }
             if (DebugSettings.godMode)
             {
-                Log.Message(this + " :: state change from " + oldStatus.ToStringSafe().Colorize(Color.red) + " to " + status.ToStringSafe().Colorize(Color.red));
+                Log.Message(this + " :: state change from " + oldStatus.ToStringSafe().Colorize(Color.yellow) + " to " + status.ToStringSafe().Colorize(Color.yellow));
             }
         }
 
@@ -620,7 +627,12 @@ namespace MedPod
 
             // Clear pawn hediff cache and try to get them off the MedPod
             patientPawn.health.hediffSet.DirtyCache();
-            patientPawn.health.healthState = PawnHealthState.Mobile;
+            patientPawn.health.healthState = (patientPawn.Downed) ? PawnHealthState.Down : PawnHealthState.Mobile;
+
+            if (DebugSettings.godMode)
+            {
+                Log.Message(this + " :: Discharged patient " + patientPawn + " (" + (finishTreatmentNormally ? "NORMAL".Colorize(Color.green) : "ABORTED".Colorize(Color.red)) + ")");
+            }
         }
 
         public void StartWickSustainer()
@@ -738,15 +750,14 @@ namespace MedPod
                         }
                         else
                         {
+                            DischargePatient(PatientPawn);
                             SwitchState();
                         }
                         break;
                     
                     case MedPodStatus.PatientDischarged:
-                        DischargePatient(PatientPawn);
                         SwitchState();
-                        ProgressHealingTicks = 0;
-                        TotalHealingTicks = 0;
+                        Reset();
                         break;
                 }
 
@@ -770,9 +781,7 @@ namespace MedPod
             }
             else
             {
-                status = MedPodStatus.Idle;
-                ProgressHealingTicks = 0;
-                TotalHealingTicks = 0;
+                Reset();
                 Aborted = false;
             }
 
@@ -820,6 +829,25 @@ namespace MedPod
                     gantryDirectionForwards = true;
                 }
             }
+        }
+
+        public void KickDownedPatientOffMedpod()
+        {
+            if (PatientPawn.Downed)
+            {
+                PatientPawn.Position = this.GetFootSlotPos(0);
+            }
+        }
+
+        public void Reset()
+        {
+            status = MedPodStatus.Idle;
+            patientTreatableHediffs.Clear();
+            patientTraitsToRemove.Clear();
+            DiagnosingTicks = 0;
+            HealingTicks = 0;
+            ProgressHealingTicks = 0;
+            TotalHealingTicks = 0;
         }
     }
 }

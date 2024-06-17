@@ -30,15 +30,7 @@ namespace MedPod
                 // Fail if MedPod has lost power, is no longer unreachable, or is no longer the right user type (colonist / guest / slave / prisoner) for the patient
                 return !BedMedPod.powerComp.PowerOn || !pawn.CanReach(BedMedPod, PathEndMode.OnCell, Danger.Deadly) || !MedPodRestUtility.IsValidBedForUserType(BedMedPod, pawn);
             });
-            AddFinishAction(delegate 
-            {
-                if(BedMedPod.status != Building_BedMedPod.MedPodStatus.Idle && BedMedPod.status != Building_BedMedPod.MedPodStatus.Error)
-                {
-                    // Discharge patient normally if the power was on and the treatment was not aborted;
-                    // otherwise trigger the abnormal version of the procedures (e.g. no trait cleanup)
-                    BedMedPod.DischargePatient(pawn, BedMedPod.powerComp.PowerOn && !BedMedPod.Aborted);
-                }
-            });
+
             yield return Toils_General.DoAtomic(delegate
             {
                 job.count = 1;
