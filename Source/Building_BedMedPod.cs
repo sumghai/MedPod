@@ -665,6 +665,13 @@ namespace MedPod
                 PatientBodySizeScaledMaxDiagnosingTicks = (int)(MaxDiagnosingTicks * PatientPawn.BodySize);
                 PatientBodySizeScaledMaxHealingTicks = (int)(MaxHealingTicks * PatientPawn.BodySize);
 
+                // Interrupt treatment on power loss
+                if (!powerComp.PowerOn)
+                {
+                    DischargePatient(PatientPawn, false);
+                }
+
+                // Main logic
                 switch (status) 
                 {
                     case MedPodStatus.Idle:
