@@ -627,7 +627,7 @@ namespace MedPod
 
             // Clear pawn hediff cache and try to get them off the MedPod
             patientPawn.health.hediffSet.DirtyCache();
-            patientPawn.health.healthState = (patientPawn.Downed) ? PawnHealthState.Down : PawnHealthState.Mobile;
+            patientPawn.health.healthState = (patientPawn.health.ShouldBeDowned()) ? PawnHealthState.Down : PawnHealthState.Mobile;
 
             if (DebugSettings.godMode)
             {
