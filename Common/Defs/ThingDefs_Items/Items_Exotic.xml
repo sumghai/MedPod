@@ -16,7 +16,7 @@
 		<soundDrop>Standard_Drop</soundDrop>
 		<stackLimit>25</stackLimit>
 		<statBases>
-			<MarketValue>6000</MarketValue>
+			<MarketValue>2000</MarketValue>
 			<MaxHitPoints>100</MaxHitPoints>
 			<Mass>0.125</Mass>
 		</statBases>
@@ -24,6 +24,9 @@
 		<thingCategories>
 			<li>Manufactured</li>
 		</thingCategories>
+		<tradeTags>
+			<li>Lethe_IsolinearProcessor</li>
+		</tradeTags>
 		<thingSetMakerTags>
 			<li>RewardStandardLowFreq</li>
 		</thingSetMakerTags>

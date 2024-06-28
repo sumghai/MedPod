@@ -11,8 +11,8 @@
 					defName = "Orbital_Exotic"
 				]/stockGenerators</xpath>
 				<value>
-					<li Class="StockGenerator_SingleDef">
-						<thingDef>IsolinearProcessor</thingDef>
+					<li Class="StockGenerator_Tag">
+						<tradeTag>Lethe_IsolinearProcessor</tradeTag>
 						<countRange>0~1</countRange>
 					</li>
 				</value>
