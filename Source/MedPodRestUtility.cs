@@ -17,6 +17,13 @@ namespace MedPod
 
         public static bool IsValidBedForUserType(Building_BedMedPod bedMedPod, Pawn pawn)
         {
+            // VetPods: skip execution early and return true if patient is an animal
+            if (pawn.RaceProps.Animal && !bedMedPod.def.building.bed_humanlike)
+            {
+                return true;
+            }
+            
+            // Otherwise, check for humanlike patients
             bool isSlave = pawn.GuestStatus == GuestStatus.Slave;
             bool isPrisoner = pawn.GuestStatus == GuestStatus.Prisoner;
 

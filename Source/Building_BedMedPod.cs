@@ -849,8 +849,14 @@ namespace MedPod
         public void Reset()
         {
             status = MedPodStatus.Idle;
-            patientTreatableHediffs.Clear();
-            patientTraitsToRemove.Clear();
+            if (!patientTreatableHediffs.NullOrEmpty())
+            {
+                patientTreatableHediffs.Clear();
+            }
+            if (!patientTraitsToRemove.NullOrEmpty())
+            {
+                patientTraitsToRemove.Clear();
+            }
             DiagnosingTicks = 0;
             HealingTicks = 0;
             ProgressHealingTicks = 0;
