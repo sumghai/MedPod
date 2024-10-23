@@ -39,6 +39,8 @@ namespace MedPod
                     || patientHediffs.Any(x => x.def.IsAddiction && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def))
                     // Has (visible) hediffs that are always treatable by MedPods
                     || patientHediffs.Any(x => x.Visible && alwaysTreatableHediffs.Contains(x.def))
+                    // Is already using a MedPod and has any greylisted hediffs
+                    || (patientPawn.CurrentBed() == bedMedPod && patientHediffs.Any(x => nonCriticalTreatableHediffs.Contains(x.def)))
                     )
                     &&
                     // Does not have hediffs or traits that block the pawn from using MedPods
