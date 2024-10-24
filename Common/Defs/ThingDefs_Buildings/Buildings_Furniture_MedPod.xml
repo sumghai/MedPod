@@ -7,6 +7,8 @@
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<selectable>true</selectable>
 		<building>
+			<bed_showSleeperBody>true</bed_showSleeperBody>
+			<bed_defaultMedical>true</bed_defaultMedical>
 			<soundDispense>MedPod_Running</soundDispense>
 		</building>
 		<castEdgeShadows>false</castEdgeShadows>
@@ -144,10 +146,6 @@
 			<Plasteel>200</Plasteel>
 			<Steel>80</Steel>
 		</costList>
-		<building>
-			<bed_showSleeperBody>true</bed_showSleeperBody>
-			<bed_defaultMedical>true</bed_defaultMedical>
-		</building>
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
