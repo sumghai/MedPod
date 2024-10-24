@@ -119,6 +119,7 @@ namespace MedPod
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
+            Medical = true; // Always ensure MedPod beds are medical beds (compat fix for SOS2)
             powerComp = GetComp<CompPowerTrader>();
             medpodSettings = GetComp<CompMedPodSettings>();
             treatmentRestrictions = GetComp<CompTreatmentRestrictions>();
