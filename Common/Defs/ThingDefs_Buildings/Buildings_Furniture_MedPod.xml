@@ -53,6 +53,7 @@
 					<li>WakeUpHigh</li>
 					<li>WakeUpTolerance</li>
 					<li>YayoHigh</li>
+					<li MayRequire="Ludeon.RimWorld.Royalty">PsychicSuppression</li>
 				</nonCriticalTreatableHediffs>
 				<usageBlockingHediffs />
 				<usageBlockingTraits />
