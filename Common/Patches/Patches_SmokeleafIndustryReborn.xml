@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Smokeleaf Industry Reborn</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Allow MedPods to treat smokeleaf hediffs (no idea why they were marked as isBad=false or were otherwise untreatable in the first place...) -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/nonCriticalTreatableHediffs</xpath>
+					<value>
+						<li>SLI_SmokeleafHigh</li>
+						<li>SLI_SmokeleafTolerance</li>
+						<li>SmokeleafLotionHigh</li>
+						<li>SmokeleafPillsHigh</li>
+						<li>SmokeleafTinctureHigh</li>
+						<li>InfusedBuzz</li>
+					</value>
+				</li>
+				
+				<!-- Remove Stoner trait once MedPod treatment is completed -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/alwaysTreatableTraits</xpath>
+					<value>
+						<li>Stoner</li>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+</Patch>
