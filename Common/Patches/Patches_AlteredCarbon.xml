@@ -20,4 +20,24 @@
 			</operations>
 		</match>
 	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Altered Carbon 2: ReSleeved</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+								
+				<!-- Prevent sleeves with the Empty Sleeve hediff from being carried to MedPods for treatment -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/usageBlockingHediffs</xpath>
+					<value>
+						<li>AC_EmptySleeve</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
 </Patch>
