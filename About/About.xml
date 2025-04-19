@@ -4,7 +4,7 @@
 	<name>MedPod</name>
 	<author>sumghai</author>
 	<packageId>sumghai.Medpod</packageId>
-	<modVersion IgnoreIfNoMatchingField="True">1.5.38</modVersion>
+	<modVersion IgnoreIfNoMatchingField="True">1.5.39</modVersion>
 	<description>Adds advanced regenerative medical beds capable of treating virtually every injury and disease.</description>
 	<url>https://github.com/sumghai/MedPod/</url>
 	<supportedVersions>
