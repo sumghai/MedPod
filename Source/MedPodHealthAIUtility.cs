@@ -33,8 +33,8 @@ namespace MedPod
             // Has (visible) hediffs causing sick thoughts (excluding those blacklisted or greylisted from MedPod treatment)
             bool hasSickThoughtHediffs = patientHediffs.Any(x => x.def.makesSickThought && x.Visible && !neverTreatableHediffs.Contains(x.def) && !nonCriticalTreatableHediffs.Contains(x.def));
 
-            // Has missing body parts
-            bool hasMissingBodyParts = !patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().NullOrEmpty() && !neverTreatableHediffs.Contains(HediffDefOf.MissingBodyPart);
+            // Has missing body parts (excluding those flagged as not bad)
+            bool hasMissingBodyParts = !patientPawn.health.hediffSet.GetMissingPartsCommonAncestors().Where(x => x.def.isBad).ToList().NullOrEmpty() && !neverTreatableHediffs.Contains(HediffDefOf.MissingBodyPart);
 
             // Has permanent injuries (excluding those blacklisted from MedPod treatment)
             bool hasPermanentInjuries = patientHediffs.Any(x => x.IsPermanent() && !neverTreatableHediffs.Contains(x.def));
