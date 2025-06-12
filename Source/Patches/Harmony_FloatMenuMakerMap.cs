@@ -10,7 +10,7 @@ namespace MedPod
 {
     // Adds a "Rescue [pawn] to MedPod" float menu option to pawns,
     // and remove any arresting/carrying/stripping/tending options for patients already lying on MedPods
-    [HarmonyPatch(typeof(FloatMenuMakerMap), nameof(FloatMenuMakerMap.AddHumanlikeOrders))]
+    /*[HarmonyPatch(typeof(FloatMenuMakerMap), nameof(FloatMenuMakerMap.AddHumanlikeOrders))]
     public static class Harmony_FloatMenuMakerMap_OverrideRescueWithMedPodVersion
     {
         public static void Postfix(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> opts)
@@ -144,5 +144,5 @@ namespace MedPod
                 }
             }
         }
-    }
+    }*/
 }
