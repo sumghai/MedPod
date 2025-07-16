@@ -20,8 +20,8 @@
 		<requiredResearchFacilities>
 			<li>MultiAnalyzer</li>
 		</requiredResearchFacilities>
-		<researchViewX>18.00</researchViewX>
-		<researchViewY>0.80</researchViewY>
+		<researchViewX>19.00</researchViewX>
+		<researchViewY>6.00</researchViewY>
 		<discoveredLetterTitle>About: Building MedPods</discoveredLetterTitle>
 		<discoveredLetterText>You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors via the following ways:\n\n  -Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n  -Some quests are rewarded with Isolinear Processors.</discoveredLetterText>
 	</ResearchProjectDef>

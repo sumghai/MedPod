@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Replimat</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Shift the position of MedPod's Accelerated Cellular Regeneration research project to just below
+					 Replimat's own Molecular Nutrient Resequencing project -->
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="AcceleratedCellularRegeneration"]/researchViewY</xpath>
+					<value>
+						<researchViewY>6.75</researchViewY>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+</Patch>
