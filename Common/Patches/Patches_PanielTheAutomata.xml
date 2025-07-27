@@ -4,6 +4,11 @@
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Paniel the Automata</li>
+			<li>Paniel the Automata[1.5]</li>
+			<li>Paniel the Automata[1.6]</li>
+			<li>Paniel the Automata[1.7]</li>
+			<li>Paniel the Automata[1.8]</li>
+			<li>Paniel the Automata[1.9]</li>
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
