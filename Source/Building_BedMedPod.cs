@@ -470,16 +470,16 @@ namespace MedPod
             // Hediffs with no body part defined (i.e. "Whole Body" hediffs) are moved to the bottom of the list)
             patientTreatableHediffs = patientPawn.health.hediffSet.hediffs.OrderBy((Hediff x) => x.Part == null ? 9999 : x.Part.Index).ThenByDescending((Hediff x) => x.Severity).ToList();
 
-            // Ignore missing child parts of limbs and other body parts that have been replaced with
-            // implants or prosthetics
+            // Ignore missing child parts of limbs and other body parts that have been replaced with implants or prosthetics
             // This is a multi-step process:
             // - Find the hediffs (and the associated body parts) corresponding to implants/prosthetics
             // - Identify the child parts affected by the implants/prosthetics
             // - Remove the hediffs from the treatment list by body part
 
-            List<Hediff> artificialPartHediffs = patientTreatableHediffs.FindAll((Hediff x) => x.def.hediffClass.Equals(typeof(Hediff_AddedPart)));
+            // Check for both the vanilla Hediff_AddedPart, and any child classes from third-party mods
+            List<Hediff> artificialPartHediffs = patientTreatableHediffs.FindAll((Hediff x) => x.def.hediffClass.Equals(typeof(Hediff_AddedPart)) || x.def.hediffClass.BaseType == typeof(Hediff_AddedPart));
 
-            List<BodyPartRecord> childPartsToSkip = new List<BodyPartRecord>();
+            List<BodyPartRecord> childPartsToSkip = new();
 
             foreach (Hediff currentArtificialPartHediff in artificialPartHediffs)
             {
