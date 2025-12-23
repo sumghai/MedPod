@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>ABF: Civil Synstructs</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Prevent MedPods from treating civil synstructs -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/disallowedRaces</xpath>
+					<value>
+						<li>ABF_Thing_Synstruct_Commoner</li>
+						<li>ABF_Thing_Synstruct_Simpleton</li>
+						<li>ABF_Thing_Synstruct_Socialite</li>
+						<li>ABF_Thing_Synstruct_Stoic</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>ABF: Martial Synstructs</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Prevent MedPods from treating martial synstructs -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/disallowedRaces</xpath>
+					<value>
+						<li>ABF_Thing_Synstruct_Bishop</li>
+						<li>ABF_Thing_Synstruct_Jellyman</li>
+						<li>ABF_Thing_Synstruct_Juggernaut</li>
+						<li>ABF_Thing_Synstruct_Paladin</li>
+						<li>ABF_Thing_Synstruct_Warrior</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>ABF: Utility Synstructs</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Prevent MedPods from treating utility synstructs -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/disallowedRaces</xpath>
+					<value>
+						<li>ABF_Thing_Synstruct_Envoy</li>
+						<li>ABF_Thing_Synstruct_Grunt</li>
+						<li>ABF_Thing_Synstruct_Overseer</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>ABF: Synstruct Biomimetics</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Prevent VetPods from treating biomimetics -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/disallowedRaces</xpath>
+					<value>
+						<li>ABF_Thing_Synstruct_Chemstruct</li>
+						<li>ABF_Thing_Synstruct_Convoystruct</li>
+						<li>ABF_Thing_Synstruct_Guardstruct</li>
+						<li>ABF_Thing_Synstruct_Nutristruct</li>
+						<li>ABF_Thing_Synstruct_Razorstruct</li>
+						<li>ABF_Thing_Synstruct_Steelstruct</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>ABF: Synstruct Masquerade</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Prevent VetPods from treating masquerade synstructs -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MedPodBedBase"]/comps/li[@Class="MedPod.CompProperties_TreatmentRestrictions"]/disallowedRaces</xpath>
+					<value>
+						<li>ABF_Thing_Synstruct_Agitator</li>
+						<li>ABF_Thing_Synstruct_Noble</li>
+						<li>ABF_Thing_Synstruct_Recluse</li>
+						<li>ABF_Thing_Synstruct_Sage</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+</Patch>
