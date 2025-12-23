@@ -22,6 +22,9 @@ namespace MedPod
                 && !bedMedPod.IsForbidden(pawn) 
                 // Pawn actually has a medical need for a MedPod
                 && MedPodHealthAIUtility.ShouldSeekMedPodRest(pawn, bedMedPod)
+                // Pawn race/xenotype is allowed to use MedPods
+                && MedPodHealthAIUtility.IsValidRaceForMedPod(pawn, bedMedPod.DisallowedRaces)
+                && MedPodHealthAIUtility.IsValidXenotypeForMedPod(pawn, bedMedPod.DisallowedXenotypes)
                 // Pawn has medical care category that allows MedPod use
                 && MedPodHealthAIUtility.HasAllowedMedicalCareCategory(pawn)
                 // Pawn type (colonist, slave, prisoner, guest) matches bedtype
