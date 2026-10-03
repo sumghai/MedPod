@@ -8,7 +8,7 @@ namespace MedPod
 {
     // Generate custom interaction cell locations for MedPods and VetPods
     [HarmonyPatch(typeof(BedCellSearchPattern), nameof(BedCellSearchPattern.AddCellsToList))]
-    public static class Harmony_BedCellSearchPattern_AddCellsToList
+    public static class Harmony_BedCellSearchPattern_AddCellsToList_CustomInteractionCellsForMedPods
     {
         public static bool Prefix(List<IntVec3> orderedCells, Thing thing, CellRect rect, IntVec3 focus, Rot4 focusRotation)
         {

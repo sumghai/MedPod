@@ -59,7 +59,7 @@
     <Compile Include="Building_BedMedPod.cs" />
     <Compile Include="MedPodRestUtility.cs" />
     <Compile Include="Compatibility\ModCompatibility.cs" />
-    <Compile Include="Patches\Harmony_BedInteractionCellSearchPattern_BedCellOffsets.cs" />
+    <Compile Include="Patches\Harmony_BedCellSearchPattern.cs" />
     <Compile Include="Patches\Harmony_Building_Bed.cs" />
     <Compile Include="Compatibility\DbhCompatibility.cs" />
     <Compile Include="Patches\Harmony_Command_SetBedOwnerType.cs" />

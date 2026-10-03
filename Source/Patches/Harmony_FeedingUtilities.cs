@@ -11,7 +11,7 @@ namespace MedPod
     // - The MedPod is powered
     // (as they would get smacked in the face by the MedPod's moving gantry)
     [HarmonyPatch]
-    public static class ShouldBeFed_IgnoreMedPods
+    public static class Harmony_FeedingUtilities_IgnoreMedPods
     {
         public static IEnumerable<MethodInfo> TargetMethods()
         {

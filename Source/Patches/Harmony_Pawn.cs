@@ -7,7 +7,7 @@ namespace MedPod
 {
     // Doctors should not perform scheduled surgeries on patients using MedPods
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.CurrentlyUsableForBills))]
-    public static class Pawn_CurrentlyUsableForBills_IgnoreSurgeryForPatientsOnMedPods
+    public static class Harmony_Pawn_CurrentlyUsableForBills_IgnoreSurgeryForPatientsOnMedPods
     {
         public static void Postfix(ref bool __result, Pawn __instance)
         {
