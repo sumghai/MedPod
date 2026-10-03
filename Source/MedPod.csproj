@@ -71,6 +71,7 @@
     <Compile Include="Patches\Harmony_Pawn_DraftController.cs" />
     <Compile Include="Patches\Harmony_RestUtility.cs" />
     <Compile Include="Patches\Harmony_WorkGiver_Tend.cs" />
+    <Compile Include="Patches\Harmony_PatchWardenTakeToBed_FromMedPod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Jobs\WorkGiver_DoctorCarryFromBedToMedPod.cs" />
     <Compile Include="Jobs\WorkGiver_DoctorRescueToMedPod.cs" />
