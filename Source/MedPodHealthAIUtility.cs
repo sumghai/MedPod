@@ -106,7 +106,10 @@ namespace MedPod
 
         public static bool HasAllowedMedicalCareCategory(Pawn patientPawn)
         {
-            return WorkGiver_DoBill.GetMedicalCareCategory(patientPawn) >= MedicalCareCategory.NormalOrWorse;
+            bool hasAllowedCareCategory = WorkGiver_DoBill.GetMedicalCareCategory(patientPawn) >= MedicalCareCategory.NormalOrWorse;
+            bool isGuest = patientPawn.GuestStatus == GuestStatus.Guest; // Guests can always use MedPods (that have "allow guests" enabled)
+
+            return hasAllowedCareCategory || isGuest;
         }
 
         public static bool HasUsageBlockingHediffs(Pawn patientPawn, List<HediffDef> usageBlockingHediffs)
