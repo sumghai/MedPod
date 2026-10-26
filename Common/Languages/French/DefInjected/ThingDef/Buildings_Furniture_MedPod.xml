@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: Invisible Blocker -->
+	<MedPodInvisibleBlocker.label>Bloqueur Invisible</MedPodInvisibleBlocker.label>
+	
+	<!-- EN: MedPod -->
+	<MedPodStandard.label>MedPod</MedPodStandard.label>
+
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis is a standard model frequently found in free public health clinics on glitterworlds. -->
+	<MedPodStandard.description>Un lit d’hôpital perfectionné qui utilise la régénération cellulaire accélérée pour traiter presque tous les types de blessures et de maladies, notamment en régénérant les organes et les membres manquants.\n\nIl s’agit d’un modèle standard que l’on trouve fréquemment dans les centres de santé publics gratuits des mondes lointains et avancés.</MedPodStandard.description>
+	
+	<!-- EN: VetPod -->
+	<MedPodAnimal.label>VetPod</MedPodAnimal.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on pets and other small domesticated animals. -->
+	<MedPodAnimal.description>Un lit d'hôpital perfectionné qui utilise la régénération cellulaire accélérée pour traiter presque tous les types de blessures et de maladies, notamment en régénérant les organes et les membres manquants.\n\nCette variante est conçue pour les soins vétérinaires des animaux de compagnie et autres petits animaux domestiques.</MedPodAnimal.description>
+	
+	<!-- EN: VetPod Large -->
+	<MedPodAnimalMedium.label>VetPod Grand</MedPodAnimalMedium.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock, but can also treat smaller animals. -->
+	<MedPodAnimalMedium.description>Un lit d'hôpital perfectionné qui utilise la régénération cellulaire accélérée pour traiter presque tous les types de blessures et de maladies, notamment en régénérant les organes et les membres manquants.\n\nCette variante est conçue pour les soins vétérinaires du bétail, mais peut également traiter les animaux de plus petite taille.</MedPodAnimalMedium.description>
+	
+	<!-- EN: VetPod Mega -->
+	<MedPodAnimalBig.label>VetPod Méga</MedPodAnimalBig.label>
+	
+	<!-- EN: An advanced hospital bed that uses accelerated cellular regeneration to treat nearly all kinds of injuries and diseases, including regenerating missing organs and limbs.\n\nThis variant is designed for veterinary use on livestock and megafauna, but can also treat smaller animals. -->
+	<MedPodAnimalBig.description>Un lit d'hôpital perfectionné qui utilise la régénération cellulaire accélérée pour traiter presque tous les types de blessures et de maladies, notamment en régénérant les organes et les membres manquants.\n\nCette variante est conçue pour les soins vétérinaires du bétail et de la mégafaune, mais peut également traiter les animaux de plus petite taille.</MedPodAnimalBig.description>
+
+</LanguageData>

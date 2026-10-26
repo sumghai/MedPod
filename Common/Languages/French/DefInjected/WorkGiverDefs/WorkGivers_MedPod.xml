@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: go to MedPod for emergency treatment -->
+	<MedPodPatientGoToMedPodEmergency.label>Aller au MedPod pour recevoir des soins d'urgence</MedPodPatientGoToMedPodEmergency.label>
+	
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodEmergency.gerund>Reçoit des soins dans</MedPodPatientGoToMedPodEmergency.gerund>
+	
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodEmergency.verb>recevoir des soins dans</MedPodPatientGoToMedPodEmergency.verb>
+	
+	<!-- EN: rescue downed allies to MedPod -->
+	<MedPodDoctorRescueToMedPod.label>Transporter les alliés inconscients jusqu'au MedPod</MedPodDoctorRescueToMedPod.label>
+	
+	<!-- EN: rescuing -->
+	<MedPodDoctorRescueToMedPod.gerund>Transport de</MedPodDoctorRescueToMedPod.gerund>
+	
+	<!-- EN: rescue -->
+	<MedPodDoctorRescueToMedPod.verb>transporter</MedPodDoctorRescueToMedPod.verb>
+	
+	<!-- EN: carry patients from bed to MedPod -->
+	<MedPodDoctorCarryFromBedToMedPod.label>Transporter les patients de leur lit au MedPod</MedPodDoctorCarryFromBedToMedPod.label>
+	
+	<!-- EN: carrying -->
+	<MedPodDoctorCarryFromBedToMedPod.gerund>Transport de</MedPodDoctorCarryFromBedToMedPod.gerund>
+	
+	<!-- EN: carry -->
+	<MedPodDoctorCarryFromBedToMedPod.verb>transporter</MedPodDoctorCarryFromBedToMedPod.verb>
+	
+	<!-- EN: go to MedPod for treatment -->
+	<MedPodPatientGoToMedPodTreatment.label>Aller au MedPod pour recevoir des soins</MedPodPatientGoToMedPodTreatment.label>
+	
+	<!-- EN: receiving treatment in -->
+	<MedPodPatientGoToMedPodTreatment.gerund>Reçoit des soins dans</MedPodPatientGoToMedPodTreatment.gerund>
+	
+	<!-- EN: receive treatment in -->
+	<MedPodPatientGoToMedPodTreatment.verb>recevoir des soins dans</MedPodPatientGoToMedPodTreatment.verb>
+	
+	<!-- EN: rescue downed prisoner to MedPod -->
+	<MedPodWardenRescueToMedPod.label>Transporter les prisonniers inconscients jusqu'au MedPod</MedPodWardenRescueToMedPod.label>
+	
+	<!-- EN: rescuing -->
+	<MedPodWardenRescueToMedPod.gerund>Transport de</MedPodWardenRescueToMedPod.gerund>
+	
+	<!-- EN: rescue -->
+	<MedPodWardenRescueToMedPod.verb>transporter</MedPodWardenRescueToMedPod.verb>
+	
+	<!-- EN: carry prisoners from bed to MedPod -->
+	<MedPodWardenCarryFromBedToMedPod.label>Transporter les prisonniers de leur lit au MedPod</MedPodWardenCarryFromBedToMedPod.label>
+	
+	<!-- EN: carrying -->
+	<MedPodWardenCarryFromBedToMedPod.gerund>Transport de</MedPodWardenCarryFromBedToMedPod.gerund>
+	
+	<!-- EN: carry -->
+	<MedPodWardenCarryFromBedToMedPod.verb>transporter</MedPodWardenCarryFromBedToMedPod.verb>
+
+</LanguageData>

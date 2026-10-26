@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: Error: No power -->
+	<MedPod_InspectorStatus_NoPower>Erreur: pas d’alimentation</MedPod_InspectorStatus_NoPower>
+
+	<!-- EN: Diagnosing ({0}%) -->
+	<MedPod_InspectorStatus_DiagnosisProgress>Diagnostic en cours ({0} %)</MedPod_InspectorStatus_DiagnosisProgress>
+
+	<!-- EN: Diagnosis Complete -->
+	<MedPod_InspectorStatus_DiagnosisComplete>Diagnostic terminé</MedPod_InspectorStatus_DiagnosisComplete>
+
+	<!-- EN: Regenerating ({0}%) -->
+	<MedPod_InspectorStatus_HealingProgress>Régénération en cours ({0} %)</MedPod_InspectorStatus_HealingProgress>
+
+	<!-- EN: 100% Clear -->
+	<MedPod_InspectorStatus_PatientDischarged>100 % rétabli</MedPod_InspectorStatus_PatientDischarged>
+
+	<!-- EN: Idle -->
+	<MedPod_InspectorStatus_Idle>Inactif</MedPod_InspectorStatus_Idle>
+
+	<!-- EN: Power consumption (Diagnosis) -->
+	<MedPod_Stat_PowerConsumptionDiagnosis_Label>Consommation électrique (diagnostic)</MedPod_Stat_PowerConsumptionDiagnosis_Label>
+
+	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Diagnosis mode. -->
+	<MedPod_Stat_PowerConsumptionDiagnosis_Desc>Quantité d’électricité consommée par ce MedPod lorsqu’il fonctionne en mode diagnostic.</MedPod_Stat_PowerConsumptionDiagnosis_Desc>
+
+	<!-- EN: Power consumption (Treatment) -->
+	<MedPod_Stat_PowerConsumptionHealing_Label>Consommation électrique (traitement)</MedPod_Stat_PowerConsumptionHealing_Label>
+
+	<!-- EN: The amount of power this MedPod will draw from the power grid while operating in Treatment mode. -->
+	<MedPod_Stat_PowerConsumptionHealing_Desc>Quantité d’électricité consommée par ce MedPod lorsqu’il fonctionne en mode traitement.</MedPod_Stat_PowerConsumptionHealing_Desc>
+
+	<!-- EN: Diagnosis time -->
+	<MedPod_Stat_DiagnosisTime_Label>Durée du diagnostic</MedPod_Stat_DiagnosisTime_Label>
+
+	<!-- EN: How long it takes for this MedPod to diagnose a patient. -->
+	<MedPod_Stat_DiagnosisTime_Desc>Temps nécessaire à ce MedPod pour établir le diagnostic d’un patient.</MedPod_Stat_DiagnosisTime_Desc>
+
+	<!-- EN: Avg. per-condition treatment time -->
+	<MedPod_Stat_PerHediffHealingTime_Label>Durée moyenne du traitement par affection</MedPod_Stat_PerHediffHealingTime_Label>
+
+	<!-- EN: How long it takes (on average) for this MedPod to treat each medical condition on a patient.\n\nNote that this is scaled according to the severity of the condition - for instance, less severe injuries will take less time to treat. -->
+	<MedPod_Stat_PerHediffHealingTime_Desc>Temps nécessaire en moyenne à ce MedPod pour traiter chaque affection médicale d’un patient.\n\nNotez que cette durée varie selon la gravité de l’affection - par exemple, les blessures moins graves prennent moins de temps à traiter.</MedPod_Stat_PerHediffHealingTime_Desc>
+
+	<!-- EN: {0} s -->
+	<MedPod_Stat_TimeSeconds>{0} s</MedPod_Stat_TimeSeconds>
+	
+	<!-- EN: No reachable, un-reserved {0} MedPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoMedPod>Aucun MedPod alimenté, à température sûre, accessible et non réservé n’est disponible pour {0}.</MedPod_Message_CannotRescue_NoMedPod>
+	
+	<!-- EN: No reachable, un-reserved VetPod with power in safe temperature. -->
+	<MedPod_Message_CannotRescue_NoVetPod>Aucun VetPod alimenté, à température sûre, accessible et non réservé n’est disponible.</MedPod_Message_CannotRescue_NoVetPod>
+
+	<!-- EN: MedPod treatment complete for {1_label}. -->
+	<MedPod_Message_TreatmentComplete>Traitement par MedPod terminé pour {1_label}.</MedPod_Message_TreatmentComplete>
+
+	<!-- EN: MedPod treatment interrupted for {1_label}. -->
+	<MedPod_Message_TreatmentInterrupted>Traitement par MedPod interrompu pour {1_label}.</MedPod_Message_TreatmentInterrupted>
+	
+	<!-- EN: MedPod cannot treat patients with {0} hediff -->
+	<MedPod_FloatMenu_PatientWithHediffNotAllowed>Le MedPod ne peut pas traiter les patients atteints de {0}.</MedPod_FloatMenu_PatientWithHediffNotAllowed>
+	
+	<!-- EN: MedPod cannot treat patients with {0} trait -->
+	<MedPod_FloatMenu_PatientWithTraitNotAllowed>Le MedPod ne peut pas traiter les patients ayant le trait {0}.</MedPod_FloatMenu_PatientWithTraitNotAllowed>
+
+	<!-- EN: MedPod cannot treat {0}s -->
+	<MedPod_FloatMenu_RaceNotAllowed>Le MedPod ne peut pas traiter les {0}.</MedPod_FloatMenu_RaceNotAllowed>
+	
+	<!-- EN: Rescue {0} to MedPod -->
+	<MedPod_FloatMenu_Rescue>Secourir {0} et l’emmener au MedPod</MedPod_FloatMenu_Rescue>
+
+	<!-- EN: MedPod not powered -->
+	<MedPod_FloatMenu_Unpowered>Le MedPod n’est pas alimenté</MedPod_FloatMenu_Unpowered>
+	
+	<!-- EN: Patient care quality must be Industrial medicine or above -->
+	<MedPod_FloatMenu_MedicalCareCategoryTooLow>La qualité des soins doit être au moins celle de la médecine industrielle</MedPod_FloatMenu_MedicalCareCategoryTooLow>
+
+	<!-- EN: patient using MedPod -->
+	<MedPod_SurgeryProhibited_PatientUsingMedPod>Patient utilisant le MedPod</MedPod_SurgeryProhibited_PatientUsingMedPod>
+	
+	<!-- EN: {0} is receiving treatment in {1}. -->
+	<MedPod_CommandGizmoDisabled_PatientReceivingTreatment>{0} reçoit un traitement dans {1}.</MedPod_CommandGizmoDisabled_PatientReceivingTreatment>
+
+	<!-- EN: {0} is in use. -->
+	<MedPod_CommandGizmoDisabled_MedPodInUse>{0} est en cours d’utilisation.</MedPod_CommandGizmoDisabled_MedPodInUse>
+	
+	<!-- EN: Allow guests -->
+	<MedPod_CommandGizmoAllowGuests_Label>Autoriser les visiteurs</MedPod_CommandGizmoAllowGuests_Label>
+	
+	<!-- EN: Allow this {0} to be used by guests and other non-colony visitors. -->
+	<MedPod_CommandGizmoAllowGuests_Desc>Autoriser les visiteurs et les autres personnes extérieures à la colonie à utiliser ce/cette {0}.</MedPod_CommandGizmoAllowGuests_Desc>
+	
+	<!-- EN: Abort -->
+	<MedPod_CommandGizmoAbortTreatment_Label>Interrompre</MedPod_CommandGizmoAbortTreatment_Label>
+	
+	<!-- EN: Stop treating the current patient immediately. -->
+	<MedPod_CommandGizmoAbortTreatment_Desc>Arrêter immédiatement le traitement du patient actuel.</MedPod_CommandGizmoAbortTreatment_Desc>
+	
+	<!-- EN: Trait(s) removed -->
+	<MedPod_Letter_TraitRemoved_Label>Traits supprimés</MedPod_Letter_TraitRemoved_Label>
+
+	<!-- EN: {PAWN_labelShort} has had the following trait(s) removed via MedPod treatment:\n -->
+	<MedPod_Letter_TraitRemoved_Desc>Les traits suivants ont été supprimés de {PAWN_labelShort} lors du traitement par MedPod:\n</MedPod_Letter_TraitRemoved_Desc>
+
+</LanguageData>

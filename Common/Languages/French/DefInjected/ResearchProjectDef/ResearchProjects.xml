@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- EN: Accelerated Cellular Regeneration -->
+	<AcceleratedCellularRegeneration.label>Régénération Cellulaire Accélérée</AcceleratedCellularRegeneration.label>
+
+	<!-- EN: Construct MedPods, advanced hospital beds capable of automatically treating a wide range of diseases and injuries by electrically stimulating and guiding the repair processes of living cells. -->
+	<AcceleratedCellularRegeneration.description>Construisez des MedPods, des lits d'hôpital perfectionnés capables de traiter automatiquement un large éventail de maladies et de blessures en stimulant électriquement les processus de réparation des cellules vivantes et en les guidant.</AcceleratedCellularRegeneration.description>
+
+	<!-- EN: About: Building MedPods -->
+	<AcceleratedCellularRegeneration.discoveredLetterTitle>À propos: Construction de MedPods</AcceleratedCellularRegeneration.discoveredLetterTitle>
+
+	<!-- EN: You now have the technology to build MedPod beds - but each MedPod requires a special Isolinear Processor component. You can collect Isolinear Processors via the following ways:\n\n-Orbital or caravan exotic goods traders sell Isolinear Processors. Invite or wait for them.\n-Some quests are rewarded with Isolinear Processors. -->
+	<AcceleratedCellularRegeneration.discoveredLetterText>Vous disposez désormais de la technologie nécessaire pour construire des lits MedPod, mais chaque MedPod nécessite un composant spécial: un Processeur Isolinéaire. Vous pouvez obtenir des Processeurs Isolinéaires de différentes façons :\n\n-Les marchands orbitaux ou les caravanes de marchands de marchandises exotiques vendent des Processeurs Isolinéaires. Faites appel à eux ou attendez leur arrivée.\n-Certaines quêtes offrent des Processeurs Isolinéaires en récompense.</AcceleratedCellularRegeneration.discoveredLetterText>
+
+</LanguageData>
