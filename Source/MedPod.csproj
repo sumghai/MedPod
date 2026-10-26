@@ -1,103 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AB951FF1-73F0-42FD-8FB5-A08C19E25C54}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MedPod</RootNamespace>
-    <AssemblyName>MedPod</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>false</DebugSymbols>
-    <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\1.6\Assemblies\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>12</LangVersion>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\1.6\Assemblies\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>12</LangVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="BadHygiene">
-      <HintPath>..\..\Dubs-Bad-Hygiene\1.6\Assemblies\BadHygiene.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Compatibility\AlphaGenesCompatibility.cs" />
-    <Compile Include="Comps\CompAnimatedGantry.cs" />
-    <Compile Include="Compatibility\EbfCompatibilityWrapper.cs" />
-    <Compile Include="Comps\CompMedPodSettings.cs" />
-    <Compile Include="Comps\CompProperties_AnimatedGantry.cs" />
-    <Compile Include="Comps\CompProperties_MedPodSettings.cs" />
-    <Compile Include="Comps\CompProperties_TreatmentRestrictions.cs" />
-    <Compile Include="Comps\CompTreatmentRestrictions.cs" />
-    <Compile Include="Jobs\JobDriver_PatientGoToMedPod.cs" />
-    <Compile Include="Jobs\JobGiver_PatientGoToMedPod.cs" />
-    <Compile Include="MedPodDef.cs" />
-    <Compile Include="MedPodHealthAIUtility.cs" />
-    <Compile Include="MedPodMod.cs" />
-    <Compile Include="Building_BedMedPod.cs" />
-    <Compile Include="MedPodRestUtility.cs" />
-    <Compile Include="Compatibility\ModCompatibility.cs" />
-    <Compile Include="Patches\Harmony_BedCellSearchPattern.cs" />
-    <Compile Include="Patches\Harmony_Building_Bed.cs" />
-    <Compile Include="Compatibility\DbhCompatibility.cs" />
-    <Compile Include="Patches\Harmony_Command_SetBedOwnerType.cs" />
-    <Compile Include="Patches\Harmony_Designator_Strip.cs" />
-    <Compile Include="Patches\Harmony_FeedingUtilities.cs" />
-    <Compile Include="Patches\Harmony_FloatMenuOptionProvider_Generic.cs" />
-    <Compile Include="Patches\Harmony_Pawn.cs" />
-    <Compile Include="Patches\Harmony_PawnRenderer.cs" />
-    <Compile Include="Patches\Harmony_Pawn_DraftController.cs" />
-    <Compile Include="Patches\Harmony_RestUtility.cs" />
-    <Compile Include="Patches\Harmony_WorkGiver_Tend.cs" />
-    <Compile Include="Patches\Harmony_PatchWardenTakeToBed_FromMedPod.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Jobs\WorkGiver_DoctorCarryFromBedToMedPod.cs" />
-    <Compile Include="Jobs\WorkGiver_DoctorRescueToMedPod.cs" />
-    <Compile Include="Jobs\WorkGiver_PatientGoToMedPod.cs" />
-    <Compile Include="Jobs\WorkGiver_WardenCarryFromBedToMedPod.cs" />
-    <Compile Include="Jobs\WorkGiver_WardenRescueToMedPod.cs" />
-    <Compile Include="UI\FloatMenuOptionProvider_RescuePawnToMedPod.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Krafs.Publicizer">
-      <Version>2.3.2</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.6.4871</Version>
-    </PackageReference>
-    <PackageReference Include="Lib.Harmony">
-      <Version>2.4.2</Version>
-      <PrivateAssets>all</PrivateAssets>
-      <ExcludeAssets>runtime</ExcludeAssets>
-      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Publicize Include="Assembly-CSharp" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<OutputType>Library</OutputType>
+		<DebugType>embedded</DebugType>
+		<AssemblyTitle>MedPod</AssemblyTitle>
+		<Product>MedPod</Product>
+		<Copyright>Copyright © 2026 sumghai. Licensed under CC BY-SA 4.0.</Copyright>
+		<Version>1.0.0</Version>
+		<LangVersion>latest</LangVersion>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<OutputPath>..\1.7\Assemblies\</OutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<OutputPath>..\1.7\Assemblies\</OutputPath>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Krafs.Publicizer" Version="2.3.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.4985-unstable" />
+		<PackageReference Include="Lib.Harmony" Version="3.0.0-rc.3" />
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="BadHygiene">
+		  <HintPath>..\..\Dubs-Bad-Hygiene\1.7\Assemblies\BadHygiene.dll</HintPath>
+		  <Private>False</Private>
+		</Reference>
+		<Reference Include="UnityStubs">
+			<HintPath>..\..\..\UnityStubs.dll</HintPath>
+		</Reference>
+		<Reference Include="Waylith">
+			<HintPath>..\..\..\Waylith.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+		<Publicize Include="Assembly-CSharp;" />
+	</ItemGroup>
 </Project>

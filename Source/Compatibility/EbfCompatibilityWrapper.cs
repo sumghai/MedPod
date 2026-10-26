@@ -18,7 +18,7 @@ namespace MedPod
             {
                 if (myDelegate == null)
                 {
-                    myDelegate = MethodInvoker.GetHandler(makeshiftEbfEndpoint);
+                    myDelegate = HarmonyLib.MethodInvoker.GetHandler(makeshiftEbfEndpoint);
                 }    
                 return (float)myDelegate(null, new object[] { def, pawn, record });
             }
